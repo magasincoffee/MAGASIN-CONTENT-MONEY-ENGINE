@@ -8,18 +8,19 @@
   "start_at": "2026-09-20T03:21:04+07:00",
   "deadline_at": "2026-09-20T07:21:04+07:00",
   "duration_seconds": 14400,
-  "current_checkpoint": "MCME_039_ACCEPTED",
-  "current_task": "MCME-040",
-  "next_task": "MCME-041_AFTER_MCME_040_ACCEPTED",
+  "current_checkpoint": "MCME_040_ACCEPTED",
+  "current_task": "MCME-041",
+  "next_task": "MCME-042_AFTER_MCME_041_ACCEPTED",
   "active_tasks": [
-    "MCME-040"
+    "MCME-041"
   ],
   "accepted_tasks": [
-    "MCME-039"
+    "MCME-039",
+    "MCME-040"
   ],
   "repair_tasks": [],
   "rejected_tasks": [],
-  "five_step_current": "SIMPLIFY_ACCELERATE",
+  "five_step_current": "QUESTION_SIMPLIFY_ACCELERATE",
   "target_outcome": "REMOVE_SAFE_PREP_BLOCKERS_BEFORE_OWNER_GATE_A",
   "next_real_execution_task": "MCME-010 Owner Pinterest property confirmation",
   "real_execution_path_unchanged": true,
@@ -54,5 +55,25 @@
     ],
     "tests": "10/10 PASS",
     "invariant": "UNKNOWN/BLOCKED != PASS; only five locked candidate slots"
+  },
+  "mcme_040_acceptance": {
+    "accepted_at": "2026-09-20T03:53:58+07:00",
+    "canonical_commit": "531412be498f0602d4b779609b7a9b61e56228c8",
+    "brain_decision": "ACCEPT",
+    "tests": "19/19 PASS",
+    "runtime": "LOCAL_PRIVATE_APPEND_ONLY_JSONL",
+    "schema_correction": {
+      "type": "BUGFIX_ONLY",
+      "change": "decimal regex corrected to accept ordinary decimal strings such as 10.50",
+      "ontology_changed": false,
+      "event_types_changed": false,
+      "money_state_semantics_changed": false
+    },
+    "invariants": [
+      "duplicate ingestion cannot double-count money",
+      "PAYOUT_ISSUED != CASH_SETTLED",
+      "CASH_SETTLED requires all settlement guards",
+      "reversals/negative cash corrections are append-only"
+    ]
   }
 }
