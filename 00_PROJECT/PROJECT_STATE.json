@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T03:34:08+07:00",
+  "updated_at": "2026-09-20T03:53:58+07:00",
   "status": "RUNNING_SAFE_PREP",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
-  "current_phase": "P5_SAFE_PREP_CASH_TRUTH_RUNTIME",
-  "current_task": "MCME-040",
-  "current_task_title": "Implement Cash Truth local MVP runtime",
-  "five_step_current": "SIMPLIFY_ACCELERATE",
+  "current_phase": "P5_SAFE_PREP_PUBLISH_SAFETY",
+  "current_task": "MCME-041",
+  "current_task_title": "Implement Pinterest publish safety dry-run harness",
+  "five_step_current": "QUESTION_SIMPLIFY_ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain accepts MCME-040 before MCME-041; next real execution task remains MCME-010",
+  "next_gate": "Brain accepts MCME-041 before MCME-042; next real execution task remains MCME-010",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
-  "last_accepted_task": "MCME-039",
-  "last_accepted_commit": "33250a61cda4ebd13acc293b738bcd86e6b31c98",
+  "last_accepted_task": "MCME-040",
+  "last_accepted_commit": "531412be498f0602d4b779609b7a9b61e56228c8",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -81,7 +81,11 @@
     "canonical_commit": "df5d8701cd199f41736fc53d292b00aa987234bd",
     "schema": "06_METRICS/mcme_cash_truth_v1.schema.json",
     "first_real_cash": "funds_received_and_reconciled",
-    "current_evidence_level": "L0_NO_REAL_COMMERCIAL_EVIDENCE"
+    "current_evidence_level": "L0_NO_REAL_COMMERCIAL_EVIDENCE",
+    "runtime_status": "ACCEPTED",
+    "runtime_commit": "531412be498f0602d4b779609b7a9b61e56228c8",
+    "schema_current_commit": "531412be498f0602d4b779609b7a9b61e56228c8",
+    "schema_bugfix": "decimal regex only; ontology/state semantics unchanged"
   },
   "first_cash_backlog": {
     "status": "ACCEPTED",
@@ -114,6 +118,8 @@
   "safe_prep": {
     "gate_a_runtime_contract": "ACCEPTED",
     "gate_a_runtime_commit": "33250a61cda4ebd13acc293b738bcd86e6b31c98",
-    "cash_truth_runtime": "ACTIVE_MCMЕ_040"
+    "cash_truth_runtime": "ACCEPTED",
+    "cash_truth_runtime_commit": "531412be498f0602d4b779609b7a9b61e56228c8",
+    "publish_safety_harness": "ACTIVE_MCME_041"
   }
 }
