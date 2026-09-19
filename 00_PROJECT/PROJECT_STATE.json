@@ -1,0 +1,37 @@
+{
+  "schema_version": "mcme.project-state.v1",
+  "project": "MAGASIN CONTENT MONEY ENGINE",
+  "updated_at": "2026-09-19T22:28:00+07:00",
+  "status": "READY",
+  "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
+  "current_phase": "P1_GLOBAL_MARKET_INTELLIGENCE",
+  "current_task": "MCME-001",
+  "current_task_title": "Global Market Intelligence V1 — rank first market/platform/monetization experiments",
+  "five_step_current": "QUESTION",
+  "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
+  "architecture_locked": true,
+  "global_scope": true,
+  "robot_24_7_required": true,
+  "saydivoice_role": "VOICE_PROVIDER",
+  "content_policy": "ORIGINAL_LICENSED_PUBLIC_DOMAIN_OR_MEANINGFULLY_TRANSFORMATIVE_WITH_RIGHTS_GATE",
+  "monetization_priority": [
+    "AFFILIATE_COMMERCE",
+    "PLATFORM_MONETIZATION",
+    "LEAD_GENERATION",
+    "SPONSORSHIP",
+    "OWN_PRODUCTS",
+    "SERVICES",
+    "IP_LICENSING"
+  ],
+  "owner_boundaries": [
+    "CREDENTIALS",
+    "MFA_OTP_CAPTCHA",
+    "KYC_TAX",
+    "BANKING_PAYMENT_SETUP",
+    "LEGAL_RIGHTS_AMBIGUITY",
+    "PLATFORM_APPEALS_SUSPENSIONS",
+    "DESTRUCTIVE_ACCOUNT_ACTIONS",
+    "SPEND_ABOVE_APPROVED_BUDGET"
+  ],
+  "next_gate": "Select first Minimum Viable Money Loop after market intelligence evidence"
+}
