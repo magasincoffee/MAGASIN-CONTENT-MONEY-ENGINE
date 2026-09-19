@@ -151,7 +151,7 @@ MCME-010 — Owner Pinterest property confirmation
 **Reversible:** yes.  
 **External side effect:** no required mutation; confirmation only.  
 **Idempotency/reconciliation:** property identity must be stable; repeated confirmation reconciles to the same public/sanitized property reference.  
-**Next gate on PASS:** MCME-011.
+**Next gate unlocked on PASS:** MCME-011.
 
 ---
 
@@ -404,40 +404,58 @@ MCME-010 — Owner Pinterest property confirmation
 
 ## MCME-024 — Evaluate Amazon conditional eligibility
 
-**Objective:** decide whether Amazon fallback may be attempted.  
+**Objective:** decide whether the conditional Amazon fallback may be attempted at all.  
+**Five-Step stage:** ACCELERATE.  
+**Dependency/precondition:** MCME-023 sanitized eligibility evidence.  
 **Executor:** WORK.  
 **Execution class:** `READ_ONLY_EXTERNAL`, `REVERSIBLE_REPO_CHANGE`.  
-**Dependency:** MCME-023.  
-**Exact output:** AMAZON_ELIGIBLE or TERMINAL_GATE_A_FAIL.  
-**STOP/FAIL:** UNKNOWN/BLOCKED/FAIL → terminal Gate A FAIL; no workaround.  
-**Next gate:** eligible → MCME-025; otherwise → MCME-028 terminal evaluation.
+**Owner boundary:** no login, account mutation, legal acceptance, KYC/tax/payment action.  
+**Input evidence/artifacts:** sanitized Amazon conditional eligibility record + MCME-005 Gate A rules.  
+**Exact output:** `AMAZON_ELIGIBLE` or `TERMINAL_GATE_A_FAIL` with evidence classification.  
+**Definition of Done:** eligibility is VERIFIED or the fallback is conclusively blocked/failed; UNKNOWN is preserved as non-PASS.  
+**STOP/FAIL condition:** UNKNOWN/BLOCKED/FAIL → terminal Gate A FAIL; no workaround or alternate property invented.  
+**Reversible:** repo evaluation append-only/supersedable by new evidence.  
+**External side effect:** no.  
+**Idempotency/reconciliation:** evaluation keyed by the one conditional Amazon eligibility record/version; repeated evaluation does not create another fallback slot.  
+**Next gate unlocked on PASS:** eligible → MCME-025; otherwise → MCME-028 terminal evaluation.
 
 ---
 
 ## MCME-025 — Amazon money-path evidence
 
-**Objective:** Owner provides one bounded Amazon fallback money-path record.  
-**Dependency:** MCME-024 AMAZON_ELIGIBLE.  
+**Objective:** Owner provides exactly one bounded Amazon fallback money-path record after eligibility is VERIFIED.  
+**Five-Step stage:** ACCELERATE.  
+**Dependency/precondition:** MCME-024 = AMAZON_ELIGIBLE.  
 **Executor:** OWNER.  
 **Execution class:** `OWNER_REQUIRED`.  
-**Owner boundary:** Owner handles account/legal/payment actions.  
-**Exact output:** sanitized property/link/action/validation/payout/rights evidence.  
-**DoD:** one path can be evaluated.  
-**STOP/FAIL:** no second Amazon slot.  
-**Idempotency:** one conditional Amazon path only.  
-**Next gate:** MCME-026.
+**Owner boundary:** Owner handles Amazon account/legal/payment/property actions directly; no credentials returned.  
+**Input evidence/artifacts:** verified conditional eligibility + merchant/path qualification template + confirmed Pinterest property.  
+**Exact output:** sanitized Amazon path evidence covering property acceptance, intended link method, commissionable action, validation/reversal, payout feasibility, rights/disclosure and checked_at.  
+**Definition of Done:** the single Amazon fallback slot contains enough sanitized evidence for deterministic evaluation.  
+**STOP/FAIL condition:** pending → WAIT_OWNER; no second Amazon slot; terminal incompatibility exhausts fallback.  
+**Reversible:** evidence record yes; Owner-side account/legal actions may not be.  
+**External side effect:** possible Owner-side protected account/legal setup only.  
+**Idempotency/reconciliation:** exactly one Amazon conditional path slot; repeated evidence reconciles to the same relationship/path and never creates a duplicate fallback.  
+**Next gate unlocked on PASS/evidence complete:** MCME-026.
 
 ---
 
 ## MCME-026 — Evaluate Amazon / terminal Gate A path
 
-**Objective:** evaluate the final allowed fallback.  
+**Objective:** evaluate the one final allowed Amazon money path and either produce a provisional winner or exhaust Gate A fallback.  
+**Five-Step stage:** ACCELERATE.  
+**Dependency/precondition:** MCME-025 evidence complete.  
 **Executor:** WORK.  
 **Execution class:** `READ_ONLY_EXTERNAL`, `REVERSIBLE_REPO_CHANGE`.  
-**Dependency:** MCME-025.  
-**Exact output:** provisional viable → MCME-027, or terminal FAIL.  
-**STOP/FAIL:** fail → bounded fallback exhausted → Gate A FAIL → KILL niche → stop.  
-**Next gate:** viable → MCME-027; fail → MCME-028 terminal record.
+**Owner boundary:** no login/application/legal/payment action.  
+**Input evidence/artifacts:** sanitized Amazon path record + Gate A evidence schema.  
+**Exact output:** `PASS-TO-PAYOUT-READINESS` or terminal `MERCHANT_FAIL/GATE_A_FAIL`.  
+**Definition of Done:** every critical merchant/tracking/validation/rights field is classified and bounded fallback status is explicit.  
+**STOP/FAIL condition:** fail → Awin + impact.com + Amazon bounded fallback exhausted → Gate A FAIL → KILL niche → stop; UNKNOWN/BLOCKED never passes.  
+**Reversible:** repo evaluation append-only/supersedable by later evidence.  
+**External side effect:** no.  
+**Idempotency/reconciliation:** evaluation keyed by the single Amazon path + evidence version/digest; no second slot and no duplicate path.  
+**Next gate unlocked on PASS:** viable → MCME-027; fail → MCME-028 terminal record.
 
 ---
 
@@ -556,9 +574,10 @@ MCME-010 — Owner Pinterest property confirmation
 **External side effect:** yes.  
 **Idempotency requirement:**
 - deterministic publish key = experiment_id + content_id + destination version;
-- persist pre-action latch/state before send;
+- **pre-action persisted latch/state** must exist before send;
 - one bounded publish action per intended Pin;
 - after uncertain result, search/reconcile published Pin ID before any retry;
+- **no blind resend**;
 - no duplicate publish to "be safe".
 **Next gate:** MCME-033.
 
