@@ -1,16 +1,29 @@
 # MCME-RUN-8H-01 LOG
 
-Prepared: 2026-09-19 23:04:05 +07
+Plan version: V2 — SINGLE LANE
 Status: WAIT_OWNER_APPROVAL
 
-This log is append-only in meaning. Brain updates checkpoints after reviewing Work.
+## OWNER CORRECTION
 
-## PRE-RUN
-
-- Architecture: LOCKED.
-- Five-Step: LOCKED.
-- Duration: 8 hours wall-clock after explicit Owner approval.
+- Project uses ONE lane only.
+- No parallel 3-lane execution.
+- Brain performs no Work task.
+- Brain dispatches one task, reviews result, then dispatches the next.
+- Maximum active Work tasks: 1.
+- Primary objective: REAL MONEY / shortest credible path to first cash.
 - Spend authorization: 0.
-- Production publishing: NOT AUTHORIZED.
-- Owner involvement during run: not required unless a hard boundary blocks all remaining safe work.
+- Production publishing: NOT AUTHORIZED in this planning run.
 - Work dispatched: NONE.
+
+## PRE-RUN SEQUENCE
+
+MCME-001 → shortest path to cash
+MCME-002 → delete to one money model
+MCME-003 → one niche + one format
+MCME-004 → real-money experiment
+MCME-005 → minimum content factory
+MCME-006 → cash truth model
+MCME-007 → first-cash implementation backlog
+MCME-008 → Brain final review/report
+
+Run remains inert until Owner approval.
