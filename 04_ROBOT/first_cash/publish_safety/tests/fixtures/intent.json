@@ -1,0 +1,9 @@
+{
+  "fixture_notice": "EXAMPLE / MOCK ONLY / NO REAL PUBLISH",
+  "intent": {
+    "experiment_id": "MCME-EXAMPLE-NOT-REAL",
+    "content_id": "MCME-FC1-FRIDGE-FIT-P01-MEASURE",
+    "content_version": "v1",
+    "destination_version": "destination-v1"
+  }
+}
