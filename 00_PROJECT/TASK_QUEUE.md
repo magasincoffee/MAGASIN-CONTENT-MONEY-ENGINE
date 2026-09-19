@@ -75,3 +75,11 @@ KEEP / KILL / SCALE based on economics.
 Five-Step: AUTOMATE
 
 Only valid after upstream loop is economically proven and operational boundaries are explicit.
+
+
+### MCME-007 — First-Cash Critical-Path Backlog
+Five-Step: ACCELERATE
+
+Status: ACTIVE in MCME-RUN-8H-01.
+
+Build the dependency-correct future task sequence from current L0 evidence to FIRST REAL CASH. Owner/account actions are specified but not executed. SaydiVoice/video/24-7 automation remain deferred until evidence justifies them.
