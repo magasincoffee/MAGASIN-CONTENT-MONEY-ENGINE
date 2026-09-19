@@ -2,16 +2,16 @@
   "schema_version": "mcme.autonomy-run.v3",
   "run_id": "MCME-RUN-8H-01",
   "plan_version": "v3-single-lane-early-finish-extension",
-  "status": "WAIT_OWNER_APPROVAL",
+  "status": "RUNNING",
   "execution_mode": "SINGLE_LANE_SEQUENTIAL",
   "lane_count": 1,
   "max_active_work_tasks": 1,
-  "start_at": null,
-  "deadline_at": null,
+  "start_at": "2026-09-20T00:12:59+07:00",
+  "deadline_at": "2026-09-20T08:12:59+07:00",
   "duration_seconds": 28800,
-  "current_checkpoint": "WAIT_OWNER_APPROVAL",
-  "current_task": null,
-  "next_task": "MCME-001",
+  "current_checkpoint": "RUNNING",
+  "current_task": "MCME-001",
+  "next_task": "MCME-002_AFTER_MCME_001_ACCEPTED",
   "five_step_current": "QUESTION",
   "target_outcome": "FIRST_REAL_MONEY_LOOP_AND_IF_TIME_DEPLOYMENT_PLAN_READY",
   "accepted_tasks": [],
@@ -23,11 +23,11 @@
   "notes": [
     "One Brain, one Work lane, sequential tasks only.",
     "Brain reviews and accepts each result before dispatching the next task.",
-    "No Work dispatch is authorized before explicit Owner approval.",
     "Primary objective is minimum time-to-first-real-cash, not content volume or views.",
     "If the cash-first core sequence completes early, Brain uses remaining wall-clock time for MCME-009 deployment planning.",
     "No actual production deployment is authorized by the early-finish extension.",
-    "The original T0 + 8h hard stop remains unchanged."
+    "The original T0 + 8h hard stop remains unchanged.",
+    "Owner approved start at T0; MCME-001 is the only authorized active Work task."
   ],
   "early_finish_extension": {
     "enabled": true,
@@ -37,5 +37,9 @@
     "execution_scope": "PLANNING_ONLY",
     "production_mutation_authorized": false,
     "stop_at_original_deadline": true
-  }
+  },
+  "active_tasks": [
+    "MCME-001"
+  ],
+  "owner_approved_at": "2026-09-20T00:12:59+07:00"
 }
