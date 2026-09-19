@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T00:51:37+07:00",
+  "updated_at": "2026-09-20T00:57:31+07:00",
   "status": "RUNNING",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
-  "current_phase": "P2_GATE_A_EXECUTION_READINESS",
-  "current_task": "MCME-005",
-  "current_task_title": "Prepare Gate A execution readiness and evidence contract without crossing Owner boundaries",
-  "five_step_current": "DELETE_SIMPLIFY_ACCELERATE",
+  "current_phase": "P2_CASH_TRUTH_EVENT_LEDGER",
+  "current_task": "MCME-006",
+  "current_task_title": "Define canonical cash truth, attribution and event ledger for first real-money experiment",
+  "five_step_current": "SIMPLIFY_ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain accepts MCME-005 readiness package; actual Gate A execution remains Owner-gated",
+  "next_gate": "Brain accepts MCME-006 before first-cash implementation backlog in MCME-007",
   "active_run": "MCME-RUN-8H-01",
   "run_start_at": "2026-09-20T00:12:59+07:00",
   "run_deadline_at": "2026-09-20T08:12:59+07:00",
-  "last_accepted_task": "MCME-004",
-  "last_accepted_commit": "29f203595afcd63a075d5f62f8638c22169b3c38",
+  "last_accepted_task": "MCME-005",
+  "last_accepted_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -64,5 +64,16 @@
     "first_validated_revenue": "validated/approved commission",
     "first_settled_cash": "funds received on Owner-authorized payout rail"
   },
-  "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE"
+  "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
+  "gate_a_readiness": {
+    "contract_status": "ACCEPTED",
+    "actual_execution_status": "OWNER_GATED_NOT_EXECUTED",
+    "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
+    "bounded_network_order": [
+      "Awin",
+      "impact.com",
+      "Amazon Associates (conditional)"
+    ],
+    "max_candidate_evaluations": 5
+  }
 }
