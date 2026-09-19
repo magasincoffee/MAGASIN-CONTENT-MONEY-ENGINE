@@ -1,0 +1,22 @@
+{
+  "schema_version": "mcme.autonomy-run.v1",
+  "run_id": "MCME-RUN-8H-01",
+  "plan_version": "v1",
+  "prepared_at": "2026-09-19T23:04:05+07:00",
+  "status": "WAIT_OWNER_APPROVAL",
+  "start_at": null,
+  "deadline_at": null,
+  "duration_seconds": 28800,
+  "current_checkpoint": "WAIT_OWNER_APPROVAL",
+  "five_step_current": "QUESTION",
+  "active_tasks": [],
+  "accepted_tasks": [],
+  "repair_tasks": [],
+  "rejected_tasks": [],
+  "owner_boundaries": [],
+  "external_spend_authorized": 0,
+  "production_publish_authorized": false,
+  "notes": [
+    "No Work dispatch is authorized before explicit Owner approval."
+  ]
+}
