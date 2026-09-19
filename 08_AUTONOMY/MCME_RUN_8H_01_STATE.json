@@ -9,10 +9,10 @@
   "start_at": "2026-09-20T00:12:59+07:00",
   "deadline_at": "2026-09-20T08:12:59+07:00",
   "duration_seconds": 28800,
-  "current_checkpoint": "C6_CASH_TRUTH_ACCEPTED",
-  "current_task": "MCME-007",
-  "next_task": "MCME-008_AFTER_MCME_007_ACCEPTED",
-  "five_step_current": "ACCELERATE",
+  "current_checkpoint": "C7_FIRST_CASH_BACKLOG",
+  "current_task": "MCME-008",
+  "next_task": "MCME-009_IF_MCME_008_ACCEPTED_BEFORE_DEADLINE",
+  "five_step_current": "QUESTION_DELETE_SIMPLIFY_ACCELERATE",
   "target_outcome": "FIRST_REAL_MONEY_LOOP_AND_IF_TIME_DEPLOYMENT_PLAN_READY",
   "accepted_tasks": [
     "MCME-001",
@@ -20,7 +20,8 @@
     "MCME-003",
     "MCME-004",
     "MCME-005",
-    "MCME-006"
+    "MCME-006",
+    "MCME-007"
   ],
   "repair_tasks": [],
   "rejected_tasks": [],
@@ -46,7 +47,7 @@
     "stop_at_original_deadline": true
   },
   "active_tasks": [
-    "MCME-007"
+    "MCME-008"
   ],
   "owner_approved_at": "2026-09-20T00:12:59+07:00",
   "mcme_001_acceptance": {
@@ -123,5 +124,15 @@
       "L4"
     ],
     "schema_parse_ok": true
+  },
+  "mcme_007_acceptance": {
+    "accepted_at": "2026-09-20T01:11:03+07:00",
+    "canonical_commit": "1d58c103403fb9854be772ddef904d118aa1e7b0",
+    "artifact": "00_PROJECT/MCME-007_FIRST_CASH_IMPLEMENTATION_BACKLOG.md",
+    "brain_decision": "ACCEPT",
+    "first_future_task": "MCME-010 Owner Pinterest property confirmation",
+    "critical_path_range": "MCME-010..MCME-038",
+    "current_real_evidence_level": "L0",
+    "current_blocker": "OWNER Pinterest property confirmation / real Gate A evidence"
   }
 }
