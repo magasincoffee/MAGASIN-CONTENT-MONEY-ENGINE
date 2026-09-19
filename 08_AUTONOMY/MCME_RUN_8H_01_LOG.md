@@ -49,3 +49,16 @@ Run remains inert until Owner approval.
 - No MCME-002 dispatch is authorized until Brain reviews and accepts MCME-001.
 - External spend remains 0.
 - Production publishing remains NOT AUTHORIZED.
+
+
+## BRAIN REVIEW — MCME-001 ACCEPTED — 2026-09-20T00:30:53+07:00
+
+- Result classification: ACCEPT.
+- Canonical artifact: 01_MARKET_INTELLIGENCE/MCME-001_FIRST_CASH_PATH_EVIDENCE.md
+- Canonical commit / current main HEAD: f63e5a4a3721f10d914ec85a39c42cb148b4c299
+- Five-Step outcome: QUESTION complete → move to DELETE.
+- Accepted conclusion: Affiliate commerce is the strongest evidence-backed route for first real cash.
+- DELETE from first-cash critical path: platform-native monetization as milestone #1, vanity metrics, pure/minor-edit reupload, multilingual rollout before proof, invented RPM/CPM/EPC, automation before conversion proof, Shorts-only canonical conversion.
+- Lead generation remains conditional, not primary.
+- Remaining unknowns are preserved; none are silently converted into facts.
+- MCME-002 is now the only authorized active Work task.
