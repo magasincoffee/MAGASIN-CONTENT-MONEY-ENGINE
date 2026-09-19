@@ -34,3 +34,25 @@ Autonomy target: 24/7, fail-closed at Owner boundaries
 ## Current prohibition
 
 Do not build a large generic media robot before the first monetization loop produces real economic evidence.
+
+
+## 2026-09-20 — New Owner constraint discovered
+
+A new hard gate has been inserted because the Owner is resident in Vietnam and the ultimate business objective is money actually received in a real bank/payment rail.
+
+Canonical gate:
+`00_PROJECT/VIETNAM_OWNER_ACCESS_AND_CASHOUT_GATE_V1.md`
+
+Important new truth:
+- a foreign-country phone number is NOT assumed necessary;
+- some services may require a real mobile number;
+- impact.com standard partner signup currently documents mobile verification;
+- Payoneer documents a valid mobile number as required for registration/verification;
+- Amazon Associates requires mobile OTP for payment-detail access;
+- Pinterest business signup is currently documented as email-first, with phone optional generally but required for SMS 2FA;
+- Awin phone requirement remains UNKNOWN until verified.
+
+Next hard gate:
+`MCME-044 — Vietnam Owner Access + Cash-Out Feasibility Gate`
+
+No fake foreign phone, false residency or temporary SMS service is permitted.
