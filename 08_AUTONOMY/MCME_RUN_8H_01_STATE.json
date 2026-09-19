@@ -9,15 +9,16 @@
   "start_at": "2026-09-20T00:12:59+07:00",
   "deadline_at": "2026-09-20T08:12:59+07:00",
   "duration_seconds": 28800,
-  "current_checkpoint": "C3_ONE_NICHE_FORMAT",
-  "current_task": "MCME-004",
-  "next_task": "MCME-005_AFTER_MCME_004_ACCEPTED",
-  "five_step_current": "SIMPLIFY_ACCELERATE",
+  "current_checkpoint": "C4_REAL_MONEY_EXPERIMENT",
+  "current_task": "MCME-005",
+  "next_task": "MCME-006_AFTER_MCME_005_ACCEPTED",
+  "five_step_current": "DELETE_SIMPLIFY_ACCELERATE",
   "target_outcome": "FIRST_REAL_MONEY_LOOP_AND_IF_TIME_DEPLOYMENT_PLAN_READY",
   "accepted_tasks": [
     "MCME-001",
     "MCME-002",
-    "MCME-003"
+    "MCME-003",
+    "MCME-004"
   ],
   "repair_tasks": [],
   "rejected_tasks": [],
@@ -43,7 +44,7 @@
     "stop_at_original_deadline": true
   },
   "active_tasks": [
-    "MCME-004"
+    "MCME-005"
   ],
   "owner_approved_at": "2026-09-20T00:12:59+07:00",
   "mcme_001_acceptance": {
@@ -75,5 +76,22 @@
     "saydivoice_first_experiment": "DELETED",
     "video_first_experiment": "DELETED",
     "merchant_path": "Impact/OXO publicly verified; Awin remains first acquisition attempt but account-dependent"
+  },
+  "mcme_004_acceptance": {
+    "accepted_at": "2026-09-20T00:51:37+07:00",
+    "canonical_commit": "29f203595afcd63a075d5f62f8638c22169b3c38",
+    "artifact": "07_EXPERIMENTS/MCME-004_FIRST_REAL_MONEY_EXPERIMENT.md",
+    "brain_decision": "ACCEPT",
+    "selected_sub_problem": "Fridge storage / fit",
+    "gate_a": "Real merchant/account path must pass before any production Pins",
+    "minimum_gate_b_batch": "3 static 2:3 original checklist Pins",
+    "first_commercial_signal": "First genuine qualified outbound click",
+    "scale_gate": "Tracked merchant action + attributed commission; views/clicks alone are insufficient"
+  },
+  "mcme_005_adaptation": {
+    "reason": "MCME-004 explicitly requires real Gate A and later interaction evidence before specifying a Minimum Content Factory. Current run has no Owner-authorized account/program evidence.",
+    "task_scope": "GATE_A_EXECUTION_READINESS_AND_EVIDENCE_CONTRACT",
+    "factory_build_authorized": false,
+    "owner_action_required_for_gate_a_execution": true
   }
 }
