@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T01:20:30+07:00",
-  "status": "WAIT_OWNER",
+  "updated_at": "2026-09-20T03:21:04+07:00",
+  "status": "RUNNING_SAFE_PREP",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
-  "current_phase": "P5_READY_FOR_REAL_GATE_A",
-  "current_task": null,
-  "current_task_title": null,
-  "five_step_current": "WAIT_OWNER_BEFORE_REAL_EXECUTION",
+  "current_phase": "P5_SAFE_PREP_BEFORE_REAL_GATE_A",
+  "current_task": "MCME-039",
+  "current_task_title": "Materialize Gate A runtime contract",
+  "five_step_current": "SIMPLIFY_ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": true,
@@ -33,10 +33,10 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Owner starts MCME-010 by confirming a real authorized Pinterest property with sanitized evidence",
-  "active_run": "MCME-RUN-8H-01",
-  "run_start_at": "2026-09-20T00:12:59+07:00",
-  "run_deadline_at": "2026-09-20T08:12:59+07:00",
+  "next_gate": "Brain accepts MCME-039 before MCME-040; next real execution task remains MCME-010",
+  "active_run": "MCME-RUN-4H-02",
+  "run_start_at": "2026-09-20T03:21:04+07:00",
+  "run_deadline_at": "2026-09-20T07:21:04+07:00",
   "last_accepted_task": "MCME-009",
   "last_accepted_commit": "a00861d7674abd3aa61c4b7d3d8aeb0648e62f4b",
   "selected_first_cash_route": {
@@ -109,5 +109,6 @@
     "database_required_for_mvp": false,
     "smallest_reliable_mvp": "local/private append-only JSONL + Cash Truth JSON Schema + validator + deterministic dedupe/reconciliation",
     "blocker": "REAL_OWNER_GATED_GATE_A_EVIDENCE"
-  }
+  },
+  "real_execution_path_unchanged": true
 }
