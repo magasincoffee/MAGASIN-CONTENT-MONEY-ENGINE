@@ -382,6 +382,59 @@ Required final decision package:
 16. Deleted alternatives and why.
 17. Remaining UNKNOWNs.
 
+## CONDITIONAL EARLY-FINISH EXTENSION — USE REMAINING WALL-CLOCK TIME
+
+If C7_FIRST_CASH_BACKLOG and the MCME-008 final decision package are accepted **before T0+8h**, Brain MUST NOT idle.
+
+Brain uses the remaining authorized wall-clock time to prepare deployment readiness, still in the same single lane.
+
+### MCME-009 — IMPLEMENTATION / DEPLOYMENT PLAN TO FIRST CASH
+Five-Step: ACCELERATE → AUTOMATE (planning only)
+
+Brain dispatches ONE bounded task to Work only after MCME-008 is accepted.
+
+Work prepares an implementation-ready deployment plan for the selected money loop.
+
+Required output:
+- exact repository/module ownership for each component;
+- ordered code/document/config changes;
+- SaydiVoice integration sequence;
+- minimum Video Composer implementation sequence;
+- distribution/publishing integration sequence;
+- tracking/attribution implementation sequence;
+- local/CI test gates;
+- staging/dry-run gate;
+- production launch gate;
+- rollback/recovery strategy;
+- idempotency requirements for external side effects;
+- credentials/KYC/payment/Owner setup checklist;
+- exact tasks Robot can perform autonomously;
+- exact tasks requiring Owner;
+- first-launch checklist;
+- post-launch measurement schedule;
+- STOP conditions;
+- ordered implementation task IDs ready for future Brain dispatch.
+
+Constraints:
+- planning only;
+- no production publish;
+- no credentials/KYC/payment actions;
+- no external spend;
+- no destructive change;
+- do not build speculative infrastructure not required by the selected first-cash loop.
+
+Checkpoint: C8_DEPLOYMENT_PLAN_READY
+
+### Remaining-time rule
+
+If MCME-009 finishes with time still remaining:
+- Brain reviews it against Five-Step;
+- Work may receive ONE bounded FIX task if required;
+- Brain may refine the ordered task queue and launch gates;
+- Brain does NOT start speculative features merely to consume time.
+
+The run always stops at the original hard deadline T0+8h.
+
 At T0+8h:
 status → COMPLETE_8H
 No automatic overtime.
@@ -447,6 +500,7 @@ WAIT_OWNER_APPROVAL
 → C5_FACTORY_MINIMUM
 → C6_CASH_TRUTH_MODEL
 → C7_FIRST_CASH_BACKLOG
+→ [if early] C8_DEPLOYMENT_PLAN_READY
 → COMPLETE_8H
 ```
 
@@ -464,6 +518,10 @@ Success means:
 
 > We know exactly what first real-money experiment to execute, why it was selected, how money will be measured, and what minimum product/Robot work must happen next.
 
+If the core sequence finishes early, success is extended to:
+
+> An implementation/deployment plan is ready down to ordered task IDs, test gates, Owner boundaries, launch gates, rollback conditions and the exact path to first real cash.
+
 ## Approval trigger
 
 This plan remains inert until Owner explicitly approves MCME-RUN-8H-01.
@@ -473,4 +531,5 @@ After approval:
 2. calculate T0 + 8h;
 3. change state to RUNNING;
 4. dispatch MCME-001 only;
-5. never dispatch MCME-002 before MCME-001 is reviewed and accepted.
+5. never dispatch MCME-002 before MCME-001 is reviewed and accepted;
+6. if the core sequence completes early, use remaining wall-clock time for MCME-009 deployment planning rather than stopping early.
