@@ -9,14 +9,15 @@
   "start_at": "2026-09-20T00:12:59+07:00",
   "deadline_at": "2026-09-20T08:12:59+07:00",
   "duration_seconds": 28800,
-  "current_checkpoint": "C2_ONE_MONEY_MODEL",
-  "current_task": "MCME-003",
-  "next_task": "MCME-004_AFTER_MCME_003_ACCEPTED",
-  "five_step_current": "SIMPLIFY",
+  "current_checkpoint": "C3_ONE_NICHE_FORMAT",
+  "current_task": "MCME-004",
+  "next_task": "MCME-005_AFTER_MCME_004_ACCEPTED",
+  "five_step_current": "SIMPLIFY_ACCELERATE",
   "target_outcome": "FIRST_REAL_MONEY_LOOP_AND_IF_TIME_DEPLOYMENT_PLAN_READY",
   "accepted_tasks": [
     "MCME-001",
-    "MCME-002"
+    "MCME-002",
+    "MCME-003"
   ],
   "repair_tasks": [],
   "rejected_tasks": [],
@@ -42,7 +43,7 @@
     "stop_at_original_deadline": true
   },
   "active_tasks": [
-    "MCME-003"
+    "MCME-004"
   ],
   "owner_approved_at": "2026-09-20T00:12:59+07:00",
   "mcme_001_acceptance": {
@@ -63,5 +64,16 @@
       "impact.com",
       "Amazon Associates (conditional)"
     ]
+  },
+  "mcme_003_acceptance": {
+    "accepted_at": "2026-09-20T00:45:13+07:00",
+    "canonical_commit": "5415fdaf740ebfe7625b85c23d82be86d137097d",
+    "artifact": "03_CONTENT/MCME-003_ONE_NICHE_ONE_FORMAT.md",
+    "brain_decision": "ACCEPT",
+    "selected_niche": "Small-space kitchen organization",
+    "selected_format": "Static 2:3 original problem-solution checklist Pin",
+    "saydivoice_first_experiment": "DELETED",
+    "video_first_experiment": "DELETED",
+    "merchant_path": "Impact/OXO publicly verified; Awin remains first acquisition attempt but account-dependent"
   }
 }
