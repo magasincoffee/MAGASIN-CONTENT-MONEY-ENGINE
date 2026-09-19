@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T01:11:03+07:00",
+  "updated_at": "2026-09-20T01:19:23+07:00",
   "status": "RUNNING",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
-  "current_phase": "P3_FINAL_RUN_RECONCILIATION",
-  "current_task": "MCME-008",
-  "current_task_title": "Prepare final run reconciliation package for Brain review",
-  "five_step_current": "QUESTION_DELETE_SIMPLIFY_ACCELERATE",
+  "current_phase": "P4_EARLY_FINISH_DEPLOYMENT_PLANNING",
+  "current_task": "MCME-009",
+  "current_task_title": "Prepare implementation and deployment readiness plan to first real cash",
+  "five_step_current": "ACCELERATE_AUTOMATE_PLANNING_ONLY",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain accepts MCME-008; if before hard deadline, dispatch MCME-009 deployment-planning extension",
+  "next_gate": "Brain accepts MCME-009; no production deployment is authorized; next real execution task remains MCME-010",
   "active_run": "MCME-RUN-8H-01",
   "run_start_at": "2026-09-20T00:12:59+07:00",
   "run_deadline_at": "2026-09-20T08:12:59+07:00",
-  "last_accepted_task": "MCME-007",
-  "last_accepted_commit": "1d58c103403fb9854be772ddef904d118aa1e7b0",
+  "last_accepted_task": "MCME-008",
+  "last_accepted_commit": "1ee31a375aa82f8508252d2e4d1c2a6cca0848cc",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -89,5 +89,15 @@
     "future_task_start": "MCME-010",
     "future_task_end": "MCME-038",
     "first_future_task": "MCME-010 Owner Pinterest property confirmation"
+  },
+  "core_run_package_status": "COMPLETE",
+  "whole_8h_run_complete": false,
+  "next_real_execution_task": "MCME-010 Owner Pinterest property confirmation",
+  "early_finish_extension": {
+    "eligible": true,
+    "active": true,
+    "task": "MCME-009",
+    "planning_only": true,
+    "hard_deadline": "2026-09-20T08:12:59+07:00"
   }
 }
