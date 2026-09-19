@@ -1,7 +1,7 @@
 # MCME-RUN-8H-01 LOG
 
 Plan version: V2 — SINGLE LANE
-Status: WAIT_OWNER_APPROVAL
+Status: RUNNING
 
 ## OWNER CORRECTION
 
@@ -36,3 +36,16 @@ Run remains inert until Owner approval.
 - Actual production deployment, credentials, KYC/payment setup, external spend and production publishing remain NOT AUTHORIZED.
 - Single-lane invariant remains unchanged: maximum one active Work task.
 - Original T0 + 8h hard stop remains unchanged.
+
+
+## RUN START — 2026-09-20T00:12:59+07:00
+
+- Owner approved execution.
+- T0: 2026-09-20T00:12:59+07:00
+- Hard deadline: 2026-09-20T08:12:59+07:00
+- Mode: SINGLE_LANE_SEQUENTIAL
+- Active Work task: MCME-001 only.
+- Five-Step: QUESTION.
+- No MCME-002 dispatch is authorized until Brain reviews and accepts MCME-001.
+- External spend remains 0.
+- Production publishing remains NOT AUTHORIZED.
