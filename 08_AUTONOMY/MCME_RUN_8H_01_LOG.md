@@ -27,3 +27,12 @@ MCME-007 → first-cash implementation backlog
 MCME-008 → Brain final review/report
 
 Run remains inert until Owner approval.
+
+## OWNER AMENDMENT — 2026-09-20 00:10:39 +07
+
+- If the cash-first core sequence completes before the 8-hour wall-clock deadline, the run does not stop early.
+- Remaining time is authorized for one sequential task: MCME-009 — Implementation / Deployment Plan to First Cash.
+- MCME-009 is planning-only: ordered implementation tasks, test gates, Owner setup, launch gates, rollback/recovery and monitoring.
+- Actual production deployment, credentials, KYC/payment setup, external spend and production publishing remain NOT AUTHORIZED.
+- Single-lane invariant remains unchanged: maximum one active Work task.
+- Original T0 + 8h hard stop remains unchanged.
