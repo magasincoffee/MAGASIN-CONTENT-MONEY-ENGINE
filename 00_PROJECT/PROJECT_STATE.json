@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T00:30:53+07:00",
+  "updated_at": "2026-09-20T00:36:45+07:00",
   "status": "RUNNING",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
-  "current_phase": "P1_DELETE_TO_ONE_MONEY_MODEL",
-  "current_task": "MCME-002",
-  "current_task_title": "DELETE to one first-cash money model, market/language, and distribution surface",
-  "five_step_current": "DELETE",
+  "current_phase": "P1_SIMPLIFY_TO_ONE_NICHE_FORMAT",
+  "current_task": "MCME-003",
+  "current_task_title": "Select one US Pinterest affiliate niche and one minimum content format",
+  "five_step_current": "SIMPLIFY",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": true,
@@ -33,10 +33,21 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain accepts MCME-002 before final niche/content format selection in MCME-003",
+  "next_gate": "Brain accepts MCME-003 before MCME-004 may design the real-money experiment",
   "active_run": "MCME-RUN-8H-01",
   "run_start_at": "2026-09-20T00:12:59+07:00",
   "run_deadline_at": "2026-09-20T08:12:59+07:00",
-  "last_accepted_task": "MCME-001",
-  "last_accepted_commit": "f63e5a4a3721f10d914ec85a39c42cb148b4c299"
+  "last_accepted_task": "MCME-002",
+  "last_accepted_commit": "14e1c7c4dbec34c5978fe74313558b559113640a",
+  "selected_first_cash_route": {
+    "market": "United States",
+    "language": "English",
+    "distribution_surface": "Pinterest organic Pins",
+    "monetization": "Affiliate commerce",
+    "network_order": [
+      "Awin",
+      "impact.com",
+      "Amazon Associates (conditional)"
+    ]
+  }
 }
