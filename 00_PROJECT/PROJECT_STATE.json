@@ -1,12 +1,12 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-19T22:28:00+07:00",
-  "status": "READY",
+  "updated_at": "2026-09-20T00:12:59+07:00",
+  "status": "RUNNING",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
-  "current_phase": "P1_GLOBAL_MARKET_INTELLIGENCE",
+  "current_phase": "P1_FIRST_CASH_PATH_SELECTION",
   "current_task": "MCME-001",
-  "current_task_title": "Global Market Intelligence V1 — rank first market/platform/monetization experiments",
+  "current_task_title": "Find the shortest credible path to first real cash — Affiliate vs Platform Monetization vs Lead Generation",
   "five_step_current": "QUESTION",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -33,5 +33,8 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Select first Minimum Viable Money Loop after market intelligence evidence"
+  "next_gate": "Brain accepts MCME-001 evidence before MCME-002 may start",
+  "active_run": "MCME-RUN-8H-01",
+  "run_start_at": "2026-09-20T00:12:59+07:00",
+  "run_deadline_at": "2026-09-20T08:12:59+07:00"
 }
