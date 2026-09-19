@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T01:19:23+07:00",
-  "status": "RUNNING",
+  "updated_at": "2026-09-20T01:20:30+07:00",
+  "status": "WAIT_OWNER",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
-  "current_phase": "P4_EARLY_FINISH_DEPLOYMENT_PLANNING",
-  "current_task": "MCME-009",
-  "current_task_title": "Prepare implementation and deployment readiness plan to first real cash",
-  "five_step_current": "ACCELERATE_AUTOMATE_PLANNING_ONLY",
+  "current_phase": "P5_READY_FOR_REAL_GATE_A",
+  "current_task": null,
+  "current_task_title": null,
+  "five_step_current": "WAIT_OWNER_BEFORE_REAL_EXECUTION",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain accepts MCME-009; no production deployment is authorized; next real execution task remains MCME-010",
+  "next_gate": "Owner starts MCME-010 by confirming a real authorized Pinterest property with sanitized evidence",
   "active_run": "MCME-RUN-8H-01",
   "run_start_at": "2026-09-20T00:12:59+07:00",
   "run_deadline_at": "2026-09-20T08:12:59+07:00",
-  "last_accepted_task": "MCME-008",
-  "last_accepted_commit": "1ee31a375aa82f8508252d2e4d1c2a6cca0848cc",
+  "last_accepted_task": "MCME-009",
+  "last_accepted_commit": "a00861d7674abd3aa61c4b7d3d8aeb0648e62f4b",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -91,13 +91,23 @@
     "first_future_task": "MCME-010 Owner Pinterest property confirmation"
   },
   "core_run_package_status": "COMPLETE",
-  "whole_8h_run_complete": false,
+  "whole_8h_run_complete": true,
   "next_real_execution_task": "MCME-010 Owner Pinterest property confirmation",
   "early_finish_extension": {
     "eligible": true,
-    "active": true,
+    "active": false,
+    "completed": true,
     "task": "MCME-009",
     "planning_only": true,
-    "hard_deadline": "2026-09-20T08:12:59+07:00"
+    "completed_at": "2026-09-20T01:20:30+07:00"
+  },
+  "run_completion_mode": "EARLY_COMPLETE_SCOPE_EXHAUSTED",
+  "deployment_readiness": {
+    "status": "ACCEPTED",
+    "canonical_commit": "a00861d7674abd3aa61c4b7d3d8aeb0648e62f4b",
+    "mcme_010_operationally_ready": true,
+    "database_required_for_mvp": false,
+    "smallest_reliable_mvp": "local/private append-only JSONL + Cash Truth JSON Schema + validator + deterministic dedupe/reconciliation",
+    "blocker": "REAL_OWNER_GATED_GATE_A_EVIDENCE"
   }
 }
