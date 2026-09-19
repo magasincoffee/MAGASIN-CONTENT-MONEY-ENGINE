@@ -8,19 +8,20 @@
   "start_at": "2026-09-20T03:21:04+07:00",
   "deadline_at": "2026-09-20T07:21:04+07:00",
   "duration_seconds": 14400,
-  "current_checkpoint": "MCME_040_ACCEPTED",
-  "current_task": "MCME-041",
-  "next_task": "MCME-042_AFTER_MCME_041_ACCEPTED",
+  "current_checkpoint": "MCME_041_ACCEPTED",
+  "current_task": "MCME-042",
+  "next_task": "MCME-043_AFTER_MCME_042_ACCEPTED_IF_TIME_REMAINS",
   "active_tasks": [
-    "MCME-041"
+    "MCME-042"
   ],
   "accepted_tasks": [
     "MCME-039",
-    "MCME-040"
+    "MCME-040",
+    "MCME-041"
   ],
   "repair_tasks": [],
   "rejected_tasks": [],
-  "five_step_current": "QUESTION_SIMPLIFY_ACCELERATE",
+  "five_step_current": "DELETE_SIMPLIFY",
   "target_outcome": "REMOVE_SAFE_PREP_BLOCKERS_BEFORE_OWNER_GATE_A",
   "next_real_execution_task": "MCME-010 Owner Pinterest property confirmation",
   "real_execution_path_unchanged": true,
@@ -74,6 +75,29 @@
       "PAYOUT_ISSUED != CASH_SETTLED",
       "CASH_SETTLED requires all settlement guards",
       "reversals/negative cash corrections are append-only"
+    ]
+  },
+  "mcme_041_acceptance": {
+    "accepted_at": "2026-09-20T04:03:35+07:00",
+    "canonical_commit": "84082efbf72c7127dc4ddf6b9c85fd6708c420fb",
+    "brain_decision": "ACCEPT",
+    "tests": "17/17 PASS",
+    "publish_key_formula": "SHA256(canonical JSON(experiment_id, content_id, content_version, destination_version))",
+    "max_send_attempts": 2,
+    "states": [
+      "PREPARED",
+      "SEND_STARTED",
+      "CONFIRMED",
+      "BLOCKED_AUTH",
+      "BLOCKED_AMBIGUOUS",
+      "FAILED_CONFIRMED"
+    ],
+    "invariants": [
+      "confirmed publish is never resent",
+      "ambiguous result reconciles before retry",
+      "only CONFIRMED_ABSENT can unlock bounded retry",
+      "auth/MFA/CAPTCHA-like condition fails closed",
+      "mock/dry-run only; no real Pinterest side effect"
     ]
   }
 }
