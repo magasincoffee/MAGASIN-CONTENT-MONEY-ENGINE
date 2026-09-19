@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T05:50:00+07:00",
-  "status": "MCME_044_COMPLETE_WAITING_BRAIN_ACCEPTANCE",
+  "updated_at": "2026-09-20T05:55:00+07:00",
+  "status": "RUNNING_MCME_010_OWNER_INTERACTIVE",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
-  "current_phase": "P6_VIETNAM_ACCESS_CASHOUT_GATE",
-  "current_task": "MCME-044",
-  "current_task_title": "Vietnam Owner Access + Cash-Out Feasibility Gate",
-  "five_step_current": "QUESTION_DELETE_SIMPLIFY_ACCELERATE",
+  "current_phase": "P7_REAL_GATE_A_EXECUTION",
+  "current_task": "MCME-010",
+  "current_task_title": "Owner Pinterest property confirmation",
+  "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain must ACCEPT MCME-044 before MCME-010 becomes executable",
+  "next_gate": "MCME-010 must produce one real Owner-authorized Pinterest property confirmation before MCME-011 Awin access evidence",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
-  "last_accepted_task": "MCME-043",
-  "last_accepted_commit": "d65dceacafb53050f97bc2402f9315004617018f",
+  "last_accepted_task": "MCME-044",
+  "last_accepted_commit": "a45e43469c14980093b9ced9fcc388bc11a0c807",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -67,7 +67,7 @@
   "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
-    "actual_execution_status": "OWNER_GATED_NOT_EXECUTED",
+    "actual_execution_status": "STARTING_MCME_010_OWNER_PINTEREST_PROPERTY",
     "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
     "bounded_network_order": [
       "Awin",
@@ -128,7 +128,7 @@
     "integration_reconciliation_commit": "d65dceacafb53050f97bc2402f9315004617018f",
     "total_offline_tests": "80/80 PASS",
     "additional_safe_prep_needed": false,
-    "recommendation": "STOP_AND_WAIT_FOR_OWNER",
+    "recommendation": "COMPLETE; REAL OWNER EXECUTION MAY BEGIN AT MCME-010",
     "current_truth": {
       "evidence": "L0_NO_REAL_COMMERCIAL_EVIDENCE",
       "gate_a": "OWNER_GATED_NOT_EXECUTED",
@@ -136,9 +136,9 @@
       "real_click_sale_commission_cash": "NONE_VERIFIED"
     }
   },
-  "pre_gate_before_mcme_010": "MCME-044",
+  "pre_gate_before_mcme_010": "MCME-044_ACCEPTED",
   "owner_access_cashout_gate": {
-    "status": "COMPLETE_WAITING_BRAIN_ACCEPTANCE",
+    "status": "ACCEPTED",
     "artifact": "00_PROJECT/VIETNAM_OWNER_ACCESS_AND_CASHOUT_GATE_V1.md",
     "research_artifact": "02_MONETIZATION/MCME-044_VIETNAM_ACCESS_CASHOUT_RESEARCH.md",
     "matrix_artifact": "02_MONETIZATION/MCME-044_VIETNAM_CASHOUT_MATRIX.json",
@@ -173,6 +173,14 @@
       "launch": "NOT_READY",
       "real_account_approvals": "NONE_VERIFIED",
       "real_click_sale_commission_cash": "NONE_VERIFIED"
+    },
+    "accepted_at": "2026-09-20T05:55:00+07:00",
+    "accepted_commit": "a45e43469c14980093b9ced9fcc388bc11a0c807",
+    "brain_decision": "ACCEPT_PASS_TO_MCME_010",
+    "phone_truth": {
+      "owner_has_real_vietnam_mobile": true,
+      "foreign_phone_required": false,
+      "foreign_phone_requirement_basis": "No bounded route has documented requirement for US/UK/foreign phone; provider-specific +84 confirmation remains where noted."
     }
   }
 }
