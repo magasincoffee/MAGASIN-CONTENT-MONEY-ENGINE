@@ -1,15 +1,19 @@
 {
-  "schema_version": "mcme.autonomy-run.v1",
+  "schema_version": "mcme.autonomy-run.v2",
   "run_id": "MCME-RUN-8H-01",
-  "plan_version": "v1",
-  "prepared_at": "2026-09-19T23:04:05+07:00",
+  "plan_version": "v2-single-lane",
   "status": "WAIT_OWNER_APPROVAL",
+  "execution_mode": "SINGLE_LANE_SEQUENTIAL",
+  "lane_count": 1,
+  "max_active_work_tasks": 1,
   "start_at": null,
   "deadline_at": null,
   "duration_seconds": 28800,
   "current_checkpoint": "WAIT_OWNER_APPROVAL",
+  "current_task": null,
+  "next_task": "MCME-001",
   "five_step_current": "QUESTION",
-  "active_tasks": [],
+  "target_outcome": "FIRST_REAL_MONEY_LOOP_READY_FOR_EXECUTION",
   "accepted_tasks": [],
   "repair_tasks": [],
   "rejected_tasks": [],
@@ -17,6 +21,9 @@
   "external_spend_authorized": 0,
   "production_publish_authorized": false,
   "notes": [
-    "No Work dispatch is authorized before explicit Owner approval."
+    "One Brain, one Work lane, sequential tasks only.",
+    "Brain reviews and accepts each result before dispatching the next task.",
+    "No Work dispatch is authorized before explicit Owner approval.",
+    "Primary objective is minimum time-to-first-real-cash, not content volume or views."
   ]
 }
