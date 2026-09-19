@@ -68,6 +68,7 @@ All facts below were accessed on **2026-09-20**.
 
 **VERIFIED**
 - Amazon Associates supports content creators/publishers and provides customized linking tools; qualifying purchases/actions can generate commission.
+- Amazon US reviews an application after at least **3 qualified sales within the first 180 days**. It requires robust original content (rule of thumb: at least 10 posts). For social-network applications, Amazon says the page/group should be established with a substantive number of organic followers/likes, **in most cases at least 500**. This makes Amazon less attractive than a lower-friction network for a true cold-start social property.
 - The Amazon Associates country selector currently lists, among others: United States, United Kingdom, Germany, France, Japan, Canada, Brazil, Australia, UAE, Singapore and Netherlands.
 - Amazon OneLink documentation supports international earning across Canada, EU5 (UK, Spain, Germany, France, Italy) and additional marketplaces including Japan, Singapore, Netherlands and Australia.
 - Amazon.com says commission income is paid approximately **60 days after the end of the month** in which it was earned.
@@ -90,6 +91,7 @@ Sources:
 
 **VERIFIED**
 - Publishers can register with a website **or social media promotional space**.
+- Awin says publisher applications are typically processed within about **24 hours**, though incomplete information or additional checks can extend the process.
 - Some advertiser programs use **automatic approval**, allowing immediate partnership and link creation after applying.
 - Standard advertiser approval can take from hours to weeks depending on advertiser.
 - Minimum confirmed-commission payment thresholds: **£20 / €20 / $20**, or equivalent for other currencies.
@@ -125,6 +127,7 @@ Sources:
 **VERIFIED**
 - As of access date, expanded YPP early access requires **500 subscribers**, 3 valid public uploads in 90 days, plus either **3,000 qualified watch hours** in the prior 12 months or **3 million qualified Shorts views** in the prior 90 days.
 - Ad/Premium revenue sharing requires **1,000 subscribers** plus either 4,000 qualified watch hours or 10 million qualified public Shorts views under the current pre-Feb-2027 thresholds.
+- AdSense/YouTube payment is monthly and only issues when the account reaches its payment threshold and has no holds; for USD accounts the payment threshold is **$100**, with payment generally issued between the 21st–26th after the prior month's earnings are finalized.
 - YouTube has announced higher ads/Premium entry thresholds beginning **2027-02-01** for new applicants; therefore no 2026 model should hard-code current thresholds as permanent.
 - YouTube states that repetitive/mass-produced, templated or minimally varied content can be ineligible for monetization.
 - YouTube’s reused-content policy is **separate from copyright enforcement**: having permission from an original creator does not by itself guarantee YPP eligibility.
@@ -139,8 +142,9 @@ Sources:
 
 **VERIFIED**
 - TikTok Creator Rewards eligibility requires residence in an eligible country, personal account in good standing, authentic account information, age requirement, **at least 10,000 followers**, **at least 100,000 video views in the last 30 days**, and original eligible videos of at least one minute.
-- TikTok’s official reward documentation names program terms for **Brazil, France, Germany, Japan, South Korea, UK and US**.
+- TikTok’s official reward documentation names program terms for **Brazil, France, Germany, Japan, South Korea, UK and US**. TikTok separately announced that **Mexico joined Creator Rewards on 2025-10-01**.
 - Eligible videos begin collecting rewards after reaching **1,000 qualified For You views**, but only after creator/program eligibility is met.
+- TikTok's rewards-payment help states a **$10 or local-currency-equivalent minimum**, monthly processing on the **15th**, and requires payout setup; tax information may also be required.
 - TikTok One / Creator Marketplace also has audience/activity eligibility, generally including **10,000 followers**, with regional differences.
 
 Sources:
@@ -221,13 +225,14 @@ Sources:
 
 These are **test priorities**, not promises of revenue.
 
-### Candidate 1 — US × Pinterest + simple owned landing/bridge page × Affiliate (Awin auto-approval / impact.com / Amazon)
+### Candidate 1 — US × Pinterest organic discovery × Affiliate (direct disclosed affiliate link where permitted; one network/merchant first)
 
 **Why it survives QUESTION**
-- Affiliate links are allowed on Pinterest under explicit commercial-content rules.
+- Affiliate links are allowed on Pinterest under explicit commercial-content rules; Pinterest requires affiliate content to be original, add unique value, be transparent, and avoid spam/manipulation.
 - Awin provides some auto-approved advertiser programs.
 - Amazon and impact.com provide deep merchant/product breadth.
 - No YPP/Creator-Rewards threshold must be crossed before an affiliate click can convert.
+- Five-Step DELETE rule: do **not** add a bridge/landing page unless a merchant/network/link-policy requirement or measurement need proves it necessary; direct disclosed affiliate links are the simpler first test where permitted.
 
 **Owner dependencies**
 - Create/own relevant publisher/network accounts.
@@ -243,16 +248,18 @@ These are **test priorities**, not promises of revenue.
 **Kill criterion**
 - If no network/merchant accepts the Owner with reasonable setup friction, or if target links cannot be used compliantly on the chosen surface, delete this route before building production machinery.
 
-### Candidate 2 — US/UK English × YouTube search/Shorts distribution × Affiliate before YPP
+### Candidate 2 — US/UK English × YouTube long-form search distribution × Affiliate before YPP
 
 **Why it survives QUESTION**
 - YouTube can be used as a distribution surface even before YPP revenue eligibility.
 - Affiliate monetization does not require waiting for YPP thresholds.
-- Search/problem-led video can support explicit product comparison and measurable outbound intent.
+- Search/problem-led long-form video can support explicit product comparison and measurable outbound intent.
+- **Canonical correction:** URLs in YouTube Shorts descriptions/comments are non-clickable. Long-form descriptions/comments can carry clickable external links when the channel has access to Advanced Features; channel profile links are also clickable. Therefore Shorts may later act as a feeder, but **Shorts-only is not the primary first-cash conversion surface**.
 
 **Owner dependencies**
 - Channel ownership and link/disclosure compliance.
 - Affiliate account approval/payment setup.
+- Advanced Features / verification state for clickable external links in long-form descriptions/comments.
 - No assumption that affiliate-link placement features are identical for every account; account-level surface capabilities remain UNKNOWN until checked.
 
 **Cheapest discriminating test**
@@ -262,7 +269,7 @@ These are **test priorities**, not promises of revenue.
 **Kill criterion**
 - If fresh-channel outbound-link friction or content cost makes qualified clicks materially slower/more expensive than Candidate 1, deprioritize.
 
-### Candidate 3 — US/UK/Canada English × original B2B educational content/direct referral surface × Lead generation / referral partnership
+### Candidate 3 — US/UK/Canada English × original B2B educational/direct referral surface × Lead generation / referral partnership (buyer-first conditional)
 
 **Why it survives QUESTION**
 - impact.com documents referral partner infrastructure and affiliate/partner tracking.
@@ -276,8 +283,9 @@ These are **test priorities**, not promises of revenue.
 - More Owner involvement is expected than retail affiliate.
 
 **Cheapest discriminating test**
-- Identify one B2B referral program with explicit public terms, trackable referral action and no paid acquisition requirement.
-- Verify acceptance rules and qualification definition before any outreach/content production.
+- Identify one B2B referral program or direct buyer with explicit qualification, attribution and payment terms and no paid acquisition requirement.
+- **Buyer-first rule:** verify willingness to pay / acceptance criteria before collecting consumer/prospect lead data or building production content.
+- If personal information will be collected for UK direct marketing, privacy/data obligations must be checked before the test; current ICO guidance requires lead collection/use to be fair, lawful and transparent and requires clear privacy information.
 
 **Kill criterion**
 - If lead qualification is opaque, requires sales calls/manual follow-up by Owner, or settlement cannot be objectively attributed, delete for first-cash phase.
@@ -324,6 +332,11 @@ These are **test priorities**, not promises of revenue.
 **Australia — KEEP LATER**
 - Amazon/OneLink and Awin AUD payment support verified.
 - English advantage, but use after US/UK/Canada because the first task should minimize parallel market work.
+
+**Mexico — KEEP LATER / ADDED BY EVIDENCE**
+- TikTok officially announced Creator Rewards availability in Mexico on 2025-10-01.
+- Amazon Mexico is present in Amazon's international Associates program list.
+- Spanish localization adds another variable, so Mexico is evidence-backed but not promoted ahead of the first English proof.
 
 **Netherlands — KEEP LATER**
 - Amazon/OneLink marketplace verified.
@@ -381,7 +394,7 @@ These are **test priorities**, not promises of revenue.
 | Candidate | Cheapest test before production scale | Evidence sought |
 |---|---|---|
 | US Pinterest → affiliate | Verify 1 compliant surface + 3–5 joinable programs + at least 1 immediately usable tracked link for one non-regulated product problem | Can MCME legally and technically create a measurable purchase path without audience thresholds? |
-| US/UK YouTube → affiliate pre-YPP | Verify one purchase-intent query cluster + accepted offer + permitted outbound link/disclosure flow | Does video/search distribution produce qualified merchant clicks before YPP matters? |
+| US/UK YouTube long-form → affiliate pre-YPP | Verify one purchase-intent query cluster + accepted offer + Advanced-Features/clickable-link state + permitted disclosure flow | Does long-form search distribution produce qualified merchant clicks before YPP matters? |
 | English B2B referral → lead gen | Verify one public referral program, qualification event, tracking, payout terms and Owner workload | Can one qualified referral be produced/attributed with lower total effort than retail affiliate? |
 
 No external spend is authorized in these tests.
@@ -456,7 +469,7 @@ Required future Owner actions will be explicitly surfaced as gates, not silently
 ## 12. Evidence gaps Brain must know before MCME-002
 
 1. **Owner eligibility matrix:** which of Amazon US/UK/CA, Awin and impact.com can the Owner legally join from the Owner’s real entity/residency/tax setup?
-2. **Payout path matrix:** which networks can settle cash to the Owner’s available banking/payment methods with acceptable fees and no prohibited workaround?
+2. **Payout path matrix:** which networks can settle cash to the Owner’s available banking/payment methods with acceptable fees and no prohibited workaround? Awin documents Payoneer for multiple cross-border cases and for AUD/CAD; actual Owner bank/country eligibility remains UNKNOWN.
 3. **Surface account reality:** what existing Pinterest/YouTube/web assets are authorized for this project, if any?
 4. **Program acceptance:** which exact Awin auto-approved or impact.com programs are currently available to the Owner after login?
 5. **Niche-independent merchant data:** for candidate programs, what are the public commission, cookie, validation, reversal and prohibited-promotion rules?
@@ -474,7 +487,10 @@ Required future Owner actions will be explicitly surfaced as gates, not silently
 **Affiliate commerce first.**
 
 **First combination to discriminate:**  
-**United States × original high-intent discovery content (Pinterest first, YouTube as parallel/fallback distribution) × joinable affiliate merchant/network offer.**
+**United States × original high-intent Pinterest discovery × one joinable affiliate network/merchant offer, using a direct disclosed affiliate link where permitted and no bridge page unless evidence requires it.**
+
+**Second distribution candidate:**  
+**US/UK × original YouTube long-form search content × external affiliate offer before YPP; Shorts-only is not the canonical conversion surface because Shorts description/comment URLs are non-clickable.**
 
 **Second model to keep alive:**  
 **Lead generation/referral**, but only through one explicitly trackable, publicly documented B2B offer with low Owner workload.
@@ -517,6 +533,15 @@ Accessed 2026-09-20.
 25. Pinterest Commercial and Branded Content Guidelines — https://policy.pinterest.com/en/commercial-and-branded-content-guidelines
 26. Shopify Collabs creator availability — https://help.shopify.com/en/manual/promoting-marketing/collabs/creators
 27. Shopify Collabs payouts — https://help.shopify.com/en/manual/promoting-marketing/collabs/creators/payments
+28. Amazon application review process — https://affiliate-program.amazon.com/help/node/topic/G8TW5AE9XL2VX9VM
+29. Awin FAQ / publisher approval timing — https://www.awin.com/gb/faqs
+30. YouTube external-link clickability — https://support.google.com/youtube/answer/13748639?hl=en
+31. AdSense payment thresholds — https://support.google.com/adsense/answer/1709871?hl=en
+32. AdSense payment timeline — https://support.google.com/adsense/answer/7164703?hl=en
+33. TikTok Mexico Creator Rewards announcement — https://newsroom.tiktok.com/programa-recompensas-creadores-tiktok-mexico?lang=es-419
+34. ICO — Collect information and generate leads — https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/direct-marketing-guidance/collect-information-and-generate-leads/
+35. ASA/CAP — Recognising ads: Social media and influencer marketing (2026-08-06) — https://www.asa.org.uk/advice-online/recognising-ads-social-media.html
+36. FTC — Endorsements, Influencers, and Reviews — https://www.ftc.gov/business-guidance/advertising-marketing/endorsements-influencers-reviews
 
 ---
 
