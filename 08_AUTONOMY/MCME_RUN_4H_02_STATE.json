@@ -8,13 +8,15 @@
   "start_at": "2026-09-20T03:21:04+07:00",
   "deadline_at": "2026-09-20T07:21:04+07:00",
   "duration_seconds": 14400,
-  "current_checkpoint": "STARTED",
-  "current_task": "MCME-039",
-  "next_task": "MCME-040_AFTER_MCME_039_ACCEPTED",
+  "current_checkpoint": "MCME_039_ACCEPTED",
+  "current_task": "MCME-040",
+  "next_task": "MCME-041_AFTER_MCME_040_ACCEPTED",
   "active_tasks": [
+    "MCME-040"
+  ],
+  "accepted_tasks": [
     "MCME-039"
   ],
-  "accepted_tasks": [],
   "repair_tasks": [],
   "rejected_tasks": [],
   "five_step_current": "SIMPLIFY_ACCELERATE",
@@ -38,5 +40,19 @@
     "One Work task at a time.",
     "No real external side effect is authorized.",
     "Stop early rather than invent work if all genuine safe-prep blockers are removed."
-  ]
+  ],
+  "mcme_039_acceptance": {
+    "accepted_at": "2026-09-20T03:34:08+07:00",
+    "canonical_commit": "33250a61cda4ebd13acc293b738bcd86e6b31c98",
+    "brain_decision": "ACCEPT",
+    "files": [
+      "07_EXPERIMENTS/gate_a/mcme_gate_a_evidence_v1.schema.json",
+      "04_ROBOT/first_cash/gate_a_evaluator/evaluator.py",
+      "04_ROBOT/first_cash/gate_a_evaluator/tests/test_evaluator.py",
+      "04_ROBOT/first_cash/gate_a_evaluator/tests/fixtures/full_verified_pass.json",
+      "04_ROBOT/first_cash/gate_a_evaluator/README.md"
+    ],
+    "tests": "10/10 PASS",
+    "invariant": "UNKNOWN/BLOCKED != PASS; only five locked candidate slots"
+  }
 }
