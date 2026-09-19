@@ -2,17 +2,17 @@
   "schema_version": "mcme.autonomy-run.v3",
   "run_id": "MCME-RUN-8H-01",
   "plan_version": "v3-single-lane-early-finish-extension",
-  "status": "RUNNING",
+  "status": "EARLY_COMPLETE_WAIT_OWNER",
   "execution_mode": "SINGLE_LANE_SEQUENTIAL",
   "lane_count": 1,
   "max_active_work_tasks": 1,
   "start_at": "2026-09-20T00:12:59+07:00",
   "deadline_at": "2026-09-20T08:12:59+07:00",
   "duration_seconds": 28800,
-  "current_checkpoint": "CORE_PACKAGE_ACCEPTED_EARLY_EXTENSION_RUNNING",
-  "current_task": "MCME-009",
-  "next_task": "HARD_STOP_AT_DEADLINE_OR_BRAIN_ACCEPTS_MCME_009",
-  "five_step_current": "ACCELERATE_AUTOMATE_PLANNING_ONLY",
+  "current_checkpoint": "C8_DEPLOYMENT_PLAN_READY",
+  "current_task": null,
+  "next_task": "MCME-010_OWNER_PINTEREST_PROPERTY_CONFIRMATION",
+  "five_step_current": "WAIT_OWNER_BEFORE_REAL_EXECUTION",
   "target_outcome": "FIRST_REAL_MONEY_LOOP_AND_IF_TIME_DEPLOYMENT_PLAN_READY",
   "accepted_tasks": [
     "MCME-001",
@@ -22,7 +22,8 @@
     "MCME-005",
     "MCME-006",
     "MCME-007",
-    "MCME-008"
+    "MCME-008",
+    "MCME-009"
   ],
   "repair_tasks": [],
   "rejected_tasks": [],
@@ -36,7 +37,8 @@
     "If the cash-first core sequence completes early, Brain uses remaining wall-clock time for MCME-009 deployment planning.",
     "No actual production deployment is authorized by the early-finish extension.",
     "The original T0 + 8h hard stop remains unchanged.",
-    "Owner approved start at T0; MCME-001 is the only authorized active Work task."
+    "Owner approved start at T0; MCME-001 is the only authorized active Work task.",
+    "Run closed early after all authorized planning scope completed. MCME-010 is Owner-gated and must not auto-start."
   ],
   "early_finish_extension": {
     "enabled": true,
@@ -47,9 +49,7 @@
     "production_mutation_authorized": false,
     "stop_at_original_deadline": true
   },
-  "active_tasks": [
-    "MCME-009"
-  ],
+  "active_tasks": [],
   "owner_approved_at": "2026-09-20T00:12:59+07:00",
   "mcme_001_acceptance": {
     "accepted_at": "2026-09-20T00:30:53+07:00",
@@ -146,5 +146,18 @@
     "gate_a": "OWNER_GATED_NOT_EXECUTED",
     "next_real_execution_task": "MCME-010 Owner Pinterest property confirmation",
     "mcme_009_ready": true
-  }
+  },
+  "mcme_009_acceptance": {
+    "accepted_at": "2026-09-20T01:20:30+07:00",
+    "canonical_commit": "a00861d7674abd3aa61c4b7d3d8aeb0648e62f4b",
+    "artifact": "08_AUTONOMY/MCME-009_DEPLOYMENT_READINESS_PLAN.md",
+    "brain_decision": "ACCEPT",
+    "deployment_topology": "SMALLEST_RELIABLE_MVP",
+    "database_required_for_3_pin_mvp": false,
+    "next_real_execution_task": "MCME-010 Owner Pinterest property confirmation",
+    "mcme_010_operationally_ready": true,
+    "biggest_remaining_blocker": "REAL_OWNER_GATED_GATE_A_EVIDENCE"
+  },
+  "finished_early_at": "2026-09-20T01:20:30+07:00",
+  "remaining_scope_status": "NO_FURTHER_OWNER_AUTHORIZED_AUTONOMOUS_WORK"
 }
