@@ -1,0 +1,49 @@
+{
+  "schema_version": "mcme.gate-a-evidence.v1",
+  "experiment_id": "EXAMPLE-OFFLINE-TEST",
+  "route_ref": "MCME-FIRST-CASH-V1",
+  "candidate_slot": "AWIN-01",
+  "property": {
+    "public_reference_sanitized": "https://www.pinterest.com/example-safe-property/",
+    "authorized": {"status": "VERIFIED", "confidence": "HIGH", "value": true, "source_reference_sanitized": "fixture:property-authorized", "observed_at": "2026-09-20T00:00:00+07:00"},
+    "network_property_accepted": {"status": "VERIFIED", "confidence": "HIGH", "value": true, "source_reference_sanitized": "fixture:property-accepted", "observed_at": "2026-09-20T00:00:00+07:00"}
+  },
+  "network": {
+    "name": "Awin",
+    "relationship": {"status": "VERIFIED", "confidence": "HIGH", "value": "ACTIVE", "source_reference_sanitized": "fixture:network-active", "observed_at": "2026-09-20T00:00:00+07:00"}
+  },
+  "merchant": {
+    "public_name": "EXAMPLE MERCHANT — NOT REAL",
+    "program_public_identifier": "EXAMPLE-PROGRAM",
+    "relationship": {"status": "VERIFIED", "confidence": "HIGH", "value": "APPROVED", "source_reference_sanitized": "fixture:merchant-approved", "observed_at": "2026-09-20T00:00:00+07:00"}
+  },
+  "geography": {
+    "us_allowed": {"status": "VERIFIED", "confidence": "HIGH", "value": true, "source_reference_sanitized": "fixture:us-allowed", "observed_at": "2026-09-20T00:00:00+07:00"}
+  },
+  "promotion": {
+    "pinterest_social_allowed": {"status": "VERIFIED", "confidence": "HIGH", "value": true, "source_reference_sanitized": "fixture:pinterest-allowed", "observed_at": "2026-09-20T00:00:00+07:00"},
+    "direct_link_allowed": {"status": "VERIFIED", "confidence": "HIGH", "value": true, "source_reference_sanitized": "fixture:direct-link", "observed_at": "2026-09-20T00:00:00+07:00"},
+    "deep_link_allowed": {"status": "VERIFIED", "confidence": "HIGH", "value": false, "source_reference_sanitized": "fixture:deep-link", "observed_at": "2026-09-20T00:00:00+07:00"}
+  },
+  "tracking": {
+    "link_capability": {"status": "VERIFIED", "confidence": "HIGH", "value": true, "source_reference_sanitized": "fixture:tracking-link", "observed_at": "2026-09-20T00:00:00+07:00"},
+    "attribution_subid_capability": {"status": "VERIFIED", "confidence": "HIGH", "value": false, "source_reference_sanitized": "fixture:subid-known-false", "observed_at": "2026-09-20T00:00:00+07:00"}
+  },
+  "commission": {
+    "commissionable_action": {"status": "VERIFIED", "confidence": "HIGH", "value": "EXAMPLE QUALIFYING PURCHASE — NOT REAL", "source_reference_sanitized": "fixture:commission-action", "observed_at": "2026-09-20T00:00:00+07:00"}
+  },
+  "validation": {
+    "locking_rule": {"status": "VERIFIED", "confidence": "HIGH", "value": "EXAMPLE VALIDATION RULE — NOT REAL", "source_reference_sanitized": "fixture:validation-rule", "observed_at": "2026-09-20T00:00:00+07:00"},
+    "reversal_return_rule": {"status": "VERIFIED", "confidence": "HIGH", "value": "EXAMPLE REVERSAL RULE — NOT REAL", "source_reference_sanitized": "fixture:reversal-rule", "observed_at": "2026-09-20T00:00:00+07:00"}
+  },
+  "payout": {
+    "threshold_cycle": {"status": "VERIFIED", "confidence": "HIGH", "value": "EXAMPLE THRESHOLD/CYCLE — NOT REAL", "source_reference_sanitized": "fixture:payout-cycle", "observed_at": "2026-09-20T00:00:00+07:00"},
+    "feasibility": {"status": "VERIFIED", "confidence": "HIGH", "value": true, "source_reference_sanitized": "fixture:payout-feasible", "observed_at": "2026-09-20T00:00:00+07:00"},
+    "rail_type": {"status": "VERIFIED", "confidence": "HIGH", "value": "EXAMPLE_RAIL_TYPE", "source_reference_sanitized": "fixture:payout-rail", "observed_at": "2026-09-20T00:00:00+07:00"}
+  },
+  "rights_disclosure": {
+    "creative_usage": {"status": "VERIFIED", "confidence": "HIGH", "value": "ORIGINAL_GRAPHICS_ONLY", "source_reference_sanitized": "fixture:creative-usage", "observed_at": "2026-09-20T00:00:00+07:00"},
+    "affiliate_disclosure": {"status": "VERIFIED", "confidence": "HIGH", "value": "EXAMPLE DISCLOSURE REQUIREMENT — NOT REAL", "source_reference_sanitized": "fixture:disclosure", "observed_at": "2026-09-20T00:00:00+07:00"}
+  },
+  "recorded_at": "2026-09-20T00:00:00+07:00"
+}

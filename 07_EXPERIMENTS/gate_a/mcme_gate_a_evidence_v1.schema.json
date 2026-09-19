@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/magasincoffee/MAGASIN-CONTENT-MONEY-ENGINE/blob/main/07_EXPERIMENTS/gate_a/mcme_gate_a_evidence_v1.schema.json",
+  "title": "MCME Gate A Sanitized Evidence V1",
+  "description": "One sanitized Gate A evidence record for one bounded candidate slot. No secrets or private payment/identity values belong in this record.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "experiment_id",
+    "route_ref",
+    "candidate_slot",
+    "property",
+    "network",
+    "merchant",
+    "geography",
+    "promotion",
+    "tracking",
+    "commission",
+    "validation",
+    "payout",
+    "rights_disclosure",
+    "recorded_at"
+  ],
+  "properties": {
+    "schema_version": {"const": "mcme.gate-a-evidence.v1"},
+    "experiment_id": {"type": "string", "minLength": 1},
+    "route_ref": {"const": "MCME-FIRST-CASH-V1"},
+    "candidate_slot": {
+      "type": "string",
+      "enum": ["AWIN-01", "AWIN-02", "IMPACT-01", "IMPACT-02", "AMAZON-01"]
+    },
+    "property": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["public_reference_sanitized", "authorized", "network_property_accepted"],
+      "properties": {
+        "public_reference_sanitized": {"type": ["string", "null"]},
+        "authorized": {"$ref": "#/$defs/evidenceItem"},
+        "network_property_accepted": {"$ref": "#/$defs/evidenceItem"}
+      }
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "relationship"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": ["Awin", "impact.com", "Amazon Associates (conditional)"]
+        },
+        "relationship": {"$ref": "#/$defs/evidenceItem"}
+      }
+    },
+    "merchant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["public_name", "program_public_identifier", "relationship"],
+      "properties": {
+        "public_name": {"type": ["string", "null"]},
+        "program_public_identifier": {"type": ["string", "null"]},
+        "relationship": {"$ref": "#/$defs/evidenceItem"}
+      }
+    },
+    "geography": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["us_allowed"],
+      "properties": {
+        "us_allowed": {"$ref": "#/$defs/evidenceItem"}
+      }
+    },
+    "promotion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pinterest_social_allowed", "direct_link_allowed", "deep_link_allowed"],
+      "properties": {
+        "pinterest_social_allowed": {"$ref": "#/$defs/evidenceItem"},
+        "direct_link_allowed": {"$ref": "#/$defs/evidenceItem"},
+        "deep_link_allowed": {"$ref": "#/$defs/evidenceItem"}
+      }
+    },
+    "tracking": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["link_capability", "attribution_subid_capability"],
+      "properties": {
+        "link_capability": {"$ref": "#/$defs/evidenceItem"},
+        "attribution_subid_capability": {"$ref": "#/$defs/evidenceItem"}
+      }
+    },
+    "commission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commissionable_action"],
+      "properties": {
+        "commissionable_action": {"$ref": "#/$defs/evidenceItem"}
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["locking_rule", "reversal_return_rule"],
+      "properties": {
+        "locking_rule": {"$ref": "#/$defs/evidenceItem"},
+        "reversal_return_rule": {"$ref": "#/$defs/evidenceItem"}
+      }
+    },
+    "payout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["threshold_cycle", "feasibility", "rail_type"],
+      "properties": {
+        "threshold_cycle": {"$ref": "#/$defs/evidenceItem"},
+        "feasibility": {"$ref": "#/$defs/evidenceItem"},
+        "rail_type": {"$ref": "#/$defs/evidenceItem"}
+      }
+    },
+    "rights_disclosure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["creative_usage", "affiliate_disclosure"],
+      "properties": {
+        "creative_usage": {"$ref": "#/$defs/evidenceItem"},
+        "affiliate_disclosure": {"$ref": "#/$defs/evidenceItem"}
+      }
+    },
+    "recorded_at": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "evidenceItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "confidence", "value", "source_reference_sanitized", "observed_at"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["VERIFIED", "UNKNOWN", "BLOCKED", "FAIL"]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["HIGH", "MEDIUM", "LOW"]
+        },
+        "value": {
+          "type": ["boolean", "string", "null"]
+        },
+        "source_reference_sanitized": {
+          "type": ["string", "null"]
+        },
+        "observed_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {"status": {"enum": ["VERIFIED", "FAIL"]}},
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "source_reference_sanitized": {"type": "string", "minLength": 1},
+              "observed_at": {"type": "string", "format": "date-time"}
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"candidate_slot": {"pattern": "^AWIN-"}}, "required": ["candidate_slot"]},
+      "then": {"properties": {"network": {"properties": {"name": {"const": "Awin"}}}}}
+    },
+    {
+      "if": {"properties": {"candidate_slot": {"pattern": "^IMPACT-"}}, "required": ["candidate_slot"]},
+      "then": {"properties": {"network": {"properties": {"name": {"const": "impact.com"}}}}}
+    },
+    {
+      "if": {"properties": {"candidate_slot": {"const": "AMAZON-01"}}, "required": ["candidate_slot"]},
+      "then": {"properties": {"network": {"properties": {"name": {"const": "Amazon Associates (conditional)"}}}}}
+    }
+  ]
+}
