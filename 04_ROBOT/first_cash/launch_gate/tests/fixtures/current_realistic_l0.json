@@ -1,0 +1,172 @@
+{
+  "fixture_notice": "CURRENT-REALISTIC SAFE_PREP — NO REAL LAUNCH",
+  "schema_version": "mcme.launch-readiness.v1",
+  "experiment_id": "EXAMPLE-NOT-REAL",
+  "gate_a": {
+    "state": "NOT_STARTED",
+    "merchant_public_identifier": null,
+    "program_public_identifier": null,
+    "relationship": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    },
+    "us_allowed": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    },
+    "pinterest_social_allowed": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    },
+    "link_method": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    },
+    "tracking_link_capability": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    },
+    "commissionable_action": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    },
+    "validation_locking": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    },
+    "reversal_return": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    },
+    "payout_threshold_cycle": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    },
+    "payout_feasibility": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    },
+    "rights_creative": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    },
+    "disclosure_requirements": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    }
+  },
+  "three_pin_package": {
+    "package_version": "EXAMPLE-v1",
+    "pins": []
+  },
+  "observation": {
+    "window_locked": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    },
+    "window_reference": null,
+    "measurement_source_plan": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    },
+    "no_artificial_clicks": {
+      "status": "VERIFIED",
+      "value": true,
+      "source_reference_sanitized": "fixture:no-clicks"
+    },
+    "no_test_purchase": {
+      "status": "VERIFIED",
+      "value": true,
+      "source_reference_sanitized": "fixture:no-purchase"
+    },
+    "contract_version": "EXAMPLE-observation-v1"
+  },
+  "publish_safety": {
+    "contract_version": "mcme.publish-safety-latch.v1",
+    "deterministic_key_ready": {
+      "status": "VERIFIED",
+      "value": true,
+      "source_reference_sanitized": "fixture:key"
+    },
+    "persisted_latch_private_boundary": {
+      "status": "VERIFIED",
+      "value": true,
+      "source_reference_sanitized": "fixture:latch"
+    },
+    "reconciliation_before_retry": {
+      "status": "VERIFIED",
+      "value": true,
+      "source_reference_sanitized": "fixture:reconcile"
+    },
+    "bounded_retry_ready": {
+      "status": "VERIFIED",
+      "value": true,
+      "source_reference_sanitized": "fixture:retry"
+    },
+    "auth_block_ready": {
+      "status": "VERIFIED",
+      "value": true,
+      "source_reference_sanitized": "fixture:auth-block"
+    }
+  },
+  "cash_truth": {
+    "contract_version": "mcme.cash-truth-event.v1",
+    "schema_validator_ready": {
+      "status": "VERIFIED",
+      "value": true,
+      "source_reference_sanitized": "fixture:schema"
+    },
+    "local_private_jsonl_ready": {
+      "status": "VERIFIED",
+      "value": true,
+      "source_reference_sanitized": "fixture:jsonl"
+    },
+    "append_only_replay_ready": {
+      "status": "VERIFIED",
+      "value": true,
+      "source_reference_sanitized": "fixture:replay"
+    },
+    "dedupe_ready": {
+      "status": "VERIFIED",
+      "value": true,
+      "source_reference_sanitized": "fixture:dedupe"
+    },
+    "cash_settled_guard_ready": {
+      "status": "VERIFIED",
+      "value": true,
+      "source_reference_sanitized": "fixture:cash-guard"
+    },
+    "privacy_boundary_ready": {
+      "status": "VERIFIED",
+      "value": true,
+      "source_reference_sanitized": "fixture:privacy"
+    }
+  },
+  "auth_browser": {
+    "future_authorized_prerequisite": {
+      "status": "UNKNOWN",
+      "value": null,
+      "source_reference_sanitized": null
+    }
+  },
+  "side_effect_authorization": {
+    "status": "VERIFIED",
+    "value": false,
+    "source_reference_sanitized": "fixture:safe-prep-no-authorization"
+  },
+  "evaluated_input_at": "2026-09-20T00:00:00+07:00"
+}

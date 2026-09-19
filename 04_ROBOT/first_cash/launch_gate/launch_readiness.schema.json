@@ -1,0 +1,385 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/magasincoffee/MAGASIN-CONTENT-MONEY-ENGINE/blob/main/04_ROBOT/first_cash/launch_gate/launch_readiness.schema.json",
+  "title": "MCME Launch Readiness Snapshot V1",
+  "description": "Sanitized, side-effect-free launch readiness snapshot for future MCME-031/032. READY never performs or authorizes a publish by itself.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "experiment_id",
+    "gate_a",
+    "three_pin_package",
+    "observation",
+    "publish_safety",
+    "cash_truth",
+    "auth_browser",
+    "side_effect_authorization",
+    "evaluated_input_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "mcme.launch-readiness.v1"
+    },
+    "experiment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "gate_a": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "merchant_public_identifier",
+        "program_public_identifier",
+        "relationship",
+        "us_allowed",
+        "pinterest_social_allowed",
+        "link_method",
+        "tracking_link_capability",
+        "commissionable_action",
+        "validation_locking",
+        "reversal_return",
+        "payout_threshold_cycle",
+        "payout_feasibility",
+        "rights_creative",
+        "disclosure_requirements"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "NOT_STARTED",
+            "OWNER_ACTION_REQUIRED",
+            "WAIT_OWNER",
+            "NETWORK_READY",
+            "MERCHANT_READY",
+            "TRACKING_READY",
+            "VALIDATION_TERMS_READY",
+            "PAYOUT_READY",
+            "RIGHTS_DISCLOSURE_READY",
+            "PASS",
+            "FAIL"
+          ]
+        },
+        "merchant_public_identifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "program_public_identifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "relationship": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "us_allowed": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "pinterest_social_allowed": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "link_method": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "tracking_link_capability": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "commissionable_action": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "validation_locking": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "reversal_return": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "payout_threshold_cycle": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "payout_feasibility": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "rights_creative": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "disclosure_requirements": {
+          "$ref": "#/$defs/evidenceItem"
+        }
+      }
+    },
+    "three_pin_package": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "package_version",
+        "pins"
+      ],
+      "properties": {
+        "package_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/pinRecord"
+          }
+        }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "window_locked",
+        "window_reference",
+        "measurement_source_plan",
+        "no_artificial_clicks",
+        "no_test_purchase",
+        "contract_version"
+      ],
+      "properties": {
+        "window_locked": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "window_reference": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "measurement_source_plan": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "no_artificial_clicks": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "no_test_purchase": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "contract_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "publish_safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "deterministic_key_ready",
+        "persisted_latch_private_boundary",
+        "reconciliation_before_retry",
+        "bounded_retry_ready",
+        "auth_block_ready"
+      ],
+      "properties": {
+        "contract_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "deterministic_key_ready": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "persisted_latch_private_boundary": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "reconciliation_before_retry": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "bounded_retry_ready": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "auth_block_ready": {
+          "$ref": "#/$defs/evidenceItem"
+        }
+      }
+    },
+    "cash_truth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "schema_validator_ready",
+        "local_private_jsonl_ready",
+        "append_only_replay_ready",
+        "dedupe_ready",
+        "cash_settled_guard_ready",
+        "privacy_boundary_ready"
+      ],
+      "properties": {
+        "contract_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schema_validator_ready": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "local_private_jsonl_ready": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "append_only_replay_ready": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "dedupe_ready": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "cash_settled_guard_ready": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "privacy_boundary_ready": {
+          "$ref": "#/$defs/evidenceItem"
+        }
+      }
+    },
+    "auth_browser": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "future_authorized_prerequisite"
+      ],
+      "properties": {
+        "future_authorized_prerequisite": {
+          "$ref": "#/$defs/evidenceItem"
+        }
+      }
+    },
+    "side_effect_authorization": {
+      "$ref": "#/$defs/evidenceItem"
+    },
+    "evaluated_input_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "fixture_notice": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "evidenceItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "value",
+        "source_reference_sanitized"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "VERIFIED",
+            "UNKNOWN",
+            "BLOCKED",
+            "FAIL"
+          ]
+        },
+        "value": {
+          "type": [
+            "boolean",
+            "string",
+            "null"
+          ]
+        },
+        "source_reference_sanitized": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "VERIFIED"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "source_reference_sanitized": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "pinRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_id",
+        "content_version",
+        "destination_version",
+        "width_px",
+        "height_px",
+        "aspect_ratio",
+        "output_reference",
+        "original_right_safe",
+        "disclosure_ref",
+        "destination_link_ref",
+        "attribution_method",
+        "qa"
+      ],
+      "properties": {
+        "content_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "destination_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "width_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height_px": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "aspect_ratio": {
+          "const": "2:3"
+        },
+        "output_reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "original_right_safe": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "disclosure_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "destination_link_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attribution_method": {
+          "$ref": "#/$defs/evidenceItem"
+        },
+        "qa": {
+          "$ref": "#/$defs/evidenceItem"
+        }
+      }
+    }
+  }
+}
