@@ -9,7 +9,8 @@ Read this file first in every new Brain/Work session.
 3. `00_PROJECT/PROJECT_STATE.json`
 4. `00_PROJECT/02_CURRENT_STATE.md`
 5. `00_PROJECT/TASK_QUEUE.md`
-6. The current task's relevant module docs.
+6. `00_PROJECT/VIETNAM_OWNER_ACCESS_AND_CASHOUT_GATE_V1.md`
+7. The current task's relevant module docs.
 
 ## Highest-priority rule
 
