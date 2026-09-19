@@ -1,0 +1,691 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/magasincoffee/MAGASIN-CONTENT-MONEY-ENGINE/blob/main/06_METRICS/mcme_cash_truth_v1.schema.json",
+  "title": "MCME Cash Truth Event V1",
+  "description": "Append-only canonical event payload for MCME cash truth. One object equals one immutable ledger event.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "event_type",
+    "experiment_id",
+    "source",
+    "occurred_at",
+    "observed_at",
+    "evidence",
+    "idempotency"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "mcme.cash-truth-event.v1"
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "PIN_PUBLISHED",
+        "PIN_IMPRESSION_OBSERVED",
+        "PIN_CLICK_OBSERVED",
+        "OUTBOUND_CLICK_OBSERVED",
+        "NETWORK_CLICK_OBSERVED",
+        "MERCHANT_ACTION_TRACKED",
+        "COMMISSION_PENDING",
+        "COMMISSION_VALIDATED",
+        "COMMISSION_REVERSED",
+        "COMMISSION_PAYABLE",
+        "PAYOUT_ISSUED",
+        "CASH_SETTLED",
+        "NEGATIVE_ADJUSTMENT_RECORDED",
+        "COST_RECORDED",
+        "TIME_RECORDED"
+      ]
+    },
+    "experiment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "pin_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "framing_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "network": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "merchant": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "program_id_sanitized": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "attribution": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "key_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "key_sanitized": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sub_id_sanitized": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "attribution_scope": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "PIN",
+            "CONTENT",
+            "EXPERIMENT",
+            "PROGRAM",
+            "UNATTRIBUTED"
+          ]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_system",
+        "source_type"
+      ],
+      "properties": {
+        "source_system": {
+          "type": "string",
+          "enum": [
+            "PINTEREST",
+            "AFFILIATE_NETWORK",
+            "MERCHANT",
+            "PAYOUT_PROVIDER",
+            "OWNER_PAYOUT_RAIL",
+            "COST_LEDGER",
+            "TIME_LEDGER",
+            "MANUAL_SANITIZED_EVIDENCE",
+            "OTHER"
+          ]
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "API",
+            "EXPORT",
+            "ACCOUNT_UI",
+            "PROGRAM_TERMS",
+            "STATEMENT",
+            "TRANSACTION_RECORD",
+            "TIMER_LOG",
+            "RECEIPT_INVOICE",
+            "OWNER_ATTESTATION",
+            "SANITIZED_CAPTURE",
+            "PUBLIC_DOC",
+            "OTHER"
+          ]
+        },
+        "source_record_id_sanitized": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_reference_sanitized": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provider_state_label_sanitized": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "adapter_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "confidence"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "VERIFIED",
+            "UNKNOWN",
+            "BLOCKED",
+            "FAIL"
+          ]
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW"
+          ]
+        },
+        "evidence_reference_sanitized": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes_sanitized": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "idempotency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strategy"
+      ],
+      "properties": {
+        "strategy": {
+          "type": "string",
+          "enum": [
+            "PROVIDER_STABLE_ID",
+            "PROVIDER_STATE_VERSION",
+            "AGGREGATE_SNAPSHOT_KEY",
+            "CONSERVATIVE_RECONCILIATION",
+            "MANUAL_REVIEW"
+          ]
+        },
+        "key_sanitized": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provider_effective_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "related_prior_event_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "canonical_money_state": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "NO_REVENUE",
+        "PENDING",
+        "VALIDATED",
+        "PAYABLE",
+        "PAYOUT_ISSUED",
+        "CASH_SETTLED",
+        "REVERSED",
+        "CANCELLED"
+      ]
+    },
+    "metric": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "value",
+        "aggregation_mode"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": [
+            "IMPRESSIONS",
+            "PIN_CLICKS",
+            "OUTBOUND_CLICKS",
+            "NETWORK_CLICKS",
+            "MERCHANT_ACTIONS"
+          ]
+        },
+        "value": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "aggregation_mode": {
+          "type": "string",
+          "enum": [
+            "SNAPSHOT_CUMULATIVE",
+            "WINDOW_TOTAL",
+            "PROVIDER_DELTA",
+            "INDIVIDUAL_EVENT"
+          ]
+        },
+        "window_start": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "window_end": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "money": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "amount_decimal",
+        "currency"
+      ],
+      "properties": {
+        "amount_decimal": {
+          "type": "string",
+          "pattern": "^-?(0|[1-9][0-9]*)(\\\\.[0-9]+)?$"
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        }
+      }
+    },
+    "adjustment": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "scope": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "COMMISSION",
+            "PAYOUT",
+            "SETTLEMENT"
+          ]
+        },
+        "reason_category": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "RETURN",
+            "REFUND",
+            "CANCELLATION",
+            "REJECTION",
+            "CLAWBACK",
+            "PROVIDER_CORRECTION",
+            "FEE",
+            "FX_ADJUSTMENT",
+            "OTHER"
+          ]
+        },
+        "related_source_record_id_sanitized": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "cost": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "category"
+      ],
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": [
+            "TOOL_API_CASH_COST",
+            "DIRECT_CREATIVE_COST",
+            "PAID_MEDIA",
+            "PAYMENT_FEE",
+            "FX_FEE",
+            "OTHER_ATTRIBUTABLE_VARIABLE_COST"
+          ]
+        },
+        "attributable": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "notes_sanitized": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "time": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "category",
+        "minutes"
+      ],
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": [
+            "PRODUCTION_MINUTES",
+            "QA_MINUTES",
+            "OWNER_MINUTES",
+            "RESEARCH_MINUTES",
+            "PUBLISHING_MINUTES",
+            "MONITORING_MINUTES",
+            "RECONCILIATION_MINUTES",
+            "WORK_MINUTES",
+            "OTHER_MEASURED_MINUTES"
+          ]
+        },
+        "minutes": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "settlement": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "funds_actually_received": {
+          "type": "boolean"
+        },
+        "owner_authorized_payout_rail": {
+          "type": "boolean"
+        },
+        "reconciled_to_payout": {
+          "type": "boolean"
+        },
+        "payout_source_record_id_sanitized": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "settlement_reference_external": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "reconciliation": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "related_event_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            null,
+            "MATCHED",
+            "PARTIAL",
+            "UNRESOLVED",
+            "CONFLICT"
+          ]
+        },
+        "notes_sanitized": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "CASH_SETTLED"
+          }
+        },
+        "required": [
+          "event_type"
+        ]
+      },
+      "then": {
+        "required": [
+          "money",
+          "settlement"
+        ],
+        "properties": {
+          "settlement": {
+            "type": "object",
+            "required": [
+              "funds_actually_received",
+              "owner_authorized_payout_rail",
+              "reconciled_to_payout"
+            ],
+            "properties": {
+              "funds_actually_received": {
+                "const": true
+              },
+              "owner_authorized_payout_rail": {
+                "const": true
+              },
+              "reconciled_to_payout": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "COST_RECORDED"
+          }
+        },
+        "required": [
+          "event_type"
+        ]
+      },
+      "then": {
+        "required": [
+          "cost",
+          "money"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "TIME_RECORDED"
+          }
+        },
+        "required": [
+          "event_type"
+        ]
+      },
+      "then": {
+        "required": [
+          "time"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "enum": [
+              "PIN_IMPRESSION_OBSERVED",
+              "PIN_CLICK_OBSERVED",
+              "OUTBOUND_CLICK_OBSERVED",
+              "NETWORK_CLICK_OBSERVED"
+            ]
+          }
+        },
+        "required": [
+          "event_type"
+        ]
+      },
+      "then": {
+        "required": [
+          "metric"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "enum": [
+              "COMMISSION_PENDING",
+              "COMMISSION_VALIDATED",
+              "COMMISSION_REVERSED",
+              "COMMISSION_PAYABLE",
+              "PAYOUT_ISSUED",
+              "NEGATIVE_ADJUSTMENT_RECORDED"
+            ]
+          }
+        },
+        "required": [
+          "event_type"
+        ]
+      },
+      "then": {
+        "properties": {
+          "network": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "network"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "NEGATIVE_ADJUSTMENT_RECORDED"
+          }
+        },
+        "required": [
+          "event_type"
+        ]
+      },
+      "then": {
+        "required": [
+          "adjustment",
+          "money"
+        ]
+      }
+    }
+  ]
+}
