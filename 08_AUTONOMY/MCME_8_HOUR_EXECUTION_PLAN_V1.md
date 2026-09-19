@@ -1,433 +1,476 @@
-# MCME 8-HOUR AUTONOMOUS EXECUTION PLAN V1
+# MCME 8-HOUR SINGLE-LANE EXECUTION PLAN V2
 
-Prepared: 2026-09-19 23:04 +07
+Prepared: 2026-09-19
 Status: WAIT_OWNER_APPROVAL
 Run ID: MCME-RUN-8H-01
-Duration: 8 hours wall-clock from explicit Owner approval/start signal
+Mode: SINGLE_LANE_SEQUENTIAL
+Duration: 8 hours wall-clock from explicit Owner approval
 
-## Purpose
+## Objective
 
-Move MAGASIN CONTENT MONEY ENGINE from architecture lock to a fully evidence-backed first Minimum Viable Money Loop and an implementation-ready experiment package, without requiring Owner decisions during the run.
+Use ONE Brain ↔ ONE Work lane only.
 
-This run MUST NOT create accounts, enter credentials, accept KYC/tax/payment terms, spend money, publish production content, or cross legal/rights ambiguity.
+The 8-hour run exists for one purpose:
 
-## Control model
+> Move the project as close as possible to the first real cash transaction, using evidence instead of speculation.
 
-Owner:
-- authorizes START once;
-- is not required during the 8-hour run.
+This is not a broad research sprint and not a generic Robot-building sprint.
 
-Brain:
-- does NOT execute research/code/content tasks;
-- dispatches bounded tasks;
-- reviews Work evidence;
-- rejects incomplete/weak outputs;
-- applies Five-Step before each next dispatch;
-- chooses between pre-authorized options using the decision policy below;
-- updates canonical run state/checkpoints.
+The run must finish with ONE selected money loop and the minimum implementation/experiment package needed to test it for real money.
 
-Work:
-- executes bounded task;
-- returns evidence, citations, artifacts, tests, risks and next facts.
+## Operating roles
 
-Robot:
-- transports Brain → Work → Brain;
-- runs lanes independently;
-- retries transient failures only;
-- preserves state;
-- never invents business decisions.
+### Owner
+Approves START once.
+No routine decision is required during the 8-hour run.
+
+### Brain
+Brain does NOT perform Work tasks.
+
+Brain only:
+1. applies Five-Step;
+2. sends ONE bounded task to the single Work chat;
+3. waits for Work result;
+4. verifies evidence and Definition of Done;
+5. accepts, repairs, deletes or simplifies;
+6. updates run state;
+7. sends the NEXT task only after the previous task is accepted.
+
+### Work
+Executes exactly ONE active task at a time.
+
+### Robot
+Transports Brain → Work → Brain, preserves state, performs bounded recovery and exact-once delivery where supported.
+
+## Single-lane invariant
+
+At any moment:
+
+```text
+Brain
+  ↓ exactly one directive
+Work
+  ↓ one completed result
+Brain review
+  ↓
+next directive
+```
+
+There is NEVER:
+- 3-lane parallel execution;
+- concurrent strategic tasks;
+- multiple active Work tasks;
+- Work choosing its own next task.
 
 ## Highest-priority law
 
-Every task and every Brain review must explicitly apply:
+For EVERY task:
 
 QUESTION → DELETE → SIMPLIFY → ACCELERATE → AUTOMATE
 
-AUTOMATE is prohibited until the relevant upstream economics/requirements are evidenced.
+AUTOMATE is not allowed before the money loop and experiment economics are explicit.
 
-## Delegated decision authority for this run
+## Cash-first decision rule
 
-Brain MAY decide without Owner:
-- which countries to research deeper;
-- which platform/monetization combinations to delete;
-- which ONE first Minimum Viable Money Loop to recommend/select for the next experiment;
-- which niche/content format to carry forward;
-- research priorities;
-- repo documentation/schema/test changes that are reversible and non-destructive;
-- how to split work across lanes.
+Brain prioritizes the next task by:
 
-Brain MUST NOT decide/execute:
-- account creation requiring legal acceptance/KYC;
-- credentials/MFA/CAPTCHA;
-- tax/banking/payment setup;
-- platform appeals/suspensions;
-- copyright/license ambiguity;
+```text
+Expected contribution to first real cash
+× confidence / learning value
+× speed
+──────────────────────────────────────
+cost + complexity + policy risk + Owner dependency
+```
+
+Raw views, follower growth and content volume are secondary.
+
+## Run boundaries
+
+Allowed without Owner:
+- public research;
+- comparing countries/platforms/niches;
+- deleting weak options;
+- choosing one provisional market/money loop;
+- writing reversible repo docs/specs/tests;
+- defining experiments;
+- defining affiliate/content funnel;
+- defining SaydiVoice/video requirements.
+
+Not allowed:
+- credentials;
+- MFA/CAPTCHA;
+- KYC/tax/banking;
+- legal/license ambiguity;
 - production publishing;
-- real ad/media spend;
-- destructive repository/account actions;
-- spend above zero unless separately authorized.
+- paid advertising;
+- real external spend;
+- destructive account/repository action.
 
-If a task hits one of those boundaries, mark that subtask WAIT_OWNER and continue other safe tasks. Do not stop the whole run unless no safe critical-path work remains.
-
-## Parallel lane topology
-
-### Lane 1 — PLATFORM MONEY
-Focus:
-- YouTube;
-- TikTok;
-- Facebook/Instagram/Meta;
-- other platform-native monetization only if evidence justifies inclusion.
-
-### Lane 2 — AFFILIATE / COMMERCE MONEY
-Focus:
-- Amazon Associates and major global affiliate networks/merchant ecosystems;
-- market accessibility;
-- payout/commission/EPC evidence where authoritative;
-- conversion path and time-to-first-cash.
-
-### Lane 3 — CONTENT / MARKET FIT
-Focus:
-- global niche discovery;
-- content formats;
-- demand signals;
-- originality/rights burden;
-- localization cost;
-- source strategy;
-- competition and production feasibility.
-
-Lane isolation is mandatory. Brain merges results; lanes do not independently alter strategy.
+If a task hits a boundary, Brain records it and immediately asks Work for the next safe critical-path task. Only stop if no safe work remains.
 
 ---
 
-# REAL-TIME SCHEDULE
+# 8-HOUR REAL-TIME SEQUENCE
 
-T0 is the exact timestamp when Owner explicitly approves and Brain changes run state from WAIT_OWNER_APPROVAL to RUNNING.
+T0 = exact Owner approval/start timestamp.
+Hard stop = T0 + 8 hours.
 
-Hard stop: T0 + 8:00:00.
+## STEP 1 — T+00:00 → T+01:15
+### MCME-001 — FIND THE SHORTEST CREDIBLE PATH TO FIRST CASH
+Five-Step: QUESTION
 
-## T+00:00 → T+00:20 — BOOTSTRAP / QUESTION
+Brain dispatches ONE task to Work:
 
-Brain:
-- re-reads START_HERE, Five-Step law, architecture, PROJECT_STATE and this runbook;
-- records exact start/deadline;
-- verifies no Owner boundary is already active;
-- dispatches MCME-001A/B/C in parallel.
+Research current global monetization routes and determine which path is most capable of producing the FIRST REAL CASH with the least Owner dependency.
 
-No Work task may begin before run state is RUNNING.
+Work must compare only:
+1. Affiliate commerce
+2. Platform monetization
+3. Lead generation
 
-### MCME-001A — Platform Monetization Evidence
-Lane 1.
-DoD:
-- official eligibility/program availability by candidate market;
-- originality/reused-content constraints;
-- payout/threshold facts when official;
-- facts separated from third-party estimates;
-- timestamp/source for every material current claim.
+Work must evaluate:
+- country availability;
+- platform/network eligibility;
+- time-to-first-cash;
+- whether a new creator can start immediately;
+- audience purchase intent;
+- payout/settlement friction;
+- content originality requirements;
+- account/Owner dependencies;
+- ability to measure actual cash.
 
-### MCME-001B — Affiliate/Commerce Evidence
-Lane 2.
-DoD:
-- major affiliate networks/programs accessible across candidate markets;
-- merchant/product depth;
-- commission/EPC evidence only when authoritative or clearly marked estimate;
-- payout/settlement constraints;
-- fastest plausible affiliate path.
+Required output:
+- evidence table;
+- VERIFIED vs ASSUMPTION vs UNKNOWN;
+- top 3 candidate combinations;
+- explicit reasons to DELETE weaker paths.
 
-### MCME-001C — Global Content Opportunity Evidence
-Lane 3.
-DoD:
-- candidate niches/formats that can be produced originally or with verified rights;
-- demand/competition proxies;
-- localization complexity;
-- product/monetization adjacency;
-- reject pure reupload as a default strategy.
+Brain acceptance gate:
+No invented RPM/CPM.
+Current claims must have reliable sources.
+Result must answer: "Which route can reach cash fastest?"
 
-Checkpoint C1 at T+00:20:
-3 valid dispatches, no duplicate task IDs.
+Checkpoint: C1_PATHS_EVIDENCED
 
-## T+00:20 → T+02:20 — PARALLEL RESEARCH / QUESTION
+---
 
-Work executes 001A/B/C.
+## STEP 2 — T+01:15 → T+02:15
+### MCME-002 — DELETE TO ONE MONEY MODEL
+Five-Step: DELETE
 
-Brain behavior:
-- poll/review only;
-- do not micromanage active Work;
-- if one lane finishes early, review and either ACCEPT or return one bounded FIX task;
-- do not create new strategic scope yet.
+After Brain accepts MCME-001, Brain sends one new task:
 
-Checkpoint C2 at T+02:20:
-Expected artifacts:
-- platform matrix;
-- affiliate matrix;
-- content opportunity matrix.
+Take the accepted evidence and aggressively eliminate options until only ONE primary monetization model remains for the first experiment.
 
-Acceptance:
-- evidence-backed;
-- current-date aware;
-- no invented RPM;
-- no uncited material eligibility claim;
-- no policy-unsafe recommendation.
+Work must produce:
+- selected monetization model;
+- selected candidate market/language;
+- selected platform/distribution surface;
+- why alternatives were deleted;
+- Owner actions eventually required;
+- evidence still missing.
 
-If one lane is incomplete:
-- Brain may grant one repair pass ≤30 minutes while other lanes continue.
+Selection rule:
+Choose the option with the shortest credible path to real settled cash, not the option with the biggest theoretical audience.
 
-## T+02:20 → T+03:00 — DELETE
+Expected likely candidates may include affiliate-led content because it can generate commerce revenue before native creator monetization thresholds, but Work must prove this rather than assume it.
 
-Brain reviews all three matrices and produces an evidence ledger:
-- VERIFIED;
-- ASSUMPTION;
-- UNKNOWN;
-- REJECTED.
+Checkpoint: C2_ONE_MONEY_MODEL
 
-Brain deletes:
-- markets with weak monetization coverage and no compensating advantage;
-- monetization paths with long/blocked time-to-first-cash;
-- niches requiring unclear third-party rights;
-- formats likely to violate originality/reused-content policies;
-- research dimensions that do not affect the first cash experiment.
+---
 
-Brain then dispatches MCME-002A/B/C.
+## STEP 3 — T+02:15 → T+03:20
+### MCME-003 — SELECT ONE NICHE + ONE CONTENT FORMAT
+Five-Step: SIMPLIFY
 
-### MCME-002A — Market Score V1
-Lane 1.
-Build a transparent scoring model using current evidence.
-No false precision.
+Brain sends one task only after MCME-002 is accepted.
 
-### MCME-002B — Money Loop Economics V1
-Lane 2.
-Compare:
-- Affiliate;
-- Platform monetization;
-- Lead generation.
-Estimate time-to-first-cash, measurement path, owner dependencies, cash attribution.
+Work finds ONE niche and ONE content format aligned with the chosen money model.
 
-### MCME-002C — Production Feasibility V1
-Lane 3.
-For top candidate markets/niches:
-- script/localization;
+Required evaluation:
+- buyer pain/problem;
+- product or offer availability;
+- search/social demand;
+- content supply/competition;
+- visual sourcing feasibility;
+- originality/rights burden;
 - SaydiVoice suitability;
-- visual sourcing;
-- video complexity;
-- rights/policy risk;
-- estimated unit production burden.
+- localization cost;
+- repeatability;
+- expected CTA clarity.
 
-Checkpoint C3: Five-Step DELETE log committed.
+Work must return:
+- 3–5 candidates;
+- delete all but ONE;
+- selected niche;
+- selected audience;
+- selected format;
+- sample content concept set;
+- why this can produce money, not just views.
 
-## T+03:00 → T+04:30 — SIMPLIFY
+Prohibited default:
+download → minor edit → repost.
 
-Workers complete 002A/B/C.
+Checkpoint: C3_ONE_NICHE_FORMAT
 
-Brain must select ONE provisional Minimum Viable Money Loop using:
+---
 
-Expected Net Cash Potential
-× Evidence Confidence
-× Speed to Cash
-× Automation Fit
-÷ Cost + Policy Risk + Owner Dependency
+## STEP 4 — T+03:20 → T+04:30
+### MCME-004 — DESIGN THE FIRST REAL-MONEY EXPERIMENT
+Five-Step: SIMPLIFY → ACCELERATE
 
-The selection is not a permanent global strategy; it is the cheapest credible first experiment.
+Brain sends Work a task to define the smallest experiment capable of producing or falsifying real revenue.
 
-Brain records:
-- selected market;
-- language;
-- primary platform;
-- niche;
-- format;
-- primary monetization;
-- secondary monetization if zero extra complexity;
-- why alternatives were deleted.
+Work must define:
 
-Checkpoint C4 at T+04:30:
-ONE loop only.
-If evidence is tied, choose the cheaper/faster falsification path, not a larger research project.
+```text
+Market
+× Platform
+× Niche
+× Format
+× Monetization
+× CTA
+```
 
-## T+04:30 → T+05:50 — ACCELERATE: EXPERIMENT PACKAGE
-
-Brain dispatches in parallel:
-
-### MCME-003A — Experiment Design
-Lane 1.
-Define:
-- target audience;
-- 3–5 content hypotheses;
-- batch size using cheapest falsification logic;
-- success/kill criteria;
+Required:
+- content count: smallest justified batch, not automatically 30;
+- 3–5 hypotheses;
 - CTA;
-- monetization attribution path.
-
-### MCME-003B — Content Factory Minimum Spec
-Lane 2.
-Define only what first loop needs:
-- research input;
-- script schema;
-- voice requirements;
-- SaydiVoice boundary;
-- video template requirements;
-- subtitles/captions;
-- output package.
-
-No generic media platform design.
-
-### MCME-003C — Measurement + Rights Spec
-Lane 3.
-Define:
-- qualified view;
-- click;
-- conversion;
+- destination/affiliate/lead path;
+- qualified view definition;
+- click definition;
+- conversion definition;
 - approved revenue;
 - settled cash;
-- cost attribution;
-- rights evidence record;
-- policy QA checklist.
+- production cost ceiling;
+- KEEP criteria;
+- KILL criteria;
+- SCALE criteria;
+- what evidence means "we are wrong."
 
-Checkpoint C5:
-Experiment can be explained end-to-end as:
-Opportunity → Content → Publish → Click/Revenue → Cash evidence.
+Checkpoint: C4_REAL_MONEY_EXPERIMENT
 
-## T+05:50 → T+06:40 — BRAIN REVIEW / REPAIR
+---
 
-Brain checks all 003 outputs against Five-Step.
+## STEP 5 — T+04:30 → T+05:30
+### MCME-005 — BUILD THE MINIMUM CONTENT FACTORY CONTRACT
+Five-Step: DELETE → SIMPLIFY
 
-Mandatory questions:
-- What can be deleted?
-- What is still assumption?
-- Can first cash test be smaller?
-- Does any requirement secretly require Owner?
-- Is every external side effect reversible/idempotent?
-- Can SaydiVoice remain a provider rather than a business subsystem?
+Work must define only what the selected experiment needs.
 
-Brain may issue one repair task per lane.
-No new module unless required for the selected experiment.
+Pipeline:
 
-Checkpoint C6:
-First experiment package ACCEPTED.
+```text
+Opportunity
+→ Script
+→ SaydiVoice
+→ Visual assets
+→ Video assembly
+→ Subtitle/caption
+→ QA
+→ Publish package
+```
 
-## T+06:40 → T+07:30 — IMPLEMENTATION-READY BACKLOG
+Work must specify:
+- script schema;
+- language;
+- voice style;
+- SaydiVoice functions actually required;
+- visual source classes;
+- video duration/aspect ratio;
+- hook structure;
+- CTA placement;
+- subtitle requirements;
+- rights evidence;
+- output file/package.
 
-Brain dispatches bounded documentation/engineering planning tasks only; no production publishing.
+Delete:
+- generic features;
+- multi-platform abstractions not required now;
+- fancy editor features;
+- AI features with no effect on first-cash experiment.
 
-Outputs:
-1. SaydiVoice gap list for selected experiment.
-2. Minimum Video Composer acceptance contract.
-3. Distribution adapter contract for selected platform.
-4. Money Attribution schema.
-5. 24/7 state machine deltas needed after validation.
-6. ordered next-task queue by cash impact.
+Checkpoint: C5_FACTORY_MINIMUM
 
-If a small reversible code/test change is necessary to prove feasibility, Work may implement it only if:
-- no credentials;
-- no external production mutation;
-- no spend;
-- no destructive migration;
-- unit/offline tests exist.
+---
 
-Checkpoint C7:
-Next implementation sequence is ready without architectural ambiguity.
+## STEP 6 — T+05:30 → T+06:30
+### MCME-006 — MONEY ATTRIBUTION + ECONOMICS
+Five-Step: QUESTION → SIMPLIFY
 
-## T+07:30 → T+08:00 — FINAL RECONCILIATION / HARD STOP
+Work defines the minimum truth model required to know whether money was actually made.
 
-Brain:
-- reviews all accepted artifacts;
-- reconciles contradictions;
-- updates PROJECT_STATE, CURRENT_STATE and TASK_QUEUE;
-- writes final run report;
-- records unresolved UNKNOWNs;
-- records Owner boundaries separately;
-- creates the next bounded task, but DOES NOT continue beyond 8-hour deadline.
+Required fields:
+- content_id;
+- market;
+- platform;
+- niche;
+- monetization method;
+- qualified views;
+- clicks;
+- conversions;
+- pending revenue;
+- approved revenue;
+- settled cash;
+- refunds/reversals;
+- variable production cost;
+- net cash contribution;
+- NCC per 1,000 qualified views.
 
-Final report must contain:
-- Five-Step decisions;
-- evidence gathered;
-- deleted markets/paths and why;
-- selected first Money Loop;
-- first experiment definition;
-- expected money path;
-- SaydiVoice requirements;
-- Video requirements;
-- measurement schema;
-- risks;
-- next 3–5 tasks;
-- exact start/end timestamps;
-- tasks accepted/rejected/repaired;
-- whether next run can proceed without Owner.
+Work must define how each number will be sourced and which values are UNKNOWN until real platform/account data exists.
+
+No synthetic revenue.
+No assumed cash settlement.
+
+Checkpoint: C6_CASH_TRUTH_MODEL
+
+---
+
+## STEP 7 — T+06:30 → T+07:20
+### MCME-007 — IMPLEMENTATION BACKLOG TO FIRST CASH
+Five-Step: ACCELERATE
+
+Work converts the accepted experiment into an ordered execution backlog.
+
+Priority must be:
+1. blockers to first publish;
+2. blockers to first click/conversion;
+3. blockers to revenue attribution;
+4. only then automation.
+
+Required backlog:
+- exact next SaydiVoice task;
+- exact minimum Video Composer task;
+- exact distribution/publish task;
+- exact tracking task;
+- Owner setup checklist;
+- estimated dependency order;
+- which tasks Robot can perform autonomously;
+- which task must wait for Owner.
+
+No 24/7 automation task may precede real experiment readiness.
+
+Checkpoint: C7_FIRST_CASH_BACKLOG
+
+---
+
+## STEP 8 — T+07:20 → T+08:00
+### MCME-008 — BRAIN FINAL REVIEW / RUN REPORT
+Five-Step: full cycle
+
+Brain does NOT ask Work for a broad new research task.
+
+Brain reviews all accepted Work results and writes canonical state.
+
+Required final decision package:
+
+1. ONE selected country/market.
+2. ONE language.
+3. ONE primary platform.
+4. ONE niche.
+5. ONE content format.
+6. ONE primary monetization method.
+7. Exact path from content → transaction → settled cash.
+8. First experiment.
+9. KEEP/KILL/SCALE thresholds.
+10. SaydiVoice minimum scope.
+11. Video minimum scope.
+12. Cash attribution schema.
+13. Rights/policy constraints.
+14. Ordered next implementation tasks.
+15. Owner actions required before real launch.
+16. Deleted alternatives and why.
+17. Remaining UNKNOWNs.
 
 At T0+8h:
-RUNNING → COMPLETE_8H
+status → COMPLETE_8H
 No automatic overtime.
 
 ---
 
-# TRACKING CONTRACT
+# BRAIN REVIEW CONTRACT
 
-Canonical files during run:
-- `00_PROJECT/PROJECT_STATE.json`
-- `00_PROJECT/TASK_QUEUE.md`
+After every Work result, Brain must answer internally:
+
+### QUESTION
+Did Work answer the exact business question?
+
+### DELETE
+What in the result can be removed?
+
+### SIMPLIFY
+Can the next experiment/task be smaller?
+
+### ACCELERATE
+What is the next action that most reduces time-to-first-cash?
+
+### AUTOMATE
+Is this already proven enough to automate?
+Default answer during this run: NO, unless evidence says otherwise.
+
+A Work result saying DONE is not sufficient.
+
+Brain accepts only if:
+- DoD met;
+- evidence is current enough;
+- assumptions identified;
+- no unsupported economic claim;
+- no rights/policy shortcut;
+- no scope creep.
+
+If rejected:
+Brain sends ONE bounded FIX task.
+It does not start a second unrelated task.
+
+---
+
+# TRACKING STATE
+
+Canonical files:
+
+- `08_AUTONOMY/MCME_8_HOUR_EXECUTION_PLAN_V1.md`
 - `08_AUTONOMY/MCME_RUN_8H_01_STATE.json`
 - `08_AUTONOMY/MCME_RUN_8H_01_LOG.md`
 - `08_AUTONOMY/MCME_RUN_8H_01_FINAL_REPORT.md`
+- `00_PROJECT/PROJECT_STATE.json`
+- `00_PROJECT/TASK_QUEUE.md`
 
-Brain updates run state after every accepted/rejected Work result.
+Checkpoint sequence:
 
-## Checkpoint states
-
+```text
 WAIT_OWNER_APPROVAL
-RUNNING
-C1_DISPATCHED
-C2_RESEARCH_ACCEPTED
-C3_DELETE_COMPLETE
-C4_MONEY_LOOP_SELECTED
-C5_EXPERIMENT_DRAFTED
-C6_EXPERIMENT_ACCEPTED
-C7_BACKLOG_READY
-COMPLETE_8H
-WAIT_OWNER
-FAILED_TERMINAL
+→ RUNNING
+→ C1_PATHS_EVIDENCED
+→ C2_ONE_MONEY_MODEL
+→ C3_ONE_NICHE_FORMAT
+→ C4_REAL_MONEY_EXPERIMENT
+→ C5_FACTORY_MINIMUM
+→ C6_CASH_TRUTH_MODEL
+→ C7_FIRST_CASH_BACKLOG
+→ COMPLETE_8H
+```
 
-## Review rule
+There is only ONE active Work task.
 
-A Work result is not complete merely because Work says DONE.
+## Success definition for this run
 
-Brain must verify:
-- DoD;
-- source quality;
-- consistency with architecture;
-- Five-Step;
-- no scope creep;
-- no unsupported factual claims;
-- no Owner boundary crossed.
+Success does NOT mean:
+- most documents;
+- most research;
+- most video features;
+- most automation.
 
-Only Brain may mark a checkpoint ACCEPTED.
+Success means:
 
-## Failure policy
-
-Transient technical failure:
-- Robot bounded retry/recovery.
-
-Weak/incomplete Work:
-- Brain returns one bounded FIX task.
-
-Repeated weak result:
-- Brain deletes/simplifies the task and continues with available evidence.
-
-Owner boundary:
-- mark affected branch WAIT_OWNER;
-- continue independent safe critical-path work.
-
-No remaining safe work:
-- stop run early with a report; never fabricate progress.
-
-## Budget
-
-Default external spend authorization for this run: ZERO.
-
-Research and repository work only.
+> We know exactly what first real-money experiment to execute, why it was selected, how money will be measured, and what minimum product/Robot work must happen next.
 
 ## Approval trigger
 
-The plan remains inert until Owner explicitly approves starting MCME-RUN-8H-01.
+This plan remains inert until Owner explicitly approves MCME-RUN-8H-01.
 
-After approval, Brain must:
-1. capture exact T0;
-2. set deadline T0 + 8h;
-3. change run state to RUNNING;
-4. dispatch only the first three bounded tasks.
+After approval:
+1. record exact T0;
+2. calculate T0 + 8h;
+3. change state to RUNNING;
+4. dispatch MCME-001 only;
+5. never dispatch MCME-002 before MCME-001 is reviewed and accepted.
