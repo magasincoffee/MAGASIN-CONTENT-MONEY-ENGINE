@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T03:53:58+07:00",
+  "updated_at": "2026-09-20T04:03:35+07:00",
   "status": "RUNNING_SAFE_PREP",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
-  "current_phase": "P5_SAFE_PREP_PUBLISH_SAFETY",
-  "current_task": "MCME-041",
-  "current_task_title": "Implement Pinterest publish safety dry-run harness",
-  "five_step_current": "QUESTION_SIMPLIFY_ACCELERATE",
+  "current_phase": "P5_SAFE_PREP_LAUNCH_GATE",
+  "current_task": "MCME-042",
+  "current_task_title": "Implement deterministic launch-readiness + privacy gate",
+  "five_step_current": "DELETE_SIMPLIFY",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain accepts MCME-041 before MCME-042; next real execution task remains MCME-010",
+  "next_gate": "Brain accepts MCME-042 before optional MCME-043; next real execution task remains MCME-010",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
-  "last_accepted_task": "MCME-040",
-  "last_accepted_commit": "531412be498f0602d4b779609b7a9b61e56228c8",
+  "last_accepted_task": "MCME-041",
+  "last_accepted_commit": "84082efbf72c7127dc4ddf6b9c85fd6708c420fb",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -120,6 +120,8 @@
     "gate_a_runtime_commit": "33250a61cda4ebd13acc293b738bcd86e6b31c98",
     "cash_truth_runtime": "ACCEPTED",
     "cash_truth_runtime_commit": "531412be498f0602d4b779609b7a9b61e56228c8",
-    "publish_safety_harness": "ACTIVE_MCME_041"
+    "publish_safety_harness": "ACCEPTED",
+    "publish_safety_commit": "84082efbf72c7127dc4ddf6b9c85fd6708c420fb",
+    "launch_readiness_gate": "ACTIVE_MCME_042"
   }
 }
