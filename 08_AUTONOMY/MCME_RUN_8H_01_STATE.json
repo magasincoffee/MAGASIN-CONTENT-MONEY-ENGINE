@@ -9,17 +9,18 @@
   "start_at": "2026-09-20T00:12:59+07:00",
   "deadline_at": "2026-09-20T08:12:59+07:00",
   "duration_seconds": 28800,
-  "current_checkpoint": "C5_GATE_A_READINESS_ACCEPTED",
-  "current_task": "MCME-006",
-  "next_task": "MCME-007_AFTER_MCME_006_ACCEPTED",
-  "five_step_current": "SIMPLIFY_ACCELERATE",
+  "current_checkpoint": "C6_CASH_TRUTH_ACCEPTED",
+  "current_task": "MCME-007",
+  "next_task": "MCME-008_AFTER_MCME_007_ACCEPTED",
+  "five_step_current": "ACCELERATE",
   "target_outcome": "FIRST_REAL_MONEY_LOOP_AND_IF_TIME_DEPLOYMENT_PLAN_READY",
   "accepted_tasks": [
     "MCME-001",
     "MCME-002",
     "MCME-003",
     "MCME-004",
-    "MCME-005"
+    "MCME-005",
+    "MCME-006"
   ],
   "repair_tasks": [],
   "rejected_tasks": [],
@@ -45,7 +46,7 @@
     "stop_at_original_deadline": true
   },
   "active_tasks": [
-    "MCME-006"
+    "MCME-007"
   ],
   "owner_approved_at": "2026-09-20T00:12:59+07:00",
   "mcme_001_acceptance": {
@@ -104,5 +105,23 @@
     "actual_gate_a_status": "OWNER_GATED_NOT_EXECUTED",
     "bounded_candidate_evaluations": 5,
     "invariant": "NO GATE A PASS = NO PIN PRODUCTION = NO GATE B = NO CONTENT FACTORY"
+  },
+  "mcme_006_acceptance": {
+    "accepted_at": "2026-09-20T01:04:23+07:00",
+    "canonical_commit": "df5d8701cd199f41736fc53d292b00aa987234bd",
+    "artifacts": [
+      "06_METRICS/MCME-006_CASH_TRUTH_EVENT_LEDGER.md",
+      "06_METRICS/mcme_cash_truth_v1.schema.json"
+    ],
+    "brain_decision": "ACCEPT",
+    "first_real_cash_definition": "Attributable payout funds actually received on Owner-authorized payout rail and reconciled to payable/payout record",
+    "evidence_levels": [
+      "L0",
+      "L1",
+      "L2",
+      "L3",
+      "L4"
+    ],
+    "schema_parse_ok": true
   }
 }
