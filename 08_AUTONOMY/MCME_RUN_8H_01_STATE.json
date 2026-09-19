@@ -9,12 +9,14 @@
   "start_at": "2026-09-20T00:12:59+07:00",
   "deadline_at": "2026-09-20T08:12:59+07:00",
   "duration_seconds": 28800,
-  "current_checkpoint": "RUNNING",
-  "current_task": "MCME-001",
-  "next_task": "MCME-002_AFTER_MCME_001_ACCEPTED",
-  "five_step_current": "QUESTION",
+  "current_checkpoint": "C1_PATHS_EVIDENCED",
+  "current_task": "MCME-002",
+  "next_task": "MCME-003_AFTER_MCME_002_ACCEPTED",
+  "five_step_current": "DELETE",
   "target_outcome": "FIRST_REAL_MONEY_LOOP_AND_IF_TIME_DEPLOYMENT_PLAN_READY",
-  "accepted_tasks": [],
+  "accepted_tasks": [
+    "MCME-001"
+  ],
   "repair_tasks": [],
   "rejected_tasks": [],
   "owner_boundaries": [],
@@ -39,7 +41,14 @@
     "stop_at_original_deadline": true
   },
   "active_tasks": [
-    "MCME-001"
+    "MCME-002"
   ],
-  "owner_approved_at": "2026-09-20T00:12:59+07:00"
+  "owner_approved_at": "2026-09-20T00:12:59+07:00",
+  "mcme_001_acceptance": {
+    "accepted_at": "2026-09-20T00:30:53+07:00",
+    "canonical_commit": "f63e5a4a3721f10d914ec85a39c42cb148b4c299",
+    "artifact": "01_MARKET_INTELLIGENCE/MCME-001_FIRST_CASH_PATH_EVIDENCE.md",
+    "brain_decision": "ACCEPT",
+    "key_result": "Affiliate commerce is the strongest evidence-backed first-cash route; native monetization removed from first-cash critical path; lead generation remains buyer-first conditional."
+  }
 }
