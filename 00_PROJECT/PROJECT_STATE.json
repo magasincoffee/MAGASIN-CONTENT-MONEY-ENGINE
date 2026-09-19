@@ -1,12 +1,12 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T03:21:04+07:00",
+  "updated_at": "2026-09-20T03:34:08+07:00",
   "status": "RUNNING_SAFE_PREP",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
-  "current_phase": "P5_SAFE_PREP_BEFORE_REAL_GATE_A",
-  "current_task": "MCME-039",
-  "current_task_title": "Materialize Gate A runtime contract",
+  "current_phase": "P5_SAFE_PREP_CASH_TRUTH_RUNTIME",
+  "current_task": "MCME-040",
+  "current_task_title": "Implement Cash Truth local MVP runtime",
   "five_step_current": "SIMPLIFY_ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain accepts MCME-039 before MCME-040; next real execution task remains MCME-010",
+  "next_gate": "Brain accepts MCME-040 before MCME-041; next real execution task remains MCME-010",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
-  "last_accepted_task": "MCME-009",
-  "last_accepted_commit": "a00861d7674abd3aa61c4b7d3d8aeb0648e62f4b",
+  "last_accepted_task": "MCME-039",
+  "last_accepted_commit": "33250a61cda4ebd13acc293b738bcd86e6b31c98",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -110,5 +110,10 @@
     "smallest_reliable_mvp": "local/private append-only JSONL + Cash Truth JSON Schema + validator + deterministic dedupe/reconciliation",
     "blocker": "REAL_OWNER_GATED_GATE_A_EVIDENCE"
   },
-  "real_execution_path_unchanged": true
+  "real_execution_path_unchanged": true,
+  "safe_prep": {
+    "gate_a_runtime_contract": "ACCEPTED",
+    "gate_a_runtime_commit": "33250a61cda4ebd13acc293b738bcd86e6b31c98",
+    "cash_truth_runtime": "ACTIVE_MCMЕ_040"
+  }
 }
