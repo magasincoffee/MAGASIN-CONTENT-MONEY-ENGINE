@@ -233,92 +233,153 @@ MCME-010 — Owner Pinterest property confirmation
 
 ## MCME-015 — Awin merchant candidate 2 evidence
 
-Same contract as MCME-013, but candidate slot = Awin/2.
-
-**Dependency:** MCME-014 MERCHANT_FAIL.  
+**Objective:** Owner checks the second and final bounded US fridge-storage merchant candidate on Awin.  
+**Five-Step stage:** ACCELERATE.  
+**Dependency/precondition:** MCME-014 = MERCHANT_FAIL.  
 **Executor:** OWNER.  
 **Execution class:** `OWNER_REQUIRED`.  
-**Bound:** this is the final Awin merchant slot.  
-**Next gate:** MCME-016.
+**Owner boundary:** merchant application/terms/account actions remain Owner-only.  
+**Input evidence/artifacts:** Awin NETWORK_READY evidence + merchant qualification template + candidate 1 FAIL record.  
+**Exact output:** sanitized Awin candidate-2 record with merchant/program, relationship state, US permission, Pinterest/social permission, direct/deep-link status, commissionable action, validation/reversal, payout feasibility, rights/disclosure, observed_at.  
+**Definition of Done:** candidate slot Awin/2 contains enough sanitized evidence for deterministic evaluation.  
+**STOP/FAIL condition:** pending → WAIT_OWNER; no third Awin merchant slot; terminal fail exhausts Awin merchant search.  
+**Reversible:** evidence record yes; merchant application may not be fully reversible.  
+**External side effect:** possible Owner-side merchant application only.  
+**Idempotency/reconciliation:** candidate identity is fixed to Awin/2 + sanitized merchant/program ID; no blind reapplication or duplicate candidate slot.  
+**Next gate unlocked on PASS/evidence complete:** MCME-016.
 
 ---
 
 ## MCME-016 — Evaluate Awin candidate 2
 
-Same evaluation contract as MCME-014.
-
-**Dependency:** MCME-015.  
+**Objective:** determine whether Awin candidate 2 produces a provisionally viable merchant money path or exhausts Awin.  
+**Five-Step stage:** ACCELERATE.  
+**Dependency/precondition:** MCME-015 evidence complete.  
 **Executor:** WORK.  
 **Execution class:** `READ_ONLY_EXTERNAL`, `REVERSIBLE_REPO_CHANGE`.  
-**STOP/FAIL:** candidate 2 fail exhausts Awin.  
-**Next gate:** provisional viable → MCME-027; Awin exhausted → MCME-017.
+**Owner boundary:** no login/application/legal/payment action.  
+**Input evidence/artifacts:** sanitized Awin candidate-2 record + `mcme.gate-a-evidence.v1`.  
+**Exact output:** PASS-TO-PAYOUT-READINESS / WAIT_OWNER / MERCHANT_FAIL with evidence statuses.  
+**Definition of Done:** every material merchant/tracking/validation/rights field is VERIFIED/UNKNOWN/BLOCKED/FAIL and Awin bounded outcome is explicit.  
+**STOP/FAIL condition:** candidate 2 FAIL exhausts Awin; UNKNOWN/BLOCKED cannot be promoted to PASS.  
+**Reversible:** repo evaluation can be superseded append-only by new evidence.  
+**External side effect:** no.  
+**Idempotency/reconciliation:** evaluation keyed by Awin/2 + evidence version/digest; repeated evaluation does not create a new merchant path.  
+**Next gate unlocked on PASS:** provisional viable → MCME-027; Awin exhausted → MCME-017.
 
 ---
 
 ## MCME-017 — Establish impact.com network relationship evidence
 
-Same network-relationship pattern as MCME-011.
-
-**Dependency:** Awin bounded path exhausted.  
+**Objective:** obtain real sanitized evidence that Owner can use impact.com after Awin bounded exhaustion.  
+**Five-Step stage:** ACCELERATE.  
+**Dependency/precondition:** MCME-016 records Awin exhausted.  
 **Executor:** OWNER.  
 **Execution class:** `OWNER_REQUIRED`.  
-**Owner boundary:** Owner handles account/legal/identity.  
-**Next gate:** MCME-018.
+**Owner boundary:** Owner performs join/login/legal/identity/account steps directly.  
+**Input evidence/artifacts:** confirmed Pinterest property + MCME-005 Owner Action Packet + Awin exhaustion record.  
+**Exact output:** sanitized impact.com network status: active/pending/rejected/blocked, property accepted yes/no/unknown, observed_at.  
+**Definition of Done:** enough real evidence exists for Work to classify impact.com relationship.  
+**STOP/FAIL condition:** pending → WAIT_OWNER; terminal incompatibility allows only the conditional Amazon path via MCME-018 result.  
+**Reversible:** evidence record yes; account/legal actions may not be.  
+**External side effect:** yes, only Owner-side account/legal setup.  
+**Idempotency/reconciliation:** one impact.com relationship keyed to Owner/property sanitized identity; never duplicate account creation.  
+**Next gate unlocked on evidence complete:** MCME-018.
 
 ---
 
 ## MCME-018 — Evaluate impact.com NETWORK_READY
 
-Same structure as MCME-012.
-
-**Dependency:** MCME-017.  
+**Objective:** ingest sanitized impact.com evidence and decide NETWORK_READY / WAIT_OWNER / FALLBACK-ELIGIBLE.  
+**Five-Step stage:** ACCELERATE.  
+**Dependency/precondition:** MCME-017 evidence.  
 **Executor:** WORK.  
 **Execution class:** `READ_ONLY_EXTERNAL`, `REVERSIBLE_REPO_CHANGE`.  
-**Next gate:** ready → MCME-019; terminal impact incompatibility → MCME-023.
+**Owner boundary:** no login/account mutation.  
+**Input evidence/artifacts:** sanitized impact.com relationship evidence + Gate A schema.  
+**Exact output:** Gate A evidence record + explicit impact.com network state transition.  
+**Definition of Done:** every material network/property field is classified and outcome is unambiguous.  
+**STOP/FAIL condition:** UNKNOWN/BLOCKED never PASS; terminal network incompatibility ends impact.com before merchant evaluation.  
+**Reversible:** repo record append-only/supersedable by evidence.  
+**External side effect:** no.  
+**Idempotency/reconciliation:** same sanitized network evidence reconciles to one relationship record.  
+**Next gate unlocked on PASS:** NETWORK_READY → MCME-019; terminal impact incompatibility → MCME-023.
 
 ---
 
 ## MCME-019 — impact.com merchant candidate 1 evidence
 
-Same merchant evidence contract as MCME-013.
-
-**Dependency:** MCME-018 NETWORK_READY.  
+**Objective:** Owner checks exactly one US fridge-storage merchant candidate on impact.com.  
+**Five-Step stage:** ACCELERATE.  
+**Dependency/precondition:** MCME-018 = NETWORK_READY.  
 **Executor:** OWNER.  
 **Execution class:** `OWNER_REQUIRED`.  
-**Candidate slot:** impact/1.  
-**Public-path hint:** OXO may be evaluated, but approval must not be assumed.  
-**Next gate:** MCME-020.
+**Owner boundary:** merchant application/terms are Owner-only.  
+**Input evidence/artifacts:** merchant qualification template; impact network-ready evidence; public OXO path may be considered but approval is not assumed.  
+**Exact output:** sanitized candidate impact/1 record with merchant/program, relationship, US allowed, Pinterest/social allowed, direct/deep-link permission, commissionable action, validation/reversal, payout feasibility, rights/disclosure, observed_at.  
+**Definition of Done:** impact/1 has enough sanitized evidence for deterministic evaluation.  
+**STOP/FAIL condition:** pending → WAIT_OWNER; candidate 2 must not be attempted until MCME-020 rejects candidate 1.  
+**Reversible:** evidence record yes; application may not be.  
+**External side effect:** possible Owner application only.  
+**Idempotency/reconciliation:** candidate slot fixed to impact/1 + sanitized merchant/program identity; no blind reapplication.  
+**Next gate unlocked on evidence complete:** MCME-020.
 
 ---
 
 ## MCME-020 — Evaluate impact.com candidate 1
 
-Same evaluation contract as MCME-014.
-
+**Objective:** determine provisional Gate-A viability of impact.com candidate 1.  
+**Five-Step stage:** ACCELERATE.  
+**Dependency/precondition:** MCME-019 evidence complete.  
 **Executor:** WORK.  
 **Execution class:** `READ_ONLY_EXTERNAL`, `REVERSIBLE_REPO_CHANGE`.  
-**Next gate:** provisional viable → MCME-027; fail → MCME-021.
+**Owner boundary:** no protected account action.  
+**Input evidence/artifacts:** sanitized impact/1 merchant record + Gate A schema.  
+**Exact output:** PASS-TO-PAYOUT-READINESS / WAIT_OWNER / MERCHANT_FAIL.  
+**Definition of Done:** all material merchant/tracking/terms evidence classified.  
+**STOP/FAIL condition:** critical FAIL rejects impact/1; UNKNOWN/BLOCKED does not pass.  
+**Reversible:** repo evaluation append-only/supersedable by later evidence.  
+**External side effect:** no.  
+**Idempotency/reconciliation:** evaluation keyed by impact/1 + evidence version/digest.  
+**Next gate unlocked on PASS:** provisional viable → MCME-027; fail → MCME-021.
 
 ---
 
 ## MCME-021 — impact.com merchant candidate 2 evidence
 
-Same contract as MCME-019.
-
-**Dependency:** MCME-020 fail.  
+**Objective:** Owner checks the second and final bounded US fridge-storage merchant candidate on impact.com.  
+**Five-Step stage:** ACCELERATE.  
+**Dependency/precondition:** MCME-020 = MERCHANT_FAIL.  
 **Executor:** OWNER.  
 **Execution class:** `OWNER_REQUIRED`.  
-**Candidate slot:** impact/2.  
-**Next gate:** MCME-022.
+**Owner boundary:** merchant application/terms handled by Owner only.  
+**Input evidence/artifacts:** impact NETWORK_READY evidence + candidate-1 FAIL record + merchant qualification template.  
+**Exact output:** sanitized impact/2 record with merchant/program, relationship, geography, Pinterest/social permission, link permissions, commissionable action, validation/reversal, payout feasibility, rights/disclosure, observed_at.  
+**Definition of Done:** final impact merchant slot has enough evidence for evaluation.  
+**STOP/FAIL condition:** pending → WAIT_OWNER; no third impact candidate.  
+**Reversible:** evidence record yes; application may not be.  
+**External side effect:** possible Owner application only.  
+**Idempotency/reconciliation:** candidate identity fixed to impact/2; do not duplicate application or slot.  
+**Next gate unlocked on evidence complete:** MCME-022.
 
 ---
 
 ## MCME-022 — Evaluate impact.com candidate 2
 
-Same evaluation contract as MCME-020.
-
-**STOP/FAIL:** fail exhausts impact.com bounded merchant search.  
-**Next gate:** provisional viable → MCME-027; exhausted → MCME-023.
+**Objective:** determine whether impact.com candidate 2 yields a provisional merchant path or exhausts impact.com.  
+**Five-Step stage:** ACCELERATE.  
+**Dependency/precondition:** MCME-021 evidence complete.  
+**Executor:** WORK.  
+**Execution class:** `READ_ONLY_EXTERNAL`, `REVERSIBLE_REPO_CHANGE`.  
+**Owner boundary:** no login/application/legal/payment action.  
+**Input evidence/artifacts:** sanitized impact/2 record + Gate A schema.  
+**Exact output:** PASS-TO-PAYOUT-READINESS / WAIT_OWNER / MERCHANT_FAIL with impact exhaustion state.  
+**Definition of Done:** all material evidence classified and bounded impact outcome explicit.  
+**STOP/FAIL condition:** candidate 2 FAIL exhausts impact.com; UNKNOWN/BLOCKED cannot pass.  
+**Reversible:** repo evaluation append-only/supersedable.  
+**External side effect:** no.  
+**Idempotency/reconciliation:** evaluation keyed by impact/2 + evidence version/digest.  
+**Next gate unlocked on PASS:** provisional viable → MCME-027; exhausted → MCME-023.
 
 ---
 
