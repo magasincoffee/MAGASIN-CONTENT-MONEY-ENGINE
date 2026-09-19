@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T00:12:59+07:00",
+  "updated_at": "2026-09-20T00:30:53+07:00",
   "status": "RUNNING",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
-  "current_phase": "P1_FIRST_CASH_PATH_SELECTION",
-  "current_task": "MCME-001",
-  "current_task_title": "Find the shortest credible path to first real cash — Affiliate vs Platform Monetization vs Lead Generation",
-  "five_step_current": "QUESTION",
+  "current_phase": "P1_DELETE_TO_ONE_MONEY_MODEL",
+  "current_task": "MCME-002",
+  "current_task_title": "DELETE to one first-cash money model, market/language, and distribution surface",
+  "five_step_current": "DELETE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": true,
@@ -33,8 +33,10 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain accepts MCME-001 evidence before MCME-002 may start",
+  "next_gate": "Brain accepts MCME-002 before final niche/content format selection in MCME-003",
   "active_run": "MCME-RUN-8H-01",
   "run_start_at": "2026-09-20T00:12:59+07:00",
-  "run_deadline_at": "2026-09-20T08:12:59+07:00"
+  "run_deadline_at": "2026-09-20T08:12:59+07:00",
+  "last_accepted_task": "MCME-001",
+  "last_accepted_commit": "f63e5a4a3721f10d914ec85a39c42cb148b4c299"
 }
