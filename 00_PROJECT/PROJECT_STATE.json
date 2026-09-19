@@ -1,8 +1,8 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T05:55:00+07:00",
-  "status": "RUNNING_MCME_010_OWNER_INTERACTIVE",
+  "updated_at": "2026-09-20T06:00:00+07:00",
+  "status": "WAIT_OWNER_INPUT_MCME_010",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
   "current_task": "MCME-010",
@@ -33,7 +33,7 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "MCME-010 must produce one real Owner-authorized Pinterest property confirmation before MCME-011 Awin access evidence",
+  "next_gate": "Owner must answer whether an existing Pinterest account will be used or a new one must be created",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
@@ -67,7 +67,7 @@
   "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
-    "actual_execution_status": "STARTING_MCME_010_OWNER_PINTEREST_PROPERTY",
+    "actual_execution_status": "MCME_010_WAIT_OWNER_ACCOUNT_CHOICE",
     "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
     "bounded_network_order": [
       "Awin",
@@ -182,5 +182,15 @@
       "foreign_phone_required": false,
       "foreign_phone_requirement_basis": "No bounded route has documented requirement for US/UK/foreign phone; provider-specific +84 confirmation remains where noted."
     }
+  },
+  "mcme_010": {
+    "status": "WAIT_OWNER_INPUT",
+    "owner_question": "Do you already have a Pinterest account you want to use for this project?",
+    "allowed_answers": [
+      "CÓ",
+      "CHƯA"
+    ],
+    "next_action": "Work guides either reuse/convert existing account or create exactly one truthful Pinterest account",
+    "mcme_011_blocked": true
   }
 }
