@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T05:08:15+07:00",
-  "status": "WAIT_OWNER",
+  "updated_at": "2026-09-20T05:15:00+07:00",
+  "status": "WAIT_OWNER_RESEARCH_GATE",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
-  "current_phase": "P6_READY_FOR_REAL_GATE_A",
+  "current_phase": "P6_VIETNAM_ACCESS_CASHOUT_GATE",
   "current_task": null,
   "current_task_title": null,
-  "five_step_current": "WAIT_OWNER_BEFORE_REAL_EXECUTION",
+  "five_step_current": "QUESTION",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": true,
@@ -33,7 +33,7 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Owner starts MCME-010 by confirming a real authorized Pinterest property with sanitized evidence",
+  "next_gate": "MCME-044 Vietnam Owner Access + Cash-Out Feasibility must be evaluated before treating the real affiliate path as executable",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
@@ -96,7 +96,7 @@
   },
   "core_run_package_status": "COMPLETE",
   "whole_8h_run_complete": true,
-  "next_real_execution_task": "MCME-010 Owner Pinterest property confirmation",
+  "next_real_execution_task": "MCME-044 Vietnam Owner Access + Cash-Out Feasibility Gate",
   "early_finish_extension": {
     "eligible": true,
     "active": false,
@@ -114,7 +114,7 @@
     "smallest_reliable_mvp": "local/private append-only JSONL + Cash Truth JSON Schema + validator + deterministic dedupe/reconciliation",
     "blocker": "REAL_OWNER_GATED_GATE_A_EVIDENCE"
   },
-  "real_execution_path_unchanged": true,
+  "real_execution_path_unchanged": false,
   "safe_prep": {
     "gate_a_runtime_contract": "ACCEPTED",
     "gate_a_runtime_commit": "33250a61cda4ebd13acc293b738bcd86e6b31c98",
@@ -135,5 +135,21 @@
       "launch": "NOT_READY",
       "real_click_sale_commission_cash": "NONE_VERIFIED"
     }
+  },
+  "pre_gate_before_mcme_010": "MCME-044",
+  "owner_access_cashout_gate": {
+    "status": "REQUIRED_NOT_YET_WORK_VERIFIED",
+    "artifact": "00_PROJECT/VIETNAM_OWNER_ACCESS_AND_CASHOUT_GATE_V1.md",
+    "owner_residence": "Vietnam",
+    "foreign_phone_required": "NOT_ASSUMED",
+    "owner_mobile_phone_required_by_some_services": true,
+    "current_key_findings": {
+      "pinterest": "business signup appears email-first; phone optional generally; SMS 2FA needs phone",
+      "impact_com": "standard partner signup includes mobile verification",
+      "amazon_associates": "payment-detail access requires mobile OTP even if signup had no phone",
+      "awin": "phone requirement still UNKNOWN",
+      "payoneer": "valid mobile phone required for registration/verification; Vietnam-specific guidance exists"
+    },
+    "pass_definition": "At least one truthful Vietnam-accessible affiliate + payout route is verified end-to-end enough to make first-cash execution credible"
   }
 }
