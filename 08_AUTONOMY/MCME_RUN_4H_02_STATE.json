@@ -8,20 +8,21 @@
   "start_at": "2026-09-20T03:21:04+07:00",
   "deadline_at": "2026-09-20T07:21:04+07:00",
   "duration_seconds": 14400,
-  "current_checkpoint": "MCME_041_ACCEPTED",
-  "current_task": "MCME-042",
-  "next_task": "MCME-043_AFTER_MCME_042_ACCEPTED_IF_TIME_REMAINS",
+  "current_checkpoint": "MCME_042_ACCEPTED",
+  "current_task": "MCME-043",
+  "next_task": "STOP_AFTER_MCME_043_OR_AT_HARD_DEADLINE",
   "active_tasks": [
-    "MCME-042"
+    "MCME-043"
   ],
   "accepted_tasks": [
     "MCME-039",
     "MCME-040",
-    "MCME-041"
+    "MCME-041",
+    "MCME-042"
   ],
   "repair_tasks": [],
   "rejected_tasks": [],
-  "five_step_current": "DELETE_SIMPLIFY",
+  "five_step_current": "QUESTION_DELETE_ACCELERATE",
   "target_outcome": "REMOVE_SAFE_PREP_BLOCKERS_BEFORE_OWNER_GATE_A",
   "next_real_execution_task": "MCME-010 Owner Pinterest property confirmation",
   "real_execution_path_unchanged": true,
@@ -98,6 +99,21 @@
       "only CONFIRMED_ABSENT can unlock bounded retry",
       "auth/MFA/CAPTCHA-like condition fails closed",
       "mock/dry-run only; no real Pinterest side effect"
+    ]
+  },
+  "mcme_042_acceptance": {
+    "accepted_at": "2026-09-20T04:17:59+07:00",
+    "canonical_commit": "3d532631afe5a1d88564d4c72a4d74cb2ee93228",
+    "brain_decision": "ACCEPT",
+    "tests": "24/24 PASS",
+    "contract": "READY_OR_NOT_READY_FAIL_CLOSED",
+    "current_realistic_result": "NOT_READY",
+    "invariants": [
+      "READY does not authorize publish",
+      "exactly three Pins required",
+      "critical UNKNOWN/BLOCKED/FAIL means NOT_READY",
+      "privacy findings fail closed",
+      "current actual project remains NOT_READY"
     ]
   }
 }
