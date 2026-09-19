@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T05:15:00+07:00",
-  "status": "WAIT_OWNER_RESEARCH_GATE",
+  "updated_at": "2026-09-20T05:20:00+07:00",
+  "status": "RUNNING_MCME_044",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P6_VIETNAM_ACCESS_CASHOUT_GATE",
-  "current_task": null,
-  "current_task_title": null,
-  "five_step_current": "QUESTION",
+  "current_task": "MCME-044",
+  "current_task_title": "Vietnam Owner Access + Cash-Out Feasibility Gate",
+  "five_step_current": "QUESTION_DELETE_SIMPLIFY",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": true,
@@ -33,7 +33,7 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "MCME-044 Vietnam Owner Access + Cash-Out Feasibility must be evaluated before treating the real affiliate path as executable",
+  "next_gate": "Brain must ACCEPT MCME-044 before MCME-010 is treated as next executable Owner task",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
@@ -138,7 +138,7 @@
   },
   "pre_gate_before_mcme_010": "MCME-044",
   "owner_access_cashout_gate": {
-    "status": "REQUIRED_NOT_YET_WORK_VERIFIED",
+    "status": "ACTIVE",
     "artifact": "00_PROJECT/VIETNAM_OWNER_ACCESS_AND_CASHOUT_GATE_V1.md",
     "owner_residence": "Vietnam",
     "foreign_phone_required": "NOT_ASSUMED",
@@ -150,6 +150,8 @@
       "awin": "phone requirement still UNKNOWN",
       "payoneer": "valid mobile phone required for registration/verification; Vietnam-specific guidance exists"
     },
-    "pass_definition": "At least one truthful Vietnam-accessible affiliate + payout route is verified end-to-end enough to make first-cash execution credible"
+    "pass_definition": "At least one truthful Vietnam-accessible affiliate + payout route is verified end-to-end enough to make first-cash execution credible",
+    "owner_has_vietnam_mobile": true,
+    "owner_mobile_note": "Owner confirms a real Vietnam mobile number is available; no foreign phone is required unless a provider explicitly proves otherwise."
   }
 }
