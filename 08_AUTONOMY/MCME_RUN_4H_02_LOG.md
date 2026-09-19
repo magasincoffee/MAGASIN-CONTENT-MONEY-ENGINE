@@ -45,3 +45,19 @@ No MCME-040 dispatch before Brain accepts MCME-039.
 - Reversals and genuine later cash debits remain append-only events.
 - Canonical schema change reviewed: exactly one decimal-regex bugfix; ontology/event types/money-state semantics unchanged.
 - MCME-041 is now the only authorized active Work task.
+
+
+## BRAIN REVIEW — MCME-041 ACCEPTED — 2026-09-20T04:03:35+07:00
+
+- Canonical commit / current main HEAD: 84082efbf72c7127dc4ddf6b9c85fd6708c420fb
+- Mock publish safety harness: ACCEPT.
+- Reported tests: 17/17 PASS.
+- Deterministic publish identity accepted.
+- PREPARED latch persists before SEND_STARTED.
+- CONFIRMED never resends.
+- Ambiguous/unknown outcome blocks and reconciles before any retry.
+- Only CONFIRMED_ABSENT can unlock one bounded retry.
+- Send cap = 2 total attempts (initial + at most one retry).
+- BLOCKED_AUTH is fail-closed; Owner resolution remains external.
+- No browser/API/network/Pinterest side effect exists in MCME-041.
+- MCME-042 is now the only authorized active Work task.
