@@ -83,3 +83,26 @@ Five-Step: ACCELERATE
 Status: ACTIVE in MCME-RUN-8H-01.
 
 Build the dependency-correct future task sequence from current L0 evidence to FIRST REAL CASH. Owner/account actions are specified but not executed. SaydiVoice/video/24-7 automation remain deferred until evidence justifies them.
+
+
+### MCME-044 — Vietnam Owner Access + Cash-Out Feasibility Gate
+Five-Step: QUESTION → DELETE → SIMPLIFY
+Status: NEXT HARD GATE.
+
+Purpose:
+Verify that the Owner, residing in Vietnam, can truthfully access the selected platform/network/security flow and ultimately receive affiliate funds into a Vietnam-accessible payout rail.
+
+Must verify:
+- Pinterest / Awin / impact.com / Amazon / Payoneer account-access requirements;
+- foreign phone vs any real phone requirement;
+- viability of a Vietnam +84 mobile number;
+- email/authenticator fallback where officially supported;
+- Vietnam bank / Payoneer / PayPal / SWIFT payout routes;
+- KYC/tax/payment prerequisites;
+- fees/FX/payout timing only from authoritative sources or actual Owner evidence;
+- final Proof-of-Cash-Out plan.
+
+Hard rule:
+No fake foreign phone/identity. No UNKNOWN→PASS.
+
+MCME-010 remains the first Pinterest-property task after/alongside this gate, but content production/publish remains blocked until the payout/access path is credible.
