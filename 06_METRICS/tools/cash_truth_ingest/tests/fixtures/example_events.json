@@ -1,0 +1,34 @@
+{
+  "fixture_notice": "EXAMPLE / NOT REAL ECONOMICS",
+  "base_event": {
+    "schema_version": "mcme.cash-truth-event.v1",
+    "event_id": "EXAMPLE-PENDING",
+    "event_type": "COMMISSION_PENDING",
+    "experiment_id": "EXAMPLE-NOT-REAL-ECONOMICS",
+    "network": "Awin",
+    "merchant": "EXAMPLE MERCHANT — NOT REAL",
+    "program_id_sanitized": "EXAMPLE-PROGRAM",
+    "source": {
+      "source_system": "AFFILIATE_NETWORK",
+      "source_type": "TRANSACTION_RECORD",
+      "source_record_id_sanitized": "COMMISSION-EXAMPLE-1",
+      "source_reference_sanitized": "fixture:EXAMPLE-PENDING",
+      "provider_state_label_sanitized": "PENDING"
+    },
+    "occurred_at": "2026-09-20T00:00:00+07:00",
+    "observed_at": "2026-09-20T00:00:00+07:00",
+    "evidence": {
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence_reference_sanitized": "fixture:EXAMPLE-NOT-REAL-ECONOMICS",
+      "notes_sanitized": "EXAMPLE / NOT REAL ECONOMICS"
+    },
+    "idempotency": {
+      "strategy": "PROVIDER_STATE_VERSION",
+      "key_sanitized": null,
+      "provider_effective_at": "2026-09-20T00:00:00+07:00"
+    },
+    "canonical_money_state": "PENDING",
+    "money": {"amount_decimal": "10.50", "currency": "USD"}
+  }
+}
