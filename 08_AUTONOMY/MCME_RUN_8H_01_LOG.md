@@ -90,3 +90,19 @@ Run remains inert until Owner approval.
 - This deletion is accepted because voice/video add production and rights burden without being required to test content → click → merchant action → tracked commission.
 - Merchant path: impact.com/OXO has a public verified path; Awin remains first acquisition attempt but actual advertiser/account approval is UNKNOWN.
 - MCME-004 is now the only authorized active Work task.
+
+
+## BRAIN REVIEW — MCME-004 ACCEPTED — 2026-09-20T00:51:37+07:00
+
+- Result classification: ACCEPT.
+- Canonical artifact: 07_EXPERIMENTS/MCME-004_FIRST_REAL_MONEY_EXPERIMENT.md
+- Canonical commit / current main HEAD: 29f203595afcd63a075d5f62f8638c22169b3c38
+- Selected sub-problem: Fridge storage / fit.
+- Gate A is mandatory before production: real Owner/property eligibility → Pinterest/social permission → joined merchant → trackable link → commissionable action → validation/reversal → payout feasibility.
+- Minimum Gate B batch: 3 static 2:3 original checklist Pins.
+- First commercial signal: first genuine qualified outbound click.
+- Scale cannot be considered from views/clicks alone; tracked merchant action + attributed commission is the minimum scale-discussion gate.
+- SaydiVoice/video remain DELETED.
+- Five-Step correction: MCME-004 explicitly states MCME-005 must not specify a Content Factory from assumptions. Current run has no real Owner-authorized Gate A/account evidence and no Level-1 interaction proof.
+- Therefore original MCME-005 factory-spec task is DELETED for this run and replaced with MCME-005 Gate A Execution Readiness / Evidence Contract.
+- No Owner action is executed; only the future Gate A workflow, evidence schema, fail-closed checks and handoff package are prepared.
