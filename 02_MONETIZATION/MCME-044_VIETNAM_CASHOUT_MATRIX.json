@@ -1,0 +1,331 @@
+{
+  "schema_version": "mcme.vietnam-cashout-matrix.v1",
+  "task_id": "MCME-044",
+  "observed_at": "2026-09-20T05:45:00+07:00",
+  "owner_context": {
+    "residence": "Vietnam",
+    "owner_controls_real_vietnam_mobile_plus84": true,
+    "foreign_phone_available": false,
+    "foreign_phone_assumed_required": false
+  },
+  "status_enum": [
+    "VERIFIED",
+    "OWNER_CONFIRMATION_REQUIRED",
+    "UNKNOWN",
+    "BLOCKED"
+  ],
+  "cash_settled_definition": "funds actually received on Owner-authorized payout rail and reconciled to affiliate payout evidence",
+  "routes": [
+    {
+      "id": "PINTEREST_ACCESS",
+      "status": "OWNER_CONFIRMATION_REQUIRED",
+      "residency_status": "DOCUMENTED_SIGNUP_FLOW_NO_FOREIGN_RESIDENCY_REQUIREMENT_FOUND; ACTUAL_OWNER_PROPERTY_UNCONFIRMED",
+      "email_signup": "VERIFIED_EMAIL_PASSWORD_AGE_FOR_NEW_BUSINESS_ACCOUNT",
+      "phone_requirement": "PHONE_OPTIONAL_FOR_ACCOUNT_GENERAL; SMS_PHONE_REQUIRED_IF_2FA_ENABLED",
+      "plus84_status": "OWNER_CONFIRMATION_REQUIRED_FOR_SMS_2FA; NOT_REQUIRED_FOR_INITIAL_BUSINESS_SIGNUP",
+      "foreign_phone_required": "NO_DOCUMENTED_REQUIREMENT",
+      "auth_options": [
+        "email confirmation",
+        "password",
+        "SMS 2FA if enabled"
+      ],
+      "kyc_tax_requirement": "NONE_DOCUMENTED_FOR_BASIC_BUSINESS_ACCOUNT_CREATION",
+      "payout_rail": "NOT_APPLICABLE_DISTRIBUTION_ONLY",
+      "merchant_property_constraints": "business account/property ownership must be confirmed in MCME-010",
+      "blocker": "actual Owner property not yet confirmed; Pinterest 2FA not available in all regions and +84 SMS support not explicitly documented",
+      "next_proof": "MCME-010 Owner confirms/creates one truthful Pinterest property; return sanitized property status only",
+      "sources": [
+        "https://help.pinterest.com/en/business/article/get-a-business-account",
+        "https://help.pinterest.com/en/article/how-pinterest-uses-your-phone-number",
+        "https://help.pinterest.com/en/article/two-factor-authentication"
+      ]
+    },
+    {
+      "id": "AWIN_ACCESS",
+      "status": "OWNER_CONFIRMATION_REQUIRED",
+      "residency_status": "publisher form requests Tax Residency and Awin describes global publishers; Vietnam option not explicitly proven in official text retrieved",
+      "email_signup": "EMAIL_IS_LOGIN/ACTIVATION_IDENTIFIER; publisher signup flow requires additional account/profile fields",
+      "phone_requirement": "Awin user-account setup page requests telephone in international format; publisher signup guide does not clearly state whether phone is mandatory in this exact flow",
+      "plus84_status": "OWNER_CONFIRMATION_REQUIRED",
+      "foreign_phone_required": "NO_DOCUMENTED_REQUIREMENT",
+      "auth_options": [
+        "email activation",
+        "authenticator-app 2SV initiated via email"
+      ],
+      "kyc_tax_requirement": "tax residency collected; further legal/payment verification may be required",
+      "payout_rail": "international payouts handled through Payoneer integration from Awin",
+      "merchant_property_constraints": "promotional space may be a social media profile; each advertiser program has its own approval/region/terms",
+      "blocker": "Vietnam tax-residency option and +84 acceptance in Owner's exact publisher flow need real signup confirmation",
+      "next_proof": "Owner attempts Awin publisher signup with truthful Vietnam tax residency and real +84 only if requested; return sanitized SUCCESS/PENDING/BLOCKED",
+      "sources": [
+        "https://success.awin.com/articles/en_US/Knowledge/How-do-I-join-Awin-as-a-Publisher",
+        "https://ui.awin.com/publisher-signup/en/awin/step1",
+        "https://ui.awin.com/user-signup?setLocale=en_GB",
+        "https://success.awin.com/articles/en_US/Knowledge/How-to-activate-and-deactivate-the-Two-Step-Verification"
+      ]
+    },
+    {
+      "id": "AWIN_PAYOUT_TO_VN",
+      "status": "OWNER_CONFIRMATION_REQUIRED",
+      "residency_status": "international publisher payments supported through Payoneer; destination-country availability must be confirmed in Owner Awin payment setup",
+      "email_signup": "NOT_APPLICABLE",
+      "phone_requirement": "Awin payment 2SV uses authenticator app; Payoneer/Awin setup may request contact information",
+      "plus84_status": "OWNER_CONFIRMATION_REQUIRED_IN_AWIN-PAYONEER_SETUP",
+      "foreign_phone_required": "NO_DOCUMENTED_REQUIREMENT",
+      "kyc_tax_requirement": "Awin tax/payment details + Payoneer payment onboarding as prompted",
+      "payout_rail": "Awin -> Payoneer Global Bank Transfer -> local-currency transfer or SWIFT -> Vietnam bank",
+      "currencies": [
+        "USD",
+        "EUR",
+        "GBP",
+        "AUD",
+        "CAD",
+        "SEK",
+        "DKK",
+        "NOK",
+        "CHF",
+        "PLN",
+        "local currency where Payoneer route supports it"
+      ],
+      "threshold_cycle": "minimum threshold: USD 20 (or stated currency minimum); Awin processes publisher payments twice monthly",
+      "fees_fx": "exact route fee/FX not fixed in public Awin docs; conversion and third-party costs may apply; Owner sees route-specific terms during setup",
+      "rejection_return": "incorrect/unsupported bank details can delay/fail payment; payment history/self-billing evidence must be reconciled to bank receipt",
+      "blocker": "Awin UI destination=Vietnam and Owner's specific Vietnam bank compatibility not yet observed",
+      "next_proof": "after Awin relationship exists, Owner opens Payment Details, selects Vietnam destination truthfully, completes only required private setup locally, returns sanitized route/currency/provider status",
+      "sources": [
+        "https://success.awin.com/articles/en_US/Knowledge/what-are-the-available-payment-methods",
+        "https://success.awin.com/articles/en_US/Knowledge/International-Payment-Method-FAQs",
+        "https://success.awin.com/articles/en_US/Knowledge/How-to-set-up-a-Payoneer-Account",
+        "https://success.awin.com/articles/en_US/Knowledge/What-are-the-payment-thresholds",
+        "https://success.awin.com/articles/en_US/Knowledge/When-will-I-receive-payment"
+      ]
+    },
+    {
+      "id": "IMPACT_ACCESS",
+      "status": "OWNER_CONFIRMATION_REQUIRED",
+      "residency_status": "VERIFIED_VIETNAM_INCLUDED_IN_SOUTHERN_AND_SOUTHEAST_ASIA_CONTRACTING_REGION",
+      "email_signup": "EMAIL_OR_SOCIAL_SIGNUP_SUPPORTED_BUT_EMAIL_ALONE_NOT_SUFFICIENT; STEP_2_MOBILE_VERIFICATION_REQUIRED",
+      "phone_requirement": "MOBILE_VERIFICATION_REQUIRED_DURING_STANDARD_SIGNUP",
+      "plus84_status": "OWNER_CONFIRMATION_REQUIRED",
+      "foreign_phone_required": "NO_DOCUMENTED_REQUIREMENT",
+      "auth_options": [
+        "mobile verification during signup",
+        "email 2FA default on applicable account-user flow",
+        "authenticator app recommended"
+      ],
+      "kyc_tax_requirement": "non-US partner tax information required for marketplace/payment; identity verification may be required for banking/payment/property verification",
+      "payout_rail": "bank EFT/wire or PayPal depending country; route B uses bank wire/EFT, not PayPal by default",
+      "merchant_property_constraints": "promotion methods/properties must be verified; brand marketplace and individual brands may approve/reject",
+      "blocker": "+84 SMS delivery in actual signup is not explicitly documented",
+      "next_proof": "if Awin bounded path fails, Owner signs up to impact.com with Vietnam country/region and real +84; return sanitized mobile-verification/account status",
+      "sources": [
+        "https://help.impact.com/partner/what-would-you-like-to-learn-about/getting-started/sign-up-as-a-partner-on-impactcom",
+        "https://help.impact.com/other/reference-documentation/understanding-impactcoms-trading-models",
+        "https://help.impact.com/partner/what-would-you-like-to-learn-about/account-management/account-settings/manage-2fa-for-partner-accounts",
+        "https://help.impact.com/partner/what-would-you-like-to-learn-about/account-management/account-settings/user-management/verify-your-identity-as-a-partner"
+      ]
+    },
+    {
+      "id": "IMPACT_PAYOUT_TO_VN",
+      "status": "OWNER_CONFIRMATION_REQUIRED",
+      "residency_status": "impact.com explicitly contracts partners in Vietnam region; USD withdrawal support lists all bank-account locations",
+      "email_signup": "NOT_APPLICABLE",
+      "phone_requirement": "phone verification may be required for payout setup/2FA",
+      "plus84_status": "OWNER_CONFIRMATION_REQUIRED",
+      "foreign_phone_required": "NO_DOCUMENTED_REQUIREMENT",
+      "kyc_tax_requirement": "tax documents + approved bank details; identity verification can be required before payment",
+      "payout_rail": "impact.com -> international wire/EFT -> Owner Vietnam bank; PayPal optional but not required for this route",
+      "currencies": [
+        "USD supported for all bank account locations; other currencies depend on supported location/method"
+      ],
+      "threshold_cycle": "minimum Autopay threshold USD 10 equivalent; threshold-based or fixed-day schedule",
+      "fees_fx": "wire fee is currency-specific and displayed in platform; intermediary-bank limitations apply; PayPal would be 2% but is not selected route",
+      "rejection_return": "invalid bank details, compliance review, intermediary-bank use or security flags can hold/fail/return withdrawals",
+      "blocker": "specific Owner Vietnam bank's ability to receive selected wire/currency must be confirmed during real bank setup; +84 signup verification still unproven",
+      "next_proof": "Owner confirms +84 signup; later private bank setup verifies Vietnam bank location/currency and returns sanitized payment-method status",
+      "sources": [
+        "https://help.impact.com/partner/what-would-you-like-to-learn-about/platform-features/finance/payments-withdrawals-and-balance/how-do-partners-get-paid",
+        "https://help.impact.com/partner/what-would-you-like-to-learn-about/platform-features/finance/payments-withdrawals-and-balance/withdraw-funds-to-your-bank-account",
+        "https://help.impact.com/other/reference-documentation/supported-currencies-and-timezones",
+        "https://help.impact.com/partner/what-would-you-like-to-learn-about/platform-features/finance/payment-requirements-explained-for-partners"
+      ]
+    },
+    {
+      "id": "AMAZON_ACCESS_CONDITIONAL",
+      "status": "OWNER_CONFIRMATION_REQUIRED",
+      "residency_status": "official tax docs explicitly cover non-US Associates; Vietnam-specific signup eligibility not explicitly documented",
+      "email_signup": "Amazon credentials used; payment-detail access has separate phone OTP security",
+      "phone_requirement": "phone may be absent initially, but viewing/editing payment details requires OTP to registered mobile",
+      "plus84_status": "OWNER_CONFIRMATION_REQUIRED",
+      "foreign_phone_required": "NO_DOCUMENTED_REQUIREMENT",
+      "auth_options": [
+        "Amazon account credentials",
+        "payment-details OTP by SMS or voice call to registered mobile"
+      ],
+      "kyc_tax_requirement": "tax interview required; non-US Associates may need W-8BEN/other tax information before payment",
+      "payout_rail": "conditional; see AMAZON_PAYOUT_TO_VN_CONDITIONAL",
+      "merchant_property_constraints": "Amazon Associates site/social property eligibility and program approval rules apply",
+      "blocker": "Vietnam signup and +84 payment-OTP not directly proven in official docs",
+      "next_proof": "do not test unless Awin + impact bounded paths fail; then Owner attempts truthful Vietnam eligibility flow",
+      "sources": [
+        "https://affiliate-program.amazon.com/help/node/topic/GP75GP58NT9U34YH",
+        "https://affiliate-program.amazon.com/help/node/topic/GPFZ6W6CF4E5BD9V",
+        "https://affiliate-program.amazon.com/help/node/topic/GYJB2LE2AB473W2L"
+      ]
+    },
+    {
+      "id": "AMAZON_PAYOUT_TO_VN_CONDITIONAL",
+      "status": "BLOCKED",
+      "residency_status": "non-US payment is supported generally, but current Amazon international direct-deposit country list does not include Vietnam",
+      "email_signup": "NOT_APPLICABLE",
+      "phone_requirement": "payment-method page OTP required",
+      "plus84_status": "OWNER_CONFIRMATION_REQUIRED",
+      "foreign_phone_required": "NO_DOCUMENTED_REQUIREMENT",
+      "kyc_tax_requirement": "tax information must be valid before payment",
+      "payout_rail": "direct deposit to Vietnam is not verified by current supported-country list; gift card is not cash; paper check is available internationally but Vietnam-bank cashability is not established by Amazon",
+      "currencies": [
+        "USD for US Associates payments; supported international DD currencies are limited by Amazon list"
+      ],
+      "threshold_cycle": "monthly, approximately 60 days after month end; DD/gift generally USD 10 minimum, check USD 100 minimum",
+      "fees_fx": "check fee waived for certain international addresses when direct deposit unavailable; local bank/check collection fees are outside Amazon evidence",
+      "rejection_return": "invalid payment/tax data can delay or hold payment",
+      "blocker": "no official evidence of direct deposit to a Vietnam bank; paper-check-to-Vietnam-bank CASH_SETTLED path unverified",
+      "next_proof": "do not use as first-cash fallback unless future official Amazon docs or Owner bank proof establishes a Vietnam cash rail",
+      "sources": [
+        "https://affiliate-program.amazon.com/help/node/topic/G8VUMS6GTBCR9RGV",
+        "https://affiliate-program.amazon.com/help/node/topic/GGD9H76RMDDNEWAE",
+        "https://affiliate-program.amazon.com/help/operating/policies",
+        "https://affiliate-program.amazon.com/help/topic/t3/a3"
+      ]
+    },
+    {
+      "id": "PAYONEER_VN_ACCESS",
+      "status": "VERIFIED",
+      "residency_status": "VERIFIED_VIETNAM_IN_OFFICIAL_2026_INDIVIDUAL_AND_BUSINESS_GUIDES",
+      "email_signup": "email required; individual guide includes email verification",
+      "phone_requirement": "VALID_MOBILE_REQUIRED",
+      "plus84_status": "VERIFIED; official Vietnam guide says +84 is prefilled and owner enters number without leading zero",
+      "foreign_phone_required": "NO",
+      "auth_options": [
+        "email verification",
+        "OTP by WhatsApp or SMS to Vietnam +84",
+        "two-step verification for certain account actions"
+      ],
+      "kyc_tax_requirement": "identity/address verification and bank ownership/details as applicable; individual/business documentation differs",
+      "payout_rail": "Payoneer account/partner integration depending route",
+      "blocker": null,
+      "next_proof": "Owner only performs real Payoneer setup if winning path requires it; keep all identity/bank values private",
+      "sources": [
+        "https://www.payoneer.com/vi/resources/how-to-use-payoneer/payoneer-registration-guide-for-individual-entrepreneurs/",
+        "https://www.payoneer.com/vi/resources/instructions-for-registering-to-a-payoneer-account/",
+        "https://www.payoneer.com/vi/about/security-center/"
+      ]
+    },
+    {
+      "id": "PAYONEER_TO_VN_BANK",
+      "status": "VERIFIED",
+      "residency_status": "Vietnam-specific Payoneer guidance supports linking and withdrawing to Vietnam bank accounts",
+      "email_signup": "NOT_APPLICABLE",
+      "phone_requirement": "security verification remains tied to Owner account/mobile as required",
+      "plus84_status": "VERIFIED_FOR_PAYONEER_VN_ACCOUNT",
+      "foreign_phone_required": "NO",
+      "kyc_tax_requirement": "bank account owner/name and identity/address verification must match as required",
+      "payout_rail": "Payoneer -> Owner Vietnam bank; VND or eligible foreign-currency account depending actual setup",
+      "currencies": [
+        "VND documented in Vietnam individual guide",
+        "USD/EUR/GBP possible where Owner has eligible foreign-currency account; exact availability is account/bank-specific"
+      ],
+      "threshold_cycle": "withdrawal limits/availability are account/region specific; most withdrawals described as same day to two business days",
+      "fees_fx": "fee and exchange rate displayed before confirmation; pricing varies by currency/route",
+      "rejection_return": "bank/account mismatches can prevent or delay withdrawal",
+      "blocker": "specific Owner bank acceptance and exact fee/FX remain OWNER_CONFIRMATION_REQUIRED at real setup, but generic Vietnam-bank rail is documented",
+      "next_proof": "when used, retain sanitized transfer proof + receiving bank posted credit evidence",
+      "sources": [
+        "https://www.payoneer.com/vi/resources/how-to-use-payoneer/payoneer-registration-guide-for-individual-entrepreneurs/",
+        "https://www.payoneer.com/vi/withdraw-funds/",
+        "https://www.payoneer.com/vi/resources/business/cach-rut-tien-tu-payoneer-ve-tai-khoan-ngan-hang-cua-ban/",
+        "https://www.payoneer.com/vi/about/pricing/"
+      ]
+    },
+    {
+      "id": "SWIFT_BANK_RAIL_VN",
+      "status": "OWNER_CONFIRMATION_REQUIRED",
+      "residency_status": "providers document SWIFT/international-wire routes; specific Vietnam bank receiving capability is bank-specific",
+      "phone_requirement": "NOT_APPLICABLE_AT_RAIL_LEVEL",
+      "plus84_status": "NOT_APPLICABLE",
+      "foreign_phone_required": "NO",
+      "payout_rail": "Awin/Payoneer or impact.com -> SWIFT/international wire -> Owner Vietnam bank",
+      "currencies": [
+        "USD",
+        "EUR",
+        "GBP and other provider-supported wire currencies"
+      ],
+      "fees_fx": "provider fee + possible correspondent/intermediary/recipient-bank fees; exact amount must be observed, not invented",
+      "blocker": "Owner's specific bank/currency account and incoming-SWIFT handling not yet verified",
+      "next_proof": "Owner confirms with own bank or during real payment setup; return only sanitized supported-currency/SWIFT-receiving status",
+      "sources": [
+        "https://success.awin.com/articles/en_US/Knowledge/International-Payment-Method-FAQs",
+        "https://help.impact.com/partner/what-would-you-like-to-learn-about/platform-features/finance/payments-withdrawals-and-balance/withdraw-funds-to-your-bank-account",
+        "https://help.impact.com/partner/what-would-you-like-to-learn-about/platform-features/finance/payments-withdrawals-and-balance/limitations-of-withdrawals-via-intermediary-banks"
+      ]
+    }
+  ],
+  "route_decisions": [
+    {
+      "id": "ROUTE_A",
+      "chain": "Pinterest -> Awin -> Awin Payoneer/GBT -> Vietnam bank -> CASH_SETTLED",
+      "status": "OWNER_CONFIRMATION_REQUIRED",
+      "decision": "KEEP_FIRST_ATTEMPT",
+      "critical_unknowns": [
+        "Awin exact Vietnam tax-residency acceptance in Owner signup flow",
+        "Awin +84 acceptance/phone requirement in exact publisher flow",
+        "Awin payment setup destination Vietnam + Owner bank compatibility"
+      ],
+      "next_owner_proof": "MCME-010 Pinterest property first; then MCME-011 Awin truthful signup/access evidence"
+    },
+    {
+      "id": "ROUTE_B",
+      "chain": "Pinterest -> impact.com -> USD wire/EFT -> Vietnam bank -> CASH_SETTLED",
+      "status": "OWNER_CONFIRMATION_REQUIRED",
+      "decision": "KEEP_FALLBACK_1",
+      "critical_unknowns": [
+        "impact.com +84 SMS verification in Owner actual signup",
+        "Owner Vietnam bank/currency acceptance for final wire"
+      ],
+      "next_owner_proof": "only after bounded Awin path fails, perform truthful impact.com signup +84 test"
+    },
+    {
+      "id": "ROUTE_C",
+      "chain": "Pinterest -> Amazon Associates conditional -> payment rail -> Vietnam bank -> CASH_SETTLED",
+      "status": "BLOCKED",
+      "decision": "DO_NOT_USE_FOR_FIRST_CASH_UNDER_CURRENT_EVIDENCE",
+      "critical_unknowns": [
+        "Vietnam direct-deposit unsupported by current Amazon list",
+        "paper-check cashability to Owner Vietnam bank unverified",
+        "+84 payment OTP unverified"
+      ],
+      "next_owner_proof": "none now; reconsider only with new official Vietnam cash-out evidence"
+    }
+  ],
+  "recommendation": "PASS_TO_MCME_010",
+  "rationale": "At least two bounded routes have credible official Vietnam-access/cash-out designs with remaining gaps limited to explicit Owner confirmation steps using truthful Vietnam information. No foreign phone is documented as required. Route A remains first attempt; Route B remains fallback; Route C is blocked for first-cash cash-out under current evidence.",
+  "cashout_proof_fields": [
+    "network/program",
+    "commission_record_reference_sanitized",
+    "validated_or_payable_amount",
+    "payout_issued_amount",
+    "payout_currency",
+    "payout_issued_at",
+    "payout_reference_sanitized",
+    "rail_type",
+    "amount_received",
+    "received_currency",
+    "posted_at",
+    "fees_if_visible",
+    "fx_rate_or_fx_amount_if_visible",
+    "receiving_rail_reference_sanitized",
+    "reconciled_to_payout=true",
+    "funds_actually_received=true",
+    "owner_authorized_payout_rail=true"
+  ]
+}

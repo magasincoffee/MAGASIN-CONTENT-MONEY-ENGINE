@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T05:20:00+07:00",
-  "status": "RUNNING_MCME_044",
+  "updated_at": "2026-09-20T05:50:00+07:00",
+  "status": "MCME_044_COMPLETE_WAITING_BRAIN_ACCEPTANCE",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P6_VIETNAM_ACCESS_CASHOUT_GATE",
   "current_task": "MCME-044",
   "current_task_title": "Vietnam Owner Access + Cash-Out Feasibility Gate",
-  "five_step_current": "QUESTION_DELETE_SIMPLIFY",
+  "five_step_current": "QUESTION_DELETE_SIMPLIFY_ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": true,
@@ -33,7 +33,7 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain must ACCEPT MCME-044 before MCME-010 is treated as next executable Owner task",
+  "next_gate": "Brain must ACCEPT MCME-044 before MCME-010 becomes executable",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
@@ -96,7 +96,7 @@
   },
   "core_run_package_status": "COMPLETE",
   "whole_8h_run_complete": true,
-  "next_real_execution_task": "MCME-044 Vietnam Owner Access + Cash-Out Feasibility Gate",
+  "next_real_execution_task": "MCME-010 Owner Pinterest property confirmation",
   "early_finish_extension": {
     "eligible": true,
     "active": false,
@@ -114,7 +114,7 @@
     "smallest_reliable_mvp": "local/private append-only JSONL + Cash Truth JSON Schema + validator + deterministic dedupe/reconciliation",
     "blocker": "REAL_OWNER_GATED_GATE_A_EVIDENCE"
   },
-  "real_execution_path_unchanged": false,
+  "real_execution_path_unchanged": true,
   "safe_prep": {
     "gate_a_runtime_contract": "ACCEPTED",
     "gate_a_runtime_commit": "33250a61cda4ebd13acc293b738bcd86e6b31c98",
@@ -138,20 +138,41 @@
   },
   "pre_gate_before_mcme_010": "MCME-044",
   "owner_access_cashout_gate": {
-    "status": "ACTIVE",
+    "status": "COMPLETE_WAITING_BRAIN_ACCEPTANCE",
     "artifact": "00_PROJECT/VIETNAM_OWNER_ACCESS_AND_CASHOUT_GATE_V1.md",
+    "research_artifact": "02_MONETIZATION/MCME-044_VIETNAM_ACCESS_CASHOUT_RESEARCH.md",
+    "matrix_artifact": "02_MONETIZATION/MCME-044_VIETNAM_CASHOUT_MATRIX.json",
+    "owner_action_packet": "00_PROJECT/MCME-044_OWNER_ACTION_PACKET.md",
     "owner_residence": "Vietnam",
-    "foreign_phone_required": "NOT_ASSUMED",
-    "owner_mobile_phone_required_by_some_services": true,
-    "current_key_findings": {
-      "pinterest": "business signup appears email-first; phone optional generally; SMS 2FA needs phone",
-      "impact_com": "standard partner signup includes mobile verification",
-      "amazon_associates": "payment-detail access requires mobile OTP even if signup had no phone",
-      "awin": "phone requirement still UNKNOWN",
-      "payoneer": "valid mobile phone required for registration/verification; Vietnam-specific guidance exists"
-    },
-    "pass_definition": "At least one truthful Vietnam-accessible affiliate + payout route is verified end-to-end enough to make first-cash execution credible",
     "owner_has_vietnam_mobile": true,
-    "owner_mobile_note": "Owner confirms a real Vietnam mobile number is available; no foreign phone is required unless a provider explicitly proves otherwise."
+    "foreign_phone_required": "NO_DOCUMENTED_REQUIREMENT_ON_BOUNDED_ROUTES",
+    "payoneer_plus84": "VERIFIED_BY_OFFICIAL_VIETNAM_GUIDE",
+    "awin_plus84": "OWNER_CONFIRMATION_REQUIRED",
+    "impact_plus84": "OWNER_CONFIRMATION_REQUIRED",
+    "amazon_plus84": "OWNER_CONFIRMATION_REQUIRED_FOR_PAYMENT_OTP",
+    "route_a": {
+      "status": "OWNER_CONFIRMATION_REQUIRED",
+      "decision": "KEEP_FIRST_ATTEMPT",
+      "chain": "Pinterest -> Awin -> Payoneer/GBT -> Vietnam bank -> CASH_SETTLED"
+    },
+    "route_b": {
+      "status": "OWNER_CONFIRMATION_REQUIRED",
+      "decision": "KEEP_FALLBACK_1",
+      "chain": "Pinterest -> impact.com -> wire/EFT -> Vietnam bank -> CASH_SETTLED"
+    },
+    "route_c": {
+      "status": "BLOCKED",
+      "decision": "DO_NOT_USE_FOR_FIRST_CASH_UNDER_CURRENT_EVIDENCE",
+      "chain": "Pinterest -> Amazon Associates conditional -> Vietnam cash rail"
+    },
+    "recommendation": "PASS_TO_MCME_010",
+    "pass_rationale": "At least two bounded routes have official Vietnam-compatible cash-out architecture; remaining critical gaps are explicit Owner-action proofs using truthful Vietnam information.",
+    "current_truth": {
+      "evidence": "L0_NO_REAL_COMMERCIAL_EVIDENCE",
+      "gate_a": "OWNER_GATED_NOT_EXECUTED",
+      "launch": "NOT_READY",
+      "real_account_approvals": "NONE_VERIFIED",
+      "real_click_sale_commission_cash": "NONE_VERIFIED"
+    }
   }
 }
