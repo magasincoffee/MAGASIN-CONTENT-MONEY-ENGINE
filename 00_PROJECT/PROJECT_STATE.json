@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T00:57:31+07:00",
+  "updated_at": "2026-09-20T01:04:23+07:00",
   "status": "RUNNING",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
-  "current_phase": "P2_CASH_TRUTH_EVENT_LEDGER",
-  "current_task": "MCME-006",
-  "current_task_title": "Define canonical cash truth, attribution and event ledger for first real-money experiment",
-  "five_step_current": "SIMPLIFY_ACCELERATE",
+  "current_phase": "P3_FIRST_CASH_IMPLEMENTATION_BACKLOG",
+  "current_task": "MCME-007",
+  "current_task_title": "Build ordered first-cash critical-path backlog with Owner/Robot boundaries",
+  "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain accepts MCME-006 before first-cash implementation backlog in MCME-007",
+  "next_gate": "Brain accepts MCME-007 before MCME-008 final reconciliation",
   "active_run": "MCME-RUN-8H-01",
   "run_start_at": "2026-09-20T00:12:59+07:00",
   "run_deadline_at": "2026-09-20T08:12:59+07:00",
-  "last_accepted_task": "MCME-005",
-  "last_accepted_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
+  "last_accepted_task": "MCME-006",
+  "last_accepted_commit": "df5d8701cd199f41736fc53d292b00aa987234bd",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -75,5 +75,12 @@
       "Amazon Associates (conditional)"
     ],
     "max_candidate_evaluations": 5
+  },
+  "cash_truth": {
+    "status": "ACCEPTED",
+    "canonical_commit": "df5d8701cd199f41736fc53d292b00aa987234bd",
+    "schema": "06_METRICS/mcme_cash_truth_v1.schema.json",
+    "first_real_cash": "funds_received_and_reconciled",
+    "current_evidence_level": "L0_NO_REAL_COMMERCIAL_EVIDENCE"
   }
 }
