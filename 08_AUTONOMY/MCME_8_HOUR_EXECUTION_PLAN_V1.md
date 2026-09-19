@@ -533,3 +533,21 @@ After approval:
 4. dispatch MCME-001 only;
 5. never dispatch MCME-002 before MCME-001 is reviewed and accepted;
 6. if the core sequence completes early, use remaining wall-clock time for MCME-009 deployment planning rather than stopping early.
+
+
+---
+
+# MCME-005 ADAPTATION — EVIDENCE-GATED
+
+Brain decision after MCME-004:
+
+The planned Minimum Content Factory specification is DELETED from the current autonomous run because MCME-004 requires real Gate A/account evidence and at least interaction evidence before a factory can be specified without assumptions.
+
+MCME-005 is replaced by:
+
+**Gate A Execution Readiness + Evidence Contract**
+
+This preserves the cash-first Five-Step method:
+QUESTION → DELETE premature factory design → SIMPLIFY Gate A → ACCELERATE future Owner handoff → AUTOMATE only after proof.
+
+The 8-hour hard deadline is unchanged.
