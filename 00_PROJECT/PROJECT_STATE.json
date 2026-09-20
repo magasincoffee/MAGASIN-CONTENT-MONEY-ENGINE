@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T20:12:39+07:00",
-  "status": "WAIT_OWNER_AWIN_FINAL_DECISION",
+  "updated_at": "2026-09-20T21:20:00+07:00",
+  "status": "RUNNING_AWIN_FINAL_DECISION_EVIDENCE",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
-  "current_task": null,
-  "current_task_title": null,
-  "five_step_current": "WAIT_OWNER",
+  "current_task": "MCME-012/AWIN-FINAL-DECISION-01",
+  "current_task_title": "Collect final Awin approval/rejection evidence",
+  "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": true,
@@ -33,7 +33,7 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Receive final Awin approval/rejection or equivalent real account-status evidence; then re-evaluate Awin network readiness before any merchant application",
+  "next_gate": "Collect sanitized final Awin account decision; if ACTIVE/APPROVED re-evaluate NETWORK_READY, if REJECTED/BLOCKED classify fallback eligibility",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
@@ -67,7 +67,7 @@
   "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
-    "actual_execution_status": "AWIN_PENDING_WAIT_OWNER_FINAL_DECISION",
+    "actual_execution_status": "AWIN_PENDING_OWNER_CHECK_FINAL_DECISION",
     "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
     "bounded_network_order": [
       "Awin",
@@ -96,7 +96,7 @@
   },
   "core_run_package_status": "COMPLETE",
   "whole_8h_run_complete": true,
-  "next_real_execution_task": "WAIT_OWNER_AWIN_FINAL_REVIEW_EVIDENCE",
+  "next_real_execution_task": "MCME-012/AWIN-FINAL-DECISION-01",
   "early_finish_extension": {
     "eligible": true,
     "active": false,
@@ -261,9 +261,10 @@
     "brain_decision": "ACCEPT_WAIT_OWNER_NOT_NETWORK_READY"
   },
   "wait_owner": {
-    "reason": "Awin network application is still PENDING",
+    "reason": "Awin network application was PENDING at MCME-012",
     "required_next_evidence": "Final Awin approval/rejection or equivalent real account-status evidence; property acceptance if separately surfaced",
     "merchant_applications_allowed": false,
-    "mcme_013_blocked": true
+    "mcme_013_blocked": true,
+    "collection_task": "MCME-012/AWIN-FINAL-DECISION-01"
   }
 }
