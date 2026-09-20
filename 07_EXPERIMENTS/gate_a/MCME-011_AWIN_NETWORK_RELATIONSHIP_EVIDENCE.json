@@ -1,0 +1,39 @@
+{
+  "schema_version": "mcme.owner-awin-network-evidence.v1",
+  "task_id": "MCME-011",
+  "platform": "AWIN",
+  "country_or_tax_residency_vietnam_available": "YES",
+  "phone_requested": "YES",
+  "plus84_result": "SUCCESS",
+  "account_status": "PENDING",
+  "pinterest_property_accepted": "UNKNOWN",
+  "observed_at": "2026-09-20T19:32:48+07:00",
+  "safe_reference": "AWIN_APPLICATION_RECEIVED",
+  "property_ref": "https://www.pinterest.com/bachvantoi1994/",
+  "promotional_type": "Content Creators & Influencers",
+  "primary_region": "United States of America",
+  "notes_sanitized": "Awin accepted the truthful Vietnam signup form including the Owner's real +84 phone and confirmed Pinterest promotional space submission. Final network approval is still under review. Awin states it will email an update. No merchant application was submitted.",
+  "evidence_basis": [
+    "Owner completed Awin Publisher signup using truthful Vietnam information.",
+    "Awin signup flow accepted Vietnam as tax residency.",
+    "Final signup form requested a telephone number and accepted the Owner's real Vietnam +84 number.",
+    "Confirmed Pinterest property was submitted as promotional space.",
+    "Awin displayed 'Application Received' and 'We're reviewing your application'; therefore final relationship status is PENDING.",
+    "No merchant candidate application has been made."
+  ],
+  "privacy": {
+    "secrets_committed": false,
+    "password_committed": false,
+    "otp_mfa_committed": false,
+    "bank_tax_identity_data_committed": false,
+    "raw_phone_number_committed": false
+  },
+  "result": "WAIT_OWNER",
+  "interpretation": {
+    "network_ready": false,
+    "pending_is_not_pass": true,
+    "pending_is_not_fail": true,
+    "unknown_property_approval_is_not_pass": true
+  },
+  "recommendation_for_mcme_012": "MCME-012 can deterministically evaluate this evidence as WAIT_OWNER / not NETWORK_READY. Do not advance to MCME-013 until Awin sends a final network decision or equivalent real account status."
+}

@@ -1,8 +1,8 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T18:40:00+07:00",
-  "status": "WAIT_OWNER_INPUT_MCME_011",
+  "updated_at": "2026-09-20T19:32:48+07:00",
+  "status": "MCME_011_COMPLETE_WAIT_OWNER_AWIN_REVIEW",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
   "current_task": "MCME-011",
@@ -33,7 +33,7 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Owner must verify whether Vietnam is available in Awin Tax Residency dropdown before MCME-011 can continue",
+  "next_gate": "Brain may dispatch MCME-012 to classify current Awin evidence; expected result WAIT_OWNER until Awin final decision",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
@@ -67,7 +67,7 @@
   "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
-    "actual_execution_status": "MCME_011_WAIT_OWNER_TAX_RESIDENCY_CHECK",
+    "actual_execution_status": "MCME_011_AWIN_APPLICATION_PENDING_REVIEW",
     "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
     "bounded_network_order": [
       "Awin",
@@ -96,7 +96,7 @@
   },
   "core_run_package_status": "COMPLETE",
   "whole_8h_run_complete": true,
-  "next_real_execution_task": "MCME-011 Owner Awin network relationship evidence",
+  "next_real_execution_task": "MCME-012 Work Awin NETWORK_READY evaluation",
   "early_finish_extension": {
     "eligible": true,
     "active": false,
@@ -209,18 +209,24 @@
     "brain_decision": "ACCEPT"
   },
   "mcme_011": {
-    "status": "WAIT_OWNER_INPUT",
-    "objective": "Establish real sanitized evidence that Owner can use Awin with the confirmed Pinterest property",
+    "status": "COMPLETE_WAIT_OWNER_AWIN_REVIEW",
+    "result": "WAIT_OWNER",
+    "evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-011_AWIN_NETWORK_RELATIONSHIP_EVIDENCE.json",
+    "platform": "AWIN",
+    "country_or_tax_residency_vietnam_available": "YES",
+    "phone_requested": "YES",
+    "plus84_result": "SUCCESS",
+    "account_status": "PENDING",
+    "pinterest_property_accepted": "UNKNOWN",
+    "observed_at": "2026-09-20T19:32:48+07:00",
+    "safe_reference": "AWIN_APPLICATION_RECEIVED",
     "property_ref": "https://www.pinterest.com/bachvantoi1994/",
-    "owner_residence": "Vietnam",
-    "owner_has_vietnam_mobile": true,
-    "owner_boundary": "Owner performs signup/login/legal/verification directly; Work receives sanitized status only",
-    "next_after_completion": "MCME-012 Work Awin NETWORK_READY evaluation",
-    "current_owner_check": "AWIN_TAX_RESIDENCY_VIETNAM_PRESENT",
-    "allowed_owner_answers": [
-      "Vietnam = CÓ",
-      "Vietnam = KHÔNG"
-    ],
-    "mcme_012_blocked": true
+    "promotional_type": "Content Creators & Influencers",
+    "primary_region": "United States of America",
+    "merchant_application_submitted": false,
+    "network_ready": false,
+    "pending_is_not_pass": true,
+    "next_task_after_brain_acceptance": "MCME-012 Work Awin NETWORK_READY evaluation",
+    "mcme_013_blocked_until_network_ready": true
   }
 }
