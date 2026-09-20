@@ -1,8 +1,8 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T19:32:48+07:00",
-  "status": "MCME_011_COMPLETE_WAIT_OWNER_AWIN_REVIEW",
+  "updated_at": "2026-09-20T19:55:00+07:00",
+  "status": "RUNNING_MCME_011_OWNER_INTERACTIVE",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
   "current_task": "MCME-011",
@@ -33,7 +33,7 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain may dispatch MCME-012 to classify current Awin evidence; expected result WAIT_OWNER until Awin final decision",
+  "next_gate": "Continue MCME-011: verify remaining Awin signup/access facts including phone request, +84 behavior, account status, and Pinterest property acceptance",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
@@ -67,7 +67,7 @@
   "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
-    "actual_execution_status": "MCME_011_AWIN_APPLICATION_PENDING_REVIEW",
+    "actual_execution_status": "MCME_011_VIETNAM_TAX_RESIDENCY_CONFIRMED_CONTINUE",
     "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
     "bounded_network_order": [
       "Awin",
@@ -209,7 +209,7 @@
     "brain_decision": "ACCEPT"
   },
   "mcme_011": {
-    "status": "COMPLETE_WAIT_OWNER_AWIN_REVIEW",
+    "status": "ACTIVE_OWNER_INTERACTIVE",
     "result": "WAIT_OWNER",
     "evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-011_AWIN_NETWORK_RELATIONSHIP_EVIDENCE.json",
     "platform": "AWIN",
@@ -227,6 +227,10 @@
     "network_ready": false,
     "pending_is_not_pass": true,
     "next_task_after_brain_acceptance": "MCME-012 Work Awin NETWORK_READY evaluation",
-    "mcme_013_blocked_until_network_ready": true
+    "mcme_013_blocked_until_network_ready": true,
+    "country_or_tax_residency_observed_by_owner": true,
+    "current_owner_check": "CONTINUE_AWIN_SIGNUP_MINIMUM_EVIDENCE",
+    "next_action": "Work guides Owner through remaining signup flow and collects sanitized status only",
+    "mcme_012_blocked": true
   }
 }
