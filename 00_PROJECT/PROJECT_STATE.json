@@ -1,12 +1,12 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T15:16:12+07:00",
-  "status": "MCME_010_COMPLETE_WAITING_BRAIN_ACCEPTANCE",
+  "updated_at": "2026-09-20T15:20:00+07:00",
+  "status": "RUNNING_MCME_011_OWNER_INTERACTIVE",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
-  "current_task": "MCME-010",
-  "current_task_title": "Owner Pinterest property confirmation",
+  "current_task": "MCME-011",
+  "current_task_title": "Owner Awin network relationship evidence",
   "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain must ACCEPT MCME-010 before MCME-011 Owner Awin network relationship evidence",
+  "next_gate": "MCME-011 must produce real sanitized Awin network relationship evidence before MCME-012 NETWORK_READY evaluation",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
-  "last_accepted_task": "MCME-044",
-  "last_accepted_commit": "a45e43469c14980093b9ced9fcc388bc11a0c807",
+  "last_accepted_task": "MCME-010",
+  "last_accepted_commit": "8a3b003a331573a6b3f23e4737b243608f08caf1",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -67,7 +67,7 @@
   "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
-    "actual_execution_status": "MCME_010_PROPERTY_CONFIRMED_WAITING_BRAIN_ACCEPTANCE",
+    "actual_execution_status": "STARTING_MCME_011_AWIN_NETWORK_RELATIONSHIP",
     "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
     "bounded_network_order": [
       "Awin",
@@ -184,7 +184,7 @@
     }
   },
   "mcme_010": {
-    "status": "COMPLETE_WAITING_BRAIN_ACCEPTANCE",
+    "status": "ACCEPTED",
     "result": "PASS",
     "evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-010_PINTEREST_PROPERTY_CONFIRMATION.json",
     "platform": "PINTEREST",
@@ -203,6 +203,18 @@
     },
     "pin_created_or_published": false,
     "next_task_after_brain_acceptance": "MCME-011 Owner Awin network relationship evidence",
-    "mcme_011_blocked_until_brain_acceptance": true
+    "mcme_011_blocked_until_brain_acceptance": false,
+    "accepted_at": "2026-09-20T15:20:00+07:00",
+    "accepted_commit": "8a3b003a331573a6b3f23e4737b243608f08caf1",
+    "brain_decision": "ACCEPT"
+  },
+  "mcme_011": {
+    "status": "ACTIVE_OWNER_INTERACTIVE",
+    "objective": "Establish real sanitized evidence that Owner can use Awin with the confirmed Pinterest property",
+    "property_ref": "https://www.pinterest.com/bachvantoi1994/",
+    "owner_residence": "Vietnam",
+    "owner_has_vietnam_mobile": true,
+    "owner_boundary": "Owner performs signup/login/legal/verification directly; Work receives sanitized status only",
+    "next_after_completion": "MCME-012 Work Awin NETWORK_READY evaluation"
   }
 }
