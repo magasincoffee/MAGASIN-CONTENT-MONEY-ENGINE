@@ -1,12 +1,12 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T21:42:00+07:00",
-  "status": "MCME_012_AWIN_PROPERTY_ACCEPTANCE_COMPLETE_WAITING_BRAIN_ACCEPTANCE",
+  "updated_at": "2026-09-20T22:27:00+07:00",
+  "status": "RUNNING_AWIN_NETWORK_REEVALUATION",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
-  "current_task": "MCME-012/AWIN-PROPERTY-ACCEPTANCE-01",
-  "current_task_title": "Verify Awin acceptance/status of Pinterest promotional space",
+  "current_task": "MCME-012/AWIN-NETWORK-REEVALUATION-01",
+  "current_task_title": "Re-run canonical Awin NETWORK_READY evaluator with accepted property evidence",
   "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain must ACCEPT property evidence and re-run canonical NETWORK_READY evaluator before MCME-013",
+  "next_gate": "Run canonical evaluator with property.authorized=VERIFIED true, property.network_property_accepted=VERIFIED true, network.relationship=ACTIVE; accept only evaluator output",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
-  "last_accepted_task": "MCME-012/AWIN-FINAL-DECISION-01",
-  "last_accepted_commit": "f06d303b3d41f02ad1e96688dfe381207f10b30f",
+  "last_accepted_task": "MCME-012/AWIN-PROPERTY-ACCEPTANCE-01",
+  "last_accepted_commit": "4506ba8f2d415d40e989f45793cfc99ee5355e7f",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -67,7 +67,7 @@
   "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
-    "actual_execution_status": "AWIN_ACCOUNT_ACTIVE_PROPERTY_ACCEPTED_EVIDENCE_COLLECTED",
+    "actual_execution_status": "AWIN_NETWORK_REEVALUATION_REQUIRED",
     "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
     "bounded_network_order": [
       "Awin",
@@ -96,7 +96,7 @@
   },
   "core_run_package_status": "COMPLETE",
   "whole_8h_run_complete": true,
-  "next_real_execution_task": "BRAIN_REEVALUATE_AWIN_NETWORK_READY",
+  "next_real_execution_task": "MCME-012/AWIN-NETWORK-REEVALUATION-01",
   "early_finish_extension": {
     "eligible": true,
     "active": false,
@@ -261,11 +261,11 @@
     "brain_decision": "ACCEPT_WAIT_OWNER_NOT_NETWORK_READY"
   },
   "wait_owner": {
-    "reason": "Resolved at property layer: real Awin account shows the confirmed Pinterest URL as a saved Promotional Space, and official Awin docs describe saved Promotional Spaces as channels used to promote advertisers without a separate property-approval workflow.",
-    "required_next_evidence": "None for network_property_accepted. Brain must accept this evidence and re-run canonical NETWORK_READY evaluation.",
+    "reason": "Resolved at network property layer.",
+    "required_next_evidence": "None before deterministic Awin network reevaluation.",
     "merchant_applications_allowed": false,
     "mcme_013_blocked": true,
-    "collection_task": "MCME-012/AWIN-PROPERTY-ACCEPTANCE-01_COMPLETE"
+    "collection_task": "MCME-012/AWIN-NETWORK-REEVALUATION-01"
   },
   "awin_final_decision": {
     "status": "ACCEPTED",
@@ -286,7 +286,7 @@
     "brain_decision": "ACCEPT_ACTIVE_ACCOUNT_PROPERTY_UNKNOWN"
   },
   "awin_property_acceptance": {
-    "status": "COMPLETE_WAITING_BRAIN_ACCEPTANCE",
+    "status": "ACCEPTED",
     "result": "PROPERTY_ACCEPTED_EVIDENCE_COMPLETE",
     "task_id": "MCME-012/AWIN-PROPERTY-ACCEPTANCE-01",
     "dispatch_id": "66bbc9718651258bd26d639d87f439cc",
@@ -303,6 +303,9 @@
     "unresolved_unknowns": [],
     "evaluator_rerun_required": true,
     "mcme_013_blocked": true,
-    "recommendation": "ACCEPT_PROPERTY_EVIDENCE_THEN_RERUN_NETWORK_READY_EVALUATOR"
+    "recommendation": "ACCEPT_PROPERTY_EVIDENCE_THEN_RERUN_NETWORK_READY_EVALUATOR",
+    "accepted_at": "2026-09-20T22:27:00+07:00",
+    "accepted_commit": "4506ba8f2d415d40e989f45793cfc99ee5355e7f",
+    "brain_decision": "ACCEPT_NETWORK_PROPERTY_ACCEPTED_VERIFIED_TRUE"
   }
 }
