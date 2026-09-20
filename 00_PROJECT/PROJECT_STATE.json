@@ -1,8 +1,8 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T06:00:00+07:00",
-  "status": "WAIT_OWNER_INPUT_MCME_010",
+  "updated_at": "2026-09-20T15:16:12+07:00",
+  "status": "MCME_010_COMPLETE_WAITING_BRAIN_ACCEPTANCE",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
   "current_task": "MCME-010",
@@ -33,7 +33,7 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Owner must answer whether an existing Pinterest account will be used or a new one must be created",
+  "next_gate": "Brain must ACCEPT MCME-010 before MCME-011 Owner Awin network relationship evidence",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
@@ -67,7 +67,7 @@
   "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
-    "actual_execution_status": "MCME_010_WAIT_OWNER_ACCOUNT_CHOICE",
+    "actual_execution_status": "MCME_010_PROPERTY_CONFIRMED_WAITING_BRAIN_ACCEPTANCE",
     "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
     "bounded_network_order": [
       "Awin",
@@ -96,7 +96,7 @@
   },
   "core_run_package_status": "COMPLETE",
   "whole_8h_run_complete": true,
-  "next_real_execution_task": "MCME-010 Owner Pinterest property confirmation",
+  "next_real_execution_task": "MCME-011 Owner Awin network relationship evidence",
   "early_finish_extension": {
     "eligible": true,
     "active": false,
@@ -184,13 +184,25 @@
     }
   },
   "mcme_010": {
-    "status": "WAIT_OWNER_INPUT",
-    "owner_question": "Do you already have a Pinterest account you want to use for this project?",
-    "allowed_answers": [
-      "CÓ",
-      "CHƯA"
-    ],
-    "next_action": "Work guides either reuse/convert existing account or create exactly one truthful Pinterest account",
-    "mcme_011_blocked": true
+    "status": "COMPLETE_WAITING_BRAIN_ACCEPTANCE",
+    "result": "PASS",
+    "evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-010_PINTEREST_PROPERTY_CONFIRMATION.json",
+    "platform": "PINTEREST",
+    "property_type": "PERSONAL_CONVERTED_TO_BUSINESS",
+    "display_name": "Small Space Kitchen Lab",
+    "public_or_sanitized_property_ref": "https://www.pinterest.com/bachvantoi1994/",
+    "owner_authorized": "YES",
+    "phone_requested_during_initial_signup": "NOT_APPLICABLE",
+    "plus84_result": "NOT_APPLICABLE",
+    "observed_at": "2026-09-20T15:16:12+07:00",
+    "pass_checks": {
+      "real_property_exists": true,
+      "owner_controls_property": true,
+      "safe_public_reference_known": true,
+      "no_distribution_blocker": true
+    },
+    "pin_created_or_published": false,
+    "next_task_after_brain_acceptance": "MCME-011 Owner Awin network relationship evidence",
+    "mcme_011_blocked_until_brain_acceptance": true
   }
 }

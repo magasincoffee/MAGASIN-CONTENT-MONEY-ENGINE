@@ -1,0 +1,29 @@
+{
+  "schema_version": "mcme.owner-property-confirmation.v1",
+  "task_id": "MCME-010",
+  "platform": "PINTEREST",
+  "status": "SUCCESS",
+  "property_type": "PERSONAL_CONVERTED_TO_BUSINESS",
+  "display_name": "Small Space Kitchen Lab",
+  "public_or_sanitized_property_ref": "https://www.pinterest.com/bachvantoi1994/",
+  "owner_authorized": "YES",
+  "phone_requested_during_initial_signup": "NOT_APPLICABLE",
+  "plus84_result": "NOT_APPLICABLE",
+  "observed_at": "2026-09-20T15:16:12+07:00",
+  "evidence_basis": [
+    "Owner stated an existing personal Pinterest account would be used",
+    "Owner completed Pinterest Personal-to-Business conversion interactively in Work chat",
+    "Owner supplied a screenshot showing the public Business profile display name Small Space Kitchen Lab",
+    "Owner supplied the public profile URL"
+  ],
+  "notes_sanitized": "Existing Owner-controlled personal Pinterest account converted to Business. No new Pinterest account created. No Pin was created or published in MCME-010. No credential, OTP, session, private account ID, or secret is stored.",
+  "pass_checks": {
+    "real_property_exists": true,
+    "owner_controls_property": true,
+    "owner_authorized_for_first_cash_distribution": true,
+    "safe_public_reference_known": true,
+    "blocking_issue": false
+  },
+  "result": "PASS",
+  "next_task_after_brain_acceptance": "MCME-011 Owner Awin network relationship evidence"
+}
