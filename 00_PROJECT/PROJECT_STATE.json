@@ -1,12 +1,12 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T19:57:00+07:00",
-  "status": "MCME_011_COMPLETE_WAIT_OWNER_AWIN_REVIEW",
+  "updated_at": "2026-09-20T20:00:00+07:00",
+  "status": "RUNNING_MCME_012",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
-  "current_task": "MCME-011",
-  "current_task_title": "Owner Awin network relationship evidence",
+  "current_task": "MCME-012",
+  "current_task_title": "Work Awin NETWORK_READY evaluation",
   "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "MCME-012 may evaluate current Awin evidence; current expected classification is WAIT_OWNER / not NETWORK_READY until Awin final review outcome",
+  "next_gate": "MCME-012 must classify current Awin evidence as NETWORK_READY / WAIT_OWNER / FALLBACK_ELIGIBLE without promoting PENDING or UNKNOWN to PASS",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
-  "last_accepted_task": "MCME-010",
-  "last_accepted_commit": "8a3b003a331573a6b3f23e4737b243608f08caf1",
+  "last_accepted_task": "MCME-011",
+  "last_accepted_commit": "058d9fe6b5089ab687c0fe48cb23216e725a93b7",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -67,7 +67,7 @@
   "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
-    "actual_execution_status": "MCME_011_AWIN_APPLICATION_PENDING_REVIEW",
+    "actual_execution_status": "MCME_012_EVALUATING_AWIN_PENDING",
     "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
     "bounded_network_order": [
       "Awin",
@@ -209,7 +209,7 @@
     "brain_decision": "ACCEPT"
   },
   "mcme_011": {
-    "status": "COMPLETE_WAIT_OWNER_AWIN_REVIEW",
+    "status": "ACCEPTED_WAIT_OWNER",
     "result": "WAIT_OWNER",
     "dispatch_id": "af08534d85adf82ec0431484279f7bf0",
     "evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-011_AWIN_NETWORK_RELATIONSHIP_EVIDENCE.json",
@@ -228,6 +228,17 @@
     "pending_is_not_fail": true,
     "mcme_012_recommendation": "WAIT_OWNER_NOT_NETWORK_READY",
     "next_task_after_brain_acceptance": "MCME-012 Work Awin NETWORK_READY evaluation",
-    "mcme_013_blocked_until_network_ready": true
+    "mcme_013_blocked_until_network_ready": true,
+    "accepted_at": "2026-09-20T20:00:00+07:00",
+    "accepted_commit": "058d9fe6b5089ab687c0fe48cb23216e725a93b7",
+    "brain_decision": "ACCEPT_EVIDENCE_WAIT_OWNER"
+  },
+  "mcme_012": {
+    "status": "ACTIVE",
+    "objective": "Evaluate current sanitized Awin evidence deterministically",
+    "expected_from_current_evidence": "WAIT_OWNER_NOT_NETWORK_READY",
+    "network_ready": false,
+    "mcme_013_blocked": true,
+    "owner_action_required_after_evaluation": "Wait for Awin final approval/rejection or equivalent account-status evidence"
   }
 }
