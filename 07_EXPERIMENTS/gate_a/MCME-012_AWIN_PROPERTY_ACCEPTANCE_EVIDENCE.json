@@ -1,0 +1,42 @@
+{
+  "schema_version": "mcme.awin-property-acceptance-evidence.v1",
+  "task_id": "MCME-012/AWIN-PROPERTY-ACCEPTANCE-01",
+  "dispatch_id": "66bbc9718651258bd26d639d87f439cc",
+  "platform": "AWIN",
+  "property_ref": "https://www.pinterest.com/bachvantoi1994/",
+  "property_visible_in_account": "YES",
+  "property_status": "NO_SEPARATE_STATUS",
+  "network_property_accepted": "YES",
+  "evidence_source": "BOTH",
+  "safe_reference": "AWIN_PROMOTIONAL_SPACE_LISTED_CONTENT_SITE",
+  "observed_at": "2026-09-20T21:42:00+07:00",
+  "notes_sanitized": "The confirmed Pinterest URL is visibly listed under Account > Promotional Spaces as a saved Content promotional space with description and sectors. No separate per-property approval/status label is shown in the observed account view. Official Awin documentation defines Promotional Spaces as websites, apps or social media channels publishers use to promote advertisers, instructs publishers to add every channel they use, and documents add/save/edit operations without a separate property-approval workflow. Under the canonical contract this supports network_property_accepted=YES at the network-property layer only.",
+  "dashboard_evidence": [
+    "The exact confirmed Pinterest property is visibly listed under Account > Promotional Spaces.",
+    "The entry is saved as a Content promotional space.",
+    "The entry includes the project description and Retail & Shopping > Home & Garden sectors.",
+    "The entry exposes edit controls and no visible PENDING/REJECTED/DISABLED status label."
+  ],
+  "official_evidence": [
+    {
+      "title": "How to manage your promotional spaces",
+      "url": "https://success.awin.com/articles/en_US/Knowledge/How-do-I-add-or-edit-my-promotional-sites",
+      "finding": "Awin says promotional spaces are websites, apps, social-media channels or other platforms used to promote advertisers; publishers should add every channel they use; the documented flow is Add Content Site -> enter URL/description/sector -> Add to save, with later editing through the same section."
+    },
+    {
+      "title": "How do I join Awin as a Publisher?",
+      "url": "https://success.awin.com/articles/en_US/Knowledge/How-do-I-join-Awin-as-a-Publisher",
+      "finding": "Awin's signup guide explicitly allows social-media profiles as Promotional Space URLs where the publisher intends to promote advertisers."
+    }
+  ],
+  "mapping_rationale": "Awin's official documentation does not define a separate approval state for saved Promotional Spaces. The real account shows the exact Pinterest URL saved in the canonical Promotional Spaces area. Therefore the account-visible saved state matches Awin's documented usable promotional-space model and is mapped to network_property_accepted=YES with property_status=NO_SEPARATE_STATUS.",
+  "non_inferences": [
+    "This does not imply approval by any advertiser/merchant programme.",
+    "This does not imply tracking-link capability for a specific merchant.",
+    "This does not imply payout, KYC, tax or payment readiness.",
+    "This does not authorize publishing or merchant application.",
+    "No account ID or other private identifier from the screenshot is stored."
+  ],
+  "unresolved_unknowns": [],
+  "recommendation_for_brain": "Accept this property-layer evidence, map property.network_property_accepted to VERIFIED true, and re-run the canonical NETWORK_READY evaluator. MCME-013 remains blocked until Brain accepts this evidence and the evaluator reaches NETWORK_READY."
+}
