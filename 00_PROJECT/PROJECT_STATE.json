@@ -1,8 +1,8 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T20:00:00+07:00",
-  "status": "RUNNING_MCME_012",
+  "updated_at": "2026-09-20T20:04:00+07:00",
+  "status": "MCME_012_COMPLETE_WAIT_OWNER_AWIN_FINAL_DECISION",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
   "current_task": "MCME-012",
@@ -33,7 +33,7 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "MCME-012 must classify current Awin evidence as NETWORK_READY / WAIT_OWNER / FALLBACK_ELIGIBLE without promoting PENDING or UNKNOWN to PASS",
+  "next_gate": "WAIT_OWNER for final Awin approval/rejection or equivalent real account status; then re-evaluate network readiness",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
@@ -67,7 +67,7 @@
   "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
-    "actual_execution_status": "MCME_012_EVALUATING_AWIN_PENDING",
+    "actual_execution_status": "MCME_012_WAIT_OWNER_NOT_NETWORK_READY",
     "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
     "bounded_network_order": [
       "Awin",
@@ -96,7 +96,7 @@
   },
   "core_run_package_status": "COMPLETE",
   "whole_8h_run_complete": true,
-  "next_real_execution_task": "MCME-012 Work Awin NETWORK_READY evaluation",
+  "next_real_execution_task": "WAIT_OWNER_AWIN_FINAL_REVIEW_EVIDENCE",
   "early_finish_extension": {
     "eligible": true,
     "active": false,
@@ -234,11 +234,27 @@
     "brain_decision": "ACCEPT_EVIDENCE_WAIT_OWNER"
   },
   "mcme_012": {
-    "status": "ACTIVE",
-    "objective": "Evaluate current sanitized Awin evidence deterministically",
-    "expected_from_current_evidence": "WAIT_OWNER_NOT_NETWORK_READY",
+    "status": "COMPLETE_WAIT_OWNER",
+    "result": "WAIT_OWNER",
+    "dispatch_id": "053ed12bdbfacc34b942b8c6aea97f63",
+    "evaluation_artifact": "07_EXPERIMENTS/gate_a/MCME-012_AWIN_NETWORK_EVALUATION.json",
+    "network": "AWIN",
+    "classification": "WAIT_OWNER",
     "network_ready": false,
+    "canonical_evaluator_state": "WAIT_OWNER",
+    "canonical_evaluator_reason": "NETWORK_RELATIONSHIP_PENDING",
+    "evaluation_id": "f5f2364bdff0d7842054fef74ab9baed1ac48245e0916b485429b5c85aaafb88",
+    "blocking_evidence": [
+      "account_status=PENDING",
+      "safe_reference=AWIN_APPLICATION_RECEIVED"
+    ],
+    "pending_fields": [
+      "network_relationship=PENDING",
+      "pinterest_property_accepted=UNKNOWN"
+    ],
+    "exact_next_proof_required": "Final Awin approval/rejection or equivalent real account-status evidence; provider/account evidence must explicitly prove Pinterest property acceptance before it can be VERIFIED.",
+    "merchant_application_submitted": false,
     "mcme_013_blocked": true,
-    "owner_action_required_after_evaluation": "Wait for Awin final approval/rejection or equivalent account-status evidence"
+    "recommendation": "WAIT_OWNER_NOT_NETWORK_READY"
   }
 }

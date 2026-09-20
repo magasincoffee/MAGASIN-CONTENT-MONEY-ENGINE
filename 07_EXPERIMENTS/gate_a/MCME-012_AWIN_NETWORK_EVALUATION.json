@@ -1,0 +1,217 @@
+{
+  "schema_version": "mcme.network-evaluation.v1",
+  "task_id": "MCME-012",
+  "dispatch_id": "053ed12bdbfacc34b942b8c6aea97f63",
+  "network": "AWIN",
+  "source_evidence": {
+    "artifact": "07_EXPERIMENTS/gate_a/MCME-011_AWIN_NETWORK_RELATIONSHIP_EVIDENCE.json",
+    "accepted_commit": "058d9fe6b5089ab687c0fe48cb23216e725a93b7",
+    "source_blob_sha": "639bad4cc525f7c27143505856841fc9c7f965c9"
+  },
+  "evaluator_contract": {
+    "evaluator_path": "04_ROBOT/first_cash/gate_a_evaluator/evaluator.py",
+    "evaluator_blob_sha": "c904bb3670b1e4fd34bee5adaaf624c4c4d51fd6",
+    "schema_path": "07_EXPERIMENTS/gate_a/mcme_gate_a_evidence_v1.schema.json",
+    "schema_blob_sha": "ba144f3b83ae5e8d5074101eeb857841d51d5dbf",
+    "deterministic_replay_count": 2,
+    "deterministic_replay_match": true
+  },
+  "mapped_gate_a_record": {
+    "schema_version": "mcme.gate-a-evidence.v1",
+    "experiment_id": "MCME-FIRST-CASH-V1",
+    "route_ref": "MCME-FIRST-CASH-V1",
+    "candidate_slot": "AWIN-01",
+    "property": {
+      "public_reference_sanitized": "https://www.pinterest.com/bachvantoi1994/",
+      "authorized": {
+        "status": "VERIFIED",
+        "confidence": "HIGH",
+        "value": true,
+        "source_reference_sanitized": "MCME-010_PINTEREST_PROPERTY",
+        "observed_at": "2026-09-20T15:16:12+07:00"
+      },
+      "network_property_accepted": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      }
+    },
+    "network": {
+      "name": "Awin",
+      "relationship": {
+        "status": "VERIFIED",
+        "confidence": "HIGH",
+        "value": "PENDING",
+        "source_reference_sanitized": "AWIN_APPLICATION_RECEIVED",
+        "observed_at": "2026-09-20T19:32:48+07:00"
+      }
+    },
+    "merchant": {
+      "public_name": null,
+      "program_public_identifier": null,
+      "relationship": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      }
+    },
+    "geography": {
+      "us_allowed": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      }
+    },
+    "promotion": {
+      "pinterest_social_allowed": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      },
+      "direct_link_allowed": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      },
+      "deep_link_allowed": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      }
+    },
+    "tracking": {
+      "link_capability": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      },
+      "attribution_subid_capability": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      }
+    },
+    "commission": {
+      "commissionable_action": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      }
+    },
+    "validation": {
+      "locking_rule": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      },
+      "reversal_return_rule": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      }
+    },
+    "payout": {
+      "threshold_cycle": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      },
+      "feasibility": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      },
+      "rail_type": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      }
+    },
+    "rights_disclosure": {
+      "creative_usage": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      },
+      "affiliate_disclosure": {
+        "status": "UNKNOWN",
+        "confidence": "HIGH",
+        "value": null,
+        "source_reference_sanitized": null,
+        "observed_at": null
+      }
+    },
+    "recorded_at": "2026-09-20T20:04:00+07:00"
+  },
+  "canonical_evaluator_output": {
+    "schema_version": "mcme.gate-a-evaluation.v1",
+    "evaluation_id": "f5f2364bdff0d7842054fef74ab9baed1ac48245e0916b485429b5c85aaafb88",
+    "candidate_slot": "AWIN-01",
+    "network": "Awin",
+    "state": "WAIT_OWNER",
+    "transition_trace": [],
+    "reasons": [
+      "NETWORK_RELATIONSHIP_PENDING"
+    ]
+  },
+  "classification": "WAIT_OWNER",
+  "network_ready": false,
+  "blocking_evidence": [
+    {
+      "field": "account_status",
+      "value": "PENDING",
+      "source_reference_sanitized": "AWIN_APPLICATION_RECEIVED",
+      "reason": "Canonical evaluator stops at NETWORK_RELATIONSHIP_PENDING."
+    }
+  ],
+  "pending_fields": [
+    {
+      "field": "network_relationship",
+      "current": "PENDING",
+      "required_for_network_ready": "ACTIVE"
+    },
+    {
+      "field": "pinterest_property_accepted",
+      "current": "UNKNOWN",
+      "required_for_network_ready": "VERIFIED true"
+    }
+  ],
+  "non_inferences": [
+    "+84 signup SUCCESS does not prove network approval, KYC, payout or payment readiness.",
+    "Application Received does not prove Pinterest property acceptance.",
+    "No merchant approval or payout readiness is inferred."
+  ],
+  "exact_next_proof_required": "Final Awin approval/rejection or equivalent real account-status evidence. Pinterest property acceptance may become VERIFIED only from real provider/account evidence.",
+  "mcme_013_blocked": true,
+  "recommendation": "WAIT_OWNER. Do not run MCME-013 until a later evaluation classifies the Awin network as NETWORK_READY."
+}
