@@ -1,8 +1,8 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T21:20:00+07:00",
-  "status": "RUNNING_AWIN_FINAL_DECISION_EVIDENCE",
+  "updated_at": "2026-09-20T21:42:00+07:00",
+  "status": "MCME_012_AWIN_FINAL_DECISION_COMPLETE_ACTIVE_PROPERTY_UNKNOWN",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
   "current_task": "MCME-012/AWIN-FINAL-DECISION-01",
@@ -33,7 +33,7 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Collect sanitized final Awin account decision; if ACTIVE/APPROVED re-evaluate NETWORK_READY, if REJECTED/BLOCKED classify fallback eligibility",
+  "next_gate": "Brain must re-evaluate Awin NETWORK_READY using ACTIVE account evidence while keeping Pinterest property acceptance UNKNOWN",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
@@ -67,7 +67,7 @@
   "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
-    "actual_execution_status": "AWIN_PENDING_OWNER_CHECK_FINAL_DECISION",
+    "actual_execution_status": "AWIN_ACCOUNT_ACTIVE_PROPERTY_ACCEPTANCE_UNKNOWN",
     "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
     "bounded_network_order": [
       "Awin",
@@ -96,7 +96,7 @@
   },
   "core_run_package_status": "COMPLETE",
   "whole_8h_run_complete": true,
-  "next_real_execution_task": "MCME-012/AWIN-FINAL-DECISION-01",
+  "next_real_execution_task": "BRAIN_REEVALUATE_AWIN_NETWORK_READY",
   "early_finish_extension": {
     "eligible": true,
     "active": false,
@@ -261,10 +261,26 @@
     "brain_decision": "ACCEPT_WAIT_OWNER_NOT_NETWORK_READY"
   },
   "wait_owner": {
-    "reason": "Awin network application was PENDING at MCME-012",
-    "required_next_evidence": "Final Awin approval/rejection or equivalent real account-status evidence; property acceptance if separately surfaced",
+    "reason": "Resolved for network account status: Awin account now has equivalent ACTIVE dashboard evidence. Pinterest promotional-space acceptance remains UNKNOWN.",
+    "required_next_evidence": "Provider/account evidence explicitly confirming Pinterest promotional-space acceptance, unless canonical evaluator/contract permits NETWORK_READY without it.",
     "merchant_applications_allowed": false,
     "mcme_013_blocked": true,
-    "collection_task": "MCME-012/AWIN-FINAL-DECISION-01"
+    "collection_task": "MCME-012/AWIN-FINAL-DECISION-01_COMPLETE"
+  },
+  "awin_final_decision": {
+    "status": "COMPLETE",
+    "result": "ACTIVE_PROPERTY_UNKNOWN",
+    "task_id": "MCME-012/AWIN-FINAL-DECISION-01",
+    "evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-012_AWIN_FINAL_DECISION_EVIDENCE.json",
+    "platform": "AWIN",
+    "final_account_status": "ACTIVE",
+    "pinterest_property_accepted": "UNKNOWN",
+    "decision_source": "DASHBOARD",
+    "observed_at": "2026-09-20T21:42:00+07:00",
+    "safe_reference": "AWIN_DASHBOARD_ADVERTISER_DIRECTORY_JOIN_AVAILABLE",
+    "merchant_application_submitted": false,
+    "network_ready_re_evaluation_required": true,
+    "mcme_013_blocked": true,
+    "recommendation": "RE_EVALUATE_NETWORK_READY_WITH_ACTIVE_ACCOUNT_AND_PROPERTY_UNKNOWN"
   }
 }

@@ -1,0 +1,28 @@
+{
+  "schema_version": "mcme.awin-final-decision-evidence.v1",
+  "task_id": "MCME-012/AWIN-FINAL-DECISION-01",
+  "platform": "AWIN",
+  "final_account_status": "ACTIVE",
+  "pinterest_property_accepted": "UNKNOWN",
+  "decision_source": "DASHBOARD",
+  "observed_at": "2026-09-20T21:42:00+07:00",
+  "safe_reference": "AWIN_DASHBOARD_ADVERTISER_DIRECTORY_JOIN_AVAILABLE",
+  "notes_sanitized": "Owner can access the Awin publisher dashboard and the advertiser directory showing 1000+ advertisers with programme-status tabs and Join actions. This is treated as equivalent real account-status evidence of an ACTIVE publisher account. The dashboard evidence does not explicitly state that the submitted Pinterest promotional space is accepted, so pinterest_property_accepted remains UNKNOWN. No merchant application was submitted.",
+  "confirming_evidence": [
+    "Authenticated Awin publisher dashboard is accessible.",
+    "Advertisers section exposes All Advertisers (1000+).",
+    "Programme status tabs are available, including Joined, Not Joined, Invitations, Pending, Suspended, Rejected and Closed.",
+    "Advertisers not yet joined expose Join actions."
+  ],
+  "blocking_or_unknown_evidence": [
+    "No provider/account evidence in the observed dashboard explicitly confirms the Pinterest promotional space as accepted."
+  ],
+  "non_inferences": [
+    "ACTIVE does not imply merchant approval.",
+    "ACTIVE does not imply payout/KYC/payment readiness.",
+    "Advertiser-directory access does not by itself prove Pinterest property acceptance.",
+    "No account ID or other private identifier from the screenshot is stored."
+  ],
+  "merchant_application_submitted": false,
+  "recommendation_for_brain": "Re-evaluate Awin NETWORK_READY using final_account_status=ACTIVE while keeping network_property_accepted=UNKNOWN. MCME-013 must remain blocked unless the canonical evaluator reaches NETWORK_READY with real provider/account evidence."
+}
