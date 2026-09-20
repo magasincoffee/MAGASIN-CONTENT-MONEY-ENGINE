@@ -2,11 +2,11 @@
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
   "updated_at": "2026-09-20T21:42:00+07:00",
-  "status": "MCME_012_AWIN_FINAL_DECISION_COMPLETE_ACTIVE_PROPERTY_UNKNOWN",
+  "status": "RUNNING_AWIN_PROPERTY_ACCEPTANCE_EVIDENCE",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
-  "current_task": "MCME-012/AWIN-FINAL-DECISION-01",
-  "current_task_title": "Collect final Awin approval/rejection evidence",
+  "current_task": "MCME-012/AWIN-PROPERTY-ACCEPTANCE-01",
+  "current_task_title": "Verify Awin acceptance/status of Pinterest promotional space",
   "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain must re-evaluate Awin NETWORK_READY using ACTIVE account evidence while keeping Pinterest property acceptance UNKNOWN",
+  "next_gate": "Collect real provider/account evidence for network_property_accepted on the confirmed Pinterest promotional space, then re-run canonical NETWORK_READY evaluation",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
-  "last_accepted_task": "MCME-012",
-  "last_accepted_commit": "2f4a5965e238a066631498e70361596edc3dd212",
+  "last_accepted_task": "MCME-012/AWIN-FINAL-DECISION-01",
+  "last_accepted_commit": "f06d303b3d41f02ad1e96688dfe381207f10b30f",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -67,7 +67,7 @@
   "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
-    "actual_execution_status": "AWIN_ACCOUNT_ACTIVE_PROPERTY_ACCEPTANCE_UNKNOWN",
+    "actual_execution_status": "AWIN_ACCOUNT_ACTIVE_PROPERTY_ACCEPTANCE_EVIDENCE_REQUIRED",
     "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
     "bounded_network_order": [
       "Awin",
@@ -96,7 +96,7 @@
   },
   "core_run_package_status": "COMPLETE",
   "whole_8h_run_complete": true,
-  "next_real_execution_task": "BRAIN_REEVALUATE_AWIN_NETWORK_READY",
+  "next_real_execution_task": "MCME-012/AWIN-PROPERTY-ACCEPTANCE-01",
   "early_finish_extension": {
     "eligible": true,
     "active": false,
@@ -261,14 +261,14 @@
     "brain_decision": "ACCEPT_WAIT_OWNER_NOT_NETWORK_READY"
   },
   "wait_owner": {
-    "reason": "Resolved for network account status: Awin account now has equivalent ACTIVE dashboard evidence. Pinterest promotional-space acceptance remains UNKNOWN.",
-    "required_next_evidence": "Provider/account evidence explicitly confirming Pinterest promotional-space acceptance, unless canonical evaluator/contract permits NETWORK_READY without it.",
+    "reason": "Awin account ACTIVE is verified, but canonical evaluator requires network_property_accepted VERIFIED true before NETWORK_READY.",
+    "required_next_evidence": "Real Awin provider/account evidence that the confirmed Pinterest promotional space is accepted/usable, or official provider evidence proving no separate property-approval state exists and what account-visible state is authoritative.",
     "merchant_applications_allowed": false,
     "mcme_013_blocked": true,
-    "collection_task": "MCME-012/AWIN-FINAL-DECISION-01_COMPLETE"
+    "collection_task": "MCME-012/AWIN-PROPERTY-ACCEPTANCE-01"
   },
   "awin_final_decision": {
-    "status": "COMPLETE",
+    "status": "ACCEPTED",
     "result": "ACTIVE_PROPERTY_UNKNOWN",
     "task_id": "MCME-012/AWIN-FINAL-DECISION-01",
     "evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-012_AWIN_FINAL_DECISION_EVIDENCE.json",
@@ -281,6 +281,8 @@
     "merchant_application_submitted": false,
     "network_ready_re_evaluation_required": true,
     "mcme_013_blocked": true,
-    "recommendation": "RE_EVALUATE_NETWORK_READY_WITH_ACTIVE_ACCOUNT_AND_PROPERTY_UNKNOWN"
+    "recommendation": "RE_EVALUATE_NETWORK_READY_WITH_ACTIVE_ACCOUNT_AND_PROPERTY_UNKNOWN",
+    "accepted_commit": "f06d303b3d41f02ad1e96688dfe381207f10b30f",
+    "brain_decision": "ACCEPT_ACTIVE_ACCOUNT_PROPERTY_UNKNOWN"
   }
 }
