@@ -35,5 +35,6 @@
     "pending_is_not_fail": true,
     "unknown_property_approval_is_not_pass": true
   },
-  "recommendation_for_mcme_012": "MCME-012 can deterministically evaluate this evidence as WAIT_OWNER / not NETWORK_READY. Do not advance to MCME-013 until Awin sends a final network decision or equivalent real account status."
+  "recommendation_for_mcme_012": "WAIT_OWNER / not NETWORK_READY until Awin final review outcome.",
+  "dispatch_id": "af08534d85adf82ec0431484279f7bf0"
 }
