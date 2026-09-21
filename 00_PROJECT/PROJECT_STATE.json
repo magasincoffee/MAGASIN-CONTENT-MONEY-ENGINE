@@ -2,11 +2,11 @@
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
   "updated_at": "2026-09-21T23:36:00+07:00",
-  "status": "MCME_018_SAFE_PREP_ACCEPTED_WAVE_1_CONTINUE",
+  "status": "MCME_013_WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
   "current_task": "NONE",
-  "current_task_title": "MCME-018 SAFE-PREP accepted; awaiting Brain dispatch of MCME-020/PREP",
+  "current_task_title": "MCME-013 AWIN-01 evidence captured; Kitchen Universe, LLC application pending advertiser approval",
   "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -33,7 +33,7 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Proceed with Owner-approved SAFE-PREP WAVE 1 at MCME-020/PREP. Next real execution remains MCME-013 Owner-deferred; impact.com runtime remains conditional fallback only.",
+  "next_gate": "MCME-014_BRAIN_REVIEW_REQUIRED",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
@@ -96,7 +96,7 @@
   },
   "core_run_package_status": "COMPLETE",
   "whole_8h_run_complete": true,
-  "next_real_execution_task": "MCME-013",
+  "next_real_execution_task": "MCME-014",
   "early_finish_extension": {
     "eligible": true,
     "active": false,
@@ -261,13 +261,17 @@
     "brain_decision": "ACCEPT_WAIT_OWNER_NOT_NETWORK_READY"
   },
   "wait_owner": {
-    "reason": "Awin network layer is NETWORK_READY. Owner has deferred merchant/KYC/payment actions while Robot performs approved SAFE-PREP waves.",
-    "required_next_evidence": "MCME-013 real Awin merchant candidate 1 evidence when Owner resumes protected account actions.",
+    "reason": "AWIN-01 merchant application for Kitchen Universe, LLC is PENDING advertiser approval after Owner-submitted Join request.",
+    "required_next_evidence": "Advertiser relationship decision/status change for AWIN-01, or Brain-dispatched MCME-014 deterministic evaluation of the current PENDING evidence.",
     "merchant_applications_allowed": false,
     "mcme_013_blocked": false,
-    "mcme_013_dependency_status": "UNBLOCKED_BY_NETWORK_READY_BUT_EXECUTION_DEFERRED_BY_OWNER",
-    "mcme_013_execution_deferred_by_owner": true,
-    "collection_task": "MCME-013_OWNER_DEFERRED"
+    "mcme_013_dependency_status": "EVIDENCE_CAPTURED_PENDING_ADVERTISER_APPROVAL",
+    "mcme_013_execution_deferred_by_owner": false,
+    "collection_task": "MCME-013_COMPLETE_WAIT_OWNER",
+    "candidate_slot": "AWIN-01",
+    "candidate_identity": "Kitchen Universe, LLC",
+    "reapplication_forbidden": true,
+    "candidate_2_forbidden_until_mcme014_merchant_fail": true
   },
   "awin_final_decision": {
     "status": "ACCEPTED",
@@ -349,8 +353,8 @@
     "wave_2": "PLANNED",
     "wave_3": "PLANNED",
     "next_task": "MCME-020/PREP",
-    "next_task_execution_allowed": true,
-    "next_task_gate": "BRAIN_DISPATCH_MCME_020_PREP"
+    "next_task_execution_allowed": false,
+    "next_task_gate": "OWNER_PAUSED_SAFE_PREP_FOR_AWIN_REAL_PATH"
   },
   "mcme_014_safe_prep": {
     "status": "ACCEPTED_PREPARED_ONLY",
@@ -476,5 +480,31 @@
     "accepted_at": "2026-09-21T23:36:00+07:00",
     "accepted_merge_commit": "ae620799fa136c5edb081d65a015e90a6c14cc9a",
     "brain_decision": "ACCEPT_PREPARED_ONLY"
+  },
+  "mcme_013": {
+    "status": "WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
+    "result": "WAIT_OWNER",
+    "task_id": "MCME-013/AWIN-MERCHANT-CANDIDATE-1-OWNER-GUIDED-EXECUTION-01",
+    "dispatch_id": null,
+    "evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-013_AWIN_MERCHANT_CANDIDATE_1_EVIDENCE.json",
+    "candidate_slot": "AWIN-01",
+    "merchant_public_name": "Kitchen Universe, LLC",
+    "program_public_identifier_sanitized": "81021",
+    "relationship_state": "PENDING",
+    "application_submitted_by_owner": true,
+    "external_side_effect": true,
+    "owner_actions_performed": true,
+    "observed_at": "2026-09-21T23:50:00+07:00",
+    "sanitized_evidence_complete_for_deterministic_mcme014": true,
+    "unknown_fields_preserved": true,
+    "no_unknown_promoted": true,
+    "historical_evidence_preserved": true,
+    "reapplication_forbidden": true,
+    "candidate_2_opened": false,
+    "mcme_014_executed": false,
+    "mcme_015_opened": false,
+    "gate_a_pass": false,
+    "next_gate": "MCME-014_BRAIN_REVIEW_REQUIRED",
+    "recommendation": "Brain verify MCME-013 WAIT_OWNER evidence, then decide whether to dispatch MCME-014 runtime. Do not reapply and do not open AWIN-02 while relationship is PENDING."
   }
 }
