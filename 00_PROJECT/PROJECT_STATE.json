@@ -1,12 +1,12 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-21T23:36:00+07:00",
-  "status": "MCME_013_WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
+  "updated_at": "2026-09-22T00:20:00+07:00",
+  "status": "MCME_013_ACCEPTED_WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
   "current_task": "NONE",
-  "current_task_title": "MCME-013 AWIN-01 evidence captured; Kitchen Universe, LLC application pending advertiser approval",
+  "current_task_title": "MCME-013 accepted; AWIN-01 Kitchen Universe, LLC pending advertiser approval",
   "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "MCME-014_BRAIN_REVIEW_REQUIRED",
+  "next_gate": "WAIT_OWNER_FOR_AWIN_01_ADVERTISER_DECISION; then refresh MCME-013 evidence and run MCME-014 on the changed real relationship state.",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
-  "last_accepted_task": "MCME-018/IMPACT-NETWORK-READY-SAFE-PREP-01",
-  "last_accepted_commit": "ae620799fa136c5edb081d65a015e90a6c14cc9a",
+  "last_accepted_task": "MCME-013/AWIN-MERCHANT-CANDIDATE-1-OWNER-GUIDED-EXECUTION-01",
+  "last_accepted_commit": "fd77e81b20cf134f8289d280b6217dce6e99cfab",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -261,13 +261,13 @@
     "brain_decision": "ACCEPT_WAIT_OWNER_NOT_NETWORK_READY"
   },
   "wait_owner": {
-    "reason": "AWIN-01 merchant application for Kitchen Universe, LLC is PENDING advertiser approval after Owner-submitted Join request.",
-    "required_next_evidence": "Advertiser relationship decision/status change for AWIN-01, or Brain-dispatched MCME-014 deterministic evaluation of the current PENDING evidence.",
+    "reason": "AWIN-01 Kitchen Universe, LLC application is PENDING advertiser approval after Owner-submitted Join request.",
+    "required_next_evidence": "Awin advertiser decision/status change for AWIN-01 (APPROVED/JOINED, REJECTED, BLOCKED, or other explicit provider state).",
     "merchant_applications_allowed": false,
     "mcme_013_blocked": false,
-    "mcme_013_dependency_status": "EVIDENCE_CAPTURED_PENDING_ADVERTISER_APPROVAL",
+    "mcme_013_dependency_status": "ACCEPTED_WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
     "mcme_013_execution_deferred_by_owner": false,
-    "collection_task": "MCME-013_COMPLETE_WAIT_OWNER",
+    "collection_task": "MCME-013_ACCEPTED_WAIT_OWNER",
     "candidate_slot": "AWIN-01",
     "candidate_identity": "Kitchen Universe, LLC",
     "reapplication_forbidden": true,
@@ -354,7 +354,7 @@
     "wave_3": "PLANNED",
     "next_task": "MCME-020/PREP",
     "next_task_execution_allowed": false,
-    "next_task_gate": "OWNER_PAUSED_SAFE_PREP_FOR_AWIN_REAL_PATH"
+    "next_task_gate": "OWNER_PAUSED_SAFE_PREP_FOR_AWIN_REAL_PATH_WAIT_OWNER"
   },
   "mcme_014_safe_prep": {
     "status": "ACCEPTED_PREPARED_ONLY",
@@ -482,7 +482,7 @@
     "brain_decision": "ACCEPT_PREPARED_ONLY"
   },
   "mcme_013": {
-    "status": "WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
+    "status": "ACCEPTED_WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
     "result": "WAIT_OWNER",
     "task_id": "MCME-013/AWIN-MERCHANT-CANDIDATE-1-OWNER-GUIDED-EXECUTION-01",
     "dispatch_id": null,
@@ -505,6 +505,11 @@
     "mcme_015_opened": false,
     "gate_a_pass": false,
     "next_gate": "MCME-014_BRAIN_REVIEW_REQUIRED",
-    "recommendation": "Brain verify MCME-013 WAIT_OWNER evidence, then decide whether to dispatch MCME-014 runtime. Do not reapply and do not open AWIN-02 while relationship is PENDING."
+    "recommendation": "Brain verify MCME-013 WAIT_OWNER evidence, then decide whether to dispatch MCME-014 runtime. Do not reapply and do not open AWIN-02 while relationship is PENDING.",
+    "accepted_at": "2026-09-22T00:20:00+07:00",
+    "accepted_merge_commit": "fd77e81b20cf134f8289d280b6217dce6e99cfab",
+    "brain_decision": "ACCEPT_WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
+    "mcme_014_dispatch_decision": "DEFER_UNTIL_RELATIONSHIP_STATE_CHANGES",
+    "mcme_014_dispatch_rationale": "Current canonical merchant relationship is PENDING, so immediate MCME-014 would deterministically remain WAIT_OWNER and unlock nothing."
   }
 }
