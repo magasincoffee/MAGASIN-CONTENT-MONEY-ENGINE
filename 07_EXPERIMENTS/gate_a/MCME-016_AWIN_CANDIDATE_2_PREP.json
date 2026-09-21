@@ -159,7 +159,8 @@
     "targeted_mcme016_local_reconstructed_canonical_semantics": "10/10 PASS",
     "combined_gate_a_semantic_subset": "37/37 PASS",
     "combined_scope": "canonical evaluator semantics + accepted MCME-014 common matrix + MCME-016 AWIN-02/guard matrix",
-    "full_repo_suite": "PENDING_ENVIRONMENT_CHECK"
+    "full_repo_suite": "NOT_RUN",
+    "full_repo_suite_reason": "Execution runtime cannot resolve github.com for git clone/ls-remote (Could not resolve host: github.com). GitHub connector provides bounded file operations but no complete repository archive/tree suitable for reconstructing the full suite."
   },
   "safety": {
     "real_evidence_consumed": false,
