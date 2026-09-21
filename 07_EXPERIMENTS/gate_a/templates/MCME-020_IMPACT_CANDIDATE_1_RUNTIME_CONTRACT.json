@@ -1,0 +1,215 @@
+{
+  "schema_version": "mcme.mcme020-impact-candidate-1-runtime-contract.v1",
+  "task_id": "MCME-020/IMPACT-CANDIDATE-1-SAFE-PREP-01",
+  "status": "PREPARED_ONLY",
+  "purpose": "Prepare deterministic IMPACT-01 merchant evaluation after a Brain-accepted real MCME-018 NETWORK_READY result and Owner-supplied real sanitized MCME-019 merchant evidence. This contract is not merchant evidence.",
+  "canonical_base": {
+    "repository": "magasincoffee/MAGASIN-CONTENT-MONEY-ENGINE",
+    "base_commit": "498e9277243acf8498caa423cd097a83fa1fd86a",
+    "candidate_slot": "IMPACT-01",
+    "network_name": "impact.com",
+    "canonical_evaluator": "04_ROBOT/first_cash/gate_a_evaluator/evaluator.py",
+    "evaluator_blob_sha": "c904bb3670b1e4fd34bee5adaaf624c4c4d51fd6",
+    "gate_a_schema": "07_EXPERIMENTS/gate_a/mcme_gate_a_evidence_v1.schema.json",
+    "schema_blob_sha": "ba144f3b83ae5e8d5074101eeb857841d51d5dbf",
+    "merchant_pattern_reference": "07_EXPERIMENTS/gate_a/templates/MCME-014_AWIN_CANDIDATE_1_RUNTIME_CONTRACT.json",
+    "impact_network_pattern_reference": "07_EXPERIMENTS/gate_a/templates/MCME-018_IMPACT_NETWORK_RUNTIME_CONTRACT.json"
+  },
+  "runtime_prerequisites": {
+    "all_required": true,
+    "currently_satisfied_in_prep": false,
+    "requirements": [
+      {
+        "prerequisite": "MCME-018_REAL_NETWORK_READY",
+        "rule": "MCME-018 must have actually executed on real MCME-017 evidence and Brain must have accepted its runtime result as NETWORK_READY. MCME-018 PREPARED_ONLY does not satisfy this prerequisite.",
+        "prep_satisfied": false
+      },
+      {
+        "prerequisite": "MCME-019_REAL_SANITIZED_IMPACT_MERCHANT_CANDIDATE_1_EVIDENCE",
+        "rule": "Owner must supply real sanitized IMPACT-01 merchant identity and merchant/downstream evidence.",
+        "prep_satisfied": false
+      }
+    ],
+    "guard_path": "04_ROBOT/first_cash/gate_a_evaluator/candidate_runtime_guard.py",
+    "guard_function": "assert_impact_candidate_1_runtime_ready",
+    "fail_closed": true
+  },
+  "impact_candidate_1_mapping_contract": {
+    "assembly": "Start from the Brain-accepted REAL MCME-018 runtime Gate A record/result. Preserve its accepted property/network facts unchanged, bind candidate_slot=IMPACT-01 and network.name=impact.com, then map only real sanitized MCME-019 merchant/downstream evidence.",
+    "immutable_upstream_paths": [
+      "/schema_version",
+      "/experiment_id",
+      "/route_ref",
+      "/candidate_slot",
+      "/property",
+      "/network"
+    ],
+    "fixed_binding": {
+      "candidate_slot": "IMPACT-01",
+      "network_name": "impact.com"
+    },
+    "identity_fields_from_real_mcme019": [
+      "/merchant/public_name",
+      "/merchant/program_public_identifier"
+    ],
+    "evidence_item_mappings": [
+      {
+        "runtime_source": "merchant.relationship",
+        "target": "/merchant/relationship"
+      },
+      {
+        "runtime_source": "geography.us_allowed",
+        "target": "/geography/us_allowed"
+      },
+      {
+        "runtime_source": "promotion.pinterest_social_allowed",
+        "target": "/promotion/pinterest_social_allowed"
+      },
+      {
+        "runtime_source": "promotion.direct_link_allowed",
+        "target": "/promotion/direct_link_allowed"
+      },
+      {
+        "runtime_source": "promotion.deep_link_allowed",
+        "target": "/promotion/deep_link_allowed"
+      },
+      {
+        "runtime_source": "tracking.link_capability",
+        "target": "/tracking/link_capability"
+      },
+      {
+        "runtime_source": "tracking.attribution_subid_capability",
+        "target": "/tracking/attribution_subid_capability"
+      },
+      {
+        "runtime_source": "commission.commissionable_action",
+        "target": "/commission/commissionable_action"
+      },
+      {
+        "runtime_source": "validation.locking_rule",
+        "target": "/validation/locking_rule"
+      },
+      {
+        "runtime_source": "validation.reversal_return_rule",
+        "target": "/validation/reversal_return_rule"
+      },
+      {
+        "runtime_source": "payout.threshold_cycle",
+        "target": "/payout/threshold_cycle"
+      },
+      {
+        "runtime_source": "payout.feasibility",
+        "target": "/payout/feasibility"
+      },
+      {
+        "runtime_source": "payout.rail_type",
+        "target": "/payout/rail_type"
+      },
+      {
+        "runtime_source": "rights_disclosure.creative_usage",
+        "target": "/rights_disclosure/creative_usage"
+      },
+      {
+        "runtime_source": "rights_disclosure.affiliate_disclosure",
+        "target": "/rights_disclosure/affiliate_disclosure"
+      }
+    ],
+    "unknown_rule": "Any merchant/downstream field not proven by real sanitized MCME-019 evidence remains UNKNOWN/null.",
+    "verified_rule": "VERIFIED/FAIL evidence items must carry real sanitized source_reference_sanitized and observed_at values satisfying the Gate A schema.",
+    "no_prefill_rule": "PREP must not contain a real or fictional merchant/program identity as runtime truth.",
+    "recorded_at_rule": "Set at runtime from the sanitized evidence assembly event; PREP does not invent it."
+  },
+  "deterministic_evaluation_path": {
+    "evaluator": "04_ROBOT/first_cash/gate_a_evaluator/evaluator.py",
+    "schema": "07_EXPERIMENTS/gate_a/mcme_gate_a_evidence_v1.schema.json",
+    "replay_count_minimum": 2,
+    "evidence_digest": "Use canonical evaluator evaluation_id = SHA-256 canonical digest of the complete sanitized Gate A record.",
+    "deterministic_requirement": "Identical IMPACT-01 runtime input must produce identical canonical output and evaluation_id.",
+    "evaluator_semantics_modified": false,
+    "schema_modified": false
+  },
+  "reconciliation": {
+    "reconciliation_key": "MCME-FIRST-CASH-V1|IMPACT-01",
+    "key_function": "impact_candidate_reconciliation_key",
+    "impact_02_key": "MCME-FIRST-CASH-V1|IMPACT-02",
+    "keys_must_differ": true,
+    "exact_duplicate": "Same IMPACT-01 reconciliation key + same evaluation_id => reconcile/reuse the existing result; do not duplicate the merchant path.",
+    "superseding_evidence": "Same IMPACT-01 key + changed real evidence/evaluation_id => append/supersede the IMPACT-01 evidence revision and re-evaluate.",
+    "merchant_identity_binding": "The first real Owner-confirmed MCME-019 merchant public name + program public identifier binds IMPACT-01.",
+    "merchant_identity_conflict": "A different merchant/program identity later presented on IMPACT-01 is a fail-closed reconciliation conflict requiring Brain review; it must not silently replace the binding.",
+    "cross_network_rule": "IMPACT-01 must use network.name=impact.com. Awin evidence must never be relabeled as IMPACT evidence.",
+    "slot_rule": "MCME-020 runtime accepts IMPACT-01 only. IMPACT-02 remains blocked until a Brain-accepted real MCME-020 runtime terminal MERCHANT_FAIL. IMPACT-03 is forbidden.",
+    "blind_reapply_forbidden": true
+  },
+  "outcome_contract": {
+    "canonical_states_are_authoritative": true,
+    "runtime_completion_mapping": [
+      {
+        "when_canonical_state": "PASS",
+        "mcme_020_runtime_result": "PASS-TO-PAYOUT-READINESS",
+        "completion": "EXECUTED_RESULT_ELIGIBLE_FOR_BRAIN_REVIEW"
+      },
+      {
+        "when_canonical_state": "WAIT_OWNER",
+        "mcme_020_runtime_result": "WAIT_OWNER",
+        "completion": "EXECUTED_RESULT_ELIGIBLE_FOR_BRAIN_REVIEW"
+      },
+      {
+        "when_canonical_state": "FAIL",
+        "mcme_020_runtime_result": "MERCHANT_FAIL",
+        "completion": "EXECUTED_RESULT_ELIGIBLE_FOR_BRAIN_REVIEW"
+      },
+      {
+        "when_canonical_state_in": [
+          "NETWORK_READY",
+          "MERCHANT_READY",
+          "TRACKING_READY",
+          "VALIDATION_TERMS_READY",
+          "PAYOUT_READY",
+          "RIGHTS_DISCLOSURE_READY",
+          "OWNER_ACTION_REQUIRED"
+        ],
+        "mcme_020_runtime_result": null,
+        "completion": "WAIT_REAL_EVIDENCE_NOT_DOD"
+      }
+    ],
+    "note": "Intermediate canonical stages remain non-terminal and must not open MCME-021."
+  },
+  "runtime_result_artifact_contract": {
+    "schema_version": "mcme.mcme020-runtime-result.v1",
+    "required_fields": [
+      "task_id",
+      "candidate_slot",
+      "source_mcme018_real_network_ready",
+      "source_mcme019_evidence",
+      "reconciliation_key",
+      "merchant_identity_binding",
+      "evaluation_id",
+      "canonical_evaluator_output",
+      "mcme_020_runtime_result",
+      "deterministic_replay",
+      "historical_evidence_preserved",
+      "external_side_effect",
+      "owner_action_performed"
+    ],
+    "fixed_values": {
+      "task_id": "MCME-020",
+      "candidate_slot": "IMPACT-01",
+      "reconciliation_key": "MCME-FIRST-CASH-V1|IMPACT-01",
+      "external_side_effect": false,
+      "owner_action_performed": false
+    }
+  },
+  "prep_truth": {
+    "real_evidence_consumed": false,
+    "external_side_effect": false,
+    "owner_action_performed": false,
+    "unknown_promoted": false,
+    "historical_evidence_preserved": true,
+    "gate_a_truth_changed": false,
+    "mcme018_runtime_executed": false,
+    "mcme019_executed": false,
+    "mcme020_executed": false,
+    "mcme021_opened": false
+  }
+}
