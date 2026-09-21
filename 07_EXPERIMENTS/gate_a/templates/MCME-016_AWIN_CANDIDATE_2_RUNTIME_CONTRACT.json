@@ -1,0 +1,156 @@
+{
+  "schema_version": "mcme.mcme016-awin-candidate-2-runtime-contract.v1",
+  "task_id": "MCME-016/AWIN-CANDIDATE-2-SAFE-PREP-01",
+  "status": "PREPARED_ONLY",
+  "purpose": "Bind the already-canonical Gate A merchant evaluation machinery to bounded fallback slot AWIN-02. This is preparation only and contains no real merchant evidence.",
+  "reuse": {
+    "canonical_evaluator": "04_ROBOT/first_cash/gate_a_evaluator/evaluator.py",
+    "evaluator_blob_sha": "c904bb3670b1e4fd34bee5adaaf624c4c4d51fd6",
+    "gate_a_schema": "07_EXPERIMENTS/gate_a/mcme_gate_a_evidence_v1.schema.json",
+    "schema_blob_sha": "ba144f3b83ae5e8d5074101eeb857841d51d5dbf",
+    "candidate_1_common_contract": "07_EXPERIMENTS/gate_a/templates/MCME-014_AWIN_CANDIDATE_1_RUNTIME_CONTRACT.json",
+    "candidate_1_contract_blob_sha": "0331b627b52f5755ca55abd134dbb8636b9117ac",
+    "candidate_1_prep": "07_EXPERIMENTS/gate_a/MCME-014_AWIN_CANDIDATE_1_PREP.json",
+    "shared_runtime_guard": "04_ROBOT/first_cash/gate_a_evaluator/candidate_runtime_guard.py",
+    "evaluator_semantics_modified": false,
+    "schema_modified": false
+  },
+  "canonical_base": {
+    "repository": "magasincoffee/MAGASIN-CONTENT-MONEY-ENGINE",
+    "base_commit": "ff34969a6483ab62ca257e68fd9145b88f4831b8",
+    "network_ready_artifact": "07_EXPERIMENTS/gate_a/MCME-012_AWIN_NETWORK_READY_RERUN.json",
+    "network_ready_evaluation_id": "f6a8afc482745cb01cf6326b3327b37bd0991febaf78e8d0b48be60877ecbb5a",
+    "candidate_slot": "AWIN-02",
+    "network": "Awin"
+  },
+  "runtime_prerequisites": {
+    "all_required": true,
+    "requirements": [
+      {
+        "prerequisite": "MCME-014_RUNTIME_ACCEPTED_MERCHANT_FAIL",
+        "rule": "There must be a Brain-accepted real runtime MCME-014 result for AWIN-01 and its terminal result must equal MERCHANT_FAIL.",
+        "prep_satisfied": false
+      },
+      {
+        "prerequisite": "MCME-015_REAL_SANITIZED_AWIN_MERCHANT_CANDIDATE_2_EVIDENCE",
+        "rule": "Owner must supply real sanitized AWIN-02 merchant evidence from MCME-015.",
+        "prep_satisfied": false
+      }
+    ],
+    "guard_path": "04_ROBOT/first_cash/gate_a_evaluator/candidate_runtime_guard.py",
+    "fail_closed": true
+  },
+  "assembly_rule": {
+    "seed": "Start from the accepted MCME-012 mapped_gate_a_record, deep-copy it, then set candidate_slot to AWIN-02 before applying only real sanitized MCME-015 merchant/downstream evidence.",
+    "immutable_network_truth": [
+      "/schema_version",
+      "/experiment_id",
+      "/route_ref",
+      "/property",
+      "/network"
+    ],
+    "required_candidate_slot": "AWIN-02",
+    "identity_fields_from_mcme015": [
+      "/merchant/public_name",
+      "/merchant/program_public_identifier"
+    ],
+    "required_evidence_item_mappings": [
+      "merchant.relationship",
+      "geography.us_allowed",
+      "promotion.pinterest_social_allowed",
+      "promotion.direct_link_allowed",
+      "promotion.deep_link_allowed",
+      "tracking.link_capability",
+      "tracking.attribution_subid_capability",
+      "commission.commissionable_action",
+      "validation.locking_rule",
+      "validation.reversal_return_rule",
+      "payout.threshold_cycle",
+      "payout.feasibility",
+      "payout.rail_type",
+      "rights_disclosure.creative_usage",
+      "rights_disclosure.affiliate_disclosure"
+    ],
+    "unknown_rule": "Fields not proven by real MCME-015 sanitized evidence remain UNKNOWN/null.",
+    "no_prefill_rule": "Do not prefill merchant/program identity or any VERIFIED merchant/downstream evidence in PREP."
+  },
+  "deterministic_evaluation": {
+    "evaluator": "04_ROBOT/first_cash/gate_a_evaluator/evaluator.py",
+    "replay_count_minimum": 2,
+    "deterministic_requirement": "Identical sanitized AWIN-02 input must yield identical evaluator output and evaluation_id on repeated evaluation.",
+    "evidence_digest": "Canonical evaluator evaluation_id (SHA-256 canonical digest of the complete sanitized Gate A record)."
+  },
+  "reconciliation": {
+    "reconciliation_key": "MCME-FIRST-CASH-V1|AWIN-02",
+    "candidate_1_key": "MCME-FIRST-CASH-V1|AWIN-01",
+    "keys_must_differ": true,
+    "exact_duplicate": "Same AWIN-02 reconciliation_key + same evaluation_id reuses/reconciles to the existing result.",
+    "superseding_evidence": "Same AWIN-02 reconciliation_key + changed evaluation_id appends/supersedes evidence for AWIN-02; it does not create another path.",
+    "cross_slot_rule": "AWIN-01 evidence/result must never be reconciled into AWIN-02, and AWIN-02 evidence/result must never overwrite AWIN-01.",
+    "hidden_slot_rule": "AWIN-03 or any additional Awin candidate slot is forbidden by bounded architecture/schema.",
+    "merchant_identity_binding": "The first real merchant public/program identity confirmed by Owner in MCME-015 binds AWIN-02. A later different identity on AWIN-02 is a reconciliation conflict requiring Brain review, not a new merchant path.",
+    "blind_reapply_forbidden": true
+  },
+  "outcome_contract": {
+    "canonical_states_are_authoritative": true,
+    "terminal_mapping": [
+      {
+        "canonical_state": "PASS",
+        "mcme_016_runtime_result": "PASS-TO-PAYOUT-READINESS"
+      },
+      {
+        "canonical_state": "WAIT_OWNER",
+        "mcme_016_runtime_result": "WAIT_OWNER"
+      },
+      {
+        "canonical_state": "FAIL",
+        "mcme_016_runtime_result": "MERCHANT_FAIL"
+      }
+    ],
+    "intermediate_states": [
+      "NETWORK_READY",
+      "MERCHANT_READY",
+      "TRACKING_READY",
+      "VALIDATION_TERMS_READY",
+      "PAYOUT_READY",
+      "RIGHTS_DISCLOSURE_READY",
+      "OWNER_ACTION_REQUIRED"
+    ],
+    "intermediate_rule": "Intermediate canonical states have no terminal MCME-016 result and remain WAIT_REAL_EVIDENCE_NOT_DOD."
+  },
+  "runtime_result_artifact_contract": {
+    "schema_version": "mcme.mcme016-runtime-result.v1",
+    "required_fields": [
+      "task_id",
+      "candidate_slot",
+      "accepted_mcme014_runtime_result",
+      "source_mcme015_evidence",
+      "source_mcme012_network_ready",
+      "reconciliation_key",
+      "evaluation_id",
+      "canonical_evaluator_output",
+      "mcme_016_runtime_result",
+      "deterministic_replay",
+      "historical_evidence_preserved",
+      "external_side_effect",
+      "owner_action_performed"
+    ],
+    "fixed_values": {
+      "task_id": "MCME-016",
+      "candidate_slot": "AWIN-02",
+      "source_mcme012_network_ready": "07_EXPERIMENTS/gate_a/MCME-012_AWIN_NETWORK_READY_RERUN.json",
+      "reconciliation_key": "MCME-FIRST-CASH-V1|AWIN-02",
+      "external_side_effect": false,
+      "owner_action_performed": false
+    }
+  },
+  "prep_truth": {
+    "real_evidence_consumed": false,
+    "external_side_effect": false,
+    "owner_action_performed": false,
+    "unknown_promoted": false,
+    "mcme_015_executed": false,
+    "mcme_016_executed": false,
+    "gate_a_truth_changed": false
+  }
+}
