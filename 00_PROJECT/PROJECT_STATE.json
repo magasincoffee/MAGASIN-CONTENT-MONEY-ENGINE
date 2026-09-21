@@ -1,12 +1,12 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-20T22:27:00+07:00",
-  "status": "RUNNING_AWIN_NETWORK_REEVALUATION",
+  "updated_at": "2026-09-21T22:55:00+07:00",
+  "status": "AWIN_NETWORK_READY_SAFE_PREP_WAVE_1_READY",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
-  "current_task": "MCME-012/AWIN-NETWORK-REEVALUATION-01",
-  "current_task_title": "Re-run canonical Awin NETWORK_READY evaluator with accepted property evidence",
+  "current_task": "NONE",
+  "current_task_title": "Wave 0 complete; awaiting Brain dispatch of MCME-014/PREP",
   "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Run canonical evaluator with property.authorized=VERIFIED true, property.network_property_accepted=VERIFIED true, network.relationship=ACTIVE; accept only evaluator output",
+  "next_gate": "Owner MCME-013 is dependency-unblocked but deferred by Owner; proceed with Owner-approved SAFE-PREP WAVE 1 starting MCME-014/PREP without merchant application or other protected actions",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
-  "last_accepted_task": "MCME-012/AWIN-PROPERTY-ACCEPTANCE-01",
-  "last_accepted_commit": "4506ba8f2d415d40e989f45793cfc99ee5355e7f",
+  "last_accepted_task": "MCME-012/AWIN-NETWORK-REEVALUATION-01",
+  "last_accepted_commit": "97f875eea22b89f3d5631c505537cee86d6ee7e7",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -67,7 +67,7 @@
   "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
-    "actual_execution_status": "AWIN_NETWORK_REEVALUATION_REQUIRED",
+    "actual_execution_status": "AWIN_NETWORK_READY_MERCHANT_EVIDENCE_REQUIRED",
     "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
     "bounded_network_order": [
       "Awin",
@@ -96,7 +96,7 @@
   },
   "core_run_package_status": "COMPLETE",
   "whole_8h_run_complete": true,
-  "next_real_execution_task": "MCME-012/AWIN-NETWORK-REEVALUATION-01",
+  "next_real_execution_task": "MCME-013",
   "early_finish_extension": {
     "eligible": true,
     "active": false,
@@ -261,11 +261,13 @@
     "brain_decision": "ACCEPT_WAIT_OWNER_NOT_NETWORK_READY"
   },
   "wait_owner": {
-    "reason": "Resolved at network property layer.",
-    "required_next_evidence": "None before deterministic Awin network reevaluation.",
+    "reason": "Awin network layer is NETWORK_READY. Owner has deferred merchant/KYC/payment actions while Robot performs approved SAFE-PREP waves.",
+    "required_next_evidence": "MCME-013 real Awin merchant candidate 1 evidence when Owner resumes protected account actions.",
     "merchant_applications_allowed": false,
-    "mcme_013_blocked": true,
-    "collection_task": "MCME-012/AWIN-NETWORK-REEVALUATION-01"
+    "mcme_013_blocked": false,
+    "mcme_013_dependency_status": "UNBLOCKED_BY_NETWORK_READY_BUT_EXECUTION_DEFERRED_BY_OWNER",
+    "mcme_013_execution_deferred_by_owner": true,
+    "collection_task": "MCME-013_OWNER_DEFERRED"
   },
   "awin_final_decision": {
     "status": "ACCEPTED",
@@ -307,5 +309,45 @@
     "accepted_at": "2026-09-20T22:27:00+07:00",
     "accepted_commit": "4506ba8f2d415d40e989f45793cfc99ee5355e7f",
     "brain_decision": "ACCEPT_NETWORK_PROPERTY_ACCEPTED_VERIFIED_TRUE"
+  },
+  "next_safe_prep_task": "MCME-014/PREP",
+  "awin_network_reevaluation": {
+    "status": "ACCEPTED",
+    "result": "NETWORK_READY",
+    "task_id": "MCME-012/AWIN-NETWORK-REEVALUATION-01",
+    "dispatch_id": null,
+    "evaluation_artifact": "07_EXPERIMENTS/gate_a/MCME-012_AWIN_NETWORK_READY_RERUN.json",
+    "network": "AWIN",
+    "classification": "NETWORK_READY",
+    "network_ready": true,
+    "canonical_evaluator_state": "NETWORK_READY",
+    "canonical_evaluator_reason": "MERCHANT_CLASS_NOT_VERIFIED",
+    "transition_trace": [
+      "NETWORK_READY"
+    ],
+    "evaluation_id": "f6a8afc482745cb01cf6326b3327b37bd0991febaf78e8d0b48be60877ecbb5a",
+    "deterministic_replay": "2/2 MATCH",
+    "downstream_unknown_field_count": 15,
+    "downstream_unknowns_preserved": true,
+    "historical_evidence_preserved": true,
+    "merchant_application_submitted": false,
+    "gate_a_pass": false,
+    "owner_action_deferred": true,
+    "next_real_execution_task": "MCME-013",
+    "next_safe_prep_task": "MCME-014/PREP",
+    "accepted_at": "2026-09-21T22:55:00+07:00",
+    "accepted_commit": "97f875eea22b89f3d5631c505537cee86d6ee7e7",
+    "brain_decision": "ACCEPT_NETWORK_READY_DEFER_OWNER_ACTION_PROCEED_SAFE_PREP"
+  },
+  "safe_prep_waves": {
+    "status": "LOCKED",
+    "plan_artifact": "00_PROJECT/MCME_SAFE_PREP_WAVES_V1.md",
+    "plan_commit": "41f1d02d9b8144cda4723e165f5d63ed0ce92da8",
+    "owner_actions_deferred": true,
+    "wave_0": "COMPLETE",
+    "wave_1": "READY_FOR_BRAIN_DISPATCH",
+    "wave_2": "PLANNED",
+    "wave_3": "PLANNED",
+    "next_task": "MCME-014/PREP"
   }
 }
