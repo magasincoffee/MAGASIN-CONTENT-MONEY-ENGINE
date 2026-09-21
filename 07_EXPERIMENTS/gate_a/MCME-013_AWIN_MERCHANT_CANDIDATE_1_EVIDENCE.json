@@ -1,0 +1,205 @@
+{
+  "schema_version": "mcme.mcme013-awin-merchant-candidate-1-evidence.v1",
+  "task_id": "MCME-013/AWIN-MERCHANT-CANDIDATE-1-OWNER-GUIDED-EXECUTION-01",
+  "dispatch_id": null,
+  "status": "WAIT_OWNER",
+  "result": "WAIT_OWNER",
+  "platform": "AWIN",
+  "candidate_slot": "AWIN-01",
+  "network_name": "Awin",
+  "merchant_public_name": "Kitchen Universe, LLC",
+  "program_public_identifier_sanitized": "81021",
+  "merchant_identity_binding": {
+    "status": "BOUND",
+    "basis": "First Owner-confirmed merchant candidate for AWIN-01; Owner submitted the join request for this exact programme.",
+    "silent_replacement_forbidden": true
+  },
+  "relationship_state": "PENDING",
+  "observed_at": "2026-09-21T23:50:00+07:00",
+  "observed_at_basis": "Owner-guided interactive Awin session; provider UI screenshots and Owner-supplied programme Terms PDF were reviewed in-session. Exact screenshot capture timestamp was not exposed by Awin.",
+  "source_evidence": [
+    {
+      "source_reference_sanitized": "AWIN_DIRECTORY_US_FILTER_KITCHEN_UNIVERSE_LLC",
+      "source_type": "OWNER_SCREENSHOT",
+      "finding": "Kitchen Universe, LLC appeared in Awin advertiser directory while United States of America filter was selected; programme entry showed Product Feed=Yes and green Link Status.",
+      "private_account_identifiers_stored": false
+    },
+    {
+      "source_reference_sanitized": "AWIN_KITCHEN_UNIVERSE_PROGRAMME_OVERVIEW",
+      "source_type": "OWNER_SCREENSHOT",
+      "finding": "Programme overview described cookware/kitchen products, text links/creatives availability, 6% base commission and monthly payouts.",
+      "private_account_identifiers_stored": false
+    },
+    {
+      "source_reference_sanitized": "AWIN_KITCHEN_UNIVERSE_TERMS_2026_03_31",
+      "source_type": "OWNER_SUPPLIED_PROGRAMME_TERMS_PDF",
+      "finding": "Programme terms explicitly allowed Social traffic, Direct linking, Content creators and influencers, and described commission exclusions/reversal conditions; paid-search brand bidding was restricted.",
+      "terms_last_updated": "2026-03-31"
+    },
+    {
+      "source_reference_sanitized": "AWIN_KITCHEN_UNIVERSE_COMMISSION_RATES_DEFAULT_6_PERCENT",
+      "source_type": "OWNER_SCREENSHOT",
+      "finding": "Commission Rates page showed Default commission group at 6.00%."
+    },
+    {
+      "source_reference_sanitized": "AWIN_KITCHEN_UNIVERSE_JOIN_REQUEST_SENT_PENDING_APPROVAL",
+      "source_type": "OWNER_SCREENSHOT",
+      "finding": "Awin displayed 'Your request to join has been sent to the advertiser' and programme state 'Pending Approval'.",
+      "private_account_identifiers_stored": false
+    }
+  ],
+  "sanitized_evidence_fields": {
+    "merchant.relationship": {
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "value": "PENDING",
+      "source_reference_sanitized": "AWIN_KITCHEN_UNIVERSE_JOIN_REQUEST_SENT_PENDING_APPROVAL",
+      "observed_at": "2026-09-21T23:50:00+07:00"
+    },
+    "geography.us_allowed": {
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "value": true,
+      "source_reference_sanitized": "AWIN_DIRECTORY_US_FILTER_KITCHEN_UNIVERSE_LLC",
+      "observed_at": "2026-09-21T23:50:00+07:00"
+    },
+    "promotion.pinterest_social_allowed": {
+      "status": "VERIFIED",
+      "confidence": "MEDIUM",
+      "value": true,
+      "source_reference_sanitized": "AWIN_KITCHEN_UNIVERSE_TERMS_2026_03_31_SOCIAL_TRAFFIC_ALLOWED",
+      "observed_at": "2026-09-21T23:50:00+07:00",
+      "note": "Programme terms explicitly allow Social traffic and Content creators/influencers. The terms do not name Pinterest separately; this mapping is to the canonical Pinterest/social permission field at the social-traffic policy class."
+    },
+    "promotion.direct_link_allowed": {
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "value": true,
+      "source_reference_sanitized": "AWIN_KITCHEN_UNIVERSE_TERMS_2026_03_31_DIRECT_LINKING_ALLOWED",
+      "observed_at": "2026-09-21T23:50:00+07:00"
+    },
+    "promotion.deep_link_allowed": {
+      "status": "UNKNOWN",
+      "confidence": "HIGH",
+      "value": null,
+      "source_reference_sanitized": null,
+      "observed_at": null
+    },
+    "tracking.link_capability": {
+      "status": "VERIFIED",
+      "confidence": "MEDIUM",
+      "value": true,
+      "source_reference_sanitized": "AWIN_KITCHEN_UNIVERSE_PROGRAMME_OVERVIEW_TEXT_LINKS_AVAILABLE",
+      "observed_at": "2026-09-21T23:50:00+07:00",
+      "note": "Programme overview states text links are available and directory showed green Link Status; actual post-approval link generation by this publisher was not tested."
+    },
+    "tracking.attribution_subid_capability": {
+      "status": "UNKNOWN",
+      "confidence": "HIGH",
+      "value": null,
+      "source_reference_sanitized": null,
+      "observed_at": null
+    },
+    "commission.commissionable_action": {
+      "status": "UNKNOWN",
+      "confidence": "HIGH",
+      "value": null,
+      "source_reference_sanitized": null,
+      "observed_at": null,
+      "note": "6% rate and transaction-based commission wording are visible, but the exact canonical commissionable action was not explicitly stated in the reviewed UI/terms."
+    },
+    "validation.locking_rule": {
+      "status": "UNKNOWN",
+      "confidence": "HIGH",
+      "value": null,
+      "source_reference_sanitized": null,
+      "observed_at": null
+    },
+    "validation.reversal_return_rule": {
+      "status": "VERIFIED",
+      "confidence": "MEDIUM",
+      "value": "Commission is declined for canceled or unpaid orders; programme terms also list commission-already-paid as a decline reason.",
+      "source_reference_sanitized": "AWIN_KITCHEN_UNIVERSE_TERMS_2026_03_31_COMMISSION_DECLINE_RULES",
+      "observed_at": "2026-09-21T23:50:00+07:00"
+    },
+    "payout.threshold_cycle": {
+      "status": "VERIFIED",
+      "confidence": "MEDIUM",
+      "value": "Monthly payouts",
+      "source_reference_sanitized": "AWIN_KITCHEN_UNIVERSE_PROGRAMME_OVERVIEW_MONTHLY_PAYOUTS",
+      "observed_at": "2026-09-21T23:50:00+07:00"
+    },
+    "payout.feasibility": {
+      "status": "UNKNOWN",
+      "confidence": "HIGH",
+      "value": null,
+      "source_reference_sanitized": null,
+      "observed_at": null,
+      "note": "Publisher payout/KYC/payment readiness was outside MCME-013 and was not evaluated."
+    },
+    "payout.rail_type": {
+      "status": "UNKNOWN",
+      "confidence": "HIGH",
+      "value": null,
+      "source_reference_sanitized": null,
+      "observed_at": null
+    },
+    "rights_disclosure.creative_usage": {
+      "status": "UNKNOWN",
+      "confidence": "HIGH",
+      "value": null,
+      "source_reference_sanitized": null,
+      "observed_at": null,
+      "note": "Creatives are advertised as available, but reviewed evidence did not define usage-rights terms."
+    },
+    "rights_disclosure.affiliate_disclosure": {
+      "status": "UNKNOWN",
+      "confidence": "HIGH",
+      "value": null,
+      "source_reference_sanitized": null,
+      "observed_at": null,
+      "note": "Owner stated an intention to use clear affiliate disclosure, but programme-specific disclosure requirements were not explicitly found."
+    }
+  },
+  "additional_public_programme_facts": {
+    "commission_group": "Default",
+    "commission_rate": "6.00%",
+    "product_feed": "Yes",
+    "overview_monthly_payouts": true,
+    "documents_uploaded_by_advertiser": false
+  },
+  "unknown_fields": [
+    "promotion.deep_link_allowed",
+    "tracking.attribution_subid_capability",
+    "commission.commissionable_action",
+    "validation.locking_rule",
+    "payout.feasibility",
+    "payout.rail_type",
+    "rights_disclosure.creative_usage",
+    "rights_disclosure.affiliate_disclosure"
+  ],
+  "owner_actions_performed": [
+    "Owner navigated authenticated Awin UI.",
+    "Owner inspected exactly one selected candidate programme.",
+    "Owner reviewed programme overview, terms, documents and commission rates.",
+    "Owner entered a truthful promotion message describing organic Pinterest content for US small-space kitchen/fridge-storage shoppers.",
+    "Owner personally accepted the programme terms checkbox.",
+    "Owner explicitly confirmed intent to submit.",
+    "Owner personally clicked Join and submitted the application."
+  ],
+  "application_submitted_by_owner": true,
+  "external_side_effect": true,
+  "external_side_effect_description": "Owner submitted one Awin merchant-programme join request for Kitchen Universe, LLC.",
+  "no_reapplication": true,
+  "candidate_2_opened": false,
+  "mcme_014_executed": false,
+  "gate_a_pass": false,
+  "private_or_secret_data_stored": false,
+  "account_id_stored": false,
+  "credentials_stored": false,
+  "otp_mfa_captcha_stored": false,
+  "payment_tax_kyc_data_stored": false,
+  "stop_reason": "Programme relationship is PENDING after Owner application; canonical MCME-013 rule is WAIT_OWNER. Do not reapply and do not open candidate 2 before MCME-014 decision.",
+  "next_gate": "MCME-014_BRAIN_REVIEW_REQUIRED",
+  "recommendation_for_brain": "Accept MCME-013 as WAIT_OWNER evidence for AWIN-01. The record is sufficient for deterministic MCME-014 evaluation, which should classify merchant PENDING as WAIT_OWNER. Do not dispatch MCME-015 and do not reapply."
+}
