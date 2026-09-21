@@ -1,0 +1,161 @@
+{
+  "schema_version": "mcme.mcme014-awin-candidate-1-prep.v1",
+  "task_id": "MCME-014/AWIN-CANDIDATE-1-SAFE-PREP-01",
+  "dispatch_id": null,
+  "status": "PREPARED_ONLY",
+  "result": "PREPARED_ONLY",
+  "prepared_at": "2026-09-21T22:49:00+07:00",
+  "canonical_inputs": [
+    {
+      "path": "00_PROJECT/MCME_SAFE_PREP_WAVES_V1.md",
+      "canonical_commit": "41f1d02d9b8144cda4723e165f5d63ed0ce92da8",
+      "blob_sha": "3f43fa1bdb9870a961e300dbfffc52daa5d3879f"
+    },
+    {
+      "path": "00_PROJECT/MCME-007_FIRST_CASH_IMPLEMENTATION_BACKLOG.md",
+      "canonical_commit": "371fed1574aee98650d24d49cf55bf74ee162a58",
+      "blob_sha": "49facec281315679b7daba40ef5ce6742bb9ebfb"
+    },
+    {
+      "path": "00_PROJECT/PROJECT_STATE.json",
+      "canonical_commit": "371fed1574aee98650d24d49cf55bf74ee162a58",
+      "blob_sha": "9c0af002695147354edbf45385ccafd015ce6206"
+    },
+    {
+      "path": "04_ROBOT/first_cash/gate_a_evaluator/evaluator.py",
+      "canonical_commit": "371fed1574aee98650d24d49cf55bf74ee162a58",
+      "blob_sha": "c904bb3670b1e4fd34bee5adaaf624c4c4d51fd6"
+    },
+    {
+      "path": "07_EXPERIMENTS/gate_a/mcme_gate_a_evidence_v1.schema.json",
+      "canonical_commit": "371fed1574aee98650d24d49cf55bf74ee162a58",
+      "blob_sha": "ba144f3b83ae5e8d5074101eeb857841d51d5dbf"
+    },
+    {
+      "path": "07_EXPERIMENTS/gate_a/MCME-012_AWIN_NETWORK_READY_RERUN.json",
+      "evidence_commit": "97f875eea22b89f3d5631c505537cee86d6ee7e7",
+      "observed_blob_sha_on_canonical_main": "371dc406c93b352bb173efc79f70c215adbde5e7",
+      "evaluation_id": "f6a8afc482745cb01cf6326b3327b37bd0991febaf78e8d0b48be60877ecbb5a"
+    },
+    {
+      "path": "04_ROBOT/first_cash/gate_a_evaluator/tests/test_evaluator.py",
+      "canonical_commit": "371fed1574aee98650d24d49cf55bf74ee162a58",
+      "blob_sha": "03577fc1ce2fbe77fdd21dc9fea47baa4bfae35a"
+    },
+    {
+      "path": "04_ROBOT/first_cash/gate_a_evaluator/tests/fixtures/full_verified_pass.json",
+      "canonical_commit": "371fed1574aee98650d24d49cf55bf74ee162a58",
+      "blob_sha": "8372fcd28be7e1008d8130402cef637a7530ba8d",
+      "fixture_only": true
+    }
+  ],
+  "five_step": {
+    "QUESTION": "Audit whether the canonical Gate A evaluator already implements the AWIN-01 merchant and downstream stage machine required by MCME-014.",
+    "DELETE": "A second MCME-014 evaluator was deleted from scope because the canonical evaluator already handles merchant, geography, promotion, tracking, validation, payout and rights/disclosure stages.",
+    "SIMPLIFY": "Use one canonical evaluator. Add only a runtime mapping/reconciliation contract and focused tests.",
+    "ACCELERATE": "Lock the MCME-013-to-Gate-A mapping, deterministic replay path, slot reconciliation and runtime output contract now so real sanitized evidence can be evaluated without redesign.",
+    "AUTOMATE": "Use canonical evaluation_id digest plus fixed AWIN-01 reconciliation key for exact replay and superseding evidence handling."
+  },
+  "existing_capability_audit": {
+    "second_evaluator_required": false,
+    "semantic_bug_detected": false,
+    "canonical_evaluator_capabilities": {
+      "candidate_slot_binding": "SUPPORTED",
+      "merchant_relationship": "SUPPORTED",
+      "geography_us_allowed": "SUPPORTED",
+      "pinterest_social_permission": "SUPPORTED",
+      "direct_deep_link_permission": "SUPPORTED",
+      "tracking_capability": "SUPPORTED",
+      "commission_validation_rules": "SUPPORTED",
+      "payout_fields": "SUPPORTED",
+      "rights_disclosure": "SUPPORTED",
+      "deterministic_evaluation_id": "SUPPORTED",
+      "fail_closed_status_handling": "SUPPORTED",
+      "progressive_stage_trace": "SUPPORTED"
+    },
+    "existing_test_coverage_before_task": [
+      "full verified PASS and full stage trace",
+      "UNKNOWN critical does not PASS",
+      "BLOCKED critical => WAIT_OWNER",
+      "explicit FAIL => FAIL",
+      "candidate slot bound check",
+      "deterministic replay/idempotency",
+      "merchant PENDING => WAIT_OWNER",
+      "PUBLIC_PROGRAM_ONLY => WAIT_OWNER",
+      "secret-like value rejection"
+    ],
+    "gaps_closed_by_task": [
+      "AWIN-01-specific merchant UNKNOWN => NETWORK_READY",
+      "merchant BLOCKED and REJECTED cases",
+      "APPROVED/JOINED with missing downstream stage stops",
+      "verified critical permission false fail-closed cases",
+      "all progressive downstream stage stops",
+      "runtime input mapping contract",
+      "reconciliation key and evidence digest rules",
+      "runtime result artifact contract"
+    ]
+  },
+  "what_was_prepared": {
+    "runtime_contract": "07_EXPERIMENTS/gate_a/templates/MCME-014_AWIN_CANDIDATE_1_RUNTIME_CONTRACT.json",
+    "targeted_tests": "04_ROBOT/first_cash/gate_a_evaluator/tests/test_mcme_014_awin_candidate_1_prep.py",
+    "evaluator_changed": false,
+    "schema_changed": false,
+    "fake_merchant_evidence_created": false,
+    "real_merchant_selected": false
+  },
+  "required_runtime_fields": [
+    "merchant.relationship",
+    "geography.us_allowed",
+    "promotion.pinterest_social_allowed",
+    "promotion.direct_link_allowed",
+    "promotion.deep_link_allowed",
+    "tracking.link_capability",
+    "tracking.attribution_subid_capability",
+    "commission.commissionable_action",
+    "validation.locking_rule",
+    "validation.reversal_return_rule",
+    "payout.threshold_cycle",
+    "payout.feasibility",
+    "payout.rail_type",
+    "rights_disclosure.creative_usage",
+    "rights_disclosure.affiliate_disclosure"
+  ],
+  "deterministic_path": {
+    "evaluator": "04_ROBOT/first_cash/gate_a_evaluator/evaluator.py",
+    "schema": "07_EXPERIMENTS/gate_a/mcme_gate_a_evidence_v1.schema.json",
+    "replay_minimum": 2,
+    "exact_duplicate_rule": "Same AWIN-01 reconciliation key and same canonical evaluation_id reuses the existing result.",
+    "supersede_rule": "Same AWIN-01 slot with changed real evidence produces a superseding evidence revision, not a duplicate merchant path."
+  },
+  "tests_run": {
+    "local_targeted_mcme014": "17/17 PASS",
+    "local_combined_gate_a_subset": "27/27 PASS",
+    "test_environment": "Reconstructed from canonical evaluator.py, schema and full_verified_pass fixture fetched at commit 371fed1574aee98650d24d49cf55bf74ee162a58.",
+    "full_repo_suite": "NOT_RUN",
+    "full_repo_suite_reason": "Repository clone/archive is unavailable in the execution runtime because direct network access to github.com cannot resolve; GitHub connector exposes file operations but no repository archive/tree download suitable for reconstructing the entire repo."
+  },
+  "safety": {
+    "real_evidence_consumed": false,
+    "external_side_effect": false,
+    "owner_action_performed": false,
+    "unknown_promoted": false,
+    "historical_evidence_preserved": true,
+    "mcme_013_executed": false,
+    "mcme_014_executed": false,
+    "mcme_014_pass_claimed": false,
+    "mcme_015_opened": false,
+    "mcme_016_started": false,
+    "production_content_created": false,
+    "published": false
+  },
+  "runtime_dependency_still_required": "MCME-013_REAL_SANITIZED_EVIDENCE",
+  "gate_a_truth_changed": false,
+  "current_evidence_level_changed": false,
+  "project_state_intent": {
+    "mcme_014_safe_prep": "PREPARED_ONLY",
+    "next_safe_prep_task_after_brain_acceptance": "MCME-016/PREP",
+    "next_real_execution_task": "MCME-013",
+    "owner_action": "DEFERRED"
+  },
+  "recommendation_for_brain": "ACCEPT PREPARED_ONLY if branch QA remains coherent. Runtime MCME-014 must not execute until MCME-013 supplies real sanitized AWIN-01 merchant evidence. After Brain acceptance, next SAFE-PREP task may be MCME-016/PREP while next real execution task remains MCME-013."
+}
