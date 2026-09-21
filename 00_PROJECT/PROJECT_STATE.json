@@ -1,12 +1,12 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-21T23:10:00+07:00",
-  "status": "MCME_016_SAFE_PREP_PREPARED_ONLY_PENDING_BRAIN_ACCEPTANCE",
+  "updated_at": "2026-09-21T23:25:00+07:00",
+  "status": "MCME_016_SAFE_PREP_ACCEPTED_WAVE_1_CONTINUE",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
-  "current_task": "MCME-016/AWIN-CANDIDATE-2-SAFE-PREP-01",
-  "current_task_title": "Awin candidate 2 fallback SAFE-PREP prepared only; pending Brain acceptance",
+  "current_task": "NONE",
+  "current_task_title": "MCME-016 SAFE-PREP accepted; awaiting Brain dispatch of MCME-018/PREP",
   "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Brain acceptance of MCME-016 PREPARED_ONLY. Real execution remains MCME-013 Owner-deferred; AWIN-02 runtime remains blocked until accepted MCME-014 runtime MERCHANT_FAIL plus real MCME-015 sanitized evidence.",
+  "next_gate": "Proceed with Owner-approved SAFE-PREP WAVE 1 at MCME-018/PREP. Next real execution remains MCME-013 Owner-deferred; impact.com runtime remains conditional fallback only.",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
-  "last_accepted_task": "MCME-014/AWIN-CANDIDATE-1-SAFE-PREP-01",
-  "last_accepted_commit": "b12bbdfc046873fad7c0ebfd3f89c6a3e13a025c",
+  "last_accepted_task": "MCME-016/AWIN-CANDIDATE-2-SAFE-PREP-01",
+  "last_accepted_commit": "032d5f0d4fd7c9e3baf21c0eff726d93ed13e34e",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -345,12 +345,12 @@
     "plan_commit": "41f1d02d9b8144cda4723e165f5d63ed0ce92da8",
     "owner_actions_deferred": true,
     "wave_0": "COMPLETE",
-    "wave_1": "MCME-016_PREPARED_ONLY_PENDING_BRAIN_ACCEPTANCE",
+    "wave_1": "MCME-016_PREPARED_ONLY_ACCEPTED",
     "wave_2": "PLANNED",
     "wave_3": "PLANNED",
     "next_task": "MCME-018/PREP",
-    "next_task_execution_allowed": false,
-    "next_task_gate": "BRAIN_ACCEPT_MCME_016_PREPARED_ONLY"
+    "next_task_execution_allowed": true,
+    "next_task_gate": "BRAIN_DISPATCH_MCME_018_PREP"
   },
   "mcme_014_safe_prep": {
     "status": "ACCEPTED_PREPARED_ONLY",
@@ -388,7 +388,7 @@
     "brain_decision": "ACCEPT_PREPARED_ONLY"
   },
   "mcme_016_safe_prep": {
-    "status": "PREPARED_ONLY_PENDING_BRAIN_ACCEPTANCE",
+    "status": "ACCEPTED_PREPARED_ONLY",
     "result": "PREPARED_ONLY",
     "task_id": "MCME-016/AWIN-CANDIDATE-2-SAFE-PREP-01",
     "dispatch_id": null,
@@ -424,6 +424,9 @@
       "combined_gate_a_subset": "37/37 PASS (local reconstructed canonical semantics)",
       "full_repo_suite": "NOT_RUN_RUNTIME_CANNOT_RESOLVE_GITHUB"
     },
-    "brain_acceptance_required_before_next_safe_prep": true
+    "brain_acceptance_required_before_next_safe_prep": false,
+    "accepted_at": "2026-09-21T23:25:00+07:00",
+    "accepted_merge_commit": "032d5f0d4fd7c9e3baf21c0eff726d93ed13e34e",
+    "brain_decision": "ACCEPT_PREPARED_ONLY"
   }
 }
