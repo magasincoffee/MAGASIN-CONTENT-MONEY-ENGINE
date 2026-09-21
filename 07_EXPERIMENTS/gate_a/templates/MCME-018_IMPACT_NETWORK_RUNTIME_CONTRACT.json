@@ -1,0 +1,160 @@
+{
+  "schema_version": "mcme.mcme018-impact-network-ready-runtime-contract.v1",
+  "task_id": "MCME-018/IMPACT-NETWORK-READY-SAFE-PREP-01",
+  "status": "PREPARED_ONLY",
+  "purpose": "Prepare deterministic impact.com network/property evaluation after real Awin bounded-path exhaustion and Owner-supplied MCME-017 sanitized evidence. This file is a mapping/runtime contract, not impact.com evidence.",
+  "canonical_base": {
+    "repository": "magasincoffee/MAGASIN-CONTENT-MONEY-ENGINE",
+    "base_commit": "cd7751215a6cd57f87608a8598666bb42be791ae",
+    "accepted_pinterest_and_network_seed": "07_EXPERIMENTS/gate_a/MCME-012_AWIN_NETWORK_READY_RERUN.json",
+    "seed_json_pointer": "/mapped_gate_a_record",
+    "accepted_property_identity_pointer": "/mapped_gate_a_record/property/public_reference_sanitized",
+    "accepted_property_authorization_pointer": "/mapped_gate_a_record/property/authorized",
+    "runtime_candidate_slot": "IMPACT-01",
+    "compatible_impact_slots": [
+      "IMPACT-01",
+      "IMPACT-02"
+    ],
+    "network_name": "impact.com"
+  },
+  "runtime_prerequisites": {
+    "all_required": true,
+    "currently_satisfied_in_prep": false,
+    "requirements": [
+      {
+        "prerequisite": "AWIN_BOUNDED_PATH_EXHAUSTED",
+        "rule": "Brain must have accepted real runtime exhaustion of the bounded Awin path. SAFE-PREP artifacts do not satisfy this. MCME-016 real runtime terminal result must be MERCHANT_FAIL and the canonical candidate-1/candidate-2 dependency chain must have actually executed.",
+        "prep_satisfied": false
+      },
+      {
+        "prerequisite": "MCME-017_REAL_SANITIZED_IMPACT_NETWORK_EVIDENCE",
+        "rule": "Owner must supply real sanitized impact.com network/property relationship evidence.",
+        "prep_satisfied": false
+      }
+    ],
+    "guard_path": "04_ROBOT/first_cash/gate_a_evaluator/candidate_runtime_guard.py",
+    "guard_function": "assert_impact_network_runtime_ready",
+    "fail_closed": true
+  },
+  "impact_network_mapping_contract": {
+    "assembly": "Deep-copy the accepted MCME-012 mapped_gate_a_record only as a structural/upstream-property seed. Replace candidate_slot with IMPACT-01 and network.name with impact.com before runtime evidence mapping.",
+    "immutable_upstream": [
+      "/schema_version",
+      "/experiment_id",
+      "/route_ref",
+      "/property/public_reference_sanitized",
+      "/property/authorized"
+    ],
+    "fixed_runtime_binding": {
+      "candidate_slot": "IMPACT-01",
+      "network_name": "impact.com"
+    },
+    "fields_from_real_mcme017_only": [
+      "/property/network_property_accepted",
+      "/network/relationship"
+    ],
+    "downstream_reset_to_unknown_null": [
+      "/merchant/public_name",
+      "/merchant/program_public_identifier",
+      "/merchant/relationship",
+      "/geography/us_allowed",
+      "/promotion/pinterest_social_allowed",
+      "/promotion/direct_link_allowed",
+      "/promotion/deep_link_allowed",
+      "/tracking/link_capability",
+      "/tracking/attribution_subid_capability",
+      "/commission/commissionable_action",
+      "/validation/locking_rule",
+      "/validation/reversal_return_rule",
+      "/payout/threshold_cycle",
+      "/payout/feasibility",
+      "/payout/rail_type",
+      "/rights_disclosure/creative_usage",
+      "/rights_disclosure/affiliate_disclosure"
+    ],
+    "reset_rule": "Merchant identity fields are null. Every downstream evidence item is UNKNOWN/HIGH/null with null source_reference_sanitized and observed_at until real downstream evidence exists.",
+    "no_prefill_rule": "No impact merchant/program or merchant-stage permission/capability may be prefilled during MCME-018.",
+    "unknown_never_promoted": true
+  },
+  "canonical_evaluation_path": {
+    "evaluator": "04_ROBOT/first_cash/gate_a_evaluator/evaluator.py",
+    "evaluator_blob_sha": "c904bb3670b1e4fd34bee5adaaf624c4c4d51fd6",
+    "schema": "07_EXPERIMENTS/gate_a/mcme_gate_a_evidence_v1.schema.json",
+    "schema_blob_sha": "ba144f3b83ae5e8d5074101eeb857841d51d5dbf",
+    "replay_count_minimum": 2,
+    "deterministic_requirement": "Identical sanitized runtime input must produce identical canonical output and evaluation_id.",
+    "evaluator_semantics_modified": false,
+    "schema_modified": false
+  },
+  "network_outcome_contract": {
+    "canonical_state_authoritative": true,
+    "mappings": [
+      {
+        "canonical_state": "NETWORK_READY",
+        "mcme_018_runtime_result": "NETWORK_READY",
+        "condition": "transition_trace contains NETWORK_READY and merchant layer is not VERIFIED"
+      },
+      {
+        "canonical_state": "WAIT_OWNER",
+        "mcme_018_runtime_result": "WAIT_OWNER"
+      },
+      {
+        "canonical_state": "OWNER_ACTION_REQUIRED",
+        "mcme_018_runtime_result": "WAIT_OWNER",
+        "note": "Preserve canonical OWNER_ACTION_REQUIRED state/reason in artifact; orchestration result remains non-pass and requires Owner evidence."
+      },
+      {
+        "canonical_state": "FAIL",
+        "mcme_018_runtime_result": "FALLBACK-ELIGIBLE",
+        "note": "Only valid for this network-only runtime record where every merchant/downstream field is forced UNKNOWN/null. Preserve canonical FAIL reason; FALLBACK-ELIGIBLE is the backlog orchestration classification for terminal impact network incompatibility, not an evaluator state."
+      }
+    ],
+    "gate_a_pass_forbidden": true,
+    "mcme019_runtime_not_opened_by_prep": true
+  },
+  "reconciliation": {
+    "relationship_key_function": "impact_network_reconciliation_key",
+    "key_basis": "MCME-FIRST-CASH-V1 + impact.com + SHA-256(normalized accepted sanitized Pinterest property identity)",
+    "one_relationship_per_owner_property": true,
+    "exact_duplicate": "Same relationship key + identical canonical evidence/evaluation_id reconciles to the same relationship/evaluation; do not create another impact.com account relationship path.",
+    "superseding_evidence": "Same relationship key + new sanitized evidence appends/supersedes the evidence revision and reruns the evaluator; it does not create a second relationship.",
+    "cross_network_rule": "IMPACT candidate slots must use network.name=impact.com. AWIN evidence/network binding must never be relabeled as impact evidence.",
+    "candidate_binding_rule": "MCME-018 network evaluation uses IMPACT-01 as the first impact candidate seed; IMPACT-02 remains schema-compatible for later bounded candidate flow, not a second network relationship.",
+    "duplicate_account_path_forbidden": true
+  },
+  "runtime_result_artifact_contract": {
+    "schema_version": "mcme.mcme018-runtime-result.v1",
+    "required_fields": [
+      "task_id",
+      "candidate_slot",
+      "source_awin_exhaustion_evidence",
+      "source_mcme017_evidence",
+      "impact_relationship_reconciliation_key",
+      "evaluation_id",
+      "canonical_evaluator_output",
+      "mcme_018_runtime_result",
+      "deterministic_replay",
+      "historical_evidence_preserved",
+      "external_side_effect",
+      "owner_action_performed"
+    ],
+    "fixed_values": {
+      "task_id": "MCME-018",
+      "candidate_slot": "IMPACT-01",
+      "external_side_effect": false,
+      "owner_action_performed": false
+    }
+  },
+  "prep_truth": {
+    "real_evidence_consumed": false,
+    "external_side_effect": false,
+    "owner_action_performed": false,
+    "unknown_promoted": false,
+    "historical_evidence_preserved": true,
+    "gate_a_truth_changed": false,
+    "awin_bounded_path_exhausted": false,
+    "mcme017_executed": false,
+    "mcme018_executed": false,
+    "impact_account_created_or_logged_in": false
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "schema_version": "mcme.mcme018-impact-network-ready-prep.v1",
+  "task_id": "MCME-018/IMPACT-NETWORK-READY-SAFE-PREP-01",
+  "dispatch_id": null,
+  "status": "PREPARED_ONLY",
+  "result": "PREPARED_ONLY",
+  "canonical_inputs": [
+    {
+      "path": "00_PROJECT/MCME_SAFE_PREP_WAVES_V1.md",
+      "commit": "41f1d02d9b8144cda4723e165f5d63ed0ce92da8",
+      "blob_sha": "3f43fa1bdb9870a961e300dbfffc52daa5d3879f"
+    },
+    {
+      "path": "00_PROJECT/MCME-007_FIRST_CASH_IMPLEMENTATION_BACKLOG.md",
+      "commit": "cd7751215a6cd57f87608a8598666bb42be791ae",
+      "blob_sha": "49facec281315679b7daba40ef5ce6742bb9ebfb"
+    },
+    {
+      "path": "00_PROJECT/PROJECT_STATE.json",
+      "commit": "cd7751215a6cd57f87608a8598666bb42be791ae",
+      "blob_sha": "57ba29f07b86770d3efe277aa977498aef549a7c"
+    },
+    {
+      "path": "04_ROBOT/first_cash/gate_a_evaluator/evaluator.py",
+      "commit": "cd7751215a6cd57f87608a8598666bb42be791ae",
+      "blob_sha": "c904bb3670b1e4fd34bee5adaaf624c4c4d51fd6"
+    },
+    {
+      "path": "07_EXPERIMENTS/gate_a/mcme_gate_a_evidence_v1.schema.json",
+      "commit": "cd7751215a6cd57f87608a8598666bb42be791ae",
+      "blob_sha": "ba144f3b83ae5e8d5074101eeb857841d51d5dbf"
+    },
+    {
+      "path": "07_EXPERIMENTS/gate_a/MCME-012_AWIN_NETWORK_READY_RERUN.json",
+      "commit": "cd7751215a6cd57f87608a8598666bb42be791ae",
+      "blob_sha": "371dc406c93b352bb173efc79f70c215adbde5e7"
+    },
+    {
+      "path": "07_EXPERIMENTS/gate_a/MCME-014_AWIN_CANDIDATE_1_PREP.json",
+      "commit": "cd7751215a6cd57f87608a8598666bb42be791ae",
+      "blob_sha": "862001083f1af7101e5a98181b05a7306b27f080"
+    },
+    {
+      "path": "07_EXPERIMENTS/gate_a/MCME-016_AWIN_CANDIDATE_2_PREP.json",
+      "commit": "cd7751215a6cd57f87608a8598666bb42be791ae",
+      "blob_sha": "038513cd4a7f65d7c65f20a4d40466a51a52a5cd"
+    },
+    {
+      "path": "04_ROBOT/first_cash/gate_a_evaluator/candidate_runtime_guard.py",
+      "commit": "cd7751215a6cd57f87608a8598666bb42be791ae",
+      "blob_sha": "08e236717594142ad7acf32d920b09ff4f67b6e5"
+    }
+  ],
+  "five_step": {
+    "QUESTION": "Does the canonical evaluator already implement impact.com network-stage semantics and bounded candidate/network binding?",
+    "DELETE": "Deleted an impact-specific evaluator and deleted wholesale duplication of generic Gate A network tests.",
+    "SIMPLIFY": "Reuse canonical evaluator/schema. Extend the existing pure runtime guard minimally for impact fallback prerequisites and one stable impact relationship key.",
+    "ACCELERATE": "Lock impact network mapping, fallback prerequisites, deterministic replay and idempotent relationship reconciliation before real Owner evidence exists.",
+    "AUTOMATE": "Use fail-closed runtime guard + stable property-scoped relationship key + canonical evaluation_id replay."
+  },
+  "existing_capability_audit": {
+    "semantic_bug_detected": false,
+    "impact_specific_evaluator_required": false,
+    "canonical_evaluator_supports_impact_network_stage": true,
+    "impact01_supported": true,
+    "impact02_supported": true,
+    "impact_slots_require_network_name_impact_com": true,
+    "cross_network_mixing_rejected": true,
+    "generic_network_semantics_reused": true,
+    "evaluator_semantics_changed": false,
+    "schema_changed": false
+  },
+  "reuse_vs_new_work": {
+    "reused": [
+      "Canonical Gate A evaluator network/property state machine",
+      "Gate A schema IMPACT-01/IMPACT-02 bindings",
+      "Accepted Pinterest property identity and authorization from upstream evidence",
+      "Existing pure candidate_runtime_guard module",
+      "Generic deterministic evaluation_id behavior",
+      "Accepted MCME-014/016 prep guard architecture"
+    ],
+    "new_minimal": [
+      "impact network relationship reconciliation-key helper",
+      "impact fallback runtime prerequisite guard",
+      "impact network runtime mapping/result contract",
+      "impact-specific regression tests",
+      "MCME-018 PREP readiness artifact",
+      "PROJECT_STATE PREPARED_ONLY transition"
+    ]
+  },
+  "what_was_prepared": {
+    "runtime_contract": "07_EXPERIMENTS/gate_a/templates/MCME-018_IMPACT_NETWORK_RUNTIME_CONTRACT.json",
+    "runtime_guard": "04_ROBOT/first_cash/gate_a_evaluator/candidate_runtime_guard.py",
+    "targeted_tests": "04_ROBOT/first_cash/gate_a_evaluator/tests/test_mcme_018_impact_network_ready_prep.py",
+    "candidate_slot_seed": "IMPACT-01",
+    "compatible_slots": [
+      "IMPACT-01",
+      "IMPACT-02"
+    ],
+    "network_name": "impact.com",
+    "deterministic_replay": "PREPARED",
+    "network_outcome_mapping": "PREPARED",
+    "relationship_reconciliation": "PREPARED",
+    "duplicate_account_path_prevention": "PREPARED",
+    "fake_impact_evidence_created": false,
+    "impact_account_opened": false
+  },
+  "runtime_prerequisites": {
+    "all_required": true,
+    "currently_satisfied": false,
+    "requirements": [
+      "AWIN_BOUNDED_PATH_EXHAUSTED",
+      "MCME-017_REAL_SANITIZED_IMPACT_NETWORK_EVIDENCE"
+    ],
+    "current_truth": {
+      "awin_bounded_path_real_runtime_exhausted": false,
+      "mcme014_runtime_executed": false,
+      "mcme016_runtime_executed": false,
+      "mcme016_terminal_merchant_fail_available": false,
+      "mcme017_executed": false,
+      "mcme017_real_sanitized_evidence_available": false
+    },
+    "fail_closed_guard": "assert_impact_network_runtime_ready"
+  },
+  "impact_network_mapping_contract": {
+    "immutable_upstream": [
+      "property.public_reference_sanitized",
+      "property.authorized"
+    ],
+    "fixed_runtime_binding": {
+      "candidate_slot": "IMPACT-01",
+      "network_name": "impact.com"
+    },
+    "real_mcme017_only": [
+      "property.network_property_accepted",
+      "network.relationship"
+    ],
+    "merchant_identity": "NULL",
+    "downstream_fields": "UNKNOWN/null until later real merchant/downstream evidence",
+    "unknown_promoted": false,
+    "gate_a_pass_possible_at_network_evaluation": false
+  },
+  "reconciliation_rules": {
+    "relationship_key": "MCME-FIRST-CASH-V1|impact.com|property-sha256:<sha256(normalized accepted sanitized Pinterest property identity)>",
+    "stable_for_same_property": true,
+    "one_relationship_per_owner_property": true,
+    "exact_duplicate": "same relationship key + same evidence/evaluation_id reconciles to the same impact relationship result",
+    "superseding_evidence": "same relationship key + new evidence appends/supersedes and reruns canonical evaluator",
+    "duplicate_account_relationship_path_forbidden": true,
+    "cross_network_mixing_forbidden": true,
+    "impact01_is_network_seed": true,
+    "impact02_is_not_second_network_relationship": true
+  },
+  "runtime_result_contract": {
+    "NETWORK_READY": "canonical NETWORK_READY -> MCME-018 NETWORK_READY",
+    "WAIT_OWNER": "canonical WAIT_OWNER or OWNER_ACTION_REQUIRED remains non-pass; orchestration result WAIT_OWNER while preserving canonical state/reason",
+    "FALLBACK_ELIGIBLE": "canonical FAIL on the network-only impact record -> terminal impact network incompatibility / FALLBACK-ELIGIBLE per backlog, preserving canonical FAIL reason",
+    "gate_a_pass": false,
+    "mcme019_not_opened_by_prep": true
+  },
+  "tests_run": {
+    "targeted_mcme018": "14/14 PASS",
+    "combined_gate_a_subset": "51/51 PASS",
+    "combined_scope": "reconstructed canonical evaluator/schema/fixture + generic evaluator tests + accepted MCME-014 + accepted MCME-016 guards + MCME-018 impact tests",
+    "deterministic_replay": "PASS",
+    "full_repo_suite": "NOT_RUN",
+    "full_repo_suite_reason": "Execution runtime cannot resolve github.com for git clone/ls-remote (Could not resolve host: github.com); GitHub connector does not expose a complete repository archive/tree suitable for reconstructing the full repository suite."
+  },
+  "safety": {
+    "real_evidence_consumed": false,
+    "external_side_effect": false,
+    "owner_action_performed": false,
+    "unknown_promoted": false,
+    "historical_evidence_preserved": true,
+    "gate_a_truth_changed": false,
+    "l0_evidence_level_changed": false,
+    "mcme013_executed": false,
+    "mcme014_runtime_executed": false,
+    "mcme016_runtime_executed": false,
+    "mcme017_executed": false,
+    "mcme018_runtime_executed": false,
+    "mcme019_opened": false,
+    "impact_account_created_or_logged_in": false,
+    "amazon_opened": false,
+    "production_content_created": false,
+    "published": false
+  },
+  "runtime_dependency_still_required": [
+    "AWIN_BOUNDED_PATH_EXHAUSTED",
+    "MCME-017_REAL_SANITIZED_IMPACT_NETWORK_EVIDENCE"
+  ],
+  "project_state_intent": {
+    "mcme018_safe_prep": "PREPARED_ONLY_PENDING_BRAIN_ACCEPTANCE",
+    "next_real_execution_task": "MCME-013",
+    "owner_action": "DEFERRED",
+    "gate_a_pass": false,
+    "awin_bounded_exhaustion": false,
+    "impact_runtime_open": false,
+    "next_safe_prep_task_after_brain_acceptance": "MCME-020/PREP",
+    "mcme020_execution_allowed_before_brain_acceptance": false
+  },
+  "recommendation_for_brain": "ACCEPT PREPARED_ONLY after branch QA. Runtime MCME-018 remains forbidden until the Awin bounded path has a Brain-accepted real runtime exhaustion and Owner supplies real sanitized MCME-017 impact.com network/property evidence. After acceptance, MCME-020/PREP may be dispatched separately; next real execution remains MCME-013."
+}
