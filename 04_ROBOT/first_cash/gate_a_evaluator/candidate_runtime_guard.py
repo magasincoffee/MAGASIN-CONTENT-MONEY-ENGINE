@@ -84,3 +84,88 @@ def assert_impact_network_runtime_ready(
         raise RuntimePrerequisiteError(
             "MCME-017 real sanitized impact.com network evidence is required before execution"
         )
+
+_IMPACT_RECONCILIATION_KEYS = {
+    "IMPACT-01": "MCME-FIRST-CASH-V1|IMPACT-01",
+    "IMPACT-02": "MCME-FIRST-CASH-V1|IMPACT-02",
+}
+
+
+def impact_candidate_reconciliation_key(candidate_slot: str) -> str:
+    """Return the fixed bounded reconciliation key for an allowed impact.com merchant slot."""
+    try:
+        return _IMPACT_RECONCILIATION_KEYS[candidate_slot]
+    except KeyError as exc:
+        raise RuntimePrerequisiteError(
+            f"unsupported bounded impact.com candidate slot: {candidate_slot}"
+        ) from exc
+
+
+def assert_impact_candidate_1_runtime_ready(
+    *,
+    candidate_slot: str,
+    network_name: str,
+    mcme_018_brain_accepted: bool,
+    mcme_018_runtime_result: str | None,
+    mcme_019_real_sanitized_evidence_present: bool,
+) -> None:
+    """Fail closed unless canonical IMPACT-01 merchant evaluation is unlocked."""
+    if candidate_slot != "IMPACT-01":
+        raise RuntimePrerequisiteError(
+            "MCME-020 runtime is bound exclusively to candidate_slot IMPACT-01"
+        )
+    if network_name != "impact.com":
+        raise RuntimePrerequisiteError(
+            "MCME-020 runtime is bound exclusively to network.name impact.com"
+        )
+    if not mcme_018_brain_accepted:
+        raise RuntimePrerequisiteError(
+            "Brain-accepted real MCME-018 NETWORK_READY is required before MCME-020 runtime"
+        )
+    if mcme_018_runtime_result != "NETWORK_READY":
+        raise RuntimePrerequisiteError(
+            "MCME-018 accepted real runtime result must be NETWORK_READY before MCME-020 runtime"
+        )
+    if not mcme_019_real_sanitized_evidence_present:
+        raise RuntimePrerequisiteError(
+            "MCME-019 real sanitized IMPACT-01 merchant evidence is required before execution"
+        )
+
+
+def assert_impact_candidate_1_identity_reconciles(
+    *,
+    bound_public_name: str | None,
+    bound_program_public_identifier: str | None,
+    incoming_public_name: str,
+    incoming_program_public_identifier: str,
+) -> None:
+    """Reject a silent merchant/program identity swap on the fixed IMPACT-01 slot."""
+    incoming_name = incoming_public_name.strip() if isinstance(incoming_public_name, str) else ""
+    incoming_program = (
+        incoming_program_public_identifier.strip()
+        if isinstance(incoming_program_public_identifier, str)
+        else ""
+    )
+    if not incoming_name or not incoming_program:
+        raise RuntimePrerequisiteError(
+            "IMPACT-01 identity reconciliation requires non-empty sanitized merchant/program identity"
+        )
+
+    if bound_public_name is None and bound_program_public_identifier is None:
+        return
+
+    bound_name = bound_public_name.strip() if isinstance(bound_public_name, str) else ""
+    bound_program = (
+        bound_program_public_identifier.strip()
+        if isinstance(bound_program_public_identifier, str)
+        else ""
+    )
+    if not bound_name or not bound_program:
+        raise RuntimePrerequisiteError(
+            "existing IMPACT-01 identity binding is incomplete and requires Brain review"
+        )
+    if (bound_name, bound_program) != (incoming_name, incoming_program):
+        raise RuntimePrerequisiteError(
+            "IMPACT-01 merchant/program identity conflict requires Brain review"
+        )
+
