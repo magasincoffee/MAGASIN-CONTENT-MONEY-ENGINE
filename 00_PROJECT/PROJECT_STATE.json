@@ -2,11 +2,11 @@
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
   "updated_at": "2026-09-21T23:36:00+07:00",
-  "status": "MCME_018_SAFE_PREP_ACCEPTED_WAVE_1_CONTINUE",
+  "status": "MCME_020_SAFE_PREP_PREPARED_ONLY_PENDING_BRAIN_ACCEPTANCE",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
-  "current_task": "NONE",
-  "current_task_title": "MCME-018 SAFE-PREP accepted; awaiting Brain dispatch of MCME-020/PREP",
+  "current_task": "MCME-020/IMPACT-CANDIDATE-1-SAFE-PREP-01",
+  "current_task_title": "impact.com candidate 1 SAFE-PREP prepared only; pending Brain acceptance",
   "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -33,7 +33,7 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "Proceed with Owner-approved SAFE-PREP WAVE 1 at MCME-020/PREP. Next real execution remains MCME-013 Owner-deferred; impact.com runtime remains conditional fallback only.",
+  "next_gate": "Brain acceptance of MCME-020 PREPARED_ONLY. Real execution remains MCME-013 Owner-deferred; MCME-020 runtime remains blocked until Brain-accepted REAL MCME-018 NETWORK_READY plus REAL MCME-019 sanitized IMPACT-01 merchant evidence.",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
@@ -310,7 +310,7 @@
     "accepted_commit": "4506ba8f2d415d40e989f45793cfc99ee5355e7f",
     "brain_decision": "ACCEPT_NETWORK_PROPERTY_ACCEPTED_VERIFIED_TRUE"
   },
-  "next_safe_prep_task": "MCME-020/PREP",
+  "next_safe_prep_task": "MCME-022/PREP",
   "awin_network_reevaluation": {
     "status": "ACCEPTED",
     "result": "NETWORK_READY",
@@ -345,12 +345,12 @@
     "plan_commit": "41f1d02d9b8144cda4723e165f5d63ed0ce92da8",
     "owner_actions_deferred": true,
     "wave_0": "COMPLETE",
-    "wave_1": "MCME-018_PREPARED_ONLY_ACCEPTED",
+    "wave_1": "MCME-020_PREPARED_ONLY_PENDING_BRAIN_ACCEPTANCE",
     "wave_2": "PLANNED",
     "wave_3": "PLANNED",
-    "next_task": "MCME-020/PREP",
-    "next_task_execution_allowed": true,
-    "next_task_gate": "BRAIN_DISPATCH_MCME_020_PREP"
+    "next_task": "MCME-022/PREP",
+    "next_task_execution_allowed": false,
+    "next_task_gate": "BRAIN_ACCEPT_MCME_020_PREPARED_ONLY"
   },
   "mcme_014_safe_prep": {
     "status": "ACCEPTED_PREPARED_ONLY",
@@ -476,5 +476,51 @@
     "accepted_at": "2026-09-21T23:36:00+07:00",
     "accepted_merge_commit": "ae620799fa136c5edb081d65a015e90a6c14cc9a",
     "brain_decision": "ACCEPT_PREPARED_ONLY"
+  },
+  "mcme_020_safe_prep": {
+    "status": "PREPARED_ONLY_PENDING_BRAIN_ACCEPTANCE",
+    "result": "PREPARED_ONLY",
+    "task_id": "MCME-020/IMPACT-CANDIDATE-1-SAFE-PREP-01",
+    "dispatch_id": null,
+    "prep_artifact": "07_EXPERIMENTS/gate_a/MCME-020_IMPACT_CANDIDATE_1_PREP.json",
+    "runtime_contract": "07_EXPERIMENTS/gate_a/templates/MCME-020_IMPACT_CANDIDATE_1_RUNTIME_CONTRACT.json",
+    "runtime_guard": "04_ROBOT/first_cash/gate_a_evaluator/candidate_runtime_guard.py",
+    "targeted_tests": "04_ROBOT/first_cash/gate_a_evaluator/tests/test_mcme_020_impact_candidate_1_prep.py",
+    "candidate_slot": "IMPACT-01",
+    "network": "impact.com",
+    "reconciliation_key": "MCME-FIRST-CASH-V1|IMPACT-01",
+    "evaluator_reused": true,
+    "evaluator_semantics_changed": false,
+    "schema_changed": false,
+    "real_evidence_consumed": false,
+    "external_side_effect": false,
+    "owner_action_performed": false,
+    "unknown_promoted": false,
+    "historical_evidence_preserved": true,
+    "gate_a_truth_changed": false,
+    "current_evidence_level_changed": false,
+    "gate_a_pass": false,
+    "awin_real_exhaustion": false,
+    "impact_runtime_open": false,
+    "mcme_018_runtime_executed": false,
+    "mcme_018_real_network_ready": false,
+    "mcme_019_executed": false,
+    "mcme_020_executed": false,
+    "mcme_021_opened": false,
+    "runtime_prerequisites_currently_satisfied": false,
+    "runtime_dependency_still_required": [
+      "MCME-018_REAL_NETWORK_READY",
+      "MCME-019_REAL_SANITIZED_EVIDENCE"
+    ],
+    "owner_action_deferred": true,
+    "next_real_execution_task": "MCME-013",
+    "next_safe_prep_task_after_brain_acceptance": "MCME-022/PREP",
+    "tests": {
+      "targeted_mcme020": "17/17 PASS (local reconstructed canonical semantics)",
+      "targeted_assertions_and_subcases": "27/27 PASS",
+      "combined_gate_a_subset": "NOT_FRESH_FULL_EXECUTION",
+      "full_repo_suite": "NOT_RUN_RUNTIME_CANNOT_RESOLVE_GITHUB"
+    },
+    "brain_acceptance_required_before_next_safe_prep": true
   }
 }
