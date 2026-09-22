@@ -1,66 +1,84 @@
-# ROADMAP — CASH-FIRST
+# ROADMAP — CHINA → VIETNAM → SHOPEE CASH-FIRST
 
-## P0 — Architecture Lock
-Goal: one source of truth.
-Exit: Five-Step, architecture, roles, rights boundaries, 24/7 autonomy contract committed.
+## P0 — Architecture Pivot Lock
+Goal: make one active source of truth.
+Exit:
+- China-social → Vietnam traffic → Shopee Affiliate is canonical;
+- old US/Pinterest/Awin/impact route marked historical/superseded;
+- Five-Step and Owner boundaries preserved.
 
-## P1 — Global Market Intelligence
-Goal: rank market/platform/monetization combinations by expected risk-adjusted cash.
+## P1 — Proof of Money (target: days 1–7)
+Goal: reach the first commercial signal as quickly as possible.
+
 Deliverables:
-- market score model;
-- platform eligibility matrix;
-- affiliate network matrix;
-- language/localization matrix;
-- candidate niches;
-- first experiment recommendation.
+- Shopee Affiliate readiness established or explicit WAIT_OWNER;
+- Douyin collector running;
+- bounded initial scan of ~50–100 videos;
+- no more than 3 first product candidates;
+- Shopee Vietnam mapping completed;
+- up to 9 Vietnamese creative variants;
+- first publication;
+- click/order/commission telemetry initialized.
 
-## P2 — Minimum Viable Money Loop
-Goal: first real revenue evidence.
-Choose ONE primary loop:
-- affiliate commerce;
-- platform monetization;
-- lead generation.
+Primary gate:
+```text
+FIRST ATTRIBUTED SHOPEE ORDER
+```
 
-Build only what this loop needs.
+A 7-day target is an execution target, not a promise that the market will convert.
 
-## P3 — Content Factory MVP
-- research;
-- script;
-- localization;
-- SaydiVoice;
-- minimum video assembly;
-- subtitle/caption;
-- rights evidence;
-- publish package.
+## P2 — Repeatability (target: days 7–14)
+Goal: determine whether the result is repeatable rather than luck.
 
-## P4 — Real Experiment
-Initial batch: 10–30 pieces unless evidence justifies a smaller/larger batch.
+Actions:
+- identify winning hook/product/content combinations;
+- create additional variants around winners;
+- test adjacent equivalent products;
+- kill weak combinations quickly;
+- track CLICK → ORDER → APPROVED COMMISSION.
 
-Measure:
-- qualified views;
-- watch/retention;
-- clicks;
-- conversion;
-- gross revenue;
-- refunds/reversals;
-- production cost;
-- net cash contribution.
+Exit:
+- repeatable commercial signal, or
+- explicit KILL / REVISE decision with evidence.
 
-## P5 — Winner Validation
-Kill weak combinations.
-Repeat winners.
-Require replicated performance before infrastructure scale.
+## P3 — Automation V1 (target: days 21–35)
+Goal: automate only the proven sequence.
 
-## P6 — 24/7 Automation
-Automate proven sequence:
-Discover → Score → Produce → QA → Publish → Measure → Learn → Scale/Kill.
+Candidate automation:
+```text
+Douyin ingestion
+→ snapshot history
+→ trend scoring
+→ product mapping
+→ Shopee candidate queue
+→ script / hook generation
+→ edit plan
+→ rendering
+→ publish queue
+→ performance collection
+→ KILL / KEEP / SCALE
+```
 
-## P7 — Portfolio
-Multiple:
-- markets;
-- languages;
-- channels;
-- niches;
-- monetization sources.
+Xiaohongshu automation is added only if it materially improves decisions.
 
-Capital and compute are allocated by marginal expected cash return.
+## P4 — Scale
+Goal: increase net cash, not content volume.
+
+Scale dimensions:
+- more winning products;
+- more validated hooks;
+- more authorized distribution surfaces;
+- higher publishing throughput;
+- only later, approved paid traffic when economics justify it.
+
+## P5 — 24/7 Autonomous Loop
+Valid only after:
+- cash attribution works;
+- rights gates are reliable;
+- publish side effects are reconciled;
+- economics are repeatable;
+- Owner boundaries are explicit.
+
+## Permanent North Star
+
+**NET CASH CONTRIBUTION / 1,000 QUALIFIED VIEWS**
