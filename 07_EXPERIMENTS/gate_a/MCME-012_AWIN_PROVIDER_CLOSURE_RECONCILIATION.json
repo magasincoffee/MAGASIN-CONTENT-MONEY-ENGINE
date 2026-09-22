@@ -1,0 +1,47 @@
+{
+  "schema_version": "mcme.awin-provider-closure-reconciliation.v1",
+  "task_id": "MCME-012/AWIN-PROVIDER-CLOSURE-RECONCILIATION-01",
+  "status": "ACCEPTED",
+  "result": "AWIN_NETWORK_TERMINAL_FAIL_FALLBACK_ELIGIBLE",
+  "network": "AWIN",
+  "evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-013_AWIN_PROVIDER_ACCOUNT_CLOSURE_EVIDENCE.json",
+  "historical_network_ready_preserved": true,
+  "historical_mcme013_pending_preserved": true,
+  "current_network_relationship": {
+    "status": "VERIFIED",
+    "value": "REJECTED",
+    "source_reference_sanitized": "AWIN_PARTNER_COMPLIANCE_ACCOUNT_CLOSURE_EMAIL",
+    "observed_at": "2026-09-22T09:43:50Z"
+  },
+  "canonical_evaluator_mapping": {
+    "evaluator_state": "FAIL",
+    "evaluator_reason": "NETWORK_RELATIONSHIP_REJECTED",
+    "network_ready": false,
+    "gate_a_pass": false
+  },
+  "orchestration_mapping": {
+    "awin_bounded_path_exhausted": true,
+    "exhaustion_layer": "NETWORK_ACCOUNT",
+    "mcme014_runtime_required": false,
+    "mcme014_runtime_forbidden_as_stale_downstream_evaluation": true,
+    "mcme015_awin02_forbidden": true,
+    "mcme016_runtime_forbidden": true,
+    "next_real_execution_task": "MCME-017",
+    "mcme017_status": "READY_OWNER_NOT_STARTED",
+    "impact_runtime_open": false
+  },
+  "provider_support_case": {
+    "pending": true,
+    "role": "CLARIFICATION_OR_POSSIBLE_REMEDIATION_WATCH",
+    "current_runtime_effect": "NONE_UNLESS_PROVIDER_RESTORES_ACCOUNT_WITH_NEW_VERIFIABLE_EVIDENCE"
+  },
+  "safety": {
+    "no_reapplication": true,
+    "no_new_awin_account": true,
+    "no_awin02": true,
+    "no_impact_side_effect_performed": true,
+    "no_publish": true
+  },
+  "reconciliation_rule": "APPEND_NEWER_PROVIDER_TRUTH_AND_SUPERSEDE_CURRENT_RUNTIME_VALIDITY_WITHOUT_REWRITING_HISTORY",
+  "brain_decision": "ACCEPT_TERMINAL_AWIN_NETWORK_FAIL_UNLOCK_MCME_017_OWNER_GATE"
+}
