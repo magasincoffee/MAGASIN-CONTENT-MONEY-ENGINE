@@ -29,7 +29,7 @@ DoD:
 - historical evidence preserved;
 - no external account/spend/publish action performed.
 
-## READY — NOT STARTED
+## ACTIVE / WAIT_OWNER
 
 ### MCME-046 — Shopee Affiliate Owner Readiness
 Five-Step: QUESTION
@@ -46,6 +46,16 @@ Owner-only where required:
 
 Output:
 READY / WAIT_OWNER / BLOCKED with sanitized evidence.
+
+Current status: **WAIT_OWNER_PROVIDER_REVIEW**.
+- Owner submission: complete.
+- Payment profile: PENDING_REVIEW.
+- Tax profile: PENDING_REVIEW.
+- Valid profile: not yet present.
+- Final affiliate approval / link-generation readiness: UNKNOWN.
+- Safe parallel work: MCME-047 may proceed while Shopee reviews.
+
+## READY — SAFE PARALLEL WORK
 
 ### MCME-047 — Douyin Collector V1
 Five-Step: DELETE → SIMPLIFY
