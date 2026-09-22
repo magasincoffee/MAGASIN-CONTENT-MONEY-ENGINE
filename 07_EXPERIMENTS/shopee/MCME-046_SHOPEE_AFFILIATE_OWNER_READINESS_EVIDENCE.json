@@ -1,0 +1,32 @@
+{
+  "schema_version": "mcme.shopee-affiliate-owner-readiness-evidence.v1",
+  "task_id": "MCME-046",
+  "observed_at": "2026-09-22T22:26:55+07:00",
+  "provider": "Shopee Affiliate Vietnam",
+  "owner_submission_complete": true,
+  "account_type": "INDIVIDUAL",
+  "payment_profile": {
+    "status": "PENDING_REVIEW",
+    "evidence": "Shopee payment setup page shows Thông tin thanh toán = Đang chờ duyệt"
+  },
+  "tax_profile": {
+    "status": "PENDING_REVIEW",
+    "evidence": "Shopee payment setup page shows Thông tin thuế = Đang chờ duyệt"
+  },
+  "valid_profile_present": false,
+  "affiliate_program_final_approval": "UNKNOWN",
+  "affiliate_link_generation_ready": "UNKNOWN",
+  "payout_ready": false,
+  "classification": "WAIT_OWNER_PROVIDER_REVIEW",
+  "unknown_never_passes": true,
+  "sensitive_values_recorded": false,
+  "next_proof_required": [
+    "Shopee final approval/valid profile evidence",
+    "Affiliate dashboard access and affiliate-link generation capability",
+    "Payout profile accepted/valid"
+  ],
+  "safe_parallel_work_allowed": [
+    "MCME-047 Douyin Collector V1",
+    "MCME-048 bounded scan preparation"
+  ]
+}
