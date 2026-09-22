@@ -9,44 +9,79 @@ Read this file first in every new Brain/Work session.
 3. `00_PROJECT/PROJECT_STATE.json`
 4. `00_PROJECT/02_CURRENT_STATE.md`
 5. `00_PROJECT/TASK_QUEUE.md`
-6. `00_PROJECT/VIETNAM_OWNER_ACCESS_AND_CASHOUT_GATE_V1.md`
-7. The current task's relevant module docs.
+6. The current task's relevant module docs.
 
-## Highest-priority rule
+Historical Gate A/Awin/impact/Pinterest files are audit evidence, not the active first-cash route.
 
+## Highest-priority operating law
+
+```text
 QUESTION → DELETE → SIMPLIFY → ACCELERATE → AUTOMATE
+```
 
 Never begin with AUTOMATE.
 
-## Mission
+## Active mission
 
-Create real, measurable net cash from global content platforms and commerce systems using a policy-compliant, 24/7 autonomous Content-to-Cash engine.
+Create real cash from:
+
+```text
+China social trend signals
+→ Vietnamese short-form content
+→ Shopee Vietnam Affiliate
+→ orders
+→ commission
+→ cash received
+```
+
+## Locked V1 scope
+
+- Primary source: Douyin.
+- Confirmation source: Xiaohongshu.
+- Initial technical collector candidate: Evil0ctal/Douyin_TikTok_Download_API.
+- Market: Vietnam.
+- Language: Vietnamese.
+- Monetization: Shopee Affiliate.
+- Spend: 0 until explicit approval/economic proof.
+- Niche: dynamic; trend-selected.
+- Initial batch ceiling: 3 products × 3 variants = 9 videos.
 
 ## North Star
 
-NET CASH CONTRIBUTION / 1,000 QUALIFIED VIEWS
+**NET CASH CONTRIBUTION / 1,000 QUALIFIED VIEWS**
+
+## Proof sequence
+
+```text
+VIEW
+→ AFFILIATE CLICK
+→ ATTRIBUTED ORDER
+→ APPROVED COMMISSION
+→ CASH RECEIVED
+```
 
 ## Current strategy
 
-- global, not Vietnam-only;
-- multi-platform;
-- multi-monetization;
-- original/meaningfully transformative content;
-- real small experiments before scaling;
-- Robot autonomy after economics are proven;
-- fail closed on Owner/legal/account/payment/security boundaries.
+- content-first discovery, product-second mapping;
+- use Chinese content as trend/reference intelligence, not as an automatic reupload license;
+- original/licensed/authorized production inputs;
+- manually prove the money loop before full automation;
+- kill weak products/creatives quickly;
+- preserve Cash Truth and fail-closed Owner boundaries.
 
 ## Role model
 
-Owner = authority
-Brain = strategy + priority + economics
-Work = bounded execution
-Robot = orchestration + state + recovery + automation
+Owner = authority/accounts/KYC/payment/legal ambiguity  
+Brain = strategy + priority + economics + KILL/KEEP/SCALE  
+Work = one bounded execution task  
+Robot = collection + state + rendering + recovery + later automation
 
 ## Do not do
 
+- do not restore US/Pinterest/Awin/impact as the active first-cash route unless Owner explicitly pivots again;
+- do not hard-code kitchen or another niche;
 - do not optimize for raw views alone;
 - do not make pure reupload the business model;
-- do not build a generic large media platform before first cash evidence;
+- do not build a large generic media platform before money evidence;
 - do not automate an unproven money loop;
-- do not guess licenses, platform eligibility or payment/KYC status.
+- do not guess affiliate eligibility, rights, KYC or payout status.
