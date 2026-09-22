@@ -81,7 +81,11 @@
       "impact.com",
       "Amazon Associates (conditional)"
     ],
-    "max_candidate_evaluations": 5
+    "max_candidate_evaluations": 5,
+    "status": "HISTORICAL_SUPERSEDED",
+    "active": false,
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "cash_truth": {
     "status": "ACCEPTED",
@@ -117,12 +121,14 @@
   },
   "run_completion_mode": "ARCHITECTURE_PIVOT_TO_NEW_FIRST_CASH_ROUTE",
   "deployment_readiness": {
-    "status": "ACCEPTED",
+    "status": "HISTORICAL_SUPERSEDED",
     "canonical_commit": "a00861d7674abd3aa61c4b7d3d8aeb0648e62f4b",
     "mcme_010_operationally_ready": true,
     "database_required_for_mvp": false,
     "smallest_reliable_mvp": "local/private append-only JSONL + Cash Truth JSON Schema + validator + deterministic dedupe/reconciliation",
-    "blocker": "REAL_OWNER_GATED_GATE_A_EVIDENCE"
+    "blocker": "NONE_FOR_V2; LEGACY_GATE_A_BLOCKER_RETAINED_AS_HISTORY",
+    "active": false,
+    "historical_only": true
   },
   "real_execution_path_unchanged": false,
   "safe_prep": {
@@ -149,7 +155,7 @@
     "historical_only": true,
     "superseded_by": "MCME-045_CHINA_VIETNAM_SHOPEE_ARCHITECTURE_PIVOT"
   },
-  "pre_gate_before_mcme_010": "MCME-044_ACCEPTED",
+  "pre_gate_before_mcme_010": null,
   "owner_access_cashout_gate": {
     "status": "ACCEPTED",
     "artifact": "00_PROJECT/VIETNAM_OWNER_ACCESS_AND_CASHOUT_GATE_V1.md",
@@ -221,7 +227,9 @@
     "mcme_011_blocked_until_brain_acceptance": false,
     "accepted_at": "2026-09-20T15:20:00+07:00",
     "accepted_commit": "8a3b003a331573a6b3f23e4737b243608f08caf1",
-    "brain_decision": "ACCEPT"
+    "brain_decision": "ACCEPT",
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "mcme_011": {
     "status": "ACCEPTED_WAIT_OWNER",
@@ -246,7 +254,9 @@
     "mcme_013_blocked_until_network_ready": true,
     "accepted_at": "2026-09-20T20:00:00+07:00",
     "accepted_commit": "058d9fe6b5089ab687c0fe48cb23216e725a93b7",
-    "brain_decision": "ACCEPT_EVIDENCE_WAIT_OWNER"
+    "brain_decision": "ACCEPT_EVIDENCE_WAIT_OWNER",
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "mcme_012": {
     "status": "ACCEPTED_WAIT_OWNER",
@@ -273,7 +283,9 @@
     "recommendation": "WAIT_OWNER_NOT_NETWORK_READY",
     "accepted_at": "2026-09-20T20:12:39+07:00",
     "accepted_commit": "2f4a5965e238a066631498e70361596edc3dd212",
-    "brain_decision": "ACCEPT_WAIT_OWNER_NOT_NETWORK_READY"
+    "brain_decision": "ACCEPT_WAIT_OWNER_NOT_NETWORK_READY",
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "awin_final_decision": {
     "status": "ACCEPTED",
@@ -291,7 +303,9 @@
     "mcme_013_blocked": true,
     "recommendation": "RE_EVALUATE_NETWORK_READY_WITH_ACTIVE_ACCOUNT_AND_PROPERTY_UNKNOWN",
     "accepted_commit": "f06d303b3d41f02ad1e96688dfe381207f10b30f",
-    "brain_decision": "ACCEPT_ACTIVE_ACCOUNT_PROPERTY_UNKNOWN"
+    "brain_decision": "ACCEPT_ACTIVE_ACCOUNT_PROPERTY_UNKNOWN",
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "awin_property_acceptance": {
     "status": "ACCEPTED",
@@ -314,9 +328,11 @@
     "recommendation": "ACCEPT_PROPERTY_EVIDENCE_THEN_RERUN_NETWORK_READY_EVALUATOR",
     "accepted_at": "2026-09-20T22:27:00+07:00",
     "accepted_commit": "4506ba8f2d415d40e989f45793cfc99ee5355e7f",
-    "brain_decision": "ACCEPT_NETWORK_PROPERTY_ACCEPTED_VERIFIED_TRUE"
+    "brain_decision": "ACCEPT_NETWORK_PROPERTY_ACCEPTED_VERIFIED_TRUE",
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
-  "next_safe_prep_task": "MCME-020/PREP",
+  "next_safe_prep_task": null,
   "awin_network_reevaluation": {
     "status": "ACCEPTED",
     "result": "NETWORK_READY",
@@ -399,7 +415,9 @@
     "accepted_at": "2026-09-21T23:10:00+07:00",
     "accepted_merge_commit": "b12bbdfc046873fad7c0ebfd3f89c6a3e13a025c",
     "brain_decision": "ACCEPT_PREPARED_ONLY",
-    "runtime_now_forbidden_by_upstream_network_closure": true
+    "runtime_now_forbidden_by_upstream_network_closure": true,
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "mcme_016_safe_prep": {
     "status": "ACCEPTED_PREPARED_ONLY",
@@ -443,7 +461,9 @@
     "accepted_merge_commit": "032d5f0d4fd7c9e3baf21c0eff726d93ed13e34e",
     "brain_decision": "ACCEPT_PREPARED_ONLY",
     "runtime_now_forbidden_by_upstream_network_closure": true,
-    "awin_02_forbidden": true
+    "awin_02_forbidden": true,
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "mcme_018_safe_prep": {
     "status": "ACCEPTED_PREPARED_ONLY",
@@ -490,7 +510,9 @@
     "brain_acceptance_required_before_next_safe_prep": false,
     "accepted_at": "2026-09-21T23:36:00+07:00",
     "accepted_merge_commit": "ae620799fa136c5edb081d65a015e90a6c14cc9a",
-    "brain_decision": "ACCEPT_PREPARED_ONLY"
+    "brain_decision": "ACCEPT_PREPARED_ONLY",
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "mcme_013": {
     "status": "ACCEPTED_WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
@@ -525,7 +547,9 @@
     "current_runtime_valid": false,
     "historical_result_preserved": "WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
     "superseded_by_provider_account_closure": true,
-    "superseding_evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-013_AWIN_PROVIDER_ACCOUNT_CLOSURE_EVIDENCE.json"
+    "superseding_evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-013_AWIN_PROVIDER_ACCOUNT_CLOSURE_EVIDENCE.json",
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "awin_provider_closure_reconciliation": {
     "status": "ACCEPTED",
@@ -683,5 +707,6 @@
     "task": "MCME-045",
     "branch": "brain/china-vietnam-shopee-affiliate-v1",
     "next_after_merge": "MCME-046"
-  }
+  },
+  "legacy_route_status": "HISTORICAL_ONLY_NO_ACTIVE_RUNTIME_EFFECT"
 }
