@@ -106,3 +106,20 @@ Hard rule:
 No fake foreign phone/identity. No UNKNOWN→PASS.
 
 MCME-010 remains the first Pinterest-property task after/alongside this gate, but content production/publish remains blocked until the payout/access path is credible.
+
+
+## CURRENT FIRST-CASH REAL PATH — AWIN PROVIDER CLOSURE RECONCILIATION
+
+- MCME-012 historical Awin NETWORK_READY: **PRESERVED AS HISTORY / NO LONGER CURRENT RUNTIME TRUTH**
+- MCME-013 AWIN-01 Kitchen Universe relationship PENDING: **PRESERVED AS HISTORY / SUPERSEDED BY PROVIDER ACCOUNT CLOSURE**
+- Current Awin publisher account runtime availability: **FALSE**
+- Canonical Awin network outcome: **TERMINAL FAIL / FALLBACK ELIGIBLE** (`NETWORK_RELATIONSHIP_REJECTED` mapping)
+- MCME-014 runtime: **DO NOT RUN**; upstream network closure makes merchant-stage evaluation stale
+- AWIN-02 / new Awin publisher account / reapplication: **FORBIDDEN**
+- Gate A PASS: **FALSE**
+- Next real task: **MCME-017 — Owner impact.com network relationship evidence**
+- MCME-017: **READY_OWNER_NOT_STARTED**
+- MCME-018 impact evaluator prep: **PREPARED_ONLY**; runtime still blocked until real MCME-017 evidence exists
+- Awin support case: clarification/remediation watch only; does not restore runtime usability unless new provider restoration evidence is verified
+
+Historical evidence is append-only and remains preserved. Do not rewrite prior NETWORK_READY/PENDING records.
