@@ -1,4 +1,4 @@
-# TASK QUEUE
+# TASK QUEUE — CHINA → VIETNAM → SHOPEE AFFILIATE
 
 Priority method:
 
@@ -12,114 +12,182 @@ Five-Step is applied before every task.
 
 ## ACTIVE
 
-### MCME-001 — Global Market Intelligence V1
+### MCME-045 — China→Vietnam Shopee Architecture Pivot
+Five-Step: QUESTION → DELETE → SIMPLIFY
+
+Objective:
+Replace the active US/Pinterest/Awin/impact first-cash architecture with the Owner-approved China-social → Vietnam traffic → Shopee Affiliate architecture while preserving historical evidence.
+
+DoD:
+- Architecture V2 canonical;
+- current state updated;
+- project state updated;
+- roadmap updated;
+- old route no longer blocks new execution;
+- historical evidence preserved;
+- no external account/spend/publish action performed.
+
+## NEXT CRITICAL PATH
+
+### MCME-046 — Shopee Affiliate Owner Readiness
 Five-Step: QUESTION
 
 Objective:
-Find the first market/platform/monetization combinations worth testing globally.
+Verify real Shopee Affiliate access for the Owner in Vietnam.
 
-DoD:
-- current platform monetization eligibility mapped;
-- major affiliate paths mapped;
-- market scoring model defined;
-- initial candidate markets compared;
-- assumptions separated from verified facts;
-- one or more cheapest discriminating experiments proposed;
-- no hard-coded RPM claim without evidence.
+Owner-only where required:
+- signup/login;
+- contractual acceptance;
+- KYC/tax;
+- banking/payout setup;
+- MFA/OTP/CAPTCHA.
 
-## NEXT
+Output:
+READY / WAIT_OWNER / BLOCKED with sanitized evidence.
 
-### MCME-002 — Monetization Opportunity Matrix
-Five-Step: DELETE
-
-Compare affiliate, platform monetization and lead generation. Delete paths with slow time-to-first-cash or poor feasibility for the first MVP.
-
-### MCME-003 — Select Minimum Viable Money Loop
-Five-Step: SIMPLIFY
-
-Choose ONE:
-Market × Platform × Niche × Format × Monetization.
-
-### MCME-004 — First Content Experiment Design
-Five-Step: SIMPLIFY
-
-Define first bounded 10–30-piece test or smaller falsification batch.
-
-### MCME-005 — SaydiVoice Production Boundary
+### MCME-047 — Douyin Collector V1
 Five-Step: DELETE → SIMPLIFY
 
-Keep only capabilities required for first experiment:
-script → voice preset → generate → verify → download.
+Objective:
+Run the minimum collector needed to acquire trend-candidate metadata from Douyin.
 
-### MCME-006 — Minimum Video Composer
-Five-Step: SIMPLIFY
+Preferred first technical candidate:
+`Evil0ctal/Douyin_TikTok_Download_API`
 
-Build only what the first proven format requires.
+Do not build a general social crawler.
 
-### MCME-007 — Distribution Adapter
+### MCME-048 — First 50–100 Video Scan
 Five-Step: ACCELERATE
 
-Publish through authorized platform path with idempotency and confirmation.
+Objective:
+Collect a bounded first dataset and rank rising videos/products.
 
-### MCME-008 — Money Attribution
+Minimum normalized fields:
+- platform;
+- video/source id;
+- source URL;
+- creator;
+- caption/hashtags;
+- views/likes/comments/shares;
+- published_at;
+- first_seen_at / last_seen_at;
+- growth since last scan;
+- trend score.
+
+### MCME-049 — Top-3 Product Mapping to Shopee Vietnam
+Five-Step: DELETE → SIMPLIFY
+
+Objective:
+Select no more than 3 product opportunities and map them to real Shopee Vietnam listings/affiliate eligibility.
+
+Do not select a product solely because a China video has high views.
+
+### MCME-050 — Nine-Creative Proof Batch
+Five-Step: SIMPLIFY → ACCELERATE
+
+Objective:
+Produce at most:
+```text
+3 products × 3 differentiated hooks = 9 creatives
+```
+
+Content must be Vietnamese and rights/policy compliant.
+
+### MCME-051 — First Publication
 Five-Step: ACCELERATE
 
-Qualified views → clicks → conversion → approved revenue → settled cash.
+Objective:
+Publish through the simplest authorized Vietnamese distribution surfaces.
 
-### MCME-009 — Winner/Loser Engine
+Initial publishing may remain manual.
+No paid traffic.
+
+### MCME-052 — First Cash-Signal Review
 Five-Step: QUESTION → DELETE
 
-KEEP / KILL / SCALE based on economics.
+Evaluate:
+- qualified views;
+- affiliate clicks;
+- attributed orders;
+- approved commissions;
+- production time/cost.
 
-### MCME-010 — 24/7 Autonomous Loop
-Five-Step: AUTOMATE
+Primary target:
+`FIRST ATTRIBUTED ORDER`
 
-Only valid after upstream loop is economically proven and operational boundaries are explicit.
+If no order, diagnose the exact bottleneck rather than adding infrastructure.
 
-
-### MCME-007 — First-Cash Critical-Path Backlog
+### MCME-053 — Repeatability Test
 Five-Step: ACCELERATE
 
-Status: ACTIVE in MCME-RUN-8H-01.
+Objective:
+Test whether winning product/hook combinations can reproduce orders.
 
-Build the dependency-correct future task sequence from current L0 evidence to FIRST REAL CASH. Owner/account actions are specified but not executed. SaydiVoice/video/24-7 automation remain deferred until evidence justifies them.
+Decision:
+KILL / KEEP / SCALE.
 
+### MCME-054 — Automation V1
+Five-Step: AUTOMATE
 
-### MCME-044 — Vietnam Owner Access + Cash-Out Feasibility Gate
-Five-Step: QUESTION → DELETE → SIMPLIFY
-Status: NEXT HARD GATE.
+Hard prerequisite:
+Repeatable economic evidence.
 
-Purpose:
-Verify that the Owner, residing in Vietnam, can truthfully access the selected platform/network/security flow and ultimately receive affiliate funds into a Vietnam-accessible payout rail.
+Automate only proven steps:
+```text
+ingest → score → map → create → queue → measure → learn
+```
 
-Must verify:
-- Pinterest / Awin / impact.com / Amazon / Payoneer account-access requirements;
-- foreign phone vs any real phone requirement;
-- viability of a Vietnam +84 mobile number;
-- email/authenticator fallback where officially supported;
-- Vietnam bank / Payoneer / PayPal / SWIFT payout routes;
-- KYC/tax/payment prerequisites;
-- fees/FX/payout timing only from authoritative sources or actual Owner evidence;
-- final Proof-of-Cash-Out plan.
+## CASH GATES
 
-Hard rule:
-No fake foreign phone/identity. No UNKNOWN→PASS.
+```text
+GATE 0 = AFFILIATE_CLICK
+GATE 1 = ATTRIBUTED_ORDER
+GATE 2 = APPROVED_COMMISSION
+GATE 3 = CASH_RECEIVED_AND_RECONCILED
+```
 
-MCME-010 remains the first Pinterest-property task after/alongside this gate, but content production/publish remains blocked until the payout/access path is credible.
+## TIME TARGETS
 
+```text
+T+2 days  RADAR RUNNING
+T+3 days  3 PRODUCTS READY
+T+4 days  9 CREATIVES READY
+T+5 days  FIRST PUBLICATION
+T+7 days  FIRST CASH-SIGNAL REVIEW
+T+14 days REPEATABILITY DECISION
+T+21–35 days AUTOMATION V1, only if justified
+```
 
-## CURRENT FIRST-CASH REAL PATH — AWIN PROVIDER CLOSURE RECONCILIATION
+These are execution targets, not guarantees of conversion or payout.
 
-- MCME-012 historical Awin NETWORK_READY: **PRESERVED AS HISTORY / NO LONGER CURRENT RUNTIME TRUTH**
-- MCME-013 AWIN-01 Kitchen Universe relationship PENDING: **PRESERVED AS HISTORY / SUPERSEDED BY PROVIDER ACCOUNT CLOSURE**
-- Current Awin publisher account runtime availability: **FALSE**
-- Canonical Awin network outcome: **TERMINAL FAIL / FALLBACK ELIGIBLE** (`NETWORK_RELATIONSHIP_REJECTED` mapping)
-- MCME-014 runtime: **DO NOT RUN**; upstream network closure makes merchant-stage evaluation stale
-- AWIN-02 / new Awin publisher account / reapplication: **FORBIDDEN**
-- Gate A PASS: **FALSE**
-- Next real task: **MCME-017 — Owner impact.com network relationship evidence**
-- MCME-017: **READY_OWNER_NOT_STARTED**
-- MCME-018 impact evaluator prep: **PREPARED_ONLY**; runtime still blocked until real MCME-017 evidence exists
-- Awin support case: clarification/remediation watch only; does not restore runtime usability unless new provider restoration evidence is verified
+## DELETED / DEFERRED FROM ACTIVE FIRST-CASH PATH
 
-Historical evidence is append-only and remains preserved. Do not rewrite prior NETWORK_READY/PENDING records.
+- US-first market selection;
+- Pinterest-first content loop;
+- Awin as active route;
+- impact.com as active route;
+- Amazon fallback as active route;
+- kitchen niche lock;
+- static 2:3 Pin as canonical first format;
+- broad multi-platform crawler;
+- generic dashboard;
+- paid traffic;
+- full 24/7 content factory;
+- automation before economic proof.
+
+## HISTORICAL EVIDENCE RULE
+
+Do not delete or rewrite prior Awin/impact/Pinterest evidence. It remains append-only historical proof and may be revisited only after a future explicit Owner pivot.
+
+## OWNER BOUNDARIES
+
+Stop for:
+- credentials;
+- MFA/OTP/CAPTCHA;
+- KYC/tax;
+- banking/payment;
+- legal/rights ambiguity;
+- destructive account actions;
+- spend outside explicit approval.
+
+Unknown never silently becomes PASS.
