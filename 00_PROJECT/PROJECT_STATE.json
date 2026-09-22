@@ -1,13 +1,13 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-22T22:00:00+07:00",
-  "status": "CHINA_VIETNAM_SHOPEE_ARCHITECTURE_PIVOT_LOCKED_MCME_045",
+  "updated_at": "2026-09-22T22:20:00+07:00",
+  "status": "MCME_045_DONE_CHINA_VIETNAM_SHOPEE_V2_CANONICAL",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P8_CHINA_VIETNAM_SHOPEE_PROOF_OF_MONEY_V1",
-  "current_task": "MCME-045",
-  "current_task_title": "China→Vietnam Shopee Affiliate Architecture Pivot V2",
-  "five_step_current": "QUESTION_DELETE_SIMPLIFY",
+  "current_task": "NONE",
+  "current_task_title": "MCME-045 DONE; MCME-046 READY and not started",
+  "five_step_current": "QUESTION",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
   "global_scope": false,
@@ -27,12 +27,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "MCME-045_MERGE_THEN_MCME-046_SHOPEE_AFFILIATE_OWNER_READINESS",
+  "next_gate": "MCME-046_SHOPEE_AFFILIATE_OWNER_READINESS",
   "active_run": null,
   "run_start_at": null,
   "run_deadline_at": null,
-  "last_accepted_task": "MCME-017/IMPACT-NETWORK-RELATIONSHIP-OWNER-GUIDED-EXECUTION-01",
-  "last_accepted_commit": "33aa5ce5cfc85079295e2b5714678d3fbc3e98a3",
+  "last_accepted_task": "MCME-045",
+  "last_accepted_commit": "2283c40a89b01bce574893c8ad787143fc668e5c",
   "selected_first_cash_route": {
     "market": "Vietnam",
     "language": "Vietnamese",
@@ -703,10 +703,14 @@
     "preservation_rule": "APPEND_ONLY_AUDIT_EVIDENCE_DO_NOT_DELETE_OR_REWRITE",
     "active_runtime_effect": "NONE_UNDER_V2_UNLESS_OWNER_EXPLICITLY_PIVOTS_BACK"
   },
-  "pending_canonical_acceptance": {
+  "pending_canonical_acceptance": null,
+  "legacy_route_status": "HISTORICAL_ONLY_NO_ACTIVE_RUNTIME_EFFECT",
+  "canonical_acceptance": {
     "task": "MCME-045",
-    "branch": "brain/china-vietnam-shopee-affiliate-v1",
-    "next_after_merge": "MCME-046"
-  },
-  "legacy_route_status": "HISTORICAL_ONLY_NO_ACTIVE_RUNTIME_EFFECT"
+    "result": "DONE",
+    "architecture": "V2_CHINA_VIETNAM_SHOPEE_AFFILIATE",
+    "merge_commit": "2283c40a89b01bce574893c8ad787143fc668e5c",
+    "next_task": "MCME-046",
+    "next_task_status": "READY_NOT_STARTED"
+  }
 }
