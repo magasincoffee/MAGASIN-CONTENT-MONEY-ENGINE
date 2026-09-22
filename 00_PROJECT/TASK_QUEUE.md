@@ -10,13 +10,15 @@ Expected Cash Impact × Learning Probability
 
 Five-Step is applied before every task.
 
-## ACTIVE
+## DONE
 
 ### MCME-045 — China→Vietnam Shopee Architecture Pivot
 Five-Step: QUESTION → DELETE → SIMPLIFY
 
 Objective:
 Replace the active US/Pinterest/Awin/impact first-cash architecture with the Owner-approved China-social → Vietnam traffic → Shopee Affiliate architecture while preserving historical evidence.
+
+Status: **DONE** — canonical merge `2283c40a89b01bce574893c8ad787143fc668e5c`.
 
 DoD:
 - Architecture V2 canonical;
@@ -27,7 +29,7 @@ DoD:
 - historical evidence preserved;
 - no external account/spend/publish action performed.
 
-## NEXT CRITICAL PATH
+## READY — NOT STARTED
 
 ### MCME-046 — Shopee Affiliate Owner Readiness
 Five-Step: QUESTION
