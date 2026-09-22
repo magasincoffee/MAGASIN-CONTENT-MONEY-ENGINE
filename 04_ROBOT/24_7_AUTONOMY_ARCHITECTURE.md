@@ -1,10 +1,19 @@
-# 24/7 AUTONOMY ARCHITECTURE
+# 24/7 AUTONOMY ARCHITECTURE — V2
 
-Status: REQUIRED SYSTEM PROPERTY
+Status: TARGET PROPERTY / NOT YET AUTHORIZED FOR FULL PRODUCTION  
+Date: 2026-09-22
 
-## Objective
+## Principle
 
-Run proven Content-to-Cash loops continuously with minimal Owner intervention while preserving safety, policy compliance and economic controls.
+24/7 automation is a destination, not the starting point.
+
+The first requirement is to prove:
+
+```text
+trend → product → content → click → order → commission → cash
+```
+
+Only then automate the steps that demonstrably shorten time-to-cash.
 
 ## Control topology
 
@@ -12,59 +21,57 @@ Run proven Content-to-Cash loops continuously with minimal Owner intervention wh
 OWNER
   ↓ authority / boundaries
 BRAIN
-  ↓ machine-readable bounded task
-SUPERVISOR / ROBOT
+  ↓ bounded task / thresholds
+ROBOT
   ↓
-WORK / SERVICES
+COLLECTORS / EDIT / QUEUES / SERVICES
   ↓
 RESULT + EVIDENCE
   ↓
 BRAIN
 ```
 
-Reuse lessons from MAGASIN Supervisor Three-Lane:
-- explicit Brain target;
-- deterministic task identity;
-- persisted latches;
-- exact-once reconciliation markers where side effects are uncertain;
-- bounded retry;
-- local/private credentials;
-- fail-closed security boundaries.
+## Target autonomous loops
 
-Do not copy implementation blindly. Reuse proven invariants.
+### Social Radar loop
+Douyin ingestion → normalize → snapshot → growth metrics → trend score.
 
-## Autonomous loops
+Xiaohongshu is initially a confirmation input and becomes automated only if its incremental value is proven.
 
-### Opportunity loop
-Discover → normalize → score → queue.
+### Product Mapping loop
+Trend/product signal → Shopee Vietnam equivalent candidates → affiliate/listing evidence → opportunity score.
 
 ### Production loop
-Research → rights gate → script → voice → video → QA.
+Reference intelligence → rights/source gate → Vietnamese hook/script → edit plan → render → QA.
 
 ### Distribution loop
-Schedule → publish → verify publication → capture content ID.
+Queue → authorized publish → reconcile publication → persist platform content ID.
 
 ### Measurement loop
-Fetch analytics → fetch monetization/affiliate data → normalize → attribute.
+Collect views/clicks/orders/commission/cash → normalize into Cash Truth.
 
 ### Learning loop
-Update priors → compare experiments → KEEP/KILL/SCALE.
+Compare products/hooks → KILL / KEEP / SCALE → update next bounded experiment.
 
-## State model
-
-Suggested job states:
+## Suggested states
 
 ```text
 DISCOVERED
+SNAPSHOT_PENDING
 SCORED
-APPROVED_AUTOMATIC
-PRODUCING
+PRODUCT_MAPPING
+AFFILIATE_CHECK
+RIGHTS_CHECK
+CREATIVE_READY
 QA
 READY_TO_PUBLISH
 PUBLISHING
 LIVE
 MEASURING
-EVALUATING
+ORDER_ATTRIBUTED
+COMMISSION_PENDING
+COMMISSION_APPROVED
+CASH_SETTLED
 SCALE
 KILL
 WAIT_OWNER
@@ -72,57 +79,52 @@ FAILED_RETRYABLE
 FAILED_TERMINAL
 ```
 
-## Side-effect safety
-
-For publish, delete, spend, message, account action or external mutation:
-- deterministic idempotency key;
-- pre-action persisted latch;
-- server/platform reconciliation;
-- no blind resend;
-- bounded retry;
-- evidence of confirmation.
-
 ## Owner-only boundaries
 
-Robot must stop for:
+Robot stops for:
 - login credentials;
 - MFA/OTP/CAPTCHA;
+- Shopee signup/contractual acceptance;
 - KYC/tax identity;
 - bank/payment setup;
-- contractual acceptance with material legal/financial impact;
-- copyright/license ambiguity;
-- platform suspension/appeal decisions;
-- destructive account deletion;
-- spending outside an approved budget;
-- ambiguous business decisions above delegated thresholds.
+- unclear copyright/license rights;
+- account suspension/appeal;
+- destructive actions;
+- spend outside explicit budget.
 
-## Health requirements
+## Side-effect safety
 
-24/7 does not mean never failing.
-
-It means:
-- failures are classified;
-- transient failures recover automatically;
-- loops do not duplicate side effects;
-- deadlocks are detected;
-- retries are bounded;
-- state survives restart;
-- watchdog can restart components;
-- Owner gets a concise escalation only when needed.
+For publishing, spend, messages, account mutations or deletion:
+- deterministic idempotency/reconciliation key;
+- pre-action persisted state;
+- bounded retry;
+- no blind duplicate side effect;
+- evidence after action.
 
 ## Economic circuit breaker
 
-Autonomy must stop scaling when:
-- cash attribution is broken;
-- spend exceeds budget;
-- conversion materially degrades;
-- refund/reversal rate breaches threshold;
-- platform policy warnings appear;
+Stop or reduce scale when:
+- cash attribution breaks;
+- product mapping becomes unreliable;
+- affiliate eligibility becomes unknown;
 - rights evidence is missing;
-- analytics source becomes untrusted.
+- clicks do not progress to orders;
+- approved commission reverses materially;
+- platform policy warnings appear;
+- spend exceeds approval.
 
-## Scheduling principle
+## Automation admission rule
 
-Priority queue is based on expected marginal net cash, adjusted by confidence and risk.
+Full automation is forbidden merely because code can be written.
 
-Not FIFO by default.
+Minimum admission sequence:
+
+```text
+FIRST ATTRIBUTED ORDER
+→ REPEATABLE ORDER EVIDENCE
+→ RELIABLE ATTRIBUTION
+→ BRAIN AUTHORIZATION
+→ AUTOMATION V1
+```
+
+Priority is expected marginal net cash adjusted by confidence, time and risk — not FIFO and not content volume.
