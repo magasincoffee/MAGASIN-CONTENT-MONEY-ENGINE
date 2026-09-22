@@ -1,0 +1,71 @@
+{
+  "schema_version": "mcme.awin-provider-account-closure-evidence.v1",
+  "task_context": "MCME-013/AWIN-MERCHANT-CANDIDATE-1-OWNER-GUIDED-EXECUTION-01",
+  "status": "VERIFIED_PROVIDER_ACCOUNT_CLOSED",
+  "platform": "AWIN",
+  "candidate_slot": "AWIN-01",
+  "merchant_public_name": "Kitchen Universe, LLC",
+  "program_public_identifier_sanitized": "81021",
+  "historical_merchant_relationship_before_closure": "PENDING",
+  "provider_account_current_active": false,
+  "network_runtime_usable": false,
+  "closure": {
+    "source_reference_sanitized": "AWIN_PARTNER_COMPLIANCE_ACCOUNT_CLOSURE_EMAIL",
+    "source_type": "PROVIDER_EMAIL_PLUS_ACCOUNT_UI",
+    "observed_at": "2026-09-22T09:43:50Z",
+    "provider_statement_summary": [
+      "Account was initially approved.",
+      "Additional checks occur when a publisher applies for a first partnership.",
+      "Following manual review, the publisher account was closed because it did not fully meet Awin participation standards.",
+      "Closure was immediate.",
+      "Provider stated the decision is final and will not be reconsidered.",
+      "Provider stated further review details will not be shared for security reasons."
+    ],
+    "ui_corroboration_sanitized": "ACCOUNT_ACTIVITY_STREAM_SHOWED_PUBLISHER_CLOSED"
+  },
+  "causal_sequence": [
+    "NETWORK_READY",
+    "AWIN_01_OWNER_APPLICATION_SUBMITTED",
+    "AWIN_01_MERCHANT_RELATIONSHIP_PENDING",
+    "FIRST_PARTNERSHIP_MANUAL_COMPLIANCE_REVIEW",
+    "PUBLISHER_ACCOUNT_CLOSED"
+  ],
+  "warning_audit": {
+    "prior_warning_or_remediation_email_found": false,
+    "closure_email_is_prior_warning": false
+  },
+  "support_case": {
+    "submitted": true,
+    "case_reference_sanitized": "AWIN_PARTNER_SUCCESS_ACCOUNT_CLOSURE_CASE",
+    "case_number_stored": false,
+    "current_status": "AWAITING_PROVIDER_RESPONSE",
+    "scope": "clarification_or_remediation_only",
+    "does_not_restore_runtime_usability": true
+  },
+  "automated_form_artifact": {
+    "generated_subject_sanitized": "ACCOUNT_CLOSURE_REQUEST_RECEIVED",
+    "owner_originally_requested_provider_closure": false,
+    "interpretation": "FORM_TOPIC_AUTOMATION_ONLY_NOT_CAUSAL_EVIDENCE"
+  },
+  "safety": {
+    "reapply_awin01_forbidden": true,
+    "open_awin02_forbidden": true,
+    "create_new_awin_publisher_account_forbidden": true,
+    "impact_opened": false,
+    "amazon_opened": false,
+    "publish_performed": false,
+    "external_side_effect_after_closure": false,
+    "private_account_identifier_stored": false,
+    "credentials_stored": false
+  },
+  "historical_evidence_preserved": true,
+  "supersedes_runtime_assumption_only": true,
+  "superseded_runtime_assumptions": [
+    "AWIN_NETWORK_READY_CURRENT",
+    "AWIN_01_PENDING_IS_CURRENT_RUNTIME_GATE"
+  ],
+  "does_not_overwrite_historical_records": [
+    "MCME-012_AWIN_NETWORK_READY_RERUN",
+    "MCME-013_AWIN_MERCHANT_CANDIDATE_1_EVIDENCE"
+  ]
+}

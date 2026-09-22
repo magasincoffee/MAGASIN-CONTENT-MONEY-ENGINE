@@ -56,3 +56,25 @@ Next hard gate:
 `MCME-044 — Vietnam Owner Access + Cash-Out Feasibility Gate`
 
 No fake foreign phone, false residency or temporary SMS service is permitted.
+
+
+## 2026-09-22 — Awin provider account closure reconciliation
+
+Provider-level evidence now supersedes the prior current-runtime interpretation of Awin `NETWORK_READY` and AWIN-01 `PENDING` without deleting either historical record.
+
+Current truth:
+
+- Awin publisher account active: **NO**
+- Awin runtime usable: **NO**
+- Awin bounded path: **EXHAUSTED AT NETWORK ACCOUNT LAYER**
+- MCME-014 merchant evaluation: **NOT APPLICABLE / DO NOT RUN WHILE NETWORK ACCOUNT IS CLOSED**
+- AWIN-02/new Awin account/reapplication: **FORBIDDEN**
+- Gate A PASS: **NO**
+- impact.com account/runtime action: **NOT STARTED**
+- next real execution task: **MCME-017 Owner impact.com network relationship evidence**
+- support case: **PENDING FOR CLARIFICATION/REMEDIATION ONLY**
+
+Canonical reconciliation artifacts:
+
+- `07_EXPERIMENTS/gate_a/MCME-013_AWIN_PROVIDER_ACCOUNT_CLOSURE_EVIDENCE.json`
+- `07_EXPERIMENTS/gate_a/MCME-012_AWIN_PROVIDER_CLOSURE_RECONCILIATION.json`
