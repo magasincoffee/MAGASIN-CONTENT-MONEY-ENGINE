@@ -1,0 +1,131 @@
+{
+  "schema_version": "mcme.mcme017-impact-network-relationship-evidence.v1",
+  "task_id": "MCME-017/IMPACT-NETWORK-RELATIONSHIP-OWNER-GUIDED-EXECUTION-01",
+  "status": "WAIT_OWNER",
+  "result": "WAIT_OWNER",
+  "candidate_slot": "IMPACT-01",
+  "network_name": "impact.com",
+  "observed_at": "2026-09-22T20:34:00+07:00",
+  "canonical_property": {
+    "platform": "PINTEREST",
+    "display_name": "Small Space Kitchen Lab",
+    "public_or_sanitized_property_ref": "https://www.pinterest.com/bachvantoi1994/",
+    "owner_authorized": "YES",
+    "source_task": "MCME-010"
+  },
+  "duplicate_account_guard": {
+    "checked_before_new_partner_setup": true,
+    "method": "Owner used official impact.com login flow with the intended Google identity. The provider routed to new Partner account setup rather than an existing Partner dashboard/relationship.",
+    "result": "NO_EXISTING_PARTNER_RELATIONSHIP_DETECTED_IN_LOGIN_FLOW",
+    "duplicate_account_created": false,
+    "second_account_attempted": false
+  },
+  "signup_truth": {
+    "account_name_sanitized": "Toi Bach",
+    "country": "Vietnam",
+    "timezone": "GMT+07:00 Bangkok, Hanoi, Jakarta",
+    "currency": "USD",
+    "account_role": "CREATOR",
+    "operating_as": "INDIVIDUAL",
+    "primary_promotion_surface": "SOCIAL_CHANNELS",
+    "truthful_identity_only": true,
+    "fake_us_identity_used": false,
+    "fake_company_used": false,
+    "fake_website_used": false
+  },
+  "provider_evidence": [
+    {
+      "source_reference_sanitized": "IMPACT_PARTNER_ACCOUNT_SETUP_VIETNAM_INDIVIDUAL",
+      "source_type": "OWNER_SCREENSHOT",
+      "finding": "Official impact.com Partner setup showed Vietnam, GMT+07:00, USD, and an individual creator/social-channel profile path."
+    },
+    {
+      "source_reference_sanitized": "IMPACT_PINTEREST_CHANNEL_CONNECTED",
+      "source_type": "OWNER_SCREENSHOT",
+      "finding": "impact.com showed Pinterest @bachvantoi1994 with provider UI status 'Đã kết nối' (Connected).",
+      "property_connection_state": "CONNECTED"
+    },
+    {
+      "source_reference_sanitized": "IMPACT_MARKETPLACE_APPLICATION_UNDER_REVIEW",
+      "source_type": "OWNER_SCREENSHOT",
+      "finding": "impact.com displayed 'Đơn đăng ký tham gia thị trường của impact.com' with status 'Đang Xem Xét' and stated the Owner will be notified when there is a response.",
+      "network_relationship_state": "PENDING"
+    }
+  ],
+  "sanitized_evidence_fields": {
+    "network.relationship": {
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "value": "PENDING",
+      "source_reference_sanitized": "IMPACT_MARKETPLACE_APPLICATION_UNDER_REVIEW",
+      "observed_at": "2026-09-22T20:34:00+07:00"
+    },
+    "property.network_property_accepted": {
+      "status": "UNKNOWN",
+      "confidence": "HIGH",
+      "value": null,
+      "source_reference_sanitized": "IMPACT_PINTEREST_CHANNEL_CONNECTED",
+      "observed_at": "2026-09-22T20:34:00+07:00",
+      "note": "Provider UI proves the Pinterest channel is connected to the impact.com profile, but the marketplace application is still under review. Connection alone is not promoted to network property acceptance."
+    },
+    "property.channel_connected": {
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "value": true,
+      "source_reference_sanitized": "IMPACT_PINTEREST_CHANNEL_CONNECTED",
+      "observed_at": "2026-09-22T20:34:00+07:00"
+    }
+  },
+  "exact_current_provider_state": {
+    "partner_account_setup_reached": true,
+    "pinterest_channel_connected": true,
+    "marketplace_application_state": "UNDER_REVIEW",
+    "canonical_network_relationship": "PENDING",
+    "property_network_acceptance": "UNKNOWN",
+    "network_ready": false
+  },
+  "owner_actions_performed": [
+    "Owner used the official impact.com Partner flow.",
+    "Owner authenticated with the intended Google identity.",
+    "Owner entered/confirmed truthful Vietnam account details.",
+    "Owner selected creator, individual, and social-channel profile classifications.",
+    "Owner connected the canonical Pinterest property @bachvantoi1994.",
+    "Owner entered an English profile description consistent with organic Pinterest content for US small-space kitchen/fridge-storage shoppers.",
+    "Owner completed the provider-side application flow and reached marketplace Under Review."
+  ],
+  "owner_boundary": {
+    "all_credentials_entered_by_owner": true,
+    "password_or_otp_shared_with_work": false,
+    "captcha_or_mfa_shared_with_work": false,
+    "tax_bank_kyc_shared_with_work": false,
+    "legal_terms_action_performed_by_owner": true,
+    "external_clicks_performed_by_owner": true,
+    "work_performed_external_side_effect": false,
+    "note": "Work asked for explicit confirmation before account-creation continuation, but Owner proceeded through subsequent provider steps without a separate final chat confirmation before the provider application entered Under Review. Work did not perform any click or account mutation."
+  },
+  "external_side_effect": true,
+  "external_side_effect_description": "Owner created/initialized one impact.com Partner relationship, connected the canonical Pinterest channel, and submitted/completed the marketplace application flow now under review.",
+  "unknown_fields": [
+    "property.network_property_accepted",
+    "final_marketplace_approval",
+    "network_active_state"
+  ],
+  "safety": {
+    "second_impact_account_created": false,
+    "duplicate_retry": false,
+    "merchant_candidate_opened": false,
+    "mcme018_executed": false,
+    "mcme019_opened": false,
+    "amazon_opened": false,
+    "publish_performed": false,
+    "credentials_stored": false,
+    "otp_mfa_captcha_stored": false,
+    "tax_bank_payment_data_stored": false,
+    "private_account_id_stored": false,
+    "unknown_promoted": false,
+    "awin_history_preserved": true
+  },
+  "stop_reason": "impact.com marketplace application is UNDER_REVIEW/PENDING. Canonical MCME-017 rule is WAIT_OWNER; do not retry, duplicate the account, open merchant candidates, or run MCME-018 automatically.",
+  "next_gate": "MCME-018_BRAIN_REVIEW_REQUIRED",
+  "recommendation_for_brain": "Accept MCME-017 as real WAIT_OWNER evidence. network.relationship=PENDING is VERIFIED; Pinterest channel connection is VERIFIED, while property.network_property_accepted remains UNKNOWN until impact.com explicitly approves the marketplace/property relationship. MCME-018 may deterministically evaluate this evidence as WAIT_OWNER after Brain review."
+}

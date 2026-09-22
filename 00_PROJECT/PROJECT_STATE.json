@@ -1,12 +1,12 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-22T20:10:00+07:00",
-  "status": "AWIN_PROVIDER_ACCOUNT_CLOSED_RECONCILED_MCME_017_READY_OWNER",
+  "updated_at": "2026-09-22T20:34:00+07:00",
+  "status": "MCME_017_WAIT_OWNER_IMPACT_MARKETPLACE_REVIEW",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
   "current_task": "NONE",
-  "current_task_title": "Awin provider account closure reconciled; impact.com owner network evidence is next",
+  "current_task_title": "MCME-017 impact.com relationship submitted by Owner; marketplace application under review",
   "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -33,7 +33,7 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "MCME-017_OWNER_IMPACT_NETWORK_RELATIONSHIP_EVIDENCE",
+  "next_gate": "MCME-018_BRAIN_REVIEW_REQUIRED",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
@@ -96,7 +96,7 @@
   },
   "core_run_package_status": "COMPLETE",
   "whole_8h_run_complete": true,
-  "next_real_execution_task": "MCME-017",
+  "next_real_execution_task": "MCME-018",
   "early_finish_extension": {
     "eligible": true,
     "active": false,
@@ -261,17 +261,14 @@
     "brain_decision": "ACCEPT_WAIT_OWNER_NOT_NETWORK_READY"
   },
   "wait_owner": {
-    "reason": "Awin publisher account was closed by provider compliance after first-partnership manual review. Awin path is currently unusable and terminal for runtime unless provider later restores it with new verifiable evidence.",
-    "required_next_evidence": "MCME-017 Owner impact.com network relationship evidence using the already-confirmed Pinterest property. Do not create/open a second Awin account or AWIN-02.",
+    "reason": "impact.com marketplace application is UNDER_REVIEW/PENDING after Owner completed the Partner setup flow.",
+    "required_next_evidence": "Final impact.com marketplace/network decision and explicit property/network acceptance evidence if provider exposes it.",
     "merchant_applications_allowed": false,
-    "collection_task": "MCME-017",
-    "network": "impact.com",
+    "collection_task": "MCME-017_COMPLETE_WAIT_OWNER",
     "candidate_slot": "IMPACT-01",
-    "awin_reapplication_forbidden": true,
-    "awin_02_forbidden": true,
-    "new_awin_account_forbidden": true,
-    "impact_owner_action_started": false,
-    "support_case_pending_nonblocking": true
+    "network": "impact.com",
+    "duplicate_account_forbidden": true,
+    "retry_forbidden_while_pending": true
   },
   "awin_final_decision": {
     "status": "ACCEPTED",
@@ -548,5 +545,31 @@
     "impact_runtime_open": false,
     "accepted_at": "2026-09-22T20:10:00+07:00",
     "brain_decision": "ACCEPT_TERMINAL_AWIN_NETWORK_FAIL_UNLOCK_MCME_017_OWNER_GATE"
+  },
+  "mcme_017": {
+    "status": "WAIT_OWNER_MARKETPLACE_REVIEW",
+    "result": "WAIT_OWNER",
+    "task_id": "MCME-017/IMPACT-NETWORK-RELATIONSHIP-OWNER-GUIDED-EXECUTION-01",
+    "evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-017_IMPACT_NETWORK_RELATIONSHIP_EVIDENCE.json",
+    "candidate_slot": "IMPACT-01",
+    "network_name": "impact.com",
+    "network_relationship": "PENDING",
+    "marketplace_application_state": "UNDER_REVIEW",
+    "pinterest_property_ref": "https://www.pinterest.com/bachvantoi1994/",
+    "pinterest_channel_connected": true,
+    "property_network_property_accepted": "UNKNOWN",
+    "duplicate_account_guard": "NO_EXISTING_PARTNER_RELATIONSHIP_DETECTED_IN_LOGIN_FLOW",
+    "duplicate_account_created": false,
+    "external_side_effect": true,
+    "owner_actions_performed": true,
+    "observed_at": "2026-09-22T20:34:00+07:00",
+    "unknown_fields_preserved": true,
+    "no_unknown_promoted": true,
+    "historical_evidence_preserved": true,
+    "merchant_candidate_opened": false,
+    "mcme_018_executed": false,
+    "gate_a_pass": false,
+    "next_gate": "MCME-018_BRAIN_REVIEW_REQUIRED",
+    "recommendation": "Brain verify MCME-017 WAIT_OWNER evidence. Do not retry or create a second impact.com account. MCME-018 may evaluate this evidence after Brain review; expected current network classification remains WAIT_OWNER while relationship is PENDING."
   }
 }
