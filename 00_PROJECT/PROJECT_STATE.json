@@ -1,12 +1,12 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-22T00:20:00+07:00",
-  "status": "MCME_013_ACCEPTED_WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
+  "updated_at": "2026-09-22T20:10:00+07:00",
+  "status": "AWIN_PROVIDER_ACCOUNT_CLOSED_RECONCILED_MCME_017_READY_OWNER",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
   "current_task": "NONE",
-  "current_task_title": "MCME-013 accepted; AWIN-01 Kitchen Universe, LLC pending advertiser approval",
+  "current_task_title": "Awin provider account closure reconciled; impact.com owner network evidence is next",
   "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -33,7 +33,7 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "WAIT_OWNER_FOR_AWIN_01_ADVERTISER_DECISION; then refresh MCME-013 evidence and run MCME-014 on the changed real relationship state.",
+  "next_gate": "MCME-017_OWNER_IMPACT_NETWORK_RELATIONSHIP_EVIDENCE",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
@@ -67,7 +67,7 @@
   "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
-    "actual_execution_status": "AWIN_NETWORK_READY_MERCHANT_EVIDENCE_REQUIRED",
+    "actual_execution_status": "AWIN_NETWORK_TERMINAL_FAIL_IMPACT_FALLBACK_REQUIRED",
     "canonical_commit": "b731207531d4b235e04956cd8b592d333f9435b4",
     "bounded_network_order": [
       "Awin",
@@ -96,7 +96,7 @@
   },
   "core_run_package_status": "COMPLETE",
   "whole_8h_run_complete": true,
-  "next_real_execution_task": "MCME-014",
+  "next_real_execution_task": "MCME-017",
   "early_finish_extension": {
     "eligible": true,
     "active": false,
@@ -261,17 +261,17 @@
     "brain_decision": "ACCEPT_WAIT_OWNER_NOT_NETWORK_READY"
   },
   "wait_owner": {
-    "reason": "AWIN-01 Kitchen Universe, LLC application is PENDING advertiser approval after Owner-submitted Join request.",
-    "required_next_evidence": "Awin advertiser decision/status change for AWIN-01 (APPROVED/JOINED, REJECTED, BLOCKED, or other explicit provider state).",
+    "reason": "Awin publisher account was closed by provider compliance after first-partnership manual review. Awin path is currently unusable and terminal for runtime unless provider later restores it with new verifiable evidence.",
+    "required_next_evidence": "MCME-017 Owner impact.com network relationship evidence using the already-confirmed Pinterest property. Do not create/open a second Awin account or AWIN-02.",
     "merchant_applications_allowed": false,
-    "mcme_013_blocked": false,
-    "mcme_013_dependency_status": "ACCEPTED_WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
-    "mcme_013_execution_deferred_by_owner": false,
-    "collection_task": "MCME-013_ACCEPTED_WAIT_OWNER",
-    "candidate_slot": "AWIN-01",
-    "candidate_identity": "Kitchen Universe, LLC",
-    "reapplication_forbidden": true,
-    "candidate_2_forbidden_until_mcme014_merchant_fail": true
+    "collection_task": "MCME-017",
+    "network": "impact.com",
+    "candidate_slot": "IMPACT-01",
+    "awin_reapplication_forbidden": true,
+    "awin_02_forbidden": true,
+    "new_awin_account_forbidden": true,
+    "impact_owner_action_started": false,
+    "support_case_pending_nonblocking": true
   },
   "awin_final_decision": {
     "status": "ACCEPTED",
@@ -341,7 +341,11 @@
     "next_safe_prep_task": "MCME-014/PREP",
     "accepted_at": "2026-09-21T22:55:00+07:00",
     "accepted_commit": "97f875eea22b89f3d5631c505537cee86d6ee7e7",
-    "brain_decision": "ACCEPT_NETWORK_READY_DEFER_OWNER_ACTION_PROCEED_SAFE_PREP"
+    "brain_decision": "ACCEPT_NETWORK_READY_DEFER_OWNER_ACTION_PROCEED_SAFE_PREP",
+    "current_runtime_valid": false,
+    "superseded_by_provider_closure": true,
+    "superseding_artifact": "07_EXPERIMENTS/gate_a/MCME-012_AWIN_PROVIDER_CLOSURE_RECONCILIATION.json",
+    "historical_result_preserved": "NETWORK_READY"
   },
   "safe_prep_waves": {
     "status": "LOCKED",
@@ -379,7 +383,7 @@
     "gate_a_truth_changed": false,
     "current_evidence_level_changed": false,
     "owner_action_deferred": true,
-    "next_real_execution_task": "MCME-013",
+    "next_real_execution_task": "MCME-017",
     "next_safe_prep_task_after_brain_acceptance": "MCME-016/PREP",
     "tests": {
       "targeted_mcme014": "17/17 PASS",
@@ -389,7 +393,8 @@
     "brain_acceptance_required_before_next_safe_prep": false,
     "accepted_at": "2026-09-21T23:10:00+07:00",
     "accepted_merge_commit": "b12bbdfc046873fad7c0ebfd3f89c6a3e13a025c",
-    "brain_decision": "ACCEPT_PREPARED_ONLY"
+    "brain_decision": "ACCEPT_PREPARED_ONLY",
+    "runtime_now_forbidden_by_upstream_network_closure": true
   },
   "mcme_016_safe_prep": {
     "status": "ACCEPTED_PREPARED_ONLY",
@@ -421,7 +426,7 @@
       "MCME-015_REAL_SANITIZED_EVIDENCE"
     ],
     "owner_action_deferred": true,
-    "next_real_execution_task": "MCME-013",
+    "next_real_execution_task": "MCME-017",
     "next_safe_prep_task_after_brain_acceptance": "MCME-018/PREP",
     "tests": {
       "targeted_mcme016": "10/10 PASS (local reconstructed canonical semantics)",
@@ -431,7 +436,9 @@
     "brain_acceptance_required_before_next_safe_prep": false,
     "accepted_at": "2026-09-21T23:25:00+07:00",
     "accepted_merge_commit": "032d5f0d4fd7c9e3baf21c0eff726d93ed13e34e",
-    "brain_decision": "ACCEPT_PREPARED_ONLY"
+    "brain_decision": "ACCEPT_PREPARED_ONLY",
+    "runtime_now_forbidden_by_upstream_network_closure": true,
+    "awin_02_forbidden": true
   },
   "mcme_018_safe_prep": {
     "status": "ACCEPTED_PREPARED_ONLY",
@@ -459,17 +466,16 @@
     "gate_a_truth_changed": false,
     "current_evidence_level_changed": false,
     "gate_a_pass": false,
-    "awin_bounded_path_exhausted": false,
+    "awin_bounded_path_exhausted": true,
     "impact_runtime_open": false,
     "mcme_017_executed": false,
     "mcme_018_executed": false,
     "runtime_prerequisites_currently_satisfied": false,
     "runtime_dependency_still_required": [
-      "AWIN_BOUNDED_PATH_EXHAUSTED",
       "MCME-017_REAL_SANITIZED_IMPACT_NETWORK_EVIDENCE"
     ],
     "owner_action_deferred": true,
-    "next_real_execution_task": "MCME-013",
+    "next_real_execution_task": "MCME-017",
     "next_safe_prep_task_after_brain_acceptance": "MCME-020/PREP",
     "tests": {
       "targeted_mcme018": "14/14 PASS (local reconstructed canonical semantics)",
@@ -509,7 +515,38 @@
     "accepted_at": "2026-09-22T00:20:00+07:00",
     "accepted_merge_commit": "fd77e81b20cf134f8289d280b6217dce6e99cfab",
     "brain_decision": "ACCEPT_WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
-    "mcme_014_dispatch_decision": "DEFER_UNTIL_RELATIONSHIP_STATE_CHANGES",
-    "mcme_014_dispatch_rationale": "Current canonical merchant relationship is PENDING, so immediate MCME-014 would deterministically remain WAIT_OWNER and unlock nothing."
+    "mcme_014_dispatch_decision": "FORBIDDEN_UPSTREAM_NETWORK_CLOSED",
+    "mcme_014_dispatch_rationale": "Current canonical merchant relationship is PENDING, so immediate MCME-014 would deterministically remain WAIT_OWNER and unlock nothing.",
+    "current_runtime_valid": false,
+    "historical_result_preserved": "WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
+    "superseded_by_provider_account_closure": true,
+    "superseding_evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-013_AWIN_PROVIDER_ACCOUNT_CLOSURE_EVIDENCE.json"
+  },
+  "awin_provider_closure_reconciliation": {
+    "status": "ACCEPTED",
+    "result": "AWIN_NETWORK_TERMINAL_FAIL_FALLBACK_ELIGIBLE",
+    "task_id": "MCME-012/AWIN-PROVIDER-CLOSURE-RECONCILIATION-01",
+    "evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-013_AWIN_PROVIDER_ACCOUNT_CLOSURE_EVIDENCE.json",
+    "reconciliation_artifact": "07_EXPERIMENTS/gate_a/MCME-012_AWIN_PROVIDER_CLOSURE_RECONCILIATION.json",
+    "provider_account_active": false,
+    "network_runtime_usable": false,
+    "current_network_relationship": "REJECTED",
+    "canonical_evaluator_state": "FAIL",
+    "canonical_evaluator_reason": "NETWORK_RELATIONSHIP_REJECTED",
+    "historical_network_ready_preserved": true,
+    "historical_mcme013_pending_preserved": true,
+    "awin_bounded_path_exhausted": true,
+    "exhaustion_layer": "NETWORK_ACCOUNT",
+    "mcme_014_runtime_allowed": false,
+    "awin_02_allowed": false,
+    "new_awin_account_allowed": false,
+    "support_case_pending": true,
+    "support_case_runtime_effect": "NONE_UNLESS_PROVIDER_RESTORES_ACCOUNT_WITH_NEW_VERIFIABLE_EVIDENCE",
+    "gate_a_pass": false,
+    "next_real_execution_task": "MCME-017",
+    "mcme_017_status": "READY_OWNER_NOT_STARTED",
+    "impact_runtime_open": false,
+    "accepted_at": "2026-09-22T20:10:00+07:00",
+    "brain_decision": "ACCEPT_TERMINAL_AWIN_NETWORK_FAIL_UNLOCK_MCME_017_OWNER_GATE"
   }
 }
