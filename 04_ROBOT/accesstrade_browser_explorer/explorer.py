@@ -175,6 +175,11 @@ def same_origin(url: str, allowed_hosts: set[str]) -> bool:
     return (urlsplit(url).hostname or "").lower() in allowed_hosts
 
 
+def is_accesstrade_network_host(url: str) -> bool:
+    host = (urlsplit(url).hostname or "").lower()
+    return host == "accesstrade.vn" or host.endswith(".accesstrade.vn")
+
+
 def is_blocked_url(url: str) -> bool:
     lower = url.lower()
     return any(keyword in lower for keyword in BLOCKED_URL_KEYWORDS)
@@ -355,7 +360,7 @@ async def map_site(
         async def on_response(response: Response) -> None:
             try:
                 request = response.request
-                if not same_origin(request.url, allowed_hosts):
+                if not is_accesstrade_network_host(request.url):
                     return
 
                 url = endpoint_url(request.url)
