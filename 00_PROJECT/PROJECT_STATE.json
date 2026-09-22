@@ -1,27 +1,21 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-22T20:42:00+07:00",
-  "status": "MCME_017_ACCEPTED_WAIT_OWNER_IMPACT_MARKETPLACE_REVIEW",
+  "updated_at": "2026-09-22T22:00:00+07:00",
+  "status": "CHINA_VIETNAM_SHOPEE_ARCHITECTURE_PIVOT_LOCKED_MCME_045",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
-  "current_phase": "P7_REAL_GATE_A_EXECUTION",
-  "current_task": "NONE",
-  "current_task_title": "MCME-017 accepted; impact.com marketplace application under review",
-  "five_step_current": "ACCELERATE",
+  "current_phase": "P8_CHINA_VIETNAM_SHOPEE_PROOF_OF_MONEY_V1",
+  "current_task": "MCME-045",
+  "current_task_title": "China→Vietnam Shopee Affiliate Architecture Pivot V2",
+  "five_step_current": "QUESTION_DELETE_SIMPLIFY",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
-  "global_scope": true,
-  "robot_24_7_required": true,
-  "saydivoice_role": "VOICE_PROVIDER",
-  "content_policy": "ORIGINAL_LICENSED_PUBLIC_DOMAIN_OR_MEANINGFULLY_TRANSFORMATIVE_WITH_RIGHTS_GATE",
+  "global_scope": false,
+  "robot_24_7_required": false,
+  "saydivoice_role": "DEFERRED_NOT_REQUIRED_FOR_PROOF_OF_MONEY_V1",
+  "content_policy": "CHINA_SOCIAL_REFERENCE_ALLOWED_PUBLICATION_REQUIRES_ORIGINAL_LICENSED_CREATOR_SUPPLIER_PLATFORM_PERMITTED_OR_OTHERWISE_RIGHTS_VERIFIED_MATERIAL",
   "monetization_priority": [
-    "AFFILIATE_COMMERCE",
-    "PLATFORM_MONETIZATION",
-    "LEAD_GENERATION",
-    "SPONSORSHIP",
-    "OWN_PRODUCTS",
-    "SERVICES",
-    "IP_LICENSING"
+    "SHOPEE_AFFILIATE_VIETNAM"
   ],
   "owner_boundaries": [
     "CREDENTIALS",
@@ -33,38 +27,51 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "WAIT_OWNER_FOR_IMPACT_MARKETPLACE_DECISION; refresh MCME-017 evidence when provider state changes, then run MCME-018.",
-  "active_run": "MCME-RUN-4H-02",
-  "run_start_at": "2026-09-20T03:21:04+07:00",
-  "run_deadline_at": "2026-09-20T07:21:04+07:00",
+  "next_gate": "MCME-045_MERGE_THEN_MCME-046_SHOPEE_AFFILIATE_OWNER_READINESS",
+  "active_run": null,
+  "run_start_at": null,
+  "run_deadline_at": null,
   "last_accepted_task": "MCME-017/IMPACT-NETWORK-RELATIONSHIP-OWNER-GUIDED-EXECUTION-01",
-  "last_accepted_commit": "73c702dde06983432ea4ffd28ddac68d7b01e55e",
+  "last_accepted_commit": "33aa5ce5cfc85079295e2b5714678d3fbc3e98a3",
   "selected_first_cash_route": {
-    "market": "United States",
-    "language": "English",
-    "distribution_surface": "Pinterest organic Pins",
-    "monetization": "Affiliate commerce",
-    "niche": "Small-space kitchen organization",
-    "canonical_format": "Static 2:3 original problem-solution checklist Pin",
-    "saydivoice_required": false,
-    "video_required": false,
-    "network_order": [
-      "Awin",
-      "impact.com",
-      "Amazon Associates (conditional)"
-    ]
+    "market": "Vietnam",
+    "language": "Vietnamese",
+    "signal_sources": [
+      "Douyin",
+      "Xiaohongshu"
+    ],
+    "primary_signal_source": "Douyin",
+    "confirmation_source": "Xiaohongshu",
+    "initial_collector_candidate": "Evil0ctal/Douyin_TikTok_Download_API",
+    "distribution_surface": "Organic short-form; manual/authorized publishing first",
+    "monetization": "Shopee Affiliate Vietnam",
+    "niche": "Dynamic; selected from real trend and Shopee-mappability evidence",
+    "initial_batch": {
+      "scan_candidate_videos": "50-100 bounded initial scan",
+      "max_products": 3,
+      "creative_variants_per_product": 3,
+      "max_creatives": 9
+    },
+    "paid_traffic": false,
+    "spend_budget_vnd": 0
   },
   "first_real_money_experiment": {
-    "sub_problem": "Fridge storage / fit",
-    "minimum_batch": 3,
-    "format": "Static 2:3 original problem-solution checklist Pin",
-    "gate_a_required": true,
-    "first_commercial_signal": "genuine qualified outbound click",
-    "first_attributed_revenue": "network-recorded commission-bearing merchant action / pending commission",
-    "first_validated_revenue": "validated/approved commission",
-    "first_settled_cash": "funds received on Owner-authorized payout rail"
+    "hypothesis": "A fast-rising China-social product/content signal can be localized into Vietnamese organic short-form traffic that produces an attributable Shopee Vietnam affiliate order.",
+    "minimum_scan": "50-100 candidate videos",
+    "max_products": 3,
+    "max_initial_creatives": 9,
+    "first_commercial_signal": "affiliate click",
+    "first_attributed_revenue": "Shopee-attributed order / commission-bearing action",
+    "first_validated_revenue": "approved commission",
+    "first_settled_cash": "funds received and reconciled on Owner-authorized payout rail",
+    "cash_gates": {
+      "gate_0": "AFFILIATE_CLICK",
+      "gate_1": "ATTRIBUTED_ORDER",
+      "gate_2": "APPROVED_COMMISSION",
+      "gate_3": "CASH_RECEIVED_AND_RECONCILED"
+    }
   },
-  "minimum_content_factory_status": "BLOCKED_UNTIL_REAL_GATE_A_AND_INTERACTION_EVIDENCE",
+  "minimum_content_factory_status": "BOUNDED_PROOF_OF_MONEY_V1_MANUAL_FIRST",
   "gate_a_readiness": {
     "contract_status": "ACCEPTED",
     "actual_execution_status": "AWIN_NETWORK_TERMINAL_FAIL_IMPACT_FALLBACK_REQUIRED",
@@ -74,7 +81,11 @@
       "impact.com",
       "Amazon Associates (conditional)"
     ],
-    "max_candidate_evaluations": 5
+    "max_candidate_evaluations": 5,
+    "status": "HISTORICAL_SUPERSEDED",
+    "active": false,
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "cash_truth": {
     "status": "ACCEPTED",
@@ -85,18 +96,21 @@
     "runtime_status": "ACCEPTED",
     "runtime_commit": "531412be498f0602d4b779609b7a9b61e56228c8",
     "schema_current_commit": "531412be498f0602d4b779609b7a9b61e56228c8",
-    "schema_bugfix": "decimal regex only; ontology/state semantics unchanged"
+    "schema_bugfix": "decimal regex only; ontology/state semantics unchanged",
+    "active_route": "VIETNAM_SHOPEE_AFFILIATE"
   },
   "first_cash_backlog": {
-    "status": "ACCEPTED",
+    "status": "HISTORICAL_SUPERSEDED_BY_MCME_045",
     "canonical_commit": "1d58c103403fb9854be772ddef904d118aa1e7b0",
     "future_task_start": "MCME-010",
     "future_task_end": "MCME-038",
-    "first_future_task": "MCME-010 Owner Pinterest property confirmation"
+    "first_future_task": "MCME-010 Owner Pinterest property confirmation",
+    "active": false,
+    "replacement_queue": "00_PROJECT/TASK_QUEUE.md MCME-045→MCME-054"
   },
   "core_run_package_status": "COMPLETE",
   "whole_8h_run_complete": true,
-  "next_real_execution_task": "MCME-018",
+  "next_real_execution_task": "MCME-046",
   "early_finish_extension": {
     "eligible": true,
     "active": false,
@@ -105,16 +119,18 @@
     "planning_only": true,
     "completed_at": "2026-09-20T01:20:30+07:00"
   },
-  "run_completion_mode": "EARLY_COMPLETE_SCOPE_EXHAUSTED",
+  "run_completion_mode": "ARCHITECTURE_PIVOT_TO_NEW_FIRST_CASH_ROUTE",
   "deployment_readiness": {
-    "status": "ACCEPTED",
+    "status": "HISTORICAL_SUPERSEDED",
     "canonical_commit": "a00861d7674abd3aa61c4b7d3d8aeb0648e62f4b",
     "mcme_010_operationally_ready": true,
     "database_required_for_mvp": false,
     "smallest_reliable_mvp": "local/private append-only JSONL + Cash Truth JSON Schema + validator + deterministic dedupe/reconciliation",
-    "blocker": "REAL_OWNER_GATED_GATE_A_EVIDENCE"
+    "blocker": "NONE_FOR_V2; LEGACY_GATE_A_BLOCKER_RETAINED_AS_HISTORY",
+    "active": false,
+    "historical_only": true
   },
-  "real_execution_path_unchanged": true,
+  "real_execution_path_unchanged": false,
   "safe_prep": {
     "gate_a_runtime_contract": "ACCEPTED",
     "gate_a_runtime_commit": "33250a61cda4ebd13acc293b738bcd86e6b31c98",
@@ -134,9 +150,12 @@
       "gate_a": "OWNER_GATED_NOT_EXECUTED",
       "launch": "NOT_READY",
       "real_click_sale_commission_cash": "NONE_VERIFIED"
-    }
+    },
+    "active": false,
+    "historical_only": true,
+    "superseded_by": "MCME-045_CHINA_VIETNAM_SHOPEE_ARCHITECTURE_PIVOT"
   },
-  "pre_gate_before_mcme_010": "MCME-044_ACCEPTED",
+  "pre_gate_before_mcme_010": null,
   "owner_access_cashout_gate": {
     "status": "ACCEPTED",
     "artifact": "00_PROJECT/VIETNAM_OWNER_ACCESS_AND_CASHOUT_GATE_V1.md",
@@ -181,7 +200,9 @@
       "owner_has_real_vietnam_mobile": true,
       "foreign_phone_required": false,
       "foreign_phone_requirement_basis": "No bounded route has documented requirement for US/UK/foreign phone; provider-specific +84 confirmation remains where noted."
-    }
+    },
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "mcme_010": {
     "status": "ACCEPTED",
@@ -206,7 +227,9 @@
     "mcme_011_blocked_until_brain_acceptance": false,
     "accepted_at": "2026-09-20T15:20:00+07:00",
     "accepted_commit": "8a3b003a331573a6b3f23e4737b243608f08caf1",
-    "brain_decision": "ACCEPT"
+    "brain_decision": "ACCEPT",
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "mcme_011": {
     "status": "ACCEPTED_WAIT_OWNER",
@@ -231,7 +254,9 @@
     "mcme_013_blocked_until_network_ready": true,
     "accepted_at": "2026-09-20T20:00:00+07:00",
     "accepted_commit": "058d9fe6b5089ab687c0fe48cb23216e725a93b7",
-    "brain_decision": "ACCEPT_EVIDENCE_WAIT_OWNER"
+    "brain_decision": "ACCEPT_EVIDENCE_WAIT_OWNER",
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "mcme_012": {
     "status": "ACCEPTED_WAIT_OWNER",
@@ -258,17 +283,9 @@
     "recommendation": "WAIT_OWNER_NOT_NETWORK_READY",
     "accepted_at": "2026-09-20T20:12:39+07:00",
     "accepted_commit": "2f4a5965e238a066631498e70361596edc3dd212",
-    "brain_decision": "ACCEPT_WAIT_OWNER_NOT_NETWORK_READY"
-  },
-  "wait_owner": {
-    "reason": "impact.com marketplace application is UNDER_REVIEW/PENDING after Owner completed one Partner setup flow.",
-    "required_next_evidence": "Final impact.com marketplace/network decision and explicit property/network acceptance evidence if provider exposes it.",
-    "merchant_applications_allowed": false,
-    "collection_task": "MCME-017_ACCEPTED_WAIT_OWNER",
-    "candidate_slot": "IMPACT-01",
-    "network": "impact.com",
-    "duplicate_account_forbidden": true,
-    "retry_forbidden_while_pending": true
+    "brain_decision": "ACCEPT_WAIT_OWNER_NOT_NETWORK_READY",
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "awin_final_decision": {
     "status": "ACCEPTED",
@@ -286,7 +303,9 @@
     "mcme_013_blocked": true,
     "recommendation": "RE_EVALUATE_NETWORK_READY_WITH_ACTIVE_ACCOUNT_AND_PROPERTY_UNKNOWN",
     "accepted_commit": "f06d303b3d41f02ad1e96688dfe381207f10b30f",
-    "brain_decision": "ACCEPT_ACTIVE_ACCOUNT_PROPERTY_UNKNOWN"
+    "brain_decision": "ACCEPT_ACTIVE_ACCOUNT_PROPERTY_UNKNOWN",
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "awin_property_acceptance": {
     "status": "ACCEPTED",
@@ -309,9 +328,11 @@
     "recommendation": "ACCEPT_PROPERTY_EVIDENCE_THEN_RERUN_NETWORK_READY_EVALUATOR",
     "accepted_at": "2026-09-20T22:27:00+07:00",
     "accepted_commit": "4506ba8f2d415d40e989f45793cfc99ee5355e7f",
-    "brain_decision": "ACCEPT_NETWORK_PROPERTY_ACCEPTED_VERIFIED_TRUE"
+    "brain_decision": "ACCEPT_NETWORK_PROPERTY_ACCEPTED_VERIFIED_TRUE",
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
-  "next_safe_prep_task": "MCME-020/PREP",
+  "next_safe_prep_task": null,
   "awin_network_reevaluation": {
     "status": "ACCEPTED",
     "result": "NETWORK_READY",
@@ -342,10 +363,12 @@
     "current_runtime_valid": false,
     "superseded_by_provider_closure": true,
     "superseding_artifact": "07_EXPERIMENTS/gate_a/MCME-012_AWIN_PROVIDER_CLOSURE_RECONCILIATION.json",
-    "historical_result_preserved": "NETWORK_READY"
+    "historical_result_preserved": "NETWORK_READY",
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE",
+    "historical_only": true
   },
   "safe_prep_waves": {
-    "status": "LOCKED",
+    "status": "HISTORICAL_SUPERSEDED",
     "plan_artifact": "00_PROJECT/MCME_SAFE_PREP_WAVES_V1.md",
     "plan_commit": "41f1d02d9b8144cda4723e165f5d63ed0ce92da8",
     "owner_actions_deferred": true,
@@ -353,9 +376,10 @@
     "wave_1": "MCME-018_PREPARED_ONLY_ACCEPTED",
     "wave_2": "PLANNED",
     "wave_3": "PLANNED",
-    "next_task": "MCME-020/PREP",
+    "next_task": null,
     "next_task_execution_allowed": false,
-    "next_task_gate": "OWNER_PAUSED_SAFE_PREP_FOR_IMPACT_REAL_PATH_WAIT_OWNER"
+    "next_task_gate": "NONE_UNDER_V2",
+    "active": false
   },
   "mcme_014_safe_prep": {
     "status": "ACCEPTED_PREPARED_ONLY",
@@ -391,7 +415,9 @@
     "accepted_at": "2026-09-21T23:10:00+07:00",
     "accepted_merge_commit": "b12bbdfc046873fad7c0ebfd3f89c6a3e13a025c",
     "brain_decision": "ACCEPT_PREPARED_ONLY",
-    "runtime_now_forbidden_by_upstream_network_closure": true
+    "runtime_now_forbidden_by_upstream_network_closure": true,
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "mcme_016_safe_prep": {
     "status": "ACCEPTED_PREPARED_ONLY",
@@ -435,7 +461,9 @@
     "accepted_merge_commit": "032d5f0d4fd7c9e3baf21c0eff726d93ed13e34e",
     "brain_decision": "ACCEPT_PREPARED_ONLY",
     "runtime_now_forbidden_by_upstream_network_closure": true,
-    "awin_02_forbidden": true
+    "awin_02_forbidden": true,
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "mcme_018_safe_prep": {
     "status": "ACCEPTED_PREPARED_ONLY",
@@ -482,7 +510,9 @@
     "brain_acceptance_required_before_next_safe_prep": false,
     "accepted_at": "2026-09-21T23:36:00+07:00",
     "accepted_merge_commit": "ae620799fa136c5edb081d65a015e90a6c14cc9a",
-    "brain_decision": "ACCEPT_PREPARED_ONLY"
+    "brain_decision": "ACCEPT_PREPARED_ONLY",
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "mcme_013": {
     "status": "ACCEPTED_WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
@@ -517,7 +547,9 @@
     "current_runtime_valid": false,
     "historical_result_preserved": "WAIT_OWNER_PENDING_ADVERTISER_APPROVAL",
     "superseded_by_provider_account_closure": true,
-    "superseding_evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-013_AWIN_PROVIDER_ACCOUNT_CLOSURE_EVIDENCE.json"
+    "superseding_evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-013_AWIN_PROVIDER_ACCOUNT_CLOSURE_EVIDENCE.json",
+    "historical_only": true,
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE"
   },
   "awin_provider_closure_reconciliation": {
     "status": "ACCEPTED",
@@ -544,7 +576,9 @@
     "mcme_017_status": "READY_OWNER_NOT_STARTED",
     "impact_runtime_open": false,
     "accepted_at": "2026-09-22T20:10:00+07:00",
-    "brain_decision": "ACCEPT_TERMINAL_AWIN_NETWORK_FAIL_UNLOCK_MCME_017_OWNER_GATE"
+    "brain_decision": "ACCEPT_TERMINAL_AWIN_NETWORK_FAIL_UNLOCK_MCME_017_OWNER_GATE",
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE",
+    "historical_only": true
   },
   "mcme_017": {
     "status": "ACCEPTED_WAIT_OWNER_MARKETPLACE_REVIEW",
@@ -575,6 +609,104 @@
     "accepted_merge_commit": "73c702dde06983432ea4ffd28ddac68d7b01e55e",
     "brain_decision": "ACCEPT_WAIT_OWNER_MARKETPLACE_REVIEW",
     "mcme_018_dispatch_decision": "DEFER_UNTIL_PROVIDER_STATE_CHANGES",
-    "mcme_018_dispatch_rationale": "Current canonical impact.com network relationship is PENDING and property.network_property_accepted is UNKNOWN, so immediate MCME-018 would deterministically remain WAIT_OWNER and unlock nothing."
-  }
+    "mcme_018_dispatch_rationale": "Current canonical impact.com network relationship is PENDING and property.network_property_accepted is UNKNOWN, so immediate MCME-018 would deterministically remain WAIT_OWNER and unlock nothing.",
+    "active_runtime_effect": "NONE_UNDER_V2_SHOPEE_ROUTE",
+    "historical_only": true
+  },
+  "architecture_version": "V2_CHINA_VIETNAM_SHOPEE_AFFILIATE",
+  "active_market_scope": "VIETNAM_V1_LOCKED",
+  "automation_policy": "DEFER_FULL_AUTOMATION_UNTIL_REPEATABLE_ECONOMIC_EVIDENCE",
+  "proof_of_money_targets": {
+    "t_plus_2_days": "RADAR_RUNNING",
+    "t_plus_3_days": "3_PRODUCTS_READY",
+    "t_plus_4_days": "9_CREATIVES_READY",
+    "t_plus_5_days": "FIRST_PUBLICATION",
+    "t_plus_7_days": "FIRST_CASH_SIGNAL_REVIEW",
+    "t_plus_14_days": "REPEATABILITY_DECISION",
+    "t_plus_21_to_35_days": "AUTOMATION_V1_ONLY_IF_JUSTIFIED",
+    "note": "Execution targets, not guarantees of market conversion or payout."
+  },
+  "active_sources": {
+    "douyin": {
+      "role": "PRIMARY_TREND_DISCOVERY",
+      "automation": "V1_TARGET"
+    },
+    "xiaohongshu": {
+      "role": "SECONDARY_CONFIRMATION",
+      "automation": "DEFERRED_UNTIL_INCREMENTAL_VALUE_PROVEN"
+    },
+    "github_collector": {
+      "repo": "Evil0ctal/Douyin_TikTok_Download_API",
+      "role": "FIRST_TECHNICAL_COLLECTOR_CANDIDATE"
+    }
+  },
+  "distribution_policy": {
+    "initial_mode": "MANUAL_OR_SIMPLEST_AUTHORIZED_PATH",
+    "target_surfaces": [
+      "TikTok",
+      "Facebook Reels",
+      "Shopee-compatible affiliate surfaces"
+    ],
+    "auto_publish": "DEFERRED",
+    "paid_traffic": "DISABLED"
+  },
+  "shopee_affiliate": {
+    "status": "OWNER_READINESS_NOT_YET_CANONICALLY_VERIFIED",
+    "owner_task": "MCME-046",
+    "owner_only_fields": [
+      "SIGNUP_LOGIN",
+      "CONTRACT_ACCEPTANCE",
+      "MFA_OTP_CAPTCHA",
+      "KYC_TAX",
+      "BANKING_PAYOUT"
+    ],
+    "unknown_never_passes": true
+  },
+  "historical_architecture": {
+    "status": "SUPERSEDED_AS_ACTIVE_ARCHITECTURE_BY_MCME_045",
+    "superseded_at": "2026-09-22",
+    "prior_route": {
+      "market": "United States",
+      "language": "English",
+      "distribution_surface": "Pinterest organic Pins",
+      "monetization": "Affiliate commerce",
+      "niche": "Small-space kitchen organization",
+      "canonical_format": "Static 2:3 original problem-solution checklist Pin",
+      "saydivoice_required": false,
+      "video_required": false,
+      "network_order": [
+        "Awin",
+        "impact.com",
+        "Amazon Associates (conditional)"
+      ]
+    },
+    "prior_first_real_money_experiment": {
+      "sub_problem": "Fridge storage / fit",
+      "minimum_batch": 3,
+      "format": "Static 2:3 original problem-solution checklist Pin",
+      "gate_a_required": true,
+      "first_commercial_signal": "genuine qualified outbound click",
+      "first_attributed_revenue": "network-recorded commission-bearing merchant action / pending commission",
+      "first_validated_revenue": "validated/approved commission",
+      "first_settled_cash": "funds received on Owner-authorized payout rail"
+    },
+    "prior_wait_owner": {
+      "reason": "impact.com marketplace application is UNDER_REVIEW/PENDING after Owner completed one Partner setup flow.",
+      "required_next_evidence": "Final impact.com marketplace/network decision and explicit property/network acceptance evidence if provider exposes it.",
+      "merchant_applications_allowed": false,
+      "collection_task": "MCME-017_ACCEPTED_WAIT_OWNER",
+      "candidate_slot": "IMPACT-01",
+      "network": "impact.com",
+      "duplicate_account_forbidden": true,
+      "retry_forbidden_while_pending": true
+    },
+    "preservation_rule": "APPEND_ONLY_AUDIT_EVIDENCE_DO_NOT_DELETE_OR_REWRITE",
+    "active_runtime_effect": "NONE_UNDER_V2_UNLESS_OWNER_EXPLICITLY_PIVOTS_BACK"
+  },
+  "pending_canonical_acceptance": {
+    "task": "MCME-045",
+    "branch": "brain/china-vietnam-shopee-affiliate-v1",
+    "next_after_merge": "MCME-046"
+  },
+  "legacy_route_status": "HISTORICAL_ONLY_NO_ACTIVE_RUNTIME_EFFECT"
 }

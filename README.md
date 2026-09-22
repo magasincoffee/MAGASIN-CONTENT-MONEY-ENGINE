@@ -1,6 +1,6 @@
 # MAGASIN CONTENT MONEY ENGINE
 
-> **Mission:** Build a policy-compliant, globally scalable, 24/7 autonomous Content-to-Cash operating system that converts market opportunities into measurable net cash.
+> **Active mission:** turn fast-rising China social-commerce signals into compliant Vietnamese short-form traffic, Shopee Affiliate orders, approved commission and reconciled cash.
 
 ## North Star
 
@@ -10,127 +10,106 @@ The project optimizes for real cash, not vanity metrics.
 
 ## Five-Step Operating Law
 
-Every material decision, feature, workflow, experiment and automation MUST pass this sequence:
+Every material decision follows:
 
-1. **QUESTION** — Challenge the requirement, assumption, metric, market, feature, source and constraint. Ask what must be true for this to create cash.
-2. **DELETE** — Remove unnecessary work, duplicated logic, weak markets, weak formats, vanity metrics, manual handoffs and non-compliant content reuse.
-3. **SIMPLIFY** — Reduce to the smallest system that can test a monetization hypothesis with real users and real money.
-4. **ACCELERATE** — Shorten the loop from idea → content → distribution → click/transaction → cash evidence.
-5. **AUTOMATE** — Only automate a loop after its economics, quality gates and safety boundaries are proven.
+1. **QUESTION**
+2. **DELETE**
+3. **SIMPLIFY**
+4. **ACCELERATE**
+5. **AUTOMATE**
 
-**Five-Step is not a project phase. It is applied recursively at every step.**
+Automation is last. First prove the money loop.
 
-## Core Business Loop
+## Canonical active loop
 
 ```text
-GLOBAL MARKET SIGNALS
+DOUYIN + XIAOHONGSHU
         ↓
-OPPORTUNITY ENGINE
+SOCIAL RADAR
         ↓
-RIGHTS + POLICY GATE
+TREND SCORE
         ↓
-CONTENT INTELLIGENCE
+PRODUCT MAPPER
         ↓
-SCRIPT / LOCALIZATION
+SHOPEE VIETNAM
         ↓
-SAYDIVOICE
+AFFILIATE / RIGHTS GATES
         ↓
-VIDEO COMPOSER
+VIETNAMESE CONTENT BRAIN
         ↓
-DISTRIBUTION
+EDIT ROBOT
         ↓
-MONETIZATION
+PUBLISH QUEUE
         ↓
-PROFIT & CASH
+ORGANIC SHORT-FORM TRAFFIC
         ↓
-LEARNING
-        └────────────→ BRAIN
+CLICK
+        ↓
+ATTRIBUTED ORDER
+        ↓
+APPROVED COMMISSION
+        ↓
+CASH RECEIVED
+        ↓
+KILL / KEEP / SCALE
 ```
 
-## Monetization Stack
+## V1 lock
 
-The system does not depend on one platform or one revenue source:
+- Market: **Vietnam**
+- Language: **Vietnamese**
+- Monetization: **Shopee Affiliate**
+- Primary source: **Douyin**
+- Confirmation source: **Xiaohongshu / RED**
+- First collector candidate: **Evil0ctal/Douyin_TikTok_Download_API**
+- Paid traffic: **0**
+- Niche: **dynamic / trend-selected**
+- Initial batch: **maximum 3 products × 3 creative variants**
 
-- Platform monetization
-- Affiliate commerce
-- Lead generation
-- Sponsorships
-- Own digital products
-- Own physical products
-- Services / UGC production
-- Content / IP licensing
-- Memberships / subscriptions where applicable
+## Cash Gates
 
-## Global Market Principle
+```text
+GATE 0 — affiliate click
+GATE 1 — attributed order
+GATE 2 — approved commission
+GATE 3 — cash received and reconciled
+```
 
-We do **not** hard-code Vietnam as the target market and we do **not** hard-code one “best country.”
-
-The Market Intelligence layer continuously evaluates countries/languages/platforms using:
-
-- expected net revenue per 1,000 qualified views;
-- platform monetization availability;
-- advertiser demand / RPM or CPM proxies;
-- affiliate EPC / commission / conversion;
-- consumer purchasing power;
-- e-commerce maturity;
-- search/social demand;
-- competition intensity;
-- localization cost;
-- content-production cost;
-- payment/settlement feasibility;
-- policy/copyright risk;
-- time-to-first-cash.
-
-The Brain allocates experiments to the markets with the best expected **risk-adjusted cash contribution**, then scales only after real evidence.
+“Views” alone are not success.
 
 ## Content Rights Principle
 
-**Import proven ideas, not stolen content.**
+**Import proven ideas, not stolen finished content.**
 
-Third-party videos may be used for research, trend discovery and format analysis. Publication requires a rights/policy gate. The production system must prefer original, licensed, public-domain, platform-permitted or otherwise verified source material.
+Third-party Chinese social videos can be used for research, trend discovery, hook analysis and product discovery. Publication requires original, licensed, creator/supplier-authorized, platform-permitted, public-domain or otherwise verified source material.
 
 “Download → minor edit → repost” is not the business model.
 
-## 24/7 Autonomy
+## Proof before automation
 
-24/7 operation is a system requirement.
+Initial Proof-of-Money:
 
-The Robot should eventually run a closed loop that can:
+```text
+scan ~50–100 candidate videos
+→ choose ≤3 products
+→ create ≤9 Vietnamese creatives
+→ publish
+→ measure click/order/commission
+```
 
-- discover opportunities;
-- create bounded experiments;
-- produce content;
-- publish through authorized integrations;
-- collect performance/revenue data;
-- attribute cash;
-- kill weak experiments;
-- scale winners;
-- pause on policy, auth, payment, legal, security or ambiguous Owner boundaries.
-
-Autonomy remains **fail-closed** for credentials, MFA/CAPTCHA, legal/rights ambiguity, destructive account changes, payment setup, tax/KYC, platform appeals and other Owner-only decisions.
+Only after repeatable economic evidence may the system automate the proven sequence.
 
 ## Roles
 
 ```text
-OWNER = authority, accounts, capital, legal/payment decisions
-BRAIN = strategy, market selection, task selection, economics, learning
-WORK  = bounded execution
-ROBOT = transport, state, scheduling, recovery, idempotency, automation
+OWNER = authority, accounts, KYC/tax, payment, rights ambiguity, spend
+BRAIN = strategy, product/trend selection, economics, KILL/KEEP/SCALE
+WORK  = one bounded execution task
+ROBOT = collection, state, rendering, recovery, later automation
 ```
 
-The Robot must not contain business strategy that belongs in the Brain.
+## Historical architecture
 
-## Initial Build Order
-
-1. Lock architecture + Five-Step operating law.
-2. Build Global Market Intelligence and Monetization Research.
-3. Choose the first minimum viable money loop.
-4. Complete SaydiVoice as a bounded voice provider.
-5. Build the minimum Video Composer required by that loop.
-6. Run real small-batch experiments.
-7. Measure clicks, conversions, revenue, cost and cash.
-8. Delete losers.
-9. Scale winners.
-10. Automate only the proven loop.
+The prior US/Pinterest/Awin/impact.com route is **superseded as the active first-cash architecture**. Its evidence remains append-only historical audit material and is not deleted.
 
 See `00_PROJECT/` for canonical source-of-truth documents.
