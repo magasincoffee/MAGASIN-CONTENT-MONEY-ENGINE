@@ -1,12 +1,12 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-22T20:34:00+07:00",
-  "status": "MCME_017_WAIT_OWNER_IMPACT_MARKETPLACE_REVIEW",
+  "updated_at": "2026-09-22T20:42:00+07:00",
+  "status": "MCME_017_ACCEPTED_WAIT_OWNER_IMPACT_MARKETPLACE_REVIEW",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P7_REAL_GATE_A_EXECUTION",
   "current_task": "NONE",
-  "current_task_title": "MCME-017 impact.com relationship submitted by Owner; marketplace application under review",
+  "current_task_title": "MCME-017 accepted; impact.com marketplace application under review",
   "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -33,12 +33,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "MCME-018_BRAIN_REVIEW_REQUIRED",
+  "next_gate": "WAIT_OWNER_FOR_IMPACT_MARKETPLACE_DECISION; refresh MCME-017 evidence when provider state changes, then run MCME-018.",
   "active_run": "MCME-RUN-4H-02",
   "run_start_at": "2026-09-20T03:21:04+07:00",
   "run_deadline_at": "2026-09-20T07:21:04+07:00",
-  "last_accepted_task": "MCME-013/AWIN-MERCHANT-CANDIDATE-1-OWNER-GUIDED-EXECUTION-01",
-  "last_accepted_commit": "fd77e81b20cf134f8289d280b6217dce6e99cfab",
+  "last_accepted_task": "MCME-017/IMPACT-NETWORK-RELATIONSHIP-OWNER-GUIDED-EXECUTION-01",
+  "last_accepted_commit": "73c702dde06983432ea4ffd28ddac68d7b01e55e",
   "selected_first_cash_route": {
     "market": "United States",
     "language": "English",
@@ -261,10 +261,10 @@
     "brain_decision": "ACCEPT_WAIT_OWNER_NOT_NETWORK_READY"
   },
   "wait_owner": {
-    "reason": "impact.com marketplace application is UNDER_REVIEW/PENDING after Owner completed the Partner setup flow.",
+    "reason": "impact.com marketplace application is UNDER_REVIEW/PENDING after Owner completed one Partner setup flow.",
     "required_next_evidence": "Final impact.com marketplace/network decision and explicit property/network acceptance evidence if provider exposes it.",
     "merchant_applications_allowed": false,
-    "collection_task": "MCME-017_COMPLETE_WAIT_OWNER",
+    "collection_task": "MCME-017_ACCEPTED_WAIT_OWNER",
     "candidate_slot": "IMPACT-01",
     "network": "impact.com",
     "duplicate_account_forbidden": true,
@@ -355,7 +355,7 @@
     "wave_3": "PLANNED",
     "next_task": "MCME-020/PREP",
     "next_task_execution_allowed": false,
-    "next_task_gate": "OWNER_PAUSED_SAFE_PREP_FOR_AWIN_REAL_PATH_WAIT_OWNER"
+    "next_task_gate": "OWNER_PAUSED_SAFE_PREP_FOR_IMPACT_REAL_PATH_WAIT_OWNER"
   },
   "mcme_014_safe_prep": {
     "status": "ACCEPTED_PREPARED_ONLY",
@@ -547,7 +547,7 @@
     "brain_decision": "ACCEPT_TERMINAL_AWIN_NETWORK_FAIL_UNLOCK_MCME_017_OWNER_GATE"
   },
   "mcme_017": {
-    "status": "WAIT_OWNER_MARKETPLACE_REVIEW",
+    "status": "ACCEPTED_WAIT_OWNER_MARKETPLACE_REVIEW",
     "result": "WAIT_OWNER",
     "task_id": "MCME-017/IMPACT-NETWORK-RELATIONSHIP-OWNER-GUIDED-EXECUTION-01",
     "evidence_artifact": "07_EXPERIMENTS/gate_a/MCME-017_IMPACT_NETWORK_RELATIONSHIP_EVIDENCE.json",
@@ -570,6 +570,11 @@
     "mcme_018_executed": false,
     "gate_a_pass": false,
     "next_gate": "MCME-018_BRAIN_REVIEW_REQUIRED",
-    "recommendation": "Brain verify MCME-017 WAIT_OWNER evidence. Do not retry or create a second impact.com account. MCME-018 may evaluate this evidence after Brain review; expected current network classification remains WAIT_OWNER while relationship is PENDING."
+    "recommendation": "Brain verify MCME-017 WAIT_OWNER evidence. Do not retry or create a second impact.com account. MCME-018 may evaluate this evidence after Brain review; expected current network classification remains WAIT_OWNER while relationship is PENDING.",
+    "accepted_at": "2026-09-22T20:42:00+07:00",
+    "accepted_merge_commit": "73c702dde06983432ea4ffd28ddac68d7b01e55e",
+    "brain_decision": "ACCEPT_WAIT_OWNER_MARKETPLACE_REVIEW",
+    "mcme_018_dispatch_decision": "DEFER_UNTIL_PROVIDER_STATE_CHANGES",
+    "mcme_018_dispatch_rationale": "Current canonical impact.com network relationship is PENDING and property.network_property_accepted is UNKNOWN, so immediate MCME-018 would deterministically remain WAIT_OWNER and unlock nothing."
   }
 }
