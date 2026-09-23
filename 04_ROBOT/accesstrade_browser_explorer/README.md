@@ -205,3 +205,106 @@ Không viết V2 trước khi xem output V1.
 5. conversion_commission_reader
 
 Các adapter write/action phải có Owner authorization riêng.
+
+
+## Deep scan sau smoke test
+
+Smoke test 20 trang chỉ xác nhận crawler hoạt động. Để khám phá các money surface mà SPA menu có thể không expose bằng anchor, dùng preset:
+
+    $PY = ".\.venv\Scripts\python.exe"
+
+    & $PY explorer.py `
+        --cdp-url http://127.0.0.1:9222 `
+        --no-login-wait `
+        --preset money `
+        --max-pages 180
+
+Preset `money` seed trực tiếp:
+- dashboard;
+- campaign;
+- /tool;
+- conversion;
+- click;
+- campaign report;
+- UTM;
+- revenue/crosscheck/payment history;
+- notification.
+
+Muốn mở rộng thêm agency/support/onboarding:
+
+    & $PY explorer.py `
+        --cdp-url http://127.0.0.1:9222 `
+        --no-login-wait `
+        --preset full `
+        --max-pages 350
+
+Có thể thêm route read-only riêng:
+
+    & $PY explorer.py `
+        --cdp-url http://127.0.0.1:9222 `
+        --no-login-wait `
+        --seed-url https://pub2.accesstrade.vn/some-read-route `
+        --max-pages 100
+
+## Money-Flow Schema Probe
+
+Sau scan V1, API đã chứng minh có các surface campaign/click/conversion/payment và một POST `/v1/product_link/`, nhưng schema request bị cố ý không ghi lại.
+
+Không đoán schema.
+
+Chạy recorder trong lúc Owner thao tác bình thường:
+
+    $PY = ".\.venv\Scripts\python.exe"
+
+    & $PY money_flow_probe.py `
+        --cdp-url http://127.0.0.1:9222
+
+Sau khi probe bắt đầu, Owner có thể tự:
+
+1. mở Shopee Smartlink campaign;
+2. mở Tạo link / Product Link;
+3. nếu muốn, tự tạo **một** link affiliate bình thường;
+4. mở Click - Traffic;
+5. mở Đơn hàng / Conversion;
+6. mở Báo cáo chiến dịch;
+7. quay lại PowerShell và nhấn ENTER.
+
+Probe **không tự click** và **không tự gửi request**.
+
+Output:
+
+    runtime/accesstrade_money_probe_YYYYMMDD_HHMMSS/
+      money_flow_schema.jsonl
+      summary.md
+
+Recorder chỉ lưu:
+- endpoint path;
+- HTTP method/status;
+- query parameter **names**;
+- request body **shape / field names / types**;
+- response JSON **shape / field names / types**;
+- page path.
+
+Recorder không lưu:
+- query values;
+- body values;
+- response values;
+- cookies;
+- Authorization;
+- password;
+- OTP;
+- token;
+- account/bank/tax identifiers.
+
+Payment/profile/identity response schemas bị skip mặc định.
+
+## Gate trước Money Robot V2
+
+Chưa tự động hóa tạo deeplink cho tới khi:
+
+1. product-link request schema được quan sát từ Owner demonstration;
+2. campaign/rules/traffic permissions được xác minh;
+3. click/conversion filter schemas được xác minh;
+4. Brain chấp nhận mapping `CLICK → ATTRIBUTED_ORDER → COMMISSION`.
+
+Sau đó mới viết narrow adapters thay vì generic browser automation.
