@@ -1,6 +1,7 @@
 import unittest
 
 from explorer import (
+    is_accesstrade_network_host,
     is_blocked_url,
     is_sensitive_url,
     sanitize_url,
@@ -43,6 +44,18 @@ class ExplorerSafetyTests(unittest.TestCase):
     def test_rejects_javascript(self):
         self.assertIsNone(
             sanitize_url("javascript:void(0)")
+        )
+
+    def test_accesstrade_api_subdomain_is_observable(self):
+        self.assertTrue(
+            is_accesstrade_network_host(
+                "https://api.accesstrade.vn/v1/campaigns"
+            )
+        )
+        self.assertFalse(
+            is_accesstrade_network_host(
+                "https://example.com/v1/campaigns"
+            )
         )
 
 

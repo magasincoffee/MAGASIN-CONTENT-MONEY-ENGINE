@@ -325,6 +325,7 @@ async def map_site(
     login_wait: bool,
     timeout_ms: int,
     profile_dir: Path | None,
+    cdp_url: str | None,
 ) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -340,8 +341,17 @@ async def map_site(
 
     async with async_playwright() as p:
         browser = None
+        attached_cdp = False
 
-        if profile_dir:
+        if cdp_url:
+            browser = await p.chromium.connect_over_cdp(cdp_url)
+            if not browser.contexts:
+                raise RuntimeError(
+                    "Connected Chrome has no browser context."
+                )
+            context = browser.contexts[0]
+            attached_cdp = True
+        elif profile_dir:
             profile_dir.mkdir(parents=True, exist_ok=True)
             context = await p.chromium.launch_persistent_context(
                 user_data_dir=str(profile_dir),
@@ -355,7 +365,18 @@ async def map_site(
             )
 
         context.set_default_timeout(timeout_ms)
-        page = context.pages[0] if context.pages else await context.new_page()
+
+        existing_pages = context.pages
+        page = next(
+            (
+                item
+                for item in existing_pages
+                if same_origin(item.url, allowed_hosts)
+            ),
+            existing_pages[0] if existing_pages else None,
+        )
+        if page is None:
+            page = await context.new_page()
 
         async def on_response(response: Response) -> None:
             try:
@@ -378,6 +399,12 @@ async def map_site(
 
         print(f"[OPEN] {start_url}")
         await page.goto(start_url, wait_until="domcontentloaded")
+
+        if attached_cdp:
+            print(
+                "[ATTACHED] Using Owner-opened Chrome via CDP. "
+                "No automated Google login is attempted."
+            )
 
         if login_wait:
             print("\n[OWNER ACTION REQUIRED]")
@@ -604,9 +631,12 @@ async def map_site(
         print(f"Mapped pages: {len(pages)}")
         print(f"Output: {output_dir.resolve()}")
 
-        await context.close()
-        if browser:
-            await browser.close()
+        if attached_cdp:
+            print("[INFO] Attached Chrome was left open.")
+        else:
+            await context.close()
+            if browser:
+                await browser.close()
 
 
 def parse_args() -> argparse.Namespace:
@@ -662,6 +692,15 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--cdp-url",
+        default=None,
+        help=(
+            "Attach to an Owner-opened normal Chrome instance via CDP, "
+            "for example http://127.0.0.1:9222. Recommended when "
+            "Google rejects login inside Playwright-launched Chromium."
+        ),
+    )
+    parser.add_argument(
         "--output-dir",
         default=None,
         help=(
@@ -693,6 +732,13 @@ def main() -> int:
         else None
     )
 
+    if args.cdp_url and profile_dir:
+        print(
+            "--cdp-url and --profile-dir are mutually exclusive.",
+            file=sys.stderr,
+        )
+        return 2
+
     if args.max_pages < 1 or args.max_pages > 1000:
         print(
             "--max-pages must be between 1 and 1000.",
@@ -723,6 +769,7 @@ def main() -> int:
             login_wait=not args.no_login_wait,
             timeout_ms=args.timeout_ms,
             profile_dir=profile_dir,
+            cdp_url=args.cdp_url,
         )
     )
     return 0
