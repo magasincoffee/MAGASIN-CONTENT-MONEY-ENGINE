@@ -32,7 +32,7 @@
   "run_start_at": null,
   "run_deadline_at": null,
   "last_accepted_task": "MCME-046",
-  "last_accepted_commit": "PENDING_MERGE",
+  "last_accepted_commit": "0bff64dc068abd40342b1c396aa035aeee63be8f",
   "selected_first_cash_route": {
     "market": "Vietnam",
     "language": "Vietnamese",
@@ -718,12 +718,12 @@
   "pending_canonical_acceptance": null,
   "legacy_route_status": "HISTORICAL_ONLY_NO_ACTIVE_RUNTIME_EFFECT",
   "canonical_acceptance": {
-    "task": "MCME-045",
-    "result": "DONE",
+    "task": "MCME-046",
+    "result": "APPROVED",
     "architecture": "V2_CHINA_VIETNAM_SHOPEE_AFFILIATE",
-    "merge_commit": "2283c40a89b01bce574893c8ad787143fc668e5c",
-    "next_task": "MCME-046",
-    "next_task_status": "READY_NOT_STARTED"
+    "merge_commit": "0bff64dc068abd40342b1c396aa035aeee63be8f",
+    "next_task": "MCME-047",
+    "next_task_status": "READY"
   },
   "mcme_046": {
     "status": "DONE_PROGRAM_APPROVED_LINK_TEST_PENDING",
