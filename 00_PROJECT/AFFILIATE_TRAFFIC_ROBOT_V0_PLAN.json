@@ -1,0 +1,90 @@
+{
+  "schema_version": "mcme.affiliate-traffic-robot-plan.v1",
+  "project": "AFFILIATE_TRAFFIC_ROBOT_V0",
+  "repo": "magasincoffee/MAGASIN-CONTENT-MONEY-ENGINE",
+  "baseline_main": "64a6246299e6387ad59f816c9f08e2f54aa8f051",
+  "planned_at": "2026-09-24T00:24:31+07:00",
+  "status": "PLANNED_READY_TO_BUILD",
+  "mission": [
+    "FIND_VIDEO",
+    "RANK",
+    "COLLECT_DOWNLOAD",
+    "LOCALIZE_EDIT",
+    "QUEUE",
+    "PUBLISH",
+    "VERIFY_LIVE"
+  ],
+  "independent_runtime_required": true,
+  "supervisor_runtime_dependency": false,
+  "v0_primary_source": "DOUYIN",
+  "initial_publish_platform_count": 1,
+  "paid_traffic": false,
+  "free_first": true,
+  "local_first": true,
+  "tasks": [
+    {
+      "id": "AR-01",
+      "name": "TREND_SCANNER",
+      "gate": "START"
+    },
+    {
+      "id": "AR-02",
+      "name": "VIRAL_RANKER",
+      "gate": "AR-01_PASS"
+    },
+    {
+      "id": "AR-03",
+      "name": "MEDIA_COLLECTOR",
+      "gate": "AR-02_PASS"
+    },
+    {
+      "id": "AR-04",
+      "name": "LOCALIZER",
+      "gate": "AR-03_PASS"
+    },
+    {
+      "id": "AR-05",
+      "name": "VIDEO_EDITOR",
+      "gate": "AR-03_PASS"
+    },
+    {
+      "id": "AR-06",
+      "name": "PUBLISH_QUEUE",
+      "gate": "AR-04_AR-05_PASS"
+    },
+    {
+      "id": "AR-07",
+      "name": "PUBLISHER",
+      "gate": "AR-06_PASS"
+    },
+    {
+      "id": "AR-08",
+      "name": "END_TO_END_ACCEPTANCE",
+      "gate": "AR-07_PASS"
+    },
+    {
+      "id": "AR-09",
+      "name": "AUTONOMOUS_SCHEDULER",
+      "gate": "AR-08_PASS"
+    }
+  ],
+  "owner_boundaries": [
+    "CREDENTIALS",
+    "MFA_OTP_CAPTCHA",
+    "KYC_TAX",
+    "BANKING_PAYMENT",
+    "LEGAL_RIGHTS_AMBIGUITY",
+    "PLATFORM_WARNINGS_APPEALS",
+    "DESTRUCTIVE_ACCOUNT_ACTIONS",
+    "SPEND_OUTSIDE_APPROVAL"
+  ],
+  "media_storage_policy": "LOCAL_OR_APPROVED_MEDIA_STORAGE_NOT_GIT",
+  "publication_rights_rule": "UNKNOWN_RIGHTS_NEVER_AUTO_PUBLISH",
+  "initial_acceptance": {
+    "single_real_video_e2e": true,
+    "bounded_batch_min": 3,
+    "bounded_batch_max": 5,
+    "manual_edit_required": false,
+    "manual_upload_required": false
+  }
+}
