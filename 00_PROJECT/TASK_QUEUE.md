@@ -29,7 +29,7 @@ DoD:
 - historical evidence preserved;
 - no external account/spend/publish action performed.
 
-## ACTIVE / WAIT_OWNER
+## DONE
 
 ### MCME-046 — Shopee Affiliate Owner Readiness
 Five-Step: QUESTION
@@ -47,13 +47,13 @@ Owner-only where required:
 Output:
 READY / WAIT_OWNER / BLOCKED with sanitized evidence.
 
-Current status: **WAIT_OWNER_PROVIDER_REVIEW**.
-- Owner submission: complete.
-- Payment profile: PENDING_REVIEW.
-- Tax profile: PENDING_REVIEW.
-- Valid profile: not yet present.
-- Final affiliate approval / link-generation readiness: UNKNOWN.
-- Safe parallel work: MCME-047 may proceed while Shopee reviews.
+Current status: **APPROVED**.
+- Shopee Affiliate program approval: VERIFIED.
+- Publisher program access: VERIFIED.
+- Link generation: NOT_YET_VERIFIED_BY_LINK_SMOKE_TEST.
+- Payment/tax/payout final state: UNKNOWN and tracked separately.
+- Safe parallel work: MCME-047 may proceed immediately.
+- Next cash proof action: create one Shopee affiliate link and verify redirect + click tracking.
 
 ## READY — SAFE PARALLEL WORK
 

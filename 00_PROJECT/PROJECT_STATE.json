@@ -1,12 +1,12 @@
 {
   "schema_version": "mcme.project-state.v1",
   "project": "MAGASIN CONTENT MONEY ENGINE",
-  "updated_at": "2026-09-22T22:26:55+07:00",
-  "status": "MCME_046_WAIT_OWNER_SHOPEE_PROVIDER_REVIEW_MCME_047_READY",
+  "updated_at": "2026-09-23T22:00:00+07:00",
+  "status": "MCME_046_SHOPEE_PROGRAM_APPROVED_LINK_TEST_READY",
   "autonomy": "AUTO_CONTINUE_WITH_FAIL_CLOSED_OWNER_BOUNDARIES",
   "current_phase": "P8_CHINA_VIETNAM_SHOPEE_PROOF_OF_MONEY_V1",
-  "current_task": "MCME-046",
-  "current_task_title": "Shopee Affiliate owner submission complete; payment and tax profiles pending provider review",
+  "current_task": "NONE",
+  "current_task_title": "MCME-046 Shopee Affiliate program approved; link smoke test ready",
   "five_step_current": "ACCELERATE",
   "north_star": "NET_CASH_CONTRIBUTION_PER_1000_QUALIFIED_VIEWS",
   "architecture_locked": true,
@@ -27,12 +27,12 @@
     "DESTRUCTIVE_ACCOUNT_ACTIONS",
     "SPEND_ABOVE_APPROVED_BUDGET"
   ],
-  "next_gate": "SHOPEE_PROVIDER_REVIEW_FINAL_DECISION_AND_LINK_READINESS",
+  "next_gate": "SHOPEE_AFFILIATE_LINK_SMOKE_TEST_THEN_TRAFFIC",
   "active_run": null,
   "run_start_at": null,
   "run_deadline_at": null,
-  "last_accepted_task": "MCME-045",
-  "last_accepted_commit": "2283c40a89b01bce574893c8ad787143fc668e5c",
+  "last_accepted_task": "MCME-046",
+  "last_accepted_commit": "PENDING_MERGE",
   "selected_first_cash_route": {
     "market": "Vietnam",
     "language": "Vietnamese",
@@ -651,7 +651,7 @@
     "paid_traffic": "DISABLED"
   },
   "shopee_affiliate": {
-    "status": "WAIT_OWNER_PROVIDER_REVIEW",
+    "status": "PROGRAM_APPROVED",
     "owner_task": "MCME-046",
     "owner_only_fields": [
       "SIGNUP_LOGIN",
@@ -662,15 +662,17 @@
     ],
     "unknown_never_passes": true,
     "owner_submission_complete": true,
-    "payment_profile_status": "PENDING_REVIEW",
-    "tax_profile_status": "PENDING_REVIEW",
+    "payment_profile_status": "UNKNOWN_AFTER_PROGRAM_APPROVAL",
+    "tax_profile_status": "UNKNOWN_AFTER_PROGRAM_APPROVAL",
     "valid_profile_present": false,
     "affiliate_program_final_approval": "UNKNOWN",
-    "affiliate_link_generation_ready": "UNKNOWN",
+    "affiliate_link_generation_ready": "NOT_YET_VERIFIED_BY_LINK_SMOKE_TEST",
     "payout_ready": false,
-    "evidence_artifact": "07_EXPERIMENTS/shopee/MCME-046_SHOPEE_AFFILIATE_OWNER_READINESS_EVIDENCE.json",
-    "observed_at": "2026-09-22T22:26:55+07:00",
-    "safe_parallel_next_task": "MCME-047"
+    "evidence_artifact": "07_EXPERIMENTS/shopee/MCME-046_SHOPEE_AFFILIATE_APPROVAL_EVIDENCE.json",
+    "observed_at": "2026-09-23T22:00:00+07:00",
+    "safe_parallel_next_task": "MCME-047",
+    "program_approval": "APPROVED",
+    "publisher_program_access": "VERIFIED"
   },
   "historical_architecture": {
     "status": "SUPERSEDED_AS_ACTIVE_ARCHITECTURE_BY_MCME_045",
@@ -724,16 +726,18 @@
     "next_task_status": "READY_NOT_STARTED"
   },
   "mcme_046": {
-    "status": "ACCEPTED_WAIT_OWNER_PROVIDER_REVIEW",
-    "result": "WAIT_OWNER",
+    "status": "DONE_PROGRAM_APPROVED_LINK_TEST_PENDING",
+    "result": "APPROVED",
     "owner_submission_complete": true,
-    "payment_profile_status": "PENDING_REVIEW",
-    "tax_profile_status": "PENDING_REVIEW",
-    "valid_profile_present": false,
-    "final_program_approval": "UNKNOWN",
+    "final_program_approval": "APPROVED",
+    "publisher_program_access": "VERIFIED",
+    "affiliate_link_generation_ready": "NOT_YET_VERIFIED_BY_LINK_SMOKE_TEST",
+    "payment_profile_status": "UNKNOWN_AFTER_PROGRAM_APPROVAL",
+    "tax_profile_status": "UNKNOWN_AFTER_PROGRAM_APPROVAL",
     "payout_ready": false,
-    "evidence_artifact": "07_EXPERIMENTS/shopee/MCME-046_SHOPEE_AFFILIATE_OWNER_READINESS_EVIDENCE.json",
+    "evidence_artifact": "07_EXPERIMENTS/shopee/MCME-046_SHOPEE_AFFILIATE_APPROVAL_EVIDENCE.json",
     "next_safe_task": "MCME-047",
-    "block_publish_to_cash_until_approval": true
+    "block_publish_to_cash_until_approval": false,
+    "next_cash_proof_action": "SHOPEE_AFFILIATE_LINK_SMOKE_TEST"
   }
 }
