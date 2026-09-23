@@ -1,0 +1,33 @@
+name: Local Browser Runner Safety CI
+
+on:
+  pull_request:
+    paths:
+      - "04_ROBOT/local_browser_runner/**"
+      - ".github/workflows/magasin-local-browser-runner.yml"
+      - ".github/workflows/local-browser-runner-safety-ci.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "04_ROBOT/local_browser_runner/**"
+      - ".github/workflows/magasin-local-browser-runner.yml"
+      - ".github/workflows/local-browser-runner-safety-ci.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  command-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run fail-closed command tests
+        working-directory: 04_ROBOT/local_browser_runner
+        run: python -m unittest -v test_runner.py
+      - name: Compile browser runner
+        run: python -m py_compile 04_ROBOT/local_browser_runner/runner.py
