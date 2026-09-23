@@ -1,0 +1,62 @@
+name: MAGASIN Local Browser Runner
+
+on:
+  workflow_dispatch:
+    inputs:
+      command_file:
+        description: "Repo-relative command JSON"
+        required: true
+        default: "04_ROBOT/local_browser_runner/commands/current.json"
+  push:
+    branches:
+      - robot-control
+    paths:
+      - "04_ROBOT/local_browser_runner/commands/current.json"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: magasin-local-browser-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  browser-command:
+    name: Execute bounded local browser command
+    runs-on: [self-hosted, Windows, X64, magasin-browser]
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout exact command revision
+        uses: actions/checkout@v4
+        with:
+          clean: true
+
+      - name: Resolve command file
+        shell: pwsh
+        run: |
+          if ("${{ github.event_name }}" -eq "workflow_dispatch") {
+            $commandFile = "${{ inputs.command_file }}"
+          } else {
+            $commandFile = "04_ROBOT/local_browser_runner/commands/current.json"
+          }
+
+          if (-not (Test-Path $commandFile)) {
+            throw "Command file not found: $commandFile"
+          }
+
+          "MAGASIN_COMMAND_FILE=$commandFile" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
+      - name: Run bounded browser robot
+        shell: pwsh
+        run: |
+          & ".\04_ROBOT\local_browser_runner\run_local_command.ps1" -CommandFile $env:MAGASIN_COMMAND_FILE
+
+      - name: Upload sanitized evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: magasin-local-browser-evidence-${{ github.run_id }}
+          path: 04_ROBOT/local_browser_runner/evidence/
+          if-no-files-found: warn
+          retention-days: 14
