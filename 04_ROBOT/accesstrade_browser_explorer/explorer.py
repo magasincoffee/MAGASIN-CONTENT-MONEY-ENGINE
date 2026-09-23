@@ -33,6 +33,30 @@ from playwright.async_api import Page, Response, async_playwright
 DEFAULT_START_URL = "https://pub2.accesstrade.vn/report/overview"
 DEFAULT_ALLOWED_HOSTS = {"pub2.accesstrade.vn"}
 
+MONEY_PRESET_SEEDS = [
+    "https://pub2.accesstrade.vn/report/overview",
+    "https://pub2.accesstrade.vn/campaign-v2",
+    "https://pub2.accesstrade.vn/tool",
+    "https://pub2.accesstrade.vn/report/conversion",
+    "https://pub2.accesstrade.vn/report/click",
+    "https://pub2.accesstrade.vn/report/campaigns",
+    "https://pub2.accesstrade.vn/report/utm",
+    "https://pub2.accesstrade.vn/payment-v2/revenue",
+    "https://pub2.accesstrade.vn/payment-v2/crosscheck",
+    "https://pub2.accesstrade.vn/payment-v2/pit",
+    "https://pub2.accesstrade.vn/notification",
+]
+
+FULL_PRESET_SEEDS = MONEY_PRESET_SEEDS + [
+    "https://pub2.accesstrade.vn/payment/advance-payment",
+    "https://pub2.accesstrade.vn/find_and_found",
+    "https://pub2.accesstrade.vn/warning",
+    "https://pub2.accesstrade.vn/onboarding-event",
+    "https://pub2.accesstrade.vn/agency/member",
+    "https://pub2.accesstrade.vn/agency/bonus",
+    "https://pub2.accesstrade.vn/agency/dashboard",
+]
+
 BLOCKED_URL_KEYWORDS = {
     "logout",
     "log-out",
@@ -326,6 +350,7 @@ async def map_site(
     timeout_ms: int,
     profile_dir: Path | None,
     cdp_url: str | None,
+    seed_urls: list[str],
 ) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -430,8 +455,19 @@ async def map_site(
                 f"After login the browser is outside allowed hosts: {seed}"
             )
 
-        queue: deque[str] = deque([seed])
-        queued: set[str] = {seed}
+        initial_seeds = [seed]
+        for raw_seed in seed_urls:
+            candidate = sanitize_url(raw_seed, keep_safe_query=True)
+            if (
+                candidate
+                and same_origin(candidate, allowed_hosts)
+                and not is_blocked_url(candidate)
+                and candidate not in initial_seeds
+            ):
+                initial_seeds.append(candidate)
+
+        queue: deque[str] = deque(initial_seeds)
+        queued: set[str] = set(initial_seeds)
         visited: set[str] = set()
 
         while queue and len(visited) < max_pages:
@@ -708,6 +744,24 @@ def parse_args() -> argparse.Namespace:
             "runtime/accesstrade_scan_<timestamp>"
         ),
     )
+    parser.add_argument(
+        "--seed-url",
+        action="append",
+        default=[],
+        help=(
+            "Additional read-only seed URL to visit. "
+            "Repeat this option for multiple seeds."
+        ),
+    )
+    parser.add_argument(
+        "--preset",
+        choices=["default", "money", "full"],
+        default="default",
+        help=(
+            "Seed preset. money explicitly covers campaign/tool/report/payment "
+            "surfaces. full adds agency/support/onboarding surfaces."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -738,6 +792,14 @@ def main() -> int:
             file=sys.stderr,
         )
         return 2
+
+    preset_seeds: list[str] = []
+    if args.preset == "money":
+        preset_seeds = MONEY_PRESET_SEEDS
+    elif args.preset == "full":
+        preset_seeds = FULL_PRESET_SEEDS
+
+    seed_urls = [*preset_seeds, *args.seed_url]
 
     if args.max_pages < 1 or args.max_pages > 1000:
         print(
@@ -770,6 +832,7 @@ def main() -> int:
             timeout_ms=args.timeout_ms,
             profile_dir=profile_dir,
             cdp_url=args.cdp_url,
+            seed_urls=seed_urls,
         )
     )
     return 0
