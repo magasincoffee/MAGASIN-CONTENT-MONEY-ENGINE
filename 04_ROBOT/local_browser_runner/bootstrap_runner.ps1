@@ -2,7 +2,8 @@ param(
     [string]$Repository = "magasincoffee/MAGASIN-CONTENT-MONEY-ENGINE",
     [string]$RunnerName = "MAGASIN-DELL",
     [string]$RunnerRoot = "C:\MAGASIN\github-runner",
-    [string]$Label = "magasin-browser"
+    [string]$Label = "magasin-browser",
+    [switch]$SkipLoginPause
 )
 
 $ErrorActionPreference = "Stop"
@@ -129,6 +130,13 @@ if (-not $debugOnline) {
         "--no-default-browser-check",
         "https://affiliate.shopee.vn/"
     )
+}
+
+if (-not $SkipLoginPause) {
+    Write-Host ""
+    Write-Host "[OWNER ACTION] Complete Shopee Affiliate login in the dedicated Chrome window now."
+    Write-Host "Handle password/OTP/MFA/CAPTCHA yourself. Do not close the Chrome Robot window."
+    Read-Host "When Shopee Affiliate dashboard is visible, press ENTER here to start the GitHub runner"
 }
 
 Write-Host "[RUNNER] Starting self-hosted runner in the logged-in Windows desktop session."
