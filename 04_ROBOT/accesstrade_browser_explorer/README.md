@@ -54,6 +54,49 @@ Cài dependency:
 
 ## Chạy V1
 
+### Cách khuyên dùng khi đăng nhập ACCESSTRADE bằng Google
+
+Google có thể từ chối OAuth bên trong Chromium do Playwright tự mở. Không cố bypass cảnh báo đó.
+
+Thay vào đó:
+
+1. Mở **Chrome thật** bằng một profile riêng dành cho Robot, có bật local remote debugging.
+2. Owner tự đăng nhập Google/ACCESSTRADE trong Chrome đó.
+3. Robot chỉ attach vào phiên Chrome đã đăng nhập.
+
+PowerShell:
+
+    $Chrome = "$env:ProgramFiles\Google\Chrome\Application\chrome.exe"
+    if (-not (Test-Path $Chrome)) {
+        $Chrome = "$env:ProgramFiles(x86)\Google\Chrome\Application\chrome.exe"
+    }
+
+    $RobotChromeProfile = "$HOME\accesstrade-robot-chrome"
+
+    Start-Process $Chrome -ArgumentList @(
+        "--remote-debugging-port=9222",
+        "--user-data-dir=$RobotChromeProfile",
+        "https://pub2.accesstrade.vn/report/overview"
+    )
+
+Trong Chrome vừa mở:
+- Owner tự đăng nhập;
+- tự xử lý Google OAuth/MFA/CAPTCHA;
+- vào ACCESSTRADE Publisher Dashboard.
+
+Sau đó chạy Robot:
+
+    $PY = ".\.venv\Scripts\python.exe"
+    & $PY explorer.py --cdp-url http://127.0.0.1:9222 --no-login-wait --max-pages 20
+
+Robot không tự đăng nhập Google và không export cookie ra output.
+
+Profile `$HOME\accesstrade-robot-chrome` chỉ nằm trên máy Owner. Không commit/upload/chia sẻ thư mục đó.
+
+### Cách cũ — Playwright tự mở Chromium
+
+Chỉ dùng khi login bình thường không bị provider chặn:
+
     python explorer.py
 
 Robot sẽ mở Chromium.
