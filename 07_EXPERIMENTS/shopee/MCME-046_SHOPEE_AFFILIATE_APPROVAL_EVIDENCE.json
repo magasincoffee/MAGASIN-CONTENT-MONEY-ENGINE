@@ -1,0 +1,28 @@
+{
+  "schema_version": "mcme.shopee-affiliate-owner-readiness-evidence.v2",
+  "task_id": "MCME-046",
+  "observed_at": "2026-09-23T22:00:00+07:00",
+  "provider": "Shopee Affiliate Vietnam",
+  "program_approval": {
+    "status": "APPROVED",
+    "evidence": "Shopee displayed success modal welcoming Owner to the Shopee Affiliate Program and stating the program can be accessed via Me in the Shopee app."
+  },
+  "account_access": {
+    "publisher_program_access": "VERIFIED",
+    "affiliate_link_generation_ready": "NOT_YET_VERIFIED_BY_LINK_SMOKE_TEST"
+  },
+  "payout": {
+    "payment_profile_status": "UNKNOWN_AFTER_PROGRAM_APPROVAL",
+    "tax_profile_status": "UNKNOWN_AFTER_PROGRAM_APPROVAL",
+    "payout_ready": "UNKNOWN"
+  },
+  "classification": "PROGRAM_APPROVED_LINK_TEST_READY",
+  "unknown_never_passes": true,
+  "sensitive_values_recorded": false,
+  "next_proof_required": [
+    "Create one Shopee affiliate link successfully",
+    "Verify link resolves to intended Shopee product",
+    "Verify click can be observed in Shopee Affiliate reporting",
+    "Verify payment/tax/payout final state separately"
+  ]
+}
