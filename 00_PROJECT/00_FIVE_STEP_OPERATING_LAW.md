@@ -1,105 +1,71 @@
-# FIVE-STEP OPERATING LAW
+# MONEY V3 — FIVE-STEP OPERATING LAW
 
-Status: LOCKED
-Date: 2026-09-19
-Authority: Owner + Brain
+Status: CANONICAL
+Effective: 2026-09-27
 
-This is the highest-priority operating law of MAGASIN CONTENT MONEY ENGINE.
-
-Every decision, research task, market, niche, content format, software feature, Robot behavior and automation must pass these five steps in order.
+Every material requirement, feature, experiment, automation, content lane, product, source, and operational process must pass these steps in order.
 
 ## 1. QUESTION
 
-Challenge every requirement and assumption.
+Challenge the requirement and the assumed causal link to cash.
 
-Mandatory questions:
-- What exact cash outcome does this requirement support?
-- Who requires it: platform, law, Owner, customer, or our own assumption?
-- What evidence proves it is necessary?
-- What is the fastest falsification test?
-- What happens if we do nothing?
-
-No requirement is trusted merely because it already exists.
+Ask:
+- Does this improve trend detection, qualified reach, affiliate click, attributed order, commission quality, cash settlement, safety, or recovery?
+- What evidence says this is needed now?
+- Can we test the same hypothesis with less time, cost, risk, or code?
 
 ## 2. DELETE
 
-Delete aggressively before optimizing.
+Remove anything that does not materially shorten or strengthen the path to cash.
 
-Delete:
-- duplicated code;
-- duplicated content workflows;
-- vanity metrics without economic use;
-- unproven markets;
-- unproven platforms;
-- unnecessary dashboards;
-- manual approval steps that have no safety/economic value;
-- pure reupload workflows;
-- low-value mass-produced templates;
-- features outside the current cash critical path.
+Delete or defer:
+- low-signal trend sources;
+- weak products;
+- weak hooks;
+- vanity-only metrics;
+- duplicate pipelines;
+- premature multi-page scale;
+- platform features without a money or reliability justification.
 
-If we are not occasionally forced to restore something that was deleted, we are probably not deleting enough.
+Deletion is reversible through Git history and evidence logs. Active runtime stays small.
 
 ## 3. SIMPLIFY
 
-After deletion, reduce the remaining workflow to the smallest reliable loop that can generate real evidence.
+Use one canonical data model, one control plane, one experiment model, one cash truth, and the smallest reliable production path.
 
-Target loop:
-
-Opportunity → Content → Distribution → Transaction → Cash → Learning
-
-A minimum viable money loop is preferred over a complete media platform.
+Defaults:
+- one primary Facebook Fanpage first;
+- multiple bounded content lanes inside a coherent audience promise;
+- one Shopee Affiliate money path;
+- one append-only economic ledger;
+- one queue/state machine per external side effect.
 
 ## 4. ACCELERATE
 
-Speed up only after the workflow is simplified.
+Minimize:
+TREND DETECTED -> DECISION -> CREATIVE READY -> PUBLISHED -> DATA -> KILL/KEEP/SCALE
 
-Primary speed metric:
-
-TIME_TO_VALIDATED_CASH
-
-Secondary:
-- idea → published content;
-- published content → qualified view;
-- qualified view → click;
-- click → conversion;
-- conversion → settled cash;
-- experiment → keep/kill decision.
+Use bounded parallelism only when dependencies allow it. Fast failure is valuable.
 
 ## 5. AUTOMATE
 
-Automation is last.
+Automate only after the process has been questioned, deleted, and simplified.
 
-Automate only when:
-- the economic hypothesis has evidence;
-- quality gates are explicit;
-- rights/policy gates are explicit;
-- retries are bounded;
-- idempotency exists for side effects;
-- recovery is deterministic;
-- Owner-only boundaries are defined.
+Automation policy:
+- safe internal steps can be automated from day one;
+- high-risk external side effects require stronger gates;
+- automation must have observable state, deterministic identifiers, bounded retries, recovery, and reconciliation;
+- never automate policy evasion, rights ambiguity, fake engagement, fake purchases, or credential/MFA bypass.
 
-24/7 autonomy means continuous execution of proven loops, not continuous production of unproven content.
+## Daily enforcement
 
-## Recursive application
+Every daily task records:
+- Five-Step stage;
+- hypothesis;
+- expected cash/learning impact;
+- DoD;
+- evidence;
+- KILL / KEEP / SCALE / REVISE decision;
+- next task.
 
-Five-Step applies at every level:
-
-Market:
-QUESTION → DELETE → SIMPLIFY → ACCELERATE → AUTOMATE
-
-Niche:
-QUESTION → DELETE → SIMPLIFY → ACCELERATE → AUTOMATE
-
-Format:
-QUESTION → DELETE → SIMPLIFY → ACCELERATE → AUTOMATE
-
-Video:
-QUESTION → DELETE → SIMPLIFY → ACCELERATE → AUTOMATE
-
-Robot feature:
-QUESTION → DELETE → SIMPLIFY → ACCELERATE → AUTOMATE
-
-Bug fix:
-QUESTION → DELETE → SIMPLIFY → ACCELERATE → AUTOMATE
-
-No task is considered correctly designed if it begins with AUTOMATE.
+If a task cannot explain how it supports the money loop or system reliability, DELETE it.
