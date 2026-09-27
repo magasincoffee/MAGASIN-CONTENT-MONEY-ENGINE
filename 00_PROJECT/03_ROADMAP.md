@@ -1,84 +1,89 @@
-# ROADMAP — CHINA → VIETNAM → SHOPEE CASH-FIRST
+# MONEY V3 — ROADMAP TO REAL CASH
 
-## P0 — Architecture Pivot Lock
-Goal: make one active source of truth.
+Status: CANONICAL
+Start: 2026-09-27
+Mission horizon: first 30 days, then continue until real cash is reconciled.
+
+## Phase 0 — V3 Source-of-Truth Lock
+
 Exit:
-- China-social → Vietnam traffic → Shopee Affiliate is canonical;
-- old US/Pinterest/Awin/impact route marked historical/superseded;
-- Five-Step and Owner boundaries preserved.
+- V3 canonical files merged to main;
+- old active assumptions removed;
+- granular subsystem SOT created;
+- daily queue points only to V3.
 
-## P1 — Proof of Money (target: days 1–7)
-Goal: reach the first commercial signal as quickly as possible.
+## Phase 1 — Closed Loop V0 | Days 1–3
 
-Deliverables:
-- Shopee Affiliate readiness established or explicit WAIT_OWNER;
-- Douyin collector running;
-- bounded initial scan of ~50–100 videos;
-- no more than 3 first product candidates;
-- Shopee Vietnam mapping completed;
-- up to 9 Vietnamese creative variants;
-- first publication;
-- click/order/commission telemetry initialized.
+Goal:
+prove all required authorities and telemetry paths before volume.
 
-Primary gate:
-```text
-FIRST ATTRIBUTED SHOPEE ORDER
-```
+Exit:
+- authorized Facebook Fanpage identified;
+- Shopee affiliate link smoke test passes;
+- Control V0 online;
+- runtime state/event model exists;
+- one end-to-end dry-run can traverse trend -> candidate -> creative -> publish-ready -> telemetry-ready.
 
-A 7-day target is an execution target, not a promise that the market will convert.
+## Phase 2 — First Live Traffic | Days 4–7
 
-## P2 — Repeatability (target: days 7–14)
-Goal: determine whether the result is repeatable rather than luck.
+Goal:
+publish the first bounded compliant batch and observe real traffic.
+
+Exit:
+- Trend Radar running;
+- initial content lanes selected;
+- first real posts published;
+- first qualified Facebook traffic observed;
+- first affiliate click targeted as earliest commercial signal.
+
+## Phase 3 — First Order Search | Days 8–14
+
+Goal:
+find combinations that create Shopee attributed orders.
+
+Method:
+rapid KILL / KEEP / REVISE of lane × hook × product × creative.
+
+Exit target:
+at least one attributed Shopee order, or a precise evidence-backed bottleneck diagnosis and revised experiment.
+
+## Phase 4 — Repeatability + Automation | Days 15–21
+
+Goal:
+automate proven and safe steps while increasing experiment throughput.
+
+Exit:
+- internal loop mostly autonomous;
+- publish/reconciliation reliable;
+- telemetry drives automatic next experiments;
+- winners receive more variants;
+- weak combinations are automatically deprioritized.
+
+## Phase 5 — Cash Acceleration | Days 22–30
+
+Goal:
+maximize approved commission and progress toward settled cash.
 
 Actions:
-- identify winning hook/product/content combinations;
-- create additional variants around winners;
-- test adjacent equivalent products;
-- kill weak combinations quickly;
-- track CLICK → ORDER → APPROVED COMMISSION.
+- scale evidence-backed content lanes;
+- improve product mapping;
+- improve CTR/CVR;
+- improve creative throughput without sacrificing originality/policy;
+- activate secondary monetization only when it does not distract from primary cash path.
 
-Exit:
-- repeatable commercial signal, or
-- explicit KILL / REVISE decision with evidence.
+30-day target:
+commercial proof and the strongest possible progression toward FIRST REAL CASH.
 
-## P3 — Automation V1 (target: days 21–35)
-Goal: automate only the proven sequence.
+Real payout timing may depend on Shopee reconciliation/payment cycles; the project does not stop at day 30 if cash has not settled.
 
-Candidate automation:
-```text
-Douyin ingestion
-→ snapshot history
-→ trend scoring
-→ product mapping
-→ Shopee candidate queue
-→ script / hook generation
-→ edit plan
-→ rendering
-→ publish queue
-→ performance collection
-→ KILL / KEEP / SCALE
-```
+## Phase 6 — Continue Until Real Cash
 
-Xiaohongshu automation is added only if it materially improves decisions.
+The project remains active until:
+CASH_RECEIVED + RECONCILED
 
-## P4 — Scale
-Goal: increase net cash, not content volume.
-
-Scale dimensions:
-- more winning products;
-- more validated hooks;
-- more authorized distribution surfaces;
-- higher publishing throughput;
-- only later, approved paid traffic when economics justify it.
-
-## P5 — 24/7 Autonomous Loop
-Valid only after:
-- cash attribution works;
-- rights gates are reliable;
-- publish side effects are reconciled;
-- economics are repeatable;
-- Owner boundaries are explicit.
+Then continue to:
+repeatable cash -> scale -> multi-page / multi-surface only when justified.
 
 ## Permanent North Star
 
-**NET CASH CONTRIBUTION / 1,000 QUALIFIED VIEWS**
+NET CASH CONTRIBUTION / 1,000 QUALIFIED VIEWS
