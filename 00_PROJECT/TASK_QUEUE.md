@@ -1,205 +1,82 @@
-# TASK QUEUE — CHINA → VIETNAM → SHOPEE AFFILIATE
+# MONEY V3 — ACTIVE TASK QUEUE
 
-Priority method:
+Status: CANONICAL
+Queue policy: execute dependency-correct tasks daily until real cash is reconciled.
 
-```text
-Expected Cash Impact × Learning Probability
-───────────────────────────────────────────
-          Time + Cost + Risk
-```
+Priority equation:
+(Expected Cash Impact × Learning Probability × Reliability Impact) / (Time + Cost + Risk)
 
-Five-Step is applied before every task.
+Each task must apply Five-Step and finish with evidence.
 
-## DONE
+## NOW
 
-### MCME-045 — China→Vietnam Shopee Architecture Pivot
-Five-Step: QUESTION → DELETE → SIMPLIFY
+### MONEY-V3-D01 — Runtime authority + closed-loop bootstrap
 
-Objective:
-Replace the active US/Pinterest/Awin/impact first-cash architecture with the Owner-approved China-social → Vietnam traffic → Shopee Affiliate architecture while preserving historical evidence.
-
-Status: **DONE** — canonical merge `2283c40a89b01bce574893c8ad787143fc668e5c`.
+Objectives:
+- verify/select the authorized Facebook Fanpage;
+- execute Shopee affiliate link smoke test;
+- establish V3 runtime identifiers/state/event contract;
+- establish Control V0 shell;
+- confirm what existing code can be reused without violating V3.
 
 DoD:
-- Architecture V2 canonical;
-- current state updated;
-- project state updated;
-- roadmap updated;
-- old route no longer blocks new execution;
-- historical evidence preserved;
-- no external account/spend/publish action performed.
+- Fanpage authority = PASS or explicit Owner blocker;
+- affiliate link redirect/tracking smoke test = PASS or explicit blocker;
+- one canonical runtime state source exists;
+- Control can display system status, blockers, current task, and money gates;
+- D02 input is unambiguous.
 
-## DONE
+## NEXT
 
-### MCME-046 — Shopee Affiliate Owner Readiness
-Five-Step: QUESTION
+### D02 — Trend Radar V0 + normalized candidate store
+### D03 — Product mapping + content lane registry + rights gate
+### D04 — Content Brain + render/edit pipeline V0
+### D05 — Facebook publisher queue + idempotent reconciliation
+### D06 — First bounded live content batch
+### D07 — First traffic/click review
+### D08 — Hook/product revision batch
+### D09 — Lane economics scoring
+### D10 — Conversion-oriented creative batch
+### D11 — Shopee order attribution review
+### D12 — Product/offer replacement if required
+### D13 — Winning-pattern variant expansion
+### D14 — First 14-day KILL/KEEP/SCALE decision
+### D15 — Automatic experiment scheduler
+### D16 — Automated trend rescans + opportunity refresh
+### D17 — Automated creative generation/QA improvements
+### D18 — Publisher recovery + failure reconciliation hardening
+### D19 — Control Webapp experiment/economics views
+### D20 — Content lane allocator
+### D21 — Repeatability decision and automation gate review
+### D22 — Scale top evidence-backed lane
+### D23 — Scale top product/hook pair
+### D24 — Secondary opportunity test
+### D25 — Cash efficiency optimization
+### D26 — Cross-source trend confirmation optimization
+### D27 — Creative throughput optimization
+### D28 — 28-day portfolio KILL/KEEP/SCALE
+### D29 — Settlement/payout reconciliation readiness
+### D30 — 30-day business review + next cash sprint
 
-Objective:
-Verify real Shopee Affiliate access for the Owner in Vietnam.
+After D30:
+continue the evidence-driven queue until FIRST REAL CASH is CASH_RECEIVED_AND_RECONCILED.
 
-Owner-only where required:
-- signup/login;
-- contractual acceptance;
-- KYC/tax;
-- banking/payout setup;
-- MFA/OTP/CAPTCHA.
+## Daily execution law
 
-Output:
-READY / WAIT_OWNER / BLOCKED with sanitized evidence.
+At the beginning of each day:
+1. read START_HERE;
+2. read PROJECT_STATE;
+3. read CURRENT_STATE;
+4. read this queue;
+5. read only the relevant V3 subsystem SOT;
+6. execute the highest dependency-correct task;
+7. write evidence and update state;
+8. choose next task from real bottleneck, not calendar vanity.
 
-Current status: **APPROVED**.
-- Shopee Affiliate program approval: VERIFIED.
-- Publisher program access: VERIFIED.
-- Link generation: NOT_YET_VERIFIED_BY_LINK_SMOKE_TEST.
-- Payment/tax/payout final state: UNKNOWN and tracked separately.
-- Safe parallel work: MCME-047 may proceed immediately.
-- Next cash proof action: create one Shopee affiliate link and verify redirect + click tracking.
+The D01–D30 labels are intended sequencing. If evidence proves a better dependency order, Brain may reorder future tasks while preserving the 30-day mission and Five-Step law.
 
-## READY — SAFE PARALLEL WORK
+## Stop / Owner handoff only when required
 
-### MCME-047 — Douyin Collector V1
-Five-Step: DELETE → SIMPLIFY
+credentials, MFA/OTP/CAPTCHA, KYC/tax, payout/banking, legal/rights ambiguity, appeals/suspension, destructive account action, or spend approval.
 
-Objective:
-Run the minimum collector needed to acquire trend-candidate metadata from Douyin.
-
-Preferred first technical candidate:
-`Evil0ctal/Douyin_TikTok_Download_API`
-
-Do not build a general social crawler.
-
-### MCME-048 — First 50–100 Video Scan
-Five-Step: ACCELERATE
-
-Objective:
-Collect a bounded first dataset and rank rising videos/products.
-
-Minimum normalized fields:
-- platform;
-- video/source id;
-- source URL;
-- creator;
-- caption/hashtags;
-- views/likes/comments/shares;
-- published_at;
-- first_seen_at / last_seen_at;
-- growth since last scan;
-- trend score.
-
-### MCME-049 — Top-3 Product Mapping to Shopee Vietnam
-Five-Step: DELETE → SIMPLIFY
-
-Objective:
-Select no more than 3 product opportunities and map them to real Shopee Vietnam listings/affiliate eligibility.
-
-Do not select a product solely because a China video has high views.
-
-### MCME-050 — Nine-Creative Proof Batch
-Five-Step: SIMPLIFY → ACCELERATE
-
-Objective:
-Produce at most:
-```text
-3 products × 3 differentiated hooks = 9 creatives
-```
-
-Content must be Vietnamese and rights/policy compliant.
-
-### MCME-051 — First Publication
-Five-Step: ACCELERATE
-
-Objective:
-Publish through the simplest authorized Vietnamese distribution surfaces.
-
-Initial publishing may remain manual.
-No paid traffic.
-
-### MCME-052 — First Cash-Signal Review
-Five-Step: QUESTION → DELETE
-
-Evaluate:
-- qualified views;
-- affiliate clicks;
-- attributed orders;
-- approved commissions;
-- production time/cost.
-
-Primary target:
-`FIRST ATTRIBUTED ORDER`
-
-If no order, diagnose the exact bottleneck rather than adding infrastructure.
-
-### MCME-053 — Repeatability Test
-Five-Step: ACCELERATE
-
-Objective:
-Test whether winning product/hook combinations can reproduce orders.
-
-Decision:
-KILL / KEEP / SCALE.
-
-### MCME-054 — Automation V1
-Five-Step: AUTOMATE
-
-Hard prerequisite:
-Repeatable economic evidence.
-
-Automate only proven steps:
-```text
-ingest → score → map → create → queue → measure → learn
-```
-
-## CASH GATES
-
-```text
-GATE 0 = AFFILIATE_CLICK
-GATE 1 = ATTRIBUTED_ORDER
-GATE 2 = APPROVED_COMMISSION
-GATE 3 = CASH_RECEIVED_AND_RECONCILED
-```
-
-## TIME TARGETS
-
-```text
-T+2 days  RADAR RUNNING
-T+3 days  3 PRODUCTS READY
-T+4 days  9 CREATIVES READY
-T+5 days  FIRST PUBLICATION
-T+7 days  FIRST CASH-SIGNAL REVIEW
-T+14 days REPEATABILITY DECISION
-T+21–35 days AUTOMATION V1, only if justified
-```
-
-These are execution targets, not guarantees of conversion or payout.
-
-## DELETED / DEFERRED FROM ACTIVE FIRST-CASH PATH
-
-- US-first market selection;
-- Pinterest-first content loop;
-- Awin as active route;
-- impact.com as active route;
-- Amazon fallback as active route;
-- kitchen niche lock;
-- static 2:3 Pin as canonical first format;
-- broad multi-platform crawler;
-- generic dashboard;
-- paid traffic;
-- full 24/7 content factory;
-- automation before economic proof.
-
-## HISTORICAL EVIDENCE RULE
-
-Do not delete or rewrite prior Awin/impact/Pinterest evidence. It remains append-only historical proof and may be revisited only after a future explicit Owner pivot.
-
-## OWNER BOUNDARIES
-
-Stop for:
-- credentials;
-- MFA/OTP/CAPTCHA;
-- KYC/tax;
-- banking/payment;
-- legal/rights ambiguity;
-- destructive account actions;
-- spend outside explicit approval.
-
-Unknown never silently becomes PASS.
+Everything else should continue autonomously.

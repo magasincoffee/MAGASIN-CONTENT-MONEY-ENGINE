@@ -1,192 +1,161 @@
-# MAGASIN CONTENT MONEY ENGINE — ARCHITECTURE V2
+# MONEY V3 — AUTONOMOUS FACEBOOK -> SHOPEE ARCHITECTURE
 
-Status: OWNER APPROVED / CANONICAL ACTIVE ARCHITECTURE  
-Date: 2026-09-22  
-Supersedes active Architecture V1 routing. Historical evidence remains append-only.
+Status: OWNER APPROVED / CANONICAL ACTIVE ARCHITECTURE
+Effective: 2026-09-27
+Supersedes Architecture V2 as active authority.
 
 ## Mission
 
-Create real, measurable cash in Vietnam by detecting fast-rising social-commerce demand from Chinese social platforms, mapping that demand to Shopee Vietnam affiliate products, producing compliant Vietnamese content, distributing it, and measuring the path from qualified view to settled cash.
+Autonomously discover global content/product opportunities, produce compliant Vietnamese Facebook content, distribute it through an authorized Fanpage, learn from performance and commerce telemetry, and maximize real Shopee Affiliate cash contribution.
+
+## Topology
+
+GLOBAL TREND SOURCES
+-> TREND RADAR
+-> NORMALIZER / DEDUPE
+-> TREND + COMMERCIAL SCORER
+-> CONTENT LANE ROUTER
+-> SHOPEE PRODUCT MAPPER
+-> RIGHTS / POLICY GATE
+-> CONTENT BRAIN
+-> EDIT / RENDER ROBOT
+-> CREATIVE QA
+-> AFFILIATE LINK BINDER
+-> FACEBOOK PUBLISH QUEUE
+-> FACEBOOK FANPAGE
+-> PERFORMANCE COLLECTOR
+-> SHOPEE COMMERCE COLLECTOR
+-> CASH TRUTH
+-> EXPERIMENT BRAIN
+-> KILL / KEEP / SCALE
+-> next cycle
+
+CONTROL WEBAPP observes and controls the full loop.
+
+## Distribution lock
+
+Primary V1 surface: Facebook Fanpage.
+
+Do not use a personal Facebook profile as the canonical Shopee Affiliate distribution surface.
+
+A second page or additional platform is opened only after the first page produces enough evidence to justify it.
+
+## Trend intelligence
+
+The system is global-source, not China-only.
+
+Sources may include Douyin, Xiaohongshu, TikTok, YouTube/Shorts, Instagram/Reels, Facebook, marketplaces, public trend surfaces, and future sources.
+
+Every source adapter must obey its terms, access rules, and content rights constraints.
+
+## Content model
+
+Import proven signals and ideas, not stolen finished content.
+
+Allowed inputs to production include original, licensed, creator-authorized, supplier-authorized, platform-permitted, public-domain, or otherwise rights-verified assets.
+
+Reference-only content may inform:
+- hooks;
+- angles;
+- pacing;
+- product discovery;
+- topic selection;
+- audience questions;
+- scene concepts.
+
+Pure download -> minor edit -> repost is not the business model.
+
+## Content lanes
+
+The system may run multiple content lanes, but each lane must have:
+- audience promise;
+- topic boundary;
+- monetization hypothesis;
+- success metric;
+- stop condition.
+
+The first Fanpage must remain coherent enough for audience and platform understanding.
+
+## Monetization
+
+Primary:
+SHOPEE VIETNAM AFFILIATE
+
+Secondary:
+Facebook/platform monetization when eligible, without compromising affiliate economics or policy compliance.
+
+## Automation model
+
+Safe automation starts immediately for:
+- ingestion;
+- normalization;
+- dedupe;
+- scoring;
+- research queues;
+- script generation;
+- edit plans;
+- rendering;
+- QA;
+- telemetry;
+- dashboards;
+- experiment analysis.
+
+External side effects such as publishing, destructive changes, spend, payment, or contractual actions use explicit authorization boundaries and fail-closed controls.
+
+## Autonomy
+
+Target operating mode:
+ZERO-TOUCH NORMAL OPERATION + MINIMAL OWNER EXCEPTION HANDOFF
+
+Owner-only exceptions:
+credentials, MFA/OTP/CAPTCHA, KYC/tax, bank/payout, legal/rights ambiguity, appeals/suspensions, destructive account action, spend approval.
+
+## Economic truth
+
+Cash stages:
+QUALIFIED_VIEW
+-> AFFILIATE_CLICK
+-> ATTRIBUTED_ORDER
+-> COMMISSION_PENDING
+-> COMMISSION_APPROVED
+-> PAYOUT_ISSUED
+-> CASH_RECEIVED
+-> CASH_RECONCILED
+
+Only CASH_RECONCILED is FIRST REAL CASH.
 
 ## North Star
 
-**NET CASH CONTRIBUTION / 1,000 QUALIFIED VIEWS**
+NET CASH CONTRIBUTION / 1,000 QUALIFIED VIEWS
 
-Vanity metrics are diagnostic only.
+Supporting diagnostics:
+- qualified reach;
+- retention/watch time;
+- share/save/comment quality;
+- outbound CTR;
+- affiliate click quality;
+- order CVR;
+- approved commission per 1,000 qualified views;
+- cost/time per creative;
+- cash settlement.
 
-## Five-Step Operating Law
+## Reliability laws
 
-Every material action follows, in order:
+- deterministic content/experiment/publish IDs;
+- append-only event history;
+- idempotent external side effects;
+- bounded retries;
+- no blind resend;
+- reconcile provider IDs after side effects;
+- unknown != pass;
+- blocked != pass;
+- policy/rights ambiguity fails closed;
+- every failure visible in Control.
 
-1. QUESTION — challenge every requirement and assumption.
-2. DELETE — remove work not required to reach first cash.
-3. SIMPLIFY — use the smallest money loop that can be tested.
-4. ACCELERATE — shorten signal → content → click → order → cash.
-5. AUTOMATE — automate only after the loop has demonstrated real economic evidence.
+## System-of-record split
 
-## Canonical V2 topology
-
-```text
-DOUYIN ─────────────┐
-XIAOHONGSHU ────────┤
-                    ↓
-            SOCIAL RADAR
-                    ↓
-             TREND SCORER
-                    ↓
-           PRODUCT MAPPER
-                    ↓
-            SHOPEE VIETNAM
-                    ↓
-          AFFILIATE ELIGIBILITY
-                    ↓
-          SOURCE / RIGHTS GATE
-                    ↓
-            CONTENT BRAIN
-                    ↓
-             EDIT ROBOT
-                    ↓
-            PUBLISH QUEUE
-                    ↓
-       TIKTOK / FACEBOOK REELS
-       / SHOPEE-COMPATIBLE SURFACES
-                    ↓
-        PERFORMANCE COLLECTOR
-                    ↓
-          ANALYTICS BRAIN
-                    ↓
-          KILL / KEEP / SCALE
-                    ↓
-             CASH TRUTH
-```
-
-## Initial source set — locked for V1
-
-1. Douyin — primary trend discovery source.
-2. Xiaohongshu / RED — secondary confirmation source for repeated product/content signals.
-3. Evil0ctal/Douyin_TikTok_Download_API — first technical collector candidate for Douyin/TikTok metadata and bounded ingestion.
-
-Xiaohongshu automation is deferred until Douyin proves commercial value. Manual/limited XHS confirmation is enough for Proof-of-Money V1.
-
-## Market and monetization lock
-
-For V1:
-
-```text
-MARKET = VIETNAM
-MONETIZATION = SHOPEE AFFILIATE
-TRAFFIC = ORGANIC SHORT-FORM CONTENT
-AD SPEND = 0
-```
-
-The prior US/Pinterest/Awin/impact.com route is no longer the active first-cash architecture. Its evidence is historical and must not be deleted or rewritten.
-
-## Proof-of-Money loop
-
-```text
-TREND
-→ PRODUCT
-→ VIETNAMESE CREATIVE
-→ PUBLICATION
-→ AFFILIATE CLICK
-→ ATTRIBUTED ORDER
-→ APPROVED COMMISSION
-→ CASH RECEIVED
-```
-
-Success is not “Robot installed” or “video got views.” Success progresses through:
-
-- CASH GATE 0 — affiliate click;
-- CASH GATE 1 — attributed Shopee order;
-- CASH GATE 2 — approved commission;
-- CASH GATE 3 — funds actually received and reconciled.
-
-## V1 operating constraints
-
-Before the first attributed order:
-
-- scan a bounded initial set, approximately 50–100 candidate videos;
-- select no more than 3 products for the first batch;
-- create 3 differentiated creatives per product, maximum 9 initial videos;
-- publish manually or through the simplest authorized path;
-- no paid traffic;
-- no generic dashboard build;
-- no multi-source crawler platform;
-- no full auto-publishing system;
-- no automation of an unproven loop.
-
-## Product selection criteria
-
-A candidate product should be favored when it has:
-
-- strong visual demonstration;
-- problem → solution understandable within seconds;
-- evidence of rising/repeated social interest;
-- an equivalent product available on Shopee Vietnam;
-- affiliate eligibility that can be verified;
-- acceptable seller/listing quality;
-- low factual/safety claim burden;
-- source material that can be used compliantly.
-
-The system is niche-agnostic. Trend evidence selects the product category.
-
-## Content rule
-
-**Import proven ideas, not stolen finished content.**
-
-Chinese social content may be used for:
-
-- trend discovery;
-- hook discovery;
-- product discovery;
-- pacing/angle analysis;
-- reference-only scene understanding.
-
-Publication must use original, licensed, supplier-authorized, creator-authorized, platform-permitted, public-domain, or otherwise rights-verified material.
-
-```text
-Download → minor edit → repost
-```
-
-is explicitly not the business model.
-
-## Core roles
-
-### Owner
-Controls credentials, MFA/CAPTCHA, Shopee registration, KYC/tax, banking/payment setup, legal/rights ambiguity, spend, destructive account actions and any contractual decision requiring human authority.
-
-### Brain
-Chooses trend/product hypotheses, experiment priorities, thresholds, economic interpretation and KILL / KEEP / SCALE decisions.
-
-### Work
-Executes one bounded task and stops.
-
-### Robot
-Handles collection, normalization, scoring, state, rendering, scheduling, retries, reconciliation and later automation. Robot does not own strategy.
-
-## Automation gate
-
-Automation becomes valid only after the loop demonstrates economic evidence.
-
-Recommended sequence:
-
-```text
-FIRST CLICK
-→ FIRST ATTRIBUTED ORDER
-→ REPEAT ORDERS
-→ AUTOMATE PROVEN STEPS
-→ SCALE
-```
-
-## Non-negotiable invariants
-
-1. Five-Step precedes automation.
-2. First real cash outranks architecture elegance.
-3. Unknown rights/account/payment state never silently becomes PASS.
-4. No pure-reupload model.
-5. No paid traffic before explicit Owner approval and proven economics.
-6. Historical Awin/impact/Pinterest evidence remains immutable history.
-7. Cash Truth remains the canonical economic evidence sink.
-8. Weak products and creatives are deleted quickly.
-9. Publish/account/payment side effects remain fail-closed.
-10. Automation must reduce time-to-cash, not merely increase system complexity.
+Strategy/state: `00_PROJECT/*` and `00_PROJECT/V3_SOT/*`
+Operational data: runtime database/event store
+Economic truth: Cash Truth ledger
+Owner view: Control Webapp
+Historical evidence: Git history and non-canonical legacy artifacts

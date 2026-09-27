@@ -1,87 +1,62 @@
-# START HERE — MAGASIN CONTENT MONEY ENGINE
+# START HERE — MONEY V3
 
-Read this file first in every new Brain/Work session.
+Status: CANONICAL ACTIVE SOURCE OF TRUTH
+Effective: 2026-09-27
+
+Read this file first in every Planner / Executor / Brain / Robot session.
+
+## Mission
+
+Build and operate an autonomous social-commerce engine that turns global trend signals into compliant Vietnamese Facebook content, qualified traffic, Shopee Vietnam Affiliate orders, approved commission, and ultimately cash actually received.
 
 ## Canonical read order
 
-1. `00_PROJECT/00_FIVE_STEP_OPERATING_LAW.md`
-2. `00_PROJECT/01_ARCHITECTURE.md`
-3. `00_PROJECT/PROJECT_STATE.json`
-4. `00_PROJECT/02_CURRENT_STATE.md`
-5. `00_PROJECT/TASK_QUEUE.md`
-6. The current task's relevant module docs.
+1. `00_PROJECT/START_HERE.md`
+2. `00_PROJECT/00_FIVE_STEP_OPERATING_LAW.md`
+3. `00_PROJECT/01_ARCHITECTURE.md`
+4. `00_PROJECT/PROJECT_STATE.json`
+5. `00_PROJECT/02_CURRENT_STATE.md`
+6. `00_PROJECT/03_ROADMAP.md`
+7. `00_PROJECT/TASK_QUEUE.md`
+8. `00_PROJECT/V3_SOT/INDEX.md`
+9. Only the subsystem SOT files needed for the current task.
 
-Historical Gate A/Awin/impact/Pinterest files are audit evidence, not the active first-cash route.
+Any older Pinterest / Awin / impact / China-only / manual-first architecture is historical evidence, not active authority.
 
-## Highest-priority operating law
+## Locked V3 route
 
-```text
-QUESTION → DELETE → SIMPLIFY → ACCELERATE → AUTOMATE
-```
-
-Never begin with AUTOMATE.
-
-## Active mission
-
-Create real cash from:
-
-```text
-China social trend signals
-→ Vietnamese short-form content
-→ Shopee Vietnam Affiliate
-→ orders
-→ commission
-→ cash received
-```
-
-## Locked V1 scope
-
-- Primary source: Douyin.
-- Confirmation source: Xiaohongshu.
-- Initial technical collector candidate: Evil0ctal/Douyin_TikTok_Download_API.
 - Market: Vietnam.
-- Language: Vietnamese.
-- Monetization: Shopee Affiliate.
-- Spend: 0 until explicit approval/economic proof.
-- Niche: dynamic; trend-selected.
-- Initial batch ceiling: 3 products × 3 variants = 9 videos.
+- Audience language: Vietnamese.
+- Primary distribution: Facebook Fanpage.
+- Primary monetization: Shopee Vietnam Affiliate.
+- Secondary monetization: Facebook/platform monetization only when available and policy-compliant.
+- Trend discovery: global, multi-source.
+- Content model: trend intelligence + rights gate + substantial transformation/original production.
+- Operating model: zero-touch normal operation, minimal Owner exception handoff.
+- Control plane: webapp/dashboard is a first-class subsystem.
+- 30-day mission: prove the commercial loop as fast as possible and progress to real settled cash.
 
 ## North Star
 
-**NET CASH CONTRIBUTION / 1,000 QUALIFIED VIEWS**
+NET CASH CONTRIBUTION / 1,000 QUALIFIED VIEWS
 
-## Proof sequence
+## Money truth
 
-```text
-VIEW
-→ AFFILIATE CLICK
-→ ATTRIBUTED ORDER
-→ APPROVED COMMISSION
-→ CASH RECEIVED
-```
+VIEW != CLICK != ORDER != PENDING COMMISSION != APPROVED COMMISSION != PAYOUT != CASH RECEIVED
 
-## Current strategy
+Only reconciled funds actually received count as FIRST REAL CASH.
 
-- content-first discovery, product-second mapping;
-- use Chinese content as trend/reference intelligence, not as an automatic reupload license;
-- original/licensed/authorized production inputs;
-- manually prove the money loop before full automation;
-- kill weak products/creatives quickly;
-- preserve Cash Truth and fail-closed Owner boundaries.
+## Non-negotiables
 
-## Role model
+- Five-Step always runs before automation.
+- No pure download-minor-edit-repost business model.
+- Unknown rights or account state never silently becomes PASS.
+- Do not optimize raw views at the expense of commercial signal.
+- Safe internal automation may start from day one.
+- External side effects use authorization, idempotency, reconciliation, retry limits, and fail-closed behavior.
+- Owner intervention is reserved for credentials, MFA/CAPTCHA, KYC/tax, payout/banking, contractual/legal ambiguity, appeals/suspensions, spend approval, and destructive actions.
+- The robot must report what it is doing, why, current bottleneck, economics, and next action through Control.
 
-Owner = authority/accounts/KYC/payment/legal ambiguity  
-Brain = strategy + priority + economics + KILL/KEEP/SCALE  
-Work = one bounded execution task  
-Robot = collection + state + rendering + recovery + later automation
+## Active start point
 
-## Do not do
-
-- do not restore US/Pinterest/Awin/impact as the active first-cash route unless Owner explicitly pivots again;
-- do not hard-code kitchen or another niche;
-- do not optimize for raw views alone;
-- do not make pure reupload the business model;
-- do not build a large generic media platform before money evidence;
-- do not automate an unproven money loop;
-- do not guess affiliate eligibility, rights, KYC or payout status.
+Read `PROJECT_STATE.json`. Active execution begins at MONEY-V3-D01.
